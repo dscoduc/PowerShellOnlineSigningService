@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\GitHubAPIClient.dll" />
+    <Content Include="bin\GitHubAPIClient.pdb" />
     <Content Include="bin\log4net.dll" />
     <Content Include="bin\log4net.xml" />
     <Content Include="bin\Newtonsoft.Json.dll" />
@@ -81,8 +82,9 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="style.css" />
-    <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\FileHandler.cs" />
@@ -92,19 +94,20 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="bin\PowerShellOnlineSigningService.dll.config" />
     <Content Include="log4net.config" />
+    <Content Include="bin\GitHubAPIClient.dll.config" />
+    <Content Include="App_Data\Website_Debug.log" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -113,7 +116,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="files\" />
   </ItemGroup>
   <PropertyGroup>
