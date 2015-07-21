@@ -1,0 +1,127 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: verdana, arial, sans-serif;
+    background: #fff;
+    min-height: 500px;
+}
+#header_wrapper
+{
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+#header
+{
+    width: 800px;
+    height: 85px;
+    padding: 15px;
+    /*background: url('../images/header.png') no-repeat;*/
+    margin: 0 auto;
+}
+#header h3
+{
+    margin: 30px 0px 0px 0px;
+    font-family: verdana, arial, sans-serif;
+    color: Black;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 18px;
+}
+#downloads { 
+    padding: 15px; 
+    color: #666; 
+    width: 800px; 
+    margin: 10px auto;
+    min-height: 200px;
+    border: 1px #ccc solid;
+}
+#downloads table { 
+    width: 100%;
+}
+#downloads table th {
+    border-bottom:1px solid #ccc;
+    font-weight: bold;
+}
+#downloads table td {
+    border-bottom:1px dotted #ccc;
+}
+#downloads .size { 
+    color: #666;  
+    float: right; 
+    padding-right: 10px;
+}
+#results { 
+    padding: 15px; 
+    color: #666; 
+    width: 500px; 
+    margin: 10px auto;
+}
+#results table { 
+    width: 100%;
+}
+#results table th {
+    border-bottom:1px solid #ccc;
+    font-weight: bold;
+}
+#results table td {
+    border-bottom:1px dotted #ccc;
+}
+#content {
+    width: 95%;
+    line-height: 25px;
+    margin: 10px auto;
+    min-height: 500px;
+}
+#content_description {
+    width: 800px;
+    padding: 15px;
+    margin: 0 auto;
+}
+#content_body {
+    width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+#content_body table {
+    width: 100%;
+}
+#footer_wrapper {
+    border-top: 1px solid #ccc;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 0 10px 0;
+}
+#footer {
+    width: 800px;
+    height: 40px;
+    padding: 5px 15px;
+    margin: 0 auto;
+    font-size: x-small;
+    color: #ddd8d8;
+}
+#serverInfo {
+    float: right;
+    color: ghostwhite;
+}
+#userInfo {
+    float: left;
+    color: #666;
+}
+#upload { 
+    padding: 15px; 
+    padding-top: 50px;
+    color: #666; 
+    width: 500px; 
+    margin: 0px auto;
+    text-align:center;
+}
+.success {
+    color: forestgreen;
+}
+.error {
+    color: maroon;
+}
