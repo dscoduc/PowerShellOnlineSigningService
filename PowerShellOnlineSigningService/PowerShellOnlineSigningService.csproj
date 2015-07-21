@@ -80,17 +80,26 @@
     <Content Include="bin\PowerShellOnlineSigningService.pdb" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\FileHandler.cs" />
-    <Content Include="App_Code\Requestor.cs" />
-    <Content Include="App_Code\serverHeaderModule.cs" />
+    <Compile Include="App_Code\FileHandler.cs" />
+    <Compile Include="App_Code\Requestor.cs" />
+    <Compile Include="App_Code\serverHeaderModule.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
