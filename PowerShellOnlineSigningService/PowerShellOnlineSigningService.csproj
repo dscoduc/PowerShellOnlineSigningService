@@ -87,7 +87,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\DownloadFile.cs" />
     <Compile Include="App_Code\FileHandler.cs" />
     <Compile Include="App_Code\Requestor.cs" />
     <Compile Include="App_Code\serverHeaderModule.cs" />
