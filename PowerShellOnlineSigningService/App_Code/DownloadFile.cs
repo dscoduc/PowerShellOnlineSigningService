@@ -7,7 +7,7 @@ using GitHubAPIClient;
 
 namespace PowerShellOnlineSigningService
 {
-    public class FileHandler : IHttpHandler
+    public class DownloadFile : IHttpHandler
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         //private string scriptFolder = "~/files";

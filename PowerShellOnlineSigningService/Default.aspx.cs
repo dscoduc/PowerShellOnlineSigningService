@@ -327,7 +327,101 @@ namespace PowerShellOnlineSigningService
             }
         }
 
-        private void displayFileList()
+        private void displayFileList() 
+        {
+
+            try
+            {
+
+                // Clear existing file list
+                tblFileList.Rows.Clear();
+
+                #region AddHeader
+                using (TableHeaderRow headerRow = new TableHeaderRow())
+                {
+                    TableHeaderCell headerCell;
+
+                    using (headerCell = new TableHeaderCell())
+                    {
+                        headerCell.Width = System.Web.UI.WebControls.Unit.Pixel(450);
+                        headerCell.Text = "File Name";
+                        headerCell.HorizontalAlign = HorizontalAlign.Left;
+                        headerRow.Cells.Add(headerCell);
+                    }
+
+                    using (headerCell = new TableHeaderCell())
+                    {
+                        headerCell.Text = "Last Modified";
+                        headerCell.Width = System.Web.UI.WebControls.Unit.Pixel(185);
+                        headerCell.HorizontalAlign = HorizontalAlign.Left;
+                        headerRow.Cells.Add(headerCell);
+                    }
+
+                    using (headerCell = new TableHeaderCell())
+                    {
+                        headerCell.Text = "File Size";
+                        headerCell.Width = System.Web.UI.WebControls.Unit.Pixel(100);
+                        headerCell.HorizontalAlign = HorizontalAlign.Right;
+                        headerCell.Style.Add("padding-right", "10px;");
+                        headerRow.Cells.Add(headerCell);
+                    }
+
+                    tblFileList.Rows.Add(headerRow);
+                }
+                #endregion // AddHeader
+
+
+                List<GitContent> contents = GitHubClient.GetContents();
+
+                foreach (GitContent entry in contents)
+                {
+                    // Console.WriteLine("{0} [{1}] [{2}]", entry.name, entry.FileSize, entry.download_url);
+                    if (Regex.IsMatch(entry.name, approvedExtensions))
+                    {
+                        #region AddDataRow
+                        using (TableRow row = new TableRow())
+                        {
+                            TableCell cell;
+
+                            using (cell = new TableCell())
+                            {
+                                cell.Text = string.Format("<a href='DownloadFile.ashx?Repo={0}&file={1}' title='Click to download'>{1}</a>", "", entry.name);
+                                row.Cells.Add(cell);
+                            }
+
+                            using (cell = new TableCell())
+                            {
+                                cell.Text = entry.sha;
+                                row.Cells.Add(cell);
+                            }
+
+                            using (cell = new TableCell())
+                            {
+                                cell.Text = string.Format("<span class='size' title='{1} bytes'>{0}</span>", GetFileSizeString(entry.size), entry.size);
+                                row.Cells.Add(cell);
+                            }
+
+                            tblFileList.Rows.Add(row);
+                        }
+                        #endregion // AddDataRow
+                    }
+                    else
+                    {
+                        log.DebugFormat("Ignoring {0} - not on approved extension list", entry.name);
+                    }
+                } 
+
+
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+        
+        }
+
+        private void displayFileList_old()
         {
             try
             {

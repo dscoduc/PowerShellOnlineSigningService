@@ -1,1 +1,136 @@
-﻿
+2015-07-21 21:50:33,294 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-21 21:50:40,544 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-21 21:50:40,575 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-21 21:50:41,669 [8] INFO  GitHubAPIClient.GitHubClient - Retrieved 22 content items from the Repository
+2015-07-21 21:50:41,669 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-21 21:50:41,669 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-21 21:50:41,809 [8] INFO  GitHubAPIClient.GitHubClient - Retrieved 22 content items from the Repository
+2015-07-21 21:50:44,747 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 13:30:46,705 [5] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 13:31:16,097 [5] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 13:31:16,121 [5] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 13:31:16,174 [5] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 13:31:17,178 [5] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 13:31:17,182 [5] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 13:31:17,185 [5] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 13:31:17,186 [5] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 13:31:17,393 [5] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 13:31:17,394 [5] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 13:33:42,534 [13] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 13:33:45,997 [13] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 13:33:46,011 [13] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 13:33:46,024 [13] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 13:33:46,745 [13] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 13:33:46,746 [13] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:06:59,834 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:06:59,873 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:06:59,875 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:07:00,023 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:07:01,433 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:07:01,436 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:07:01,439 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:07:01,440 [9] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:07:02,144 [9] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:07:02,145 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:07:34,665 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:07:34,686 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:07:34,689 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:07:34,690 [9] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:07:35,277 [9] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:07:35,278 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:07:35,279 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:07:35,280 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:07:35,280 [9] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:07:35,461 [9] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:07:35,463 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:08:03,365 [10] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:08:03,384 [10] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:08:03,388 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:08:03,389 [10] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:08:04,079 [10] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:08:04,081 [10] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:08:04,082 [10] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:08:04,084 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:08:04,084 [10] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:08:04,277 [10] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:08:04,278 [10] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:09:05,725 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:09:05,768 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:09:05,770 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:09:05,841 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:09:06,792 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:09:21,325 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:09:21,331 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:09:21,342 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:09:21,353 [9] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:09:21,965 [9] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:09:21,967 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:10:26,677 [6] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:10:26,704 [6] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:10:26,705 [6] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:10:26,707 [6] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:10:27,294 [6] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:10:27,295 [6] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:10:29,413 [11] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:10:29,427 [11] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:10:29,438 [11] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:10:29,446 [11] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:10:29,625 [11] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:10:29,626 [11] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:25:21,378 [5] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:25:21,425 [5] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:25:21,427 [5] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:25:21,492 [5] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:25:22,502 [5] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:25:59,180 [5] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-22 14:25:59,183 [5] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/GetPassword.ps1]
+2015-07-22 14:25:59,233 [5] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/GetPassword.ps1]
+2015-07-22 14:26:18,101 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:26:18,236 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:26:18,240 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:26:18,301 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:26:19,302 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:26:25,694 [8] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-22 14:26:25,707 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/GetPassword.ps1]
+2015-07-22 14:26:25,728 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/GetPassword.ps1]
+2015-07-22 14:40:22,108 [5] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:40:22,167 [5] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:40:22,168 [5] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:40:22,231 [5] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:40:23,238 [5] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:41:49,279 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:41:49,322 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:41:49,324 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:41:49,377 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:41:50,405 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:42:18,966 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:42:19,008 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:42:19,019 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:42:19,074 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:42:19,954 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:43:35,992 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:43:36,042 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:43:36,043 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:43:36,105 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:43:36,976 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:43:49,858 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:43:49,872 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:43:49,881 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:43:49,883 [8] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:43:50,721 [8] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-22 14:43:50,722 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:45:04,580 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:45:04,713 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:45:04,716 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:45:04,773 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:45:05,835 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:47:21,465 [6] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:47:21,509 [6] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:47:21,511 [6] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:47:21,569 [6] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:47:22,654 [6] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-22 14:49:12,137 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-22 14:49:12,183 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-22 14:49:12,188 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:49:12,248 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-22 14:49:13,193 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
