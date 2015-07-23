@@ -97,10 +97,14 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DownloadFile.ashx.cs">
+      <DependentUpon>DownloadFile.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -108,6 +112,7 @@
     <Content Include="log4net.config" />
     <Content Include="bin\GitHubAPIClient.dll.config" />
     <Content Include="App_Data\Website_Debug.log" />
+    <Content Include="DownloadFile.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
