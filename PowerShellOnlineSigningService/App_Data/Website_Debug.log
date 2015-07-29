@@ -239,3 +239,451 @@
 2015-07-22 22:29:21,467 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncProgress.ps1]
 2015-07-22 22:29:21,624 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncProgress.ps1
 2015-07-22 22:29:21,629 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncProgress.ps1 into temp file [C:\Users\Administrator\AppData\Local\Temp\tmp50D.tmp]
+2015-07-27 08:43:37,993 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 08:43:38,258 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 08:43:38,258 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 08:43:38,337 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 08:43:39,321 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 08:45:16,352 [13] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 08:45:16,352 [13] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 08:45:16,369 [13] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 08:45:16,369 [13] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 08:45:16,821 [13] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-27 08:45:16,837 [13] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 08:56:01,697 [5] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 08:56:01,744 [5] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 08:56:01,744 [5] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 08:56:01,806 [5] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 08:56:02,588 [5] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 08:56:10,556 [5] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 08:57:09,900 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 08:57:09,947 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 08:57:09,947 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 08:57:09,994 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 08:57:10,650 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 08:57:14,041 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 08:57:51,431 [9] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 08:57:53,557 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 08:58:04,917 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 08:58:06,041 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 08:58:06,041 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\Users\Administrator\AppData\Local\Temp\tmpA893.tmp]
+2015-07-27 08:59:18,077 [9] ERROR PowerShellOnlineSigningService.DownloadFile - System.IO.FileNotFoundException: Could not find file 'C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\BITSAsyncDownload.ps1'.
+File name: 'C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\BITSAsyncDownload.ps1'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponse.TransmitFile(String filename)
+   at PowerShellOnlineSigningService.DownloadFile.ProcessRequest(HttpContext context) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\DownloadFile.ashx.cs:line 55
+2015-07-27 08:59:19,728 [9] ERROR PowerShellOnlineSigningService.WebUtils - System.IO.IOException: The process cannot access the file 'C:\Users\Administrator\AppData\Local\Temp\tmpA893.tmp' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileInfo.Delete()
+   at PowerShellOnlineSigningService.WebUtils.DeleteFile(String filePath) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\WebUtils.cs:line 22
+2015-07-27 09:02:13,213 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:02:13,260 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 09:02:13,260 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:02:13,307 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:02:15,603 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 09:02:17,572 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:02:20,308 [9] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 09:02:20,322 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 09:02:20,322 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 09:02:20,495 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 09:02:20,510 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\Users\Administrator\AppData\Local\Temp\tmpB2.tmp]
+2015-07-27 09:03:00,604 [9] ERROR PowerShellOnlineSigningService.DownloadFile - System.IO.FileNotFoundException: Could not find file 'C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\BITSAsyncDownload.ps1'.
+File name: 'C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\BITSAsyncDownload.ps1'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponse.TransmitFile(String filename)
+   at PowerShellOnlineSigningService.DownloadFile.ProcessRequest(HttpContext context) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\DownloadFile.ashx.cs:line 55
+2015-07-27 09:03:14,775 [9] ERROR PowerShellOnlineSigningService.WebUtils - System.IO.IOException: The process cannot access the file 'C:\Users\Administrator\AppData\Local\Temp\tmpB2.tmp' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileInfo.Delete()
+   at PowerShellOnlineSigningService.WebUtils.DeleteFile(String filePath) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\WebUtils.cs:line 22
+2015-07-27 09:07:00,873 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:07:01,037 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 09:07:01,037 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:07:01,131 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:07:02,608 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 09:07:06,569 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:07:06,592 [8] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 09:07:06,592 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 09:07:06,592 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 09:07:51,241 [8] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 09:09:03,686 [8] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\Users\Administrator\AppData\Local\Temp\tmp57FB.tmp]
+2015-07-27 09:17:46,554 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:17:46,624 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 09:17:46,624 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:17:46,718 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:17:48,077 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 09:18:26,398 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:18:26,445 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 09:18:26,445 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:18:26,538 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:18:27,991 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 09:18:37,251 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:18:37,273 [8] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 09:18:37,296 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 09:18:37,296 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 09:18:40,174 [8] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 09:18:40,179 [8] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\Users\Administrator\AppData\Local\Temp\tmp5EA0.tmp]
+2015-07-27 09:27:33,664 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:27:33,734 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 09:27:33,734 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:27:33,805 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 09:27:35,352 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 09:27:38,164 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 09:27:38,164 [8] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 09:27:38,187 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 09:27:38,187 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 09:27:38,539 [8] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 09:27:38,562 [8] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\Users\Administrator\AppData\Local\Temp\tmpDF32.tmp]
+2015-07-27 17:59:17,047 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 17:59:17,235 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 17:59:17,235 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 17:59:17,360 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 17:59:18,235 [8] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 17:59:20,766 [8] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 17:59:20,781 [8] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 17:59:20,781 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 17:59:20,781 [8] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 17:59:20,922 [8] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 17:59:20,938 [8] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\Users\Administrator\AppData\Local\Temp\tmp3A1E.tmp]
+2015-07-27 18:05:53,610 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 18:05:53,641 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 18:05:53,641 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:05:53,688 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:05:54,298 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 18:05:56,188 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 18:05:56,204 [9] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 18:05:56,204 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:05:56,219 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:05:56,330 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 18:05:56,330 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\Users\Administrator\AppData\Local\Temp\tmp42BC.tmp]
+2015-07-27 18:08:13,891 [9] ERROR PowerShellOnlineSigningService.DownloadFile - The process cannot access the file 'C:\Users\Administrator\AppData\Local\Temp\tmp42BC.tmp' because it is being used by another process.
+2015-07-27 18:08:13,923 [9] ERROR PowerShellOnlineSigningService.DownloadFile - System.Exception: Unable to sign file
+   at PowerShellOnlineSigningService.DownloadFile.ProcessRequest(HttpContext context) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\DownloadFile.ashx.cs:line 58
+2015-07-27 18:08:13,954 [9] ERROR PowerShellOnlineSigningService.WebUtils - System.IO.IOException: The process cannot access the file 'C:\Users\Administrator\AppData\Local\Temp\tmp42BC.tmp' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileInfo.Delete()
+   at PowerShellOnlineSigningService.WebUtils.DeleteFile(String filePath) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\WebUtils.cs:line 22
+2015-07-27 18:18:01,111 [10] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 18:18:01,236 [10] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 18:18:01,236 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:18:01,408 [10] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:18:02,314 [10] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 18:18:04,689 [9] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 18:18:04,706 [9] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 18:18:04,720 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:18:04,720 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:18:04,846 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 18:18:04,846 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\windows\TEMP\tmp6070.tmp]
+2015-07-27 18:19:35,330 [9] ERROR PowerShellOnlineSigningService.DownloadFile - System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at PowerShellOnlineSigningService.DownloadFile.ProcessRequest(HttpContext context) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\DownloadFile.ashx.cs:line 54
+2015-07-27 18:20:29,330 [10] WARN  PowerShellOnlineSigningService.Requestor - Authenticated as Anonymous User from ::1
+2015-07-27 18:20:29,392 [10] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 18:20:29,392 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:20:29,486 [10] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:20:30,174 [10] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 18:21:18,252 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 18:21:18,288 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:21:18,392 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:21:19,064 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 18:21:28,017 [10] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 18:21:28,033 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:21:28,033 [10] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:21:51,017 [10] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 18:22:08,611 [10] INFO  PowerShellOnlineSigningService.DownloadFile - Completed saving BITSAsyncDownload.ps1 into temp file [C:\windows\TEMP\tmp6EF9.tmp]
+2015-07-27 18:22:38,284 [10] ERROR PowerShellOnlineSigningService.DownloadFile - System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at PowerShellOnlineSigningService.DownloadFile.ProcessRequest(HttpContext context) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\DownloadFile.ashx.cs:line 52
+2015-07-27 18:24:42,908 [10] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 18:24:42,924 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:24:43,018 [10] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:24:43,893 [10] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 18:24:48,736 [10] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 18:24:48,752 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:24:48,768 [10] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:24:48,862 [10] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 18:25:49,817 [10] ERROR PowerShellOnlineSigningService.DownloadFile - System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at PowerShellOnlineSigningService.DownloadFile.ProcessRequest(HttpContext context) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\DownloadFile.ashx.cs:line 52
+2015-07-27 18:26:40,486 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-27 18:26:40,486 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:26:40,486 [9] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-27 18:26:40,986 [9] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-27 18:26:40,986 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-27 18:27:57,752 [9] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-27 18:27:57,768 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:27:57,768 [9] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-27 18:27:58,143 [9] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-27 18:28:04,127 [9] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to BITSAsyncDownload.ps1
+2015-07-27 18:31:59,784 [9] ERROR PowerShellOnlineSigningService.DownloadFile - The process cannot access the file 'C:\windows\TEMP\tmp73F4.tmp' because it is being used by another process.
+2015-07-27 18:32:00,002 [9] ERROR PowerShellOnlineSigningService.DownloadFile - The process cannot access the file 'C:\windows\TEMP\tmp73F4.tmp' because it is being used by another process.
+2015-07-27 18:32:00,002 [9] ERROR PowerShellOnlineSigningService.DownloadFile - System.Exception: Unable to sign file
+   at PowerShellOnlineSigningService.DownloadFile.ProcessRequest(HttpContext context) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\DownloadFile.ashx.cs:line 58
+2015-07-27 18:32:00,018 [9] ERROR PowerShellOnlineSigningService.WebUtils - System.IO.IOException: The process cannot access the file 'C:\windows\TEMP\tmp73F4.tmp' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileInfo.Delete()
+   at PowerShellOnlineSigningService.WebUtils.DeleteFile(String filePath) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\WebUtils.cs:line 22
+2015-07-28 10:44:39,643 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 10:44:39,690 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 10:44:39,847 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 10:44:41,159 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 10:45:04,878 [9] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 10:45:04,909 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 10:45:04,925 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 10:48:05,300 [9] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell signing completed successfully
+2015-07-28 11:07:52,098 [36] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:07:52,145 [36] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:07:52,286 [36] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:07:53,661 [36] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:08:09,223 [32] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:08:09,239 [32] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 11:08:09,239 [32] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 11:08:35,051 [32] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell signing completed successfully
+2015-07-28 11:10:32,677 [36] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:10:32,692 [36] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 11:10:32,692 [36] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 11:10:33,302 [36] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 11:11:07,708 [36] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell signing completed successfully
+2015-07-28 11:12:50,583 [32] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:12:50,599 [32] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:12:50,630 [32] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:12:51,536 [32] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 11:12:51,536 [32] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:13:21,505 [7] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:13:21,521 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:13:21,645 [7] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:13:22,677 [7] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:13:26,849 [6] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:13:26,880 [6] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncProgress.ps1]
+2015-07-28 11:13:26,880 [6] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncProgress.ps1]
+2015-07-28 11:13:44,458 [6] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell signing completed successfully
+2015-07-28 11:16:44,005 [21] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:16:44,036 [21] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:16:44,130 [21] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:16:45,239 [21] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:16:47,911 [21] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:16:47,927 [21] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 11:16:47,927 [21] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 11:16:49,068 [21] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell signing completed successfully
+2015-07-28 11:17:11,021 [12] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:17:11,021 [12] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncProgress.ps1]
+2015-07-28 11:17:11,021 [12] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncProgress.ps1]
+2015-07-28 11:17:11,911 [12] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell signing completed successfully
+2015-07-28 11:26:52,834 [31] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:26:52,865 [31] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:26:52,959 [31] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:26:53,975 [31] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:27:26,834 [31] ERROR PowerShellOnlineSigningService.WebUtils - System.ArgumentException: The path is not of a legal form.
+   at System.IO.Path.NormalizePath(String path, Boolean fullCheck, Int32 maxPathLength, Boolean expandShortPaths)
+   at System.IO.FileInfo.Init(String fileName, Boolean checkHost)
+   at PowerShellOnlineSigningService.WebUtils.DeleteFile(String filePath) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\WebUtils.cs:line 19
+2015-07-28 11:30:55,147 [45] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:30:55,194 [45] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:30:55,272 [45] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:30:56,272 [45] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:32:02,178 [44] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:32:02,194 [44] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:32:02,209 [44] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:32:02,819 [44] INFO  GitHubAPIClient.GitHubClient - The remote server returned an error: (404) Not Found.
+2015-07-28 11:32:02,819 [44] WARN  GitHubAPIClient.GitHubClient - No file matching the request was found in the Repository
+2015-07-28 11:32:23,522 [44] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:32:23,537 [44] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:32:23,553 [44] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:32:24,178 [44] INFO  GitHubAPIClient.GitHubClient - The remote server returned an error: (404) Not Found.
+2015-07-28 11:32:24,178 [44] WARN  GitHubAPIClient.GitHubClient - No file matching the request was found in the Repository
+2015-07-28 11:33:48,131 [52] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:33:48,147 [52] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:33:48,147 [52] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:33:48,897 [52] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 11:33:48,897 [52] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:45:24,460 [73] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:45:24,476 [73] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:45:24,601 [73] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:45:25,663 [73] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:45:43,601 [73] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:45:43,601 [73] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:45:43,601 [73] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:45:44,226 [73] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 11:45:44,226 [73] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:45:52,085 [73] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:45:52,085 [73] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:45:52,085 [73] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:45:52,304 [73] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 11:45:52,304 [73] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:46:48,867 [74] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:46:48,867 [74] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:46:48,867 [74] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:46:49,538 [74] INFO  GitHubAPIClient.GitHubClient - The remote server returned an error: (404) Not Found.
+2015-07-28 11:46:49,538 [74] WARN  GitHubAPIClient.GitHubClient - No file matching the request was found in the Repository
+2015-07-28 11:48:20,429 [56] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:48:20,445 [56] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:48:20,460 [56] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:48:21,101 [56] INFO  GitHubAPIClient.GitHubClient - The remote server returned an error: (404) Not Found.
+2015-07-28 11:48:21,101 [56] WARN  GitHubAPIClient.GitHubClient - No file matching the request was found in the Repository
+2015-07-28 11:49:21,289 [55] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:49:21,304 [55] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:49:21,336 [55] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:49:21,961 [55] INFO  GitHubAPIClient.GitHubClient - The remote server returned an error: (404) Not Found.
+2015-07-28 11:49:21,961 [55] WARN  GitHubAPIClient.GitHubClient - No file matching the request was found in the Repository
+2015-07-28 11:49:27,242 [64] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:49:27,242 [64] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:49:27,242 [64] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/test.txt]
+2015-07-28 11:49:27,368 [64] INFO  GitHubAPIClient.GitHubClient - The remote server returned an error: (404) Not Found.
+2015-07-28 11:49:27,368 [64] WARN  GitHubAPIClient.GitHubClient - No file matching the request was found in the Repository
+2015-07-28 11:50:02,992 [56] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:50:02,992 [56] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:50:02,992 [56] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:50:03,929 [56] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:50:28,132 [62] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:50:28,132 [62] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/rotatefile.ps1]
+2015-07-28 11:50:28,132 [62] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/rotatefile.ps1]
+2015-07-28 11:50:30,117 [62] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-28 11:52:43,961 [64] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:52:43,976 [64] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/rotatefile.ps1]
+2015-07-28 11:52:44,008 [64] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/rotatefile.ps1]
+2015-07-28 11:52:45,117 [64] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-28 11:57:43,681 [61] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 11:57:43,696 [61] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:57:43,727 [61] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 11:57:44,836 [61] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 11:57:48,430 [74] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:57:48,446 [74] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/rotatefile.ps1]
+2015-07-28 11:57:48,446 [74] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/rotatefile.ps1]
+2015-07-28 11:57:48,883 [74] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-28 11:57:54,571 [61] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 11:57:54,586 [61] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/rotatefile.ps1]
+2015-07-28 11:57:54,602 [61] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/rotatefile.ps1]
+2015-07-28 11:57:54,758 [61] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 11:57:54,884 [61] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-28 12:01:36,383 [74] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 12:01:36,399 [74] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:01:36,415 [74] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:01:37,352 [74] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 12:01:40,868 [58] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 12:01:40,883 [58] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:01:40,899 [58] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:01:41,040 [58] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 12:01:41,040 [58] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 12:01:44,118 [74] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 12:01:44,134 [74] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 12:01:44,134 [74] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 12:01:44,477 [74] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-28 12:06:43,634 [56] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 12:06:43,649 [56] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:06:43,681 [56] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:06:44,665 [56] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 12:11:34,353 [60] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 12:11:34,368 [60] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:11:34,384 [60] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:11:35,275 [60] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 12:16:57,060 [61] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 12:16:57,079 [61] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:16:57,119 [61] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:17:00,975 [61] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 12:17:50,080 [62] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 12:17:50,080 [62] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:17:50,080 [62] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:17:51,230 [62] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 12:17:51,230 [62] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 12:19:55,560 [62] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 12:19:55,603 [62] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:19:55,718 [62] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 12:19:56,493 [62] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 17:32:50,934 [6] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 17:32:50,965 [6] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:32:51,106 [6] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:32:52,309 [6] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 17:33:30,746 [31] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 17:33:30,746 [31] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:33:30,762 [31] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:33:31,387 [31] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 17:33:31,387 [31] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 17:34:18,215 [34] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 17:34:18,231 [34] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:34:18,262 [34] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:34:19,247 [34] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 17:34:20,809 [15] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 17:34:20,825 [15] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:34:20,841 [15] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:34:20,982 [15] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 17:34:20,982 [15] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 17:34:22,215 [34] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 17:34:22,231 [34] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:34:22,231 [34] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 17:34:22,372 [34] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 17:34:22,387 [34] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 19:15:14,286 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 19:15:14,318 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 19:15:14,365 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 19:15:15,411 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:21:52,963 [10] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:21:52,994 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:21:53,088 [10] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:21:54,197 [10] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:22:06,072 [10] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:22:06,072 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:22:06,072 [10] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:22:06,635 [10] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 20:22:06,635 [10] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:23:29,901 [11] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:23:29,933 [11] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:23:29,948 [11] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:23:30,541 [11] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 20:23:30,541 [11] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:25:46,010 [13] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:25:46,057 [13] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:25:46,088 [13] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:25:47,120 [13] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:25:56,182 [11] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-28 20:25:56,182 [11] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 20:25:56,182 [11] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-28 20:25:57,932 [11] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-28 20:26:18,838 [13] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:26:18,838 [13] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:26:18,854 [13] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:26:19,370 [13] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 20:26:19,385 [13] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:31:09,823 [22] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:31:09,840 [22] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:31:09,870 [22] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:31:10,870 [22] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:31:42,714 [18] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:31:42,714 [18] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:31:42,714 [18] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:31:43,292 [18] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 20:31:43,292 [18] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:33:18,105 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:33:18,136 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:33:18,151 [9] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:33:19,183 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:33:32,136 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:33:32,136 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:33:32,151 [9] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:33:32,558 [9] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 20:33:32,558 [9] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:34:59,167 [24] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:34:59,184 [24] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:34:59,214 [24] INFO  GitHubAPIClient.Utils - no Cache data found for cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:35:00,167 [24] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:35:13,574 [33] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:35:13,589 [33] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:35:13,589 [33] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:35:14,042 [33] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 20:35:14,042 [33] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-28 20:35:54,105 [24] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-28 20:35:54,136 [24] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:35:54,136 [24] INFO  GitHubAPIClient.Utils - Data found for memory cache key [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-28 20:35:54,730 [24] INFO  GitHubAPIClient.GitHubClient - Cached data is valid - using cache instead of a new request
+2015-07-28 20:35:54,745 [24] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items

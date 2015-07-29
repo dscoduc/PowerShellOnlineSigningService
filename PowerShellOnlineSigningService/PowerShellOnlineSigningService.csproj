@@ -14,7 +14,7 @@
     <RootNamespace>PowerShellOnlineSigningService</RootNamespace>
     <AssemblyName>PowerShellOnlineSigningService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -81,13 +81,13 @@
     <Content Include="bin\PowerShellOnlineSigningService.pdb" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\banner.jpg" />
     <Content Include="style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\FileHandler.cs" />
     <Compile Include="App_Code\Requestor.cs" />
     <Compile Include="App_Code\serverHeaderModule.cs" />
     <Compile Include="Default.aspx.cs">
@@ -138,7 +138,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56252</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56150/</IISUrl>
+          <IISUrl>http://localhost/PowerShellOnlineSigningService</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:56150/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

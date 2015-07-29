@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using GitHubAPIClient;
+﻿using GitHubAPIClient;
 using log4net;
-using System.Web;
-using System.Reflection;
-using System.IO;
-using System.Text;
-using System.Management.Automation;
+using System;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Management.Automation;
+using System.Reflection;
+using System.Web;
 
 namespace PowerShellOnlineSigningService
 {
@@ -25,146 +23,150 @@ namespace PowerShellOnlineSigningService
 
         public void ProcessRequest(HttpContext context)
         {
-            string workingFile = string.Empty;
+            string filePath = string.Empty;
+            string fileName = context.Request.QueryString["file"];
+            string owner = context.Request.QueryString["owner"];
+            string repository = context.Request.QueryString["repository"];
 
-            if (!string.IsNullOrEmpty(context.Request.QueryString["file"]))
+            try
             {
-                try
+                if (string.IsNullOrEmpty(fileName))
                 {
-                    //string repository = context.Request.QueryString["repo"];
-                    string fileName = context.Request.QueryString["file"];
-
-                    //string file = Server.MapPath(scriptFolder) + Path.DirectorySeparatorChar + fileName;
-                    //File.WriteAllText(tempfile, content);
-                    //File.Copy(tempfile, file, true);
-
-                    // create temp file
-                    workingFile = createPresignedFile(fileName);
-
-                    // sign the script file
-                    //bool result = signFile(workingFile.FullName);
-
-                    if (signFile(workingFile))
-                    {
-                        context.Response.Clear();
-                        context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
-                        context.Response.ContentType = "application/octet-stream";
-                        //context.Response.AddHeader("Content-Length", workingFile.Length.ToString());
-                        context.Response.AppendHeader("Content-Disposition", "attachment; filename=\"" + workingFile + "\"");
-                        context.Response.TransmitFile(fileName);
-
-                        log.DebugFormat("File downloaded: {0}", workingFile);
-                    }
-                    else
-                    {
-                        log.Warn("Unable to complete the signing");
-                        context.Response.StatusCode = 500;
-                        context.Response.StatusDescription = "Internal Server Error";
-                    }
-
-                    context.Response.End();
+                    log.Debug("Request made without a proper File query string value");
+                    context.Response.Clear();
+                    context.Response.StatusCode = 200;
+                    //context.Response.StatusDescription = "Unable to provide file without a proper File query string";
+                    return;
+                    //context.Response.End();
                 }
-                catch (Exception ex)
+
+                // load decoded content from requested file
+                string rawContent = GitHubClient.GetFileContents(owner, repository, fileName);
+                if (string.IsNullOrEmpty(rawContent))
                 {
-                    log.Error(ex);
-                    throw;
+                    context.Response.Clear();
+                    context.Response.StatusCode = 404;
+                    context.Response.StatusDescription = "Unable to locate the requested file";
+                    return;
+                    //context.Response.End();
                 }
-                finally
+
+                // save contents to file to be downloaded
+                filePath = context.Server.MapPath("~/App_Data") + Path.DirectorySeparatorChar + fileName;
+                File.WriteAllText(filePath, rawContent);
+
+                // clean any previos signing
+                cleanFileToBeDownloaded(filePath);
+
+                string length = new FileInfo(filePath).Length.ToString();
+               
+                if (signFile(filePath))
                 {
-                    if (!string.IsNullOrEmpty(workingFile))
-                        WebUtils.DeleteFile(workingFile);
+                    context.Response.Clear();
+                    context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                    context.Response.ContentType = "application/octet-stream";
+                    context.Response.AddHeader("Content-Length", new FileInfo(filePath).Length.ToString());
+                    context.Response.AppendHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+                    context.Response.TransmitFile(filePath);
+                    context.Response.Flush();
+
+                    log.DebugFormat("File downloaded: {0}", fileName);
                 }
-            }
-            else  {
-                context.Response.Redirect("~/");
-            }
-        }
-
-        private string createPresignedFile(string fileName)
-        {
-            // create temp file
-            string workingFile = Path.GetTempFileName();
-            log.DebugFormat("Created temp file {0}", workingFile);
-
-            // load decoded content from requested file
-            string rawContent = GitHubClient.GetFileContents(fileName);
-
-            using (StreamWriter writer = new StreamWriter(workingFile))
-            { 
-                using (StreamReader reader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(rawContent ?? ""))))
+                else
                 {
-                    string firstLine = reader.ReadLine();
-                    if (firstLine.StartsWith("<#--"))
-                    {
-                        log.DebugFormat("Replacing pre-existing author header [{0}]", firstLine);
-                        writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
-                    }
-                    else
-                    {
-                        log.InfoFormat("Adding new author header to {0}", fileName);
-                        writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
-                        writer.WriteLine("");
-                        writer.WriteLine(firstLine);
-                    }
-
-                    while (!reader.EndOfStream)
-                    {
-                        string line = reader.ReadLine();
-
-                        if (line.StartsWith("# SIG # Begin signature block"))
-                        {
-                            log.Info("Stripping off previous signature block");
-                            break;  // reached the end of the file, strip off previous signature if found
-                        }
-                        else
-                        {
-                            writer.WriteLine(line);
-                        }
-                    }
+                    log.Warn("Notifying user that signing file failed");
+                    context.Response.Clear();
+                    context.Response.StatusCode = 500;
+                    context.Response.StatusDescription = "An unknown error occurred while signing " + fileName;
                 }
             }
-            log.InfoFormat("Completed saving {0} into temp file [{1}]", fileName, workingFile);
-            return workingFile;
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                context.Response.Clear();
+                context.Response.StatusCode = 500;
+                context.Response.StatusDescription = "Internal Server Error";
+            }
+            finally
+            {
+                // remove any remaining files
+                WebUtils.DeleteFile(filePath);
+
+                // close response on the way out...
+                context.Response.End();
+            }
         }
 
         private Boolean signFile(string filePath)
         {
             string commandSyntax = string.Format("Set-AuthenticodeSignature -FilePath '{0}' @(Get-ChildItem cert:\\LocalMachine\\My -codesign)[0]", filePath);
 
-            try
+            using (PowerShell PowerShellInstance = PowerShell.Create())
             {
-                using (PowerShell PowerShellInstance = PowerShell.Create())
+                PowerShellInstance.AddScript(commandSyntax);
+                log.DebugFormat("PowerShell syntax '{0}'", commandSyntax);
+
+                // execute PowerShell script
+                Collection<PSObject> PSOutput = PowerShellInstance.Invoke();
+
+                // check if there were any PowerShell errors thrown
+                if(PowerShellInstance.HadErrors)
                 {
-                    PowerShellInstance.AddScript(commandSyntax);
-
-                    log.DebugFormat("PowerShell syntax '{0}'", commandSyntax);
-                    Collection<PSObject> PSOutput = PowerShellInstance.Invoke();
-
-                    if (PowerShellInstance.Streams.Error.Count > 0)
-                    {
-                        log.Error(PowerShellInstance.Streams.Error[0].ToString());
-                        return false;
-                    }
-
-                    if (PSOutput.Count > 0)
-                    {
-                        string statusMessage = ((System.Management.Automation.Signature)(PSOutput[0].BaseObject)).StatusMessage;
-                        log.DebugFormat("PowerShell output: {0} - {1}", filePath, statusMessage);
-                        return true;
-                    }
-                    else
-                    {
-                        log.Debug("PowerShell did not complete successfully");
-                        return false;
-                    }
+                    log.WarnFormat("PowerShell did not complete successfully \r\n{0}", PowerShellInstance.Streams.Error[0].ToString());
+                    return false;
                 }
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                throw;
+
+                string statusMessage = ((System.Management.Automation.Signature)(PSOutput[0].BaseObject)).StatusMessage;
+                log.InfoFormat("PowerShell status message: {0}", statusMessage);
+
+                // return results of status message comparison
+                return (statusMessage == "Signature verified.");
             }
         }
 
+        private void cleanFileToBeDownloaded(string fileToBeDownloaded)
+        {
+            string tempfile = Path.GetTempFileName();
+            log.DebugFormat("Created temp file {0}", tempfile);
+
+            using (StreamWriter writer = new StreamWriter(tempfile))
+            using (StreamReader reader = new StreamReader(fileToBeDownloaded))
+            {
+                string firstLine = reader.ReadLine();
+                if (firstLine.StartsWith("<#--"))
+                {
+                    log.DebugFormat("Replacing pre-existing author header [{0}]", firstLine);
+                    writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
+                }
+                else
+                {
+                    log.DebugFormat("Adding new author header to {0}", fileToBeDownloaded);
+                    writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
+                    writer.WriteLine(firstLine);
+                }
+
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+
+
+                    if (line.StartsWith("# SIG # Begin signature block"))
+                    {
+                        log.Debug("Stripping off previous signature block");
+                        break;  // reached the end of the file, strip off previous signature if found
+                    }
+                    else
+                    {
+                        writer.WriteLine(line);
+                    }
+                }
+            }
+
+            File.Copy(tempfile, fileToBeDownloaded, true);
+            log.DebugFormat("Finished updating {0}", fileToBeDownloaded);
+
+            if (!string.IsNullOrEmpty(tempfile))
+                WebUtils.DeleteFile(tempfile);
+        }
     }
 }
