@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+  <!-- 
+    The following appSettings are required in your application's config
+    file, ( ex. app.config or web.config )
+  -->
+  <appSettings>
+    
+    <add key="log4net.Config" value="log4net.config"/>
+    <add key="log4net.Config.Watch" value="True"/>
+
+    <add key="repository_owner" value="dscoduc"/>
+    <add key="repository_name" value="PowerShellScripts"/>
+
+    <add key="committer_name" value="Chris Blankenship"/>
+    <add key="committer_email" value="chris@dscoduc.com"/>
+    <add key="commit_message" value="Committed via Test Application"/>
+
+    <add key="auth_username" value="dscoduc"/>
+    <add key="auth_token" value="0000000000000000000000000000000000000000" />
+  </appSettings>
+  
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/>
+  </startup>
+</configuration>

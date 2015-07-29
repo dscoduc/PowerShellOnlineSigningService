@@ -13,9 +13,7 @@ namespace PowerShellOnlineSigningService
     public partial class Default : System.Web.UI.Page
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        //private string repository_owner = ConfigurationManager.AppSettings["repository_owner"].ToString();
-        //private string repository_name = ConfigurationManager.AppSettings["repository_name"].ToString();
-        private string approvedExtensions = @"^.+\.((ps1)|(ps1))$";
+        private string approvedExtensions = @"^.+\.((ps1)|(txt))$";
         private Requestor requestor = new Requestor();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -25,10 +23,18 @@ namespace PowerShellOnlineSigningService
 
             if (!Page.IsPostBack)
             {
-                tbRepoOwner.Text = ConfigurationManager.AppSettings["repository_owner"].ToString();
-                tbRepository.Text = ConfigurationManager.AppSettings["repository_name"].ToString();
+                if (!string.IsNullOrEmpty(Request.QueryString["owner"]))
+                    Session["GitOwner"] = Server.HtmlEncode(Request.QueryString["owner"]);
+                else
+                    Session["GitOwner"] = ConfigurationManager.AppSettings["default_owner"].ToString();
 
-                displayFileList(tbRepoOwner.Text, tbRepository.Text);
+                populateRepoList();
+
+                // update form fields
+                tbRepoOwner.Text = (string)Session["GitOwner"];
+
+                // update file list
+                displayFileList();
             }
         }
 
@@ -43,12 +49,61 @@ namespace PowerShellOnlineSigningService
                 serverInfo.InnerText = System.Environment.MachineName.ToLower();
         }
 
-        private void displayFileList(string owner, string repository)
+        private void populateRepoList()
         {
+            string owner = (string)Session["GitOwner"];
+
+            ddlRepositories.Items.Clear();
+
+            List<GitRepository> Repositories = GitHubClient.GetRepositories(owner);
+            if (Repositories.Count < 1)
+            {
+                HtmlGenericControl gcResultsInfo = (HtmlGenericControl)Page.FindControl("resultsInfo");
+                if (gcResultsInfo != null)
+                    gcResultsInfo.InnerText = string.Format("Unable to find any repositories for {0}", owner);
+
+                return;
+            }
+
+            foreach (GitRepository repository in Repositories)
+            {
+                ddlRepositories.Items.Add(new ListItem(Server.HtmlEncode(repository.name)));
+            }
+
+            string repoName = string.Empty;
+            if (!string.IsNullOrEmpty(Request.QueryString["repository"]))
+            {
+                repoName = Server.HtmlEncode(Request.QueryString["repository"]);
+            }
+            else if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["default_repository"].ToString()))
+            {
+                repoName = ConfigurationManager.AppSettings["default_repository"].ToString();
+            }
+
+            ListItem providedRepo = ddlRepositories.Items.FindByText(repoName);
+            if (null != providedRepo)
+            {
+                Session["GitRepository"] = repoName;
+                providedRepo.Selected = true;
+            }
+            else
+            {
+                Session["GitRepository"] = ddlRepositories.Items[0].Text;
+            }
+        
+        }
+
+        private void displayFileList()
+        {
+            string owner = (string)Session["GitOwner"];
+            string repository = (string)Session["GitRepository"];
+
             try
             {
                 // Clear existing file list
                 tblFileList.Rows.Clear();
+
+                log.InfoFormat("Request to display contents for {0}/{1}", owner, repository);
 
                 // retrieve list of contents in Repository
                 List<GitContent> contents = GitHubClient.GetContents(owner, repository);
@@ -88,9 +143,6 @@ namespace PowerShellOnlineSigningService
                 }
                 #endregion // AddHeader
 
-
-
-
                 foreach (GitContent entry in contents)
                 {
                     // Console.WriteLine("{0} [{1}] [{2}]", entry.name, entry.FileSize, entry.download_url);
@@ -122,20 +174,39 @@ namespace PowerShellOnlineSigningService
                         log.DebugFormat("Ignoring {0} - not on approved extension list", entry.name);
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
                 log.Error(ex);
-                throw;
+                
+                Response.Clear();
+                Response.StatusCode = 500;
+                Response.StatusDescription = "Internal Server Error";
+                Response.End();
             }
-
         }
 
         protected void btnRefreshList_Click(object sender, EventArgs e)
         {
-            displayFileList(tbRepoOwner.Text, tbRepository.Text);
+            //TODO: This section doesn't work when an empty owner is populated
+            if (string.IsNullOrEmpty(tbRepoOwner.Text))
+            {
+                return;
+            } 
+
+            if (Server.HtmlEncode(tbRepoOwner.Text) != (string)Session["GitOwner"])
+            {
+                // update session information
+                Session["GitOwner"] = Server.HtmlEncode(tbRepoOwner.Text);
+
+                // repopulate Repository list
+                populateRepoList();
+            }
+
+
+            Session["GitRepository"] = ddlRepositories.SelectedItem.Text;
+
+            displayFileList();
         }
 
     }

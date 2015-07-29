@@ -31,13 +31,13 @@ namespace PowerShellOnlineSigningService {
         protected global::System.Web.UI.WebControls.TextBox tbRepoOwner;
         
         /// <summary>
-        /// tbRepository control.
+        /// ddlRepositories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbRepository;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRepositories;
         
         /// <summary>
         /// btnSignFile control.

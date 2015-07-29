@@ -24,9 +24,9 @@ namespace PowerShellOnlineSigningService
         public void ProcessRequest(HttpContext context)
         {
             string filePath = string.Empty;
-            string fileName = context.Request.QueryString["file"];
-            string owner = context.Request.QueryString["owner"];
-            string repository = context.Request.QueryString["repository"];
+            string fileName = context.Server.HtmlEncode(context.Request.QueryString["file"]);
+            string owner = context.Server.HtmlEncode(context.Request.QueryString["owner"]);
+            string repository = context.Server.HtmlEncode(context.Request.QueryString["repository"]);
 
             try
             {
