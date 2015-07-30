@@ -78,6 +78,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\banner.jpg" />
+    <None Include="LICENSE" />
     <Content Include="style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -109,6 +110,7 @@
     <Content Include="bin\GitHubAPIClient.dll.config" />
     <Content Include="App_Data\Website_Debug.log" />
     <Content Include="DownloadFile.ashx" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
