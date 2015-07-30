@@ -17,3 +17,5 @@ digital signing certificate in the local machine store.
 
 I would be interested to hear from anyone who is able to sign PowerShell 
 scripts natively in C# so I can replace the shell out to PowerShell code. 
+
+![Main screen snapshot](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/PowerShellOnlineSigningService.PNG)
