@@ -128,8 +128,6 @@ namespace PowerShellOnlineSigningService
                 return;
             }
 
-            log.InfoFormat("Request to display files for {0}/{1}", cachedOwner, cachedRepoName);
-
             List<GitContent> contents = null;
             try
             {
@@ -153,6 +151,8 @@ namespace PowerShellOnlineSigningService
                 // check if we should be displaying the entry
                 if (Regex.IsMatch(entry.name, approvedExtensions))
                 {
+                    log.DebugFormat("Adding qualified file {0}", entry.name);
+
                     #region AddDataRow
                     using (TableRow row = new TableRow())
                     {
@@ -227,7 +227,7 @@ namespace PowerShellOnlineSigningService
             // clear everything if Owner value is empty
             if (string.IsNullOrEmpty(tbRepoOwner.Text))
             {
-                log.Debug("Repository owner information was emptied by user");
+                log.Info("Repository owner information was emptied by user");
 
                 ddlRepositories.Items.Clear();
                 tblFileList.Rows.Clear();
@@ -259,7 +259,7 @@ namespace PowerShellOnlineSigningService
             // check if owner name has changed
             if (string.Compare(inputRepoOwner, cachedRepoOwner, true) != 0)
             {
-                log.DebugFormat("Repository owner changed from {0} to {1}", cachedRepoOwner, inputRepoOwner);
+                log.InfoFormat("Repository owner changed from {0} to {1}", cachedRepoOwner, inputRepoOwner);
                 
                 // update owner session with new owner input
                 Session["GitOwner"] = Server.HtmlEncode(tbRepoOwner.Text);

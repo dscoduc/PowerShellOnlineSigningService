@@ -23,7 +23,7 @@ namespace PowerShellOnlineSigningService
                 if (file.Exists)
                 {
                     file.Delete();
-                    log.DebugFormat("Deleted {0}", filePath);
+                    log.InfoFormat("Deleted {0}", filePath);
                 }
                 else
                 {

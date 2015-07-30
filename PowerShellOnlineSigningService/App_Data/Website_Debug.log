@@ -1,20 +1,29 @@
-2015-07-30 01:10:41,608 [56] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
-2015-07-30 01:10:41,631 [56] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
-2015-07-30 01:10:41,644 [56] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
-2015-07-30 01:10:42,250 [56] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
-2015-07-30 01:10:42,257 [56] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
-2015-07-30 01:10:42,259 [56] INFO  PowerShellOnlineSigningService.Default - Adding GitHubAPIClient to repository list
-2015-07-30 01:10:42,260 [56] INFO  PowerShellOnlineSigningService.Default - Adding PowerShellOnlineSigningService to repository list
-2015-07-30 01:10:42,262 [56] INFO  PowerShellOnlineSigningService.Default - Adding PowerShellScripts to repository list
-2015-07-30 01:10:42,263 [56] INFO  PowerShellOnlineSigningService.Default - Request to display files for dscoduc/PowerShellScripts
-2015-07-30 01:10:42,264 [56] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
-2015-07-30 01:10:42,264 [56] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
-2015-07-30 01:10:42,266 [56] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
-2015-07-30 01:10:42,421 [56] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
-2015-07-30 01:10:42,430 [56] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
-2015-07-30 01:10:46,988 [57] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
-2015-07-30 01:10:46,990 [57] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
-2015-07-30 01:10:46,994 [57] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
-2015-07-30 01:10:46,998 [57] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
-2015-07-30 01:10:47,146 [57] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
-2015-07-30 01:10:48,946 [57] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-30 01:18:53,359 [55] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 01:18:53,385 [55] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 01:18:53,403 [55] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 01:18:53,405 [55] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 01:18:54,087 [55] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 01:18:54,405 [55] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 01:18:54,408 [55] INFO  PowerShellOnlineSigningService.Default - Adding GitHubAPIClient to repository list
+2015-07-30 01:18:54,411 [55] INFO  PowerShellOnlineSigningService.Default - Adding PowerShellOnlineSigningService to repository list
+2015-07-30 01:18:54,414 [55] INFO  PowerShellOnlineSigningService.Default - Adding PowerShellScripts to repository list
+2015-07-30 01:18:54,422 [55] INFO  PowerShellOnlineSigningService.Default - Request to display files for dscoduc/PowerShellScripts
+2015-07-30 01:18:54,423 [55] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files in the Repository
+2015-07-30 01:18:54,424 [55] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-30 01:18:54,425 [55] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-30 01:18:54,426 [55] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 01:18:54,670 [55] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 01:18:54,693 [55] INFO  GitHubAPIClient.GitHubClient - Returning 21 content items
+2015-07-30 01:18:57,220 [55] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-30 01:18:57,227 [55] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-30 01:18:57,234 [55] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/BITSAsyncDownload.ps1]
+2015-07-30 01:18:57,236 [55] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 01:18:57,369 [55] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 01:18:57,382 [55] INFO  PowerShellOnlineSigningService.DownloadFile - Created temp file C:\windows\TEMP\tmp8E06.tmp
+2015-07-30 01:18:57,385 [55] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\BITSAsyncDownload.ps1
+2015-07-30 01:18:57,394 [55] INFO  PowerShellOnlineSigningService.DownloadFile - Finished updating C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\BITSAsyncDownload.ps1
+2015-07-30 01:18:57,397 [55] INFO  PowerShellOnlineSigningService.WebUtils - Deleted C:\windows\TEMP\tmp8E06.tmp
+2015-07-30 01:18:57,404 [55] INFO  PowerShellOnlineSigningService.DownloadFile - Executing PowerShell syntax 'Set-AuthenticodeSignature -FilePath 'C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\BITSAsyncDownload.ps1' @(Get-ChildItem cert:\LocalMachine\My -codesign)[0]'
+2015-07-30 01:18:57,957 [55] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-30 01:18:57,961 [55] INFO  PowerShellOnlineSigningService.DownloadFile - File downloaded: BITSAsyncDownload.ps1
+2015-07-30 01:18:57,962 [55] INFO  PowerShellOnlineSigningService.WebUtils - Deleted C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\BITSAsyncDownload.ps1

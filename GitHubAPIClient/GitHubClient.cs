@@ -108,7 +108,7 @@ namespace GitHubAPIClient
             // GET /repos/:owner/:repo/contents
             string url = string.Format("https://api.github.com/repos/{0}/{1}/contents", owner, repository);
 
-            log.Info("Requesting a list of all files in the Repository");
+            log.InfoFormat("Requesting a list of all files for {0}/{1}", owner, repository);
 
             // Build request
             HttpWebRequest request = buildWebRequest(method.GET, url);

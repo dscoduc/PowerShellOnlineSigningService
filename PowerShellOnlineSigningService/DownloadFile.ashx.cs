@@ -32,7 +32,7 @@ namespace PowerShellOnlineSigningService
             {
                 if (string.IsNullOrEmpty(fileName))
                 {
-                    log.Debug("Request made without a proper File query string value");
+                    log.Info("Request made without a proper File query string value");
                     context.Response.Clear();
                     context.Response.StatusCode = 200;
                     return;
@@ -67,7 +67,7 @@ namespace PowerShellOnlineSigningService
                     context.Response.TransmitFile(filePath);
                     context.Response.Flush();
 
-                    log.DebugFormat("File downloaded: {0}", fileName);
+                    log.InfoFormat("File downloaded: {0}", fileName);
                 }
                 else
                 {
@@ -101,7 +101,7 @@ namespace PowerShellOnlineSigningService
             using (PowerShell PowerShellInstance = PowerShell.Create())
             {
                 PowerShellInstance.AddScript(commandSyntax);
-                log.DebugFormat("PowerShell syntax '{0}'", commandSyntax);
+                log.InfoFormat("Executing PowerShell syntax '{0}'", commandSyntax);
 
                 // execute PowerShell script
                 Collection<PSObject> PSOutput = PowerShellInstance.Invoke();
@@ -124,7 +124,7 @@ namespace PowerShellOnlineSigningService
         private void cleanFileToBeDownloaded(string fileToBeDownloaded)
         {
             string tempfile = Path.GetTempFileName();
-            log.DebugFormat("Created temp file {0}", tempfile);
+            log.InfoFormat("Created temp file {0}", tempfile);
 
             using (StreamWriter writer = new StreamWriter(tempfile))
             using (StreamReader reader = new StreamReader(fileToBeDownloaded))
@@ -132,12 +132,12 @@ namespace PowerShellOnlineSigningService
                 string firstLine = reader.ReadLine();
                 if (firstLine.StartsWith("<#--"))
                 {
-                    log.DebugFormat("Replacing pre-existing author header [{0}]", firstLine);
+                    log.InfoFormat("Replacing pre-existing author header [{0}]", firstLine);
                     writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
                 }
                 else
                 {
-                    log.DebugFormat("Adding new author header to {0}", fileToBeDownloaded);
+                    log.InfoFormat("Adding new author header to {0}", fileToBeDownloaded);
                     writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
                     writer.WriteLine(firstLine);
                 }
@@ -149,7 +149,7 @@ namespace PowerShellOnlineSigningService
 
                     if (line.StartsWith("# SIG # Begin signature block"))
                     {
-                        log.Debug("Stripping off previous signature block");
+                        log.Info("Stripping off previous signature block");
                         break;  // reached the end of the file, strip off previous signature if found
                     }
                     else
@@ -160,7 +160,7 @@ namespace PowerShellOnlineSigningService
             }
 
             File.Copy(tempfile, fileToBeDownloaded, true);
-            log.DebugFormat("Finished updating {0}", fileToBeDownloaded);
+            log.InfoFormat("Finished updating {0}", fileToBeDownloaded);
 
             if (!string.IsNullOrEmpty(tempfile))
                 WebUtils.DeleteFile(tempfile);
