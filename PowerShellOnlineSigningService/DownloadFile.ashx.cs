@@ -35,9 +35,7 @@ namespace PowerShellOnlineSigningService
                     log.Debug("Request made without a proper File query string value");
                     context.Response.Clear();
                     context.Response.StatusCode = 200;
-                    //context.Response.StatusDescription = "Unable to provide file without a proper File query string";
                     return;
-                    //context.Response.End();
                 }
 
                 // load decoded content from requested file
@@ -48,7 +46,6 @@ namespace PowerShellOnlineSigningService
                     context.Response.StatusCode = 404;
                     context.Response.StatusDescription = "Unable to locate the requested file";
                     return;
-                    //context.Response.End();
                 }
 
                 // save contents to file to be downloaded

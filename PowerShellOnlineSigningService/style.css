@@ -32,7 +32,6 @@
         #settings_table {
             width: 500px;
             margin: 20px auto;
-            padding-bottom: 15px;
         }
         #settings_table .tLabel {
             width: 125px;
@@ -40,20 +39,26 @@
             text-align: right;
         }
         #settings_table input[type='text'] {
-            width: 99%;
+            width: 96%;
             font-size: 1.1em;
+            padding-left: 10px;
         }
-
         #settings_table select {
             width: 100%;
             font-size: 1.1em;
+            padding-left: 8px;
         }
-
         #results {
             width: 600px; 
-            margin: 10px auto;        
+            margin: 10px auto;
+            text-align: center;
         }
-
+        .error { 
+            color: maroon; 
+        }
+        .clean {
+            color: black; 
+        }
         #downloads { 
             padding: 15px; 
             color: #666; 
@@ -68,6 +73,7 @@
         #downloads table th {
             border-bottom:1px solid #ccc;
             font-weight: bold;
+            color: black;
         }
         #downloads table td {
             border-bottom:1px dotted #ccc;

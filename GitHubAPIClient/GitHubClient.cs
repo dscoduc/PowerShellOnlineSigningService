@@ -2,105 +2,19 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Reflection;
-using System.Runtime.Caching;
 
 namespace GitHubAPIClient
 {
     public static class GitHubClient
     {
         #region private declarations
-        private static string auth_token = ConfigurationManager.AppSettings["auth_token"].ToString();
-        private static string committer_name = ConfigurationManager.AppSettings["committer_name"].ToString();
-        private static string committer_email = ConfigurationManager.AppSettings["committer_email"].ToString();
-        private static string commit_message = ConfigurationManager.AppSettings["commit_message"].ToString();
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         #endregion // private declarations
 
         #region public functions
-        /// <summary>
-        /// Ex. 
-        ///     GitUserData user = GitHubClient.GetUser();
-        ///     Console.WriteLine("Name: {0}{1}Email: {2}", user.name, Environment.NewLine, user.email);
-        /// </summary>
-        /// <returns>Returns the authenticated user object</returns>
-        public static GitUserData GetUser()
-        {
-            try
-            {
-                log.Info("Retrieving authenticated user");
-                HttpWebRequest request = buildWebRequest("https://api.github.com/user");
-
-                string jsonResult = getResponse(request);
-
-                GitUserData userData = JsonConvert.DeserializeObject<GitUserData>(jsonResult);
-                return userData;
-            }
-            catch (Exception ex)
-            {
-                log.Debug(ex);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Ex.
-        ///     GitREADME readme = GitHubClient.GetReadme();
-        ///     Console.WriteLine(readme.name);
-        /// </summary>
-        /// <returns>Returns the Repository default README object</returns>
-        public static GitREADME GetReadme(string owner, string repository)
-        {
-            string jsonResult = string.Empty;
-
-            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-
-            log.InfoFormat("Requesting the default README from {0}/{1}", owner, repository);
-
-            // GET /repos/:owner/:repo/readme
-            string url = string.Format("https://api.github.com/repos/{0}/{1}/readme", owner, repository);
-
-            // Build request
-            HttpWebRequest request = buildWebRequest(method.GET, url);
-
-            try
-            {
-                // Submit request 
-                jsonResult = getResponse(request);
-            }
-            catch (WebException wex)
-            {
-                if ((wex.Response).Headers["status"] == "404 Not Found")
-                {
-                    log.Info(wex.Message);
-                    return null;
-                }
-                else
-                {
-                    log.Warn(wex);
-                    throw;
-                }
-            }
-
-            // convert json to object and return object
-            GitREADME readme = JsonConvert.DeserializeObject<GitREADME>(jsonResult);
-            return readme;
-        }
-
-        /// <summary>
-        /// Ex.
-        ///     Console.WriteLine(GitHubClient.GetReadme().DecodedContent);
-        /// </summary>
-        /// <returns>Returns the text found in the Repository default README file</returns>
-        public static string GetReadme_Content(string owner, string repository)
-        {
-            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-            return GetReadme(owner, repository).DecodedContent;
-        }
-
         /// <summary>
         /// Ex.
         ///     GitRateLimit rateLimit = GitHubClient.GetRateLimit();
@@ -217,9 +131,9 @@ namespace GitHubAPIClient
                 }
             }
 
-            //    // No obvious way to tell difference between a json result with a 
-            //    // single entry result (non-array) or a json with multiple entries (array).  
-            //    // This hack handles it for now...
+            // No obvious way to tell difference between a json result with a 
+            // single entry result (non-array) or a json with multiple entries (array).  
+            // This hack handles it for now...
             if (jsonResult.StartsWith("["))
             {
                 contents = JsonConvert.DeserializeObject<List<GitContent>>(jsonResult);
@@ -233,250 +147,6 @@ namespace GitHubAPIClient
             log.InfoFormat("Returning {0} content items", contents.Count);
             return contents;
  
-        }
-
-        /// <summary>
-        /// Ex. 
-        ///     bool result = GitHubClient.UploadContent("c:\\temp\\myfile.ps1");
-        /// </summary>
-        /// <param name="sourceFile">The full file path to upload (ex. c:\temp\hello.txt)</param>
-        /// <returns>Did upload succeeded?</returns>
-        public static bool UploadContent(string sourceFile, string owner, string repository)
-        {
-            return UploadContent(sourceFile, owner, repository, string.Empty);
-        }
-
-        /// <summary>
-        /// Ex. 
-        ///     bool result = GitHubClient.UploadContent("c:\\temp\\myfile.ps1", "myfile.ps1");
-        /// </summary>
-        /// <param name="SourceFile">The full file path to upload (ex. c:\temp\hello.txt)</param>
-        /// <param name="owner">The repository owner name</param>
-        /// <param name="repository">The name of the repository</param>
-        /// <param name="contentPath">The path of the file in the repository (ex. 'hello.txt' or 'folder/hello.txt')</param>
-        /// <returns>Did the upload succeed?</returns>
-        public static bool UploadContent(string SourceFile, string owner, string repository, string contentPath)
-        {
-            if (string.IsNullOrEmpty(SourceFile) || string.IsNullOrEmpty(owner) ||
-                string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-
-            // if ContentPath isn't specified then assume root and use the source file name
-            if (string.IsNullOrEmpty(contentPath)) { contentPath = Path.GetFileName(SourceFile); }
-
-            log.InfoFormat("Processing a request to Create/Update {0} in {1}/{2}", contentPath, owner, repository);
-
-            // See if we can find a file already in the hub
-            GitContent content = GitHubClient.GetContent(owner, repository, contentPath);
-            if (content != null)
-            {
-                log.Info("An existing file was found in the Repository");
-                return UpdateFile(SourceFile, owner, repository, content);
-            }
-
-            log.Info("No existing file was found in the Repository");
-            return CreateFile(SourceFile, owner, repository, contentPath);
-        }
-
-        /// <summary>
-        /// Ex.
-        ///     GitHubClient.DeleteContent("Hello.ps1")
-        /// </summary>
-        /// <param name="owner">The repository owner name</param>
-        /// <param name="repository">The name of the repository</param>
-        /// <param name="contentPath">The path of the file in the repository (ex. 'hello.txt' or 'folder/hello.txt')</param>
-        /// <returns></returns>
-        public static bool DeleteContent(string owner, string repository, string contentPath)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(contentPath) || string.IsNullOrEmpty(owner) ||
-                    string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-
-                log.InfoFormat("Requesting the deletion of {0} in {1}/{2}", contentPath, owner, repository);
-
-                // See if we can find a file already in the hub
-                GitContent content = GitHubClient.GetContent(owner, repository, contentPath);
-                if (content == null)
-                    return false;            
-
-                // DELETE /repos/:owner/:repo/contents/:path
-                string url = string.Format("https://api.github.com/repos/{0}/{1}/contents/{2}", owner, repository, content.path);
-
-                #region Build Request
-                HttpWebRequest request = buildWebRequest(method.DELETE, url);
-                using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
-                {
-                    GitDeleteFile deleteFile = new GitDeleteFile();
-                    deleteFile.message = commit_message;
-                    //TODO: Replace author info with authenticated user info
-                    //deleteFile.author = new GitAuthor("Chris B", "chris@dscoduc.com");
-                    deleteFile.committer = new GitCommitter(committer_name, committer_email);
-                    deleteFile.sha = content.sha;
-
-                    // create json from object
-                    string json = JsonConvert.SerializeObject(deleteFile, Formatting.None,
-                        new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-
-                    streamWriter.Write(json);
-                    streamWriter.Flush();
-                    streamWriter.Close();
-                }
-                #endregion // Build Request
-
-                string jsonResult = getResponse(request);
-
-                log.Info("File deleted from repository");
-                return true;
-            }
-            catch (FileNotFoundException fex)
-            {
-                log.WarnFormat("File NOT deleted from Repository - {0}", fex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// Ex. GitHubClient.CreateFile("c:\\temp\\myfile.ps1", "myfile.ps1");
-        /// </summary>
-        /// <param name="sourceFile">The full file path to upload (ex. c:\temp\hello.txt)</param>
-        /// <param name="contentPath">The path of the file in the repository (ex. 'hello.txt' or 'folder/hello.txt')</param>
-        /// <returns>Did the creation succeed?</returns>
-        public static bool CreateFile(string sourceFile, string owner, string repository, string contentPath)
-        {
-            if (string.IsNullOrEmpty(sourceFile) || string.IsNullOrEmpty(owner) ||
-                string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-
-            log.InfoFormat("Requesting the creation of {0} in {1}/{2}", contentPath, owner, repository);
-
-            // PUT /repos/:owner/:repo/contents/:path
-            string url = string.Format("https://api.github.com/repos/{0}/{1}/contents/{2}", owner, repository, contentPath);
-
-            #region Build Request
-            HttpWebRequest request = buildWebRequest(method.PUT, url);
-            using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
-            {
-                GitCreateFile uploadFile = new GitCreateFile();
-                uploadFile.message = commit_message;
-                //TODO: Replace author info with authenticated user info
-                //uploadFile.author = new GitAuthor("Chris B", "chris@dscoduc.com"); 
-                uploadFile.committer = new GitCommitter(committer_name, committer_email);
-                uploadFile.content = Utils.EncodeFile(sourceFile);
-
-                // create json from object
-                string json = JsonConvert.SerializeObject(uploadFile, Formatting.None, 
-                    new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-
-                streamWriter.Write(json);
-                streamWriter.Flush();
-                streamWriter.Close();
-            }
-            #endregion // Build Request
-
-            try
-            {
-                string jsonResult = getResponse(request);
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                return false;
-            }
-
-            log.Info("File sucessfully created in Repository");
-            return true;
-        }
-
-        /// <summary>
-        /// 
-        /// Ex. GitHubClient.UpdateFile("c:\\temp\\myfile.ps1", "myfile.ps1");
-        /// </summary>
-        /// <param name="sourceFile">The full file path to upload (ex. c:\temp\hello.txt)</param>
-        /// <param name="contentPath">The path of the file in the repository (ex. 'hello.txt' or 'folder/hello.txt')</param>
-        /// <returns>Did the update succeed?</returns>
-        public static bool UpdateFile(string sourceFile, string owner, string repository, string contentPath)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(sourceFile) || string.IsNullOrEmpty(owner) ||
-                    string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-
-                GitContent content = GitHubClient.GetContent(owner, repository, contentPath);
-                if (content == null)
-                {
-                    log.Warn("Aborting Update due to missing file");
-                    return false;
-                }
-
-                return UpdateFile(sourceFile, owner, repository, content);
-            }
-            catch (Exception ex)
-            { 
-                log.Error(ex);
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sourceFile">The full file path to upload (ex. c:\temp\hello.txt)</param>
-        /// <param name="content">Content object</param>
-        /// <returns>True/False</returns>
-        public static bool UpdateFile(string sourceFile, string owner, string repository, GitContent content)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(sourceFile) || string.IsNullOrEmpty(owner) ||
-                    string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-
-                log.Info("Requesting an update to a file in the Repository");
-
-                // PUT /repos/:owner/:repo/contents/:path
-                string url = string.Format("https://api.github.com/repos/{0}/{1}/contents/{2}", owner, repository, content.path);
-
-                #region Build Request
-                HttpWebRequest request = buildWebRequest(method.PUT, url);
-                using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
-                {
-                    GitUpdateFile updateFile = new GitUpdateFile();
-                    updateFile.message = commit_message;
-                    //TODO: Replace author info with authenticated user info
-                    //updateFile.author = new GitAuthor("Chris B", "chris@dscoduc.com");
-                    updateFile.committer = new GitCommitter(committer_name, committer_email);
-                    updateFile.content = Utils.EncodeFile(sourceFile);
-                    updateFile.sha = content.sha;
-
-                    // create json from object
-                    string json = JsonConvert.SerializeObject(updateFile, Formatting.None, 
-                        new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-
-                    streamWriter.Write(json);
-                    streamWriter.Flush();
-                    streamWriter.Close();
-                }
-                #endregion // Build Request
-
-                string jsonResult = getResponse(request);
-
-                log.Info("File sucessfully updated in the Repository");
-                return true;
-            }
-            catch (FileNotFoundException fex)
-            {
-                log.Warn(fex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                return false;
-            }
         }
 
         /// <summary>
@@ -544,9 +214,9 @@ namespace GitHubAPIClient
                 }
             }
 
-            //    // No obvious way to tell difference between a json result with a 
-            //    // single entry result (non-array) or a json with multiple entries (array).  
-            //    // This hack handles it for now...
+            // No obvious way to tell difference between a json result with a 
+            // single entry result (non-array) or a json with multiple entries (array).  
+            // This hack handles it for now...
             if (jsonResult.StartsWith("["))
             {
                 contents = JsonConvert.DeserializeObject<List<GitRepository>>(jsonResult);
@@ -592,9 +262,6 @@ namespace GitHubAPIClient
             request.ContentType = "text/json";  // everything we're doing here is json based
             request.UserAgent = "curl"; //userAgent;  // GitHub requires userAgent be your username or repository
             request.Accept = "*/*";
-
-            if (!string.IsNullOrEmpty(auth_token))
-                request.Headers.Add("authorization: token " + auth_token);
 
             return request;
         }
@@ -680,9 +347,9 @@ namespace GitHubAPIClient
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                log.Error(ex);
                 throw;
             }
         }

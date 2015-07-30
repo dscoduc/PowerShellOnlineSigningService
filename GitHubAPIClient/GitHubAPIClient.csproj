@@ -48,18 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GitAuthor.cs" />
-    <Compile Include="GitCommitter.cs" />
     <Compile Include="GitContent.cs" />
-    <Compile Include="GitCreateFile.cs" />
-    <Compile Include="GitDeleteFile.cs" />
     <Compile Include="GitHubClient.cs" />
     <Compile Include="GitRateLimit.cs" />
-    <Compile Include="GitREADME.cs" />
     <Compile Include="GitRepository.cs" />
     <Compile Include="GitResponse.cs" />
-    <Compile Include="GitUpdateFile.cs" />
-    <Compile Include="GitUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>

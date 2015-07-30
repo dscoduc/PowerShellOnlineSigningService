@@ -86,7 +86,6 @@
   <ItemGroup>
     <Compile Include="App_Code\Requestor.cs" />
     <Compile Include="App_Code\serverHeaderModule.cs" />
-    <Content Include="App_Code\Settings.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,9 +116,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="files\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\GitHubAPIClient\GitHubAPIClient.csproj">
       <Project>{8d937bbc-5783-4831-a5a7-8c7ecd0de0ab}</Project>
