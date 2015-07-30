@@ -38,6 +38,8 @@ namespace PowerShellOnlineSigningService
                     return;
                 }
 
+                log.InfoFormat("New download request initiated for {0}", fileName);
+
                 // load decoded content from requested file
                 string rawContent = GitHubClient.GetFileContents(owner, repository, fileName);
                 if (string.IsNullOrEmpty(rawContent))

@@ -96,7 +96,7 @@ namespace PowerShellOnlineSigningService
             {
                 string cleanRepoName = Server.HtmlEncode(repository.name);
 
-                log.InfoFormat("Adding {0} to repository list", cleanRepoName);
+                log.DebugFormat("Adding {0} to repository list", cleanRepoName);
 
                 ListItem item = new ListItem(cleanRepoName);
                 
