@@ -18,4 +18,19 @@ digital signing certificate in the local machine store.
 I would be interested to hear from anyone who is able to sign PowerShell 
 scripts natively in C# so I can replace the shell out to PowerShell code. 
 
+Install Steps:
+
+Create new folder for root of Web Application 
+	Ex. c:\InetPub\PowerShellSigning)
+Copy Web Application files into new Web Applicaton folder
+Create Application Pool 
+	Ex. Name=PowerShell CLR=v4 Pipeline=Integrated
+Create new Website using new AppPool
+	Ex. PowerShell Signing
+Configure Web Site Authentication to only accept Windows Integrated
+Delegate Modify rights to App_Data folder to IIS AppPool account 
+	Ex. icacls c:\inetpub\PowerShellSigning\App_Data /grant "IIS APPPOOL\PowerShell":(OI)(CI)(F)
+Install Code Signing Certificate into Local Machine Certificate store
+Delegate read access to Code Signing Certificate private key
+
 ![Main screen snapshot](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/PowerShellOnlineSigningService.PNG)

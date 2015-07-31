@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 
@@ -91,6 +92,63 @@ namespace GitHubAPIClient
             return content;
         }
 
+        public static List<GitContent> GetContents(string owner, string repository, string contentPath)
+        {
+            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
+
+            string jsonResult = string.Empty;
+
+            // GET /repos/:owner/:repo/contents
+            string url = string.Format("https://api.github.com/repos/{0}/{1}/contents/{2}", owner, repository, contentPath);
+
+            // Build request
+            HttpWebRequest request = buildWebRequest(method.GET, url);
+
+            try
+            {
+                jsonResult = getResponse(request);
+            }
+            catch (WebException wex)
+            {
+                if ((wex.Response).Headers["status"] == "404 Not Found")
+                {
+                    log.Warn(wex.Message);
+                    return null;
+                }
+                else
+                {
+                    log.Warn(wex);
+                }
+            }
+
+            List<GitContent> contents = new List<GitContent>();
+
+            // No obvious way to tell difference between a json result with a 
+            // single entry result (non-array) or a json with multiple entries (array).  
+            // This hack handles it for now...
+            if (jsonResult.StartsWith("["))
+            {
+                contents = JsonConvert.DeserializeObject<List<GitContent>>(jsonResult);
+            }
+            else
+            {
+                GitContent content = JsonConvert.DeserializeObject<GitContent>(jsonResult);
+                contents.Add(content);
+            }
+
+            // sort contents by type and then name
+            contents.Sort();
+
+            // sort by content type
+            //contents.Sort((x,y) => x.type.CompareTo(y.type));
+            
+            // sort by content type, then by content name
+            //List<GitContent> sortedContents = contents.OrderBy(o => o.type).ThenBy(o => o.name).ToList();
+
+            log.InfoFormat("Returning {0} content items", contents.Count);
+            return contents;
+        }
+
         /// <summary>
         /// Ex. 
         ///     List<GitContent> contents = GitHubClient.GetContents();
@@ -104,6 +162,9 @@ namespace GitHubAPIClient
             
             List<GitContent> contents = new List<GitContent>();
             string jsonResult = string.Empty;
+
+            //TODO: Need to figure out how to loop through nested folders and grab the file info, then put them
+            //      into a single array...
 
             // GET /repos/:owner/:repo/contents
             string url = string.Format("https://api.github.com/repos/{0}/{1}/contents", owner, repository);
@@ -226,6 +287,9 @@ namespace GitHubAPIClient
                 GitRepository content = JsonConvert.DeserializeObject<GitRepository>(jsonResult);
                 contents.Add(content);
             }
+
+            // sort repositories by name
+            contents.Sort();
 
             log.InfoFormat("Returning {0} content items", contents.Count);
             return contents;

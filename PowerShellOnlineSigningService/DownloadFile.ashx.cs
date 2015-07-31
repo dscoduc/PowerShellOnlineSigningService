@@ -24,13 +24,13 @@ namespace PowerShellOnlineSigningService
         public void ProcessRequest(HttpContext context)
         {
             string filePath = string.Empty;
-            string fileName = context.Server.HtmlEncode(context.Request.QueryString["file"]);
             string owner = context.Server.HtmlEncode(context.Request.QueryString["owner"]);
             string repository = context.Server.HtmlEncode(context.Request.QueryString["repository"]);
+            string contentPath = context.Server.HtmlEncode(context.Request.QueryString["path"]);
 
             try
             {
-                if (string.IsNullOrEmpty(fileName))
+                if (string.IsNullOrEmpty(contentPath))
                 {
                     log.Info("Request made without a proper File query string value");
                     context.Response.Clear();
@@ -38,10 +38,10 @@ namespace PowerShellOnlineSigningService
                     return;
                 }
 
-                log.InfoFormat("New download request initiated for {0}", fileName);
+                log.InfoFormat("New download request initiated for {0}", contentPath);
 
                 // load decoded content from requested file
-                string rawContent = GitHubClient.GetFileContents(owner, repository, fileName);
+                string rawContent = GitHubClient.GetFileContents(owner, repository, contentPath);
                 if (string.IsNullOrEmpty(rawContent))
                 {
                     context.Response.Clear();
@@ -50,8 +50,11 @@ namespace PowerShellOnlineSigningService
                     return;
                 }
 
+                // extract filename from contentPath
+                string contentFileName = Path.GetFileName(contentPath);
+
                 // save contents to file to be downloaded
-                filePath = context.Server.MapPath("~/App_Data") + Path.DirectorySeparatorChar + fileName;
+                filePath = context.Server.MapPath("~/App_Data") + Path.DirectorySeparatorChar + contentFileName;
                 File.WriteAllText(filePath, rawContent);
 
                 // clean any previos signing
@@ -65,18 +68,18 @@ namespace PowerShellOnlineSigningService
                     context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
                     context.Response.ContentType = "application/octet-stream";
                     context.Response.AddHeader("Content-Length", new FileInfo(filePath).Length.ToString());
-                    context.Response.AppendHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+                    context.Response.AppendHeader("Content-Disposition", "attachment; filename=\"" + contentFileName + "\"");
                     context.Response.TransmitFile(filePath);
                     context.Response.Flush();
 
-                    log.InfoFormat("File downloaded: {0}", fileName);
+                    log.InfoFormat("File downloaded: {0}", contentFileName);
                 }
                 else
                 {
                     log.Warn("Notifying user that signing file failed");
                     context.Response.Clear();
                     context.Response.StatusCode = 500;
-                    context.Response.StatusDescription = "An unknown error occurred while signing " + fileName;
+                    context.Response.StatusDescription = "An unknown error occurred while signing " + contentFileName;
                 }
             }
             catch (Exception ex)

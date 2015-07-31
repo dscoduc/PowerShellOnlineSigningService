@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Linq;
 
 namespace PowerShellOnlineSigningService
 {
@@ -35,6 +36,11 @@ namespace PowerShellOnlineSigningService
                 // populate the repository if provided in querystring
                 if (!string.IsNullOrEmpty(Request.QueryString["repository"]))
                     Session["GitRepository"] = Server.HtmlEncode(Request.QueryString["repository"]);
+
+                // populate the contentPath if provided in querystring
+                if (!string.IsNullOrEmpty(Request.QueryString["path"]))
+                    Session["GitContentPath"] = Server.HtmlEncode(Request.QueryString["path"]);
+
             }
             else if (!string.IsNullOrEmpty(defaultOwner))
             {
@@ -47,7 +53,7 @@ namespace PowerShellOnlineSigningService
 
             // load repository dropdown list
             if(populateRepoList())
-                displayFileList();
+                displayPathList();
         }
 
         private void displaySessionInfo()
@@ -112,7 +118,7 @@ namespace PowerShellOnlineSigningService
             return true;
         }
 
-        private void displayFileList()
+        private void displayPathList()
         {
             // Clear existing file list
             tblFileList.Rows.Clear();
@@ -120,6 +126,7 @@ namespace PowerShellOnlineSigningService
             // fetch cached information
             string cachedOwner = (string)Session["GitOwner"];
             string cachedRepoName = (string)Session["GitRepository"];
+            string cachedContentPath = (string)Session["GitContentPath"] ?? string.Empty;
 
             // bail if the cached repository info is empty
             if (string.IsNullOrEmpty(cachedRepoName))
@@ -128,13 +135,8 @@ namespace PowerShellOnlineSigningService
                 return;
             }
 
-            List<GitContent> contents = null;
-            try
-            {
-                // retrieve list of contents in Repository
-                contents = GitHubClient.GetContents(cachedOwner, cachedRepoName);
-            }
-            catch (Exception) { } // Continue - contents will be null and will exit gracefully
+            // retrieve list of contents in Repository
+            List<GitContent> contents = GitHubClient.GetContents(cachedOwner, cachedRepoName, cachedContentPath);
 
             // if null or empty the lookup failed
             if (null == contents || contents.Count < 1)
@@ -144,23 +146,32 @@ namespace PowerShellOnlineSigningService
 
                 return;
             }
-
+               
             // loop through each entry returned for repository
             foreach (GitContent entry in contents)
             {
-                // check if we should be displaying the entry
-                if (Regex.IsMatch(entry.name, approvedExtensions))
+                using (TableRow row = new TableRow())
                 {
-                    log.DebugFormat("Adding qualified file {0}", entry.name);
-
-                    #region AddDataRow
-                    using (TableRow row = new TableRow())
+                    TableCell cell;
+                    if (entry.type == "dir")
                     {
-                        TableCell cell;
+                        using (cell = new TableCell())
+                        {
+                            cell.Text = string.Format("<a href='?owner={0}&repository={1}&path={2}'>{2}</a>", cachedOwner, cachedRepoName, entry.path);
+                            row.Cells.Add(cell);
+                        }
 
                         using (cell = new TableCell())
                         {
-                            cell.Text = string.Format("<a href='DownloadFile.ashx?owner={0}&repository={1}&file={2}' title='Click to download'>{2}</a>", cachedOwner, cachedRepoName, entry.name);
+                            cell.Text = "";
+                            row.Cells.Add(cell);
+                        }
+                    }
+                    else
+                    {
+                        using (cell = new TableCell())
+                        {
+                            cell.Text = string.Format("<a href='DownloadFile.ashx?owner={0}&repository={1}&path={2}' title='Click to download'>{2}</a>", cachedOwner, cachedRepoName, entry.path);
                             row.Cells.Add(cell);
                         }
 
@@ -169,15 +180,32 @@ namespace PowerShellOnlineSigningService
                             cell.Text = string.Format("<span class='size' title='{1} bytes'>{0}</span>", WebUtils.GetFileSizeString(entry.size), entry.size);
                             row.Cells.Add(cell);
                         }
-
-                        tblFileList.Rows.Add(row);
                     }
-                    #endregion // AddDataRow
+
+                    tblFileList.Rows.Add(row);
                 }
-                else
-                {
-                    log.DebugFormat("Ignoring {0} - not on approved extension list", entry.name);
-                }
+
+                //#region AddDataRow
+                //using (TableRow row = new TableRow())
+                //{
+                //    TableCell cell;
+
+                //    using (cell = new TableCell())
+                //    {
+                //        cell.Text = string.Format("<a href='DownloadFile.ashx?owner={0}&repository={1}&path={2}' title='Click to download'>{2}</a>", cachedOwner, cachedRepoName, entry.path);
+                //        row.Cells.Add(cell);
+                //    }
+
+                //    using (cell = new TableCell())
+                //    {
+                //        cell.Text = string.Format("<span class='size' title='{1} bytes'>{0}</span>", WebUtils.GetFileSizeString(entry.size), entry.size);
+                //        row.Cells.Add(cell);
+                //    }
+
+                //    tblFileList.Rows.Add(row);
+                //}
+                //#endregion // AddDataRow
+
             }
 
             // if no rows were added then we don't need the file list header
@@ -231,6 +259,7 @@ namespace PowerShellOnlineSigningService
 
                 ddlRepositories.Items.Clear();
                 tblFileList.Rows.Clear();
+                Session.Remove("GitContentPath");
 
                 // if there are no default variables then clear out everything
                 if (string.IsNullOrEmpty(defaultOwner))
@@ -266,17 +295,27 @@ namespace PowerShellOnlineSigningService
 
                 // clear out previous repository cache
                 Session.Remove("GitRepository");
+
+                // clear out previous contentPath cache
+                Session.Remove("GitContentPath");
             }
             else
             {
                 // update repository session with selected repository if available
                 if (null != ddlRepositories.SelectedItem)
-                    Session["GitRepository"] = Server.HtmlEncode(ddlRepositories.SelectedItem.Text);            
+                {
+                    Session["GitRepository"] = Server.HtmlEncode(ddlRepositories.SelectedItem.Text);
+                }
+                else
+                {
+                    // clear out previous contentPath cache
+                    Session.Remove("GitContentPath");
+                }
             }
 
             // repopulate Repository list
             if(populateRepoList())
-                displayFileList();
+                displayPathList();
         }
     }
 }

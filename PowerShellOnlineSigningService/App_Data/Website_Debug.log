@@ -23,3 +23,525 @@
 2015-07-30 01:28:14,467 [71] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
 2015-07-30 01:28:14,469 [71] INFO  PowerShellOnlineSigningService.DownloadFile - File downloaded: BITSAsyncDownload.ps1
 2015-07-30 01:28:14,500 [71] INFO  PowerShellOnlineSigningService.WebUtils - Deleted C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\BITSAsyncDownload.ps1
+2015-07-30 21:19:30,255 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:19:30,287 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:19:30,396 [9] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:19:30,396 [9] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:19:31,255 [9] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:19:31,802 [9] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:19:31,818 [9] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files for dscoduc/PowerShellScripts
+2015-07-30 21:19:31,818 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-30 21:19:31,818 [9] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-30 21:19:31,818 [9] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:19:32,084 [9] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:19:32,099 [9] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:19:47,396 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:19:47,396 [9] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:19:47,396 [9] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:19:47,990 [9] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:19:47,990 [9] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:20:10,177 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:20:10,193 [9] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:20:10,912 [9] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 21:20:10,912 [9] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:22:52,928 [9] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:22:53,052 [9] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:22:53,052 [9] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:22:53,757 [9] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:22:53,990 [9] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:24:01,224 [12] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 21:24:07,365 [12] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 21:24:08,803 [12] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:24:11,271 [12] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:24:24,568 [12] INFO  GitHubAPIClient.GitHubClient - Returning 2 content items
+2015-07-30 21:25:06,600 [12] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 21:25:10,146 [12] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 21:25:21,334 [12] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 21:25:51,773 [12] INFO  GitHubAPIClient.GitHubClient - Returning 2 content items
+2015-07-30 21:27:21,897 [16] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/TestFolder/TestFolder2]
+2015-07-30 21:27:27,756 [16] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/TestFolder/TestFolder2]
+2015-07-30 21:27:30,584 [16] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:27:50,745 [16] ERROR GitHubAPIClient.GitHubClient - System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.GetResponse()
+   at GitHubAPIClient.GitHubClient.getResponse(HttpWebRequest request) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\GitHubAPIClient\GitHubClient.cs:line 385
+2015-07-30 21:28:40,162 [16] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 21:28:50,803 [16] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/Dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 21:28:55,365 [16] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:29:02,115 [16] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:29:54,740 [16] INFO  GitHubAPIClient.GitHubClient - Returning 1 content items
+2015-07-30 21:40:09,101 [38] INFO  PowerShellOnlineSigningService.Default - Repository owner information was emptied by user
+2015-07-30 21:40:09,132 [38] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:40:09,147 [38] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:40:09,163 [38] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:40:09,163 [38] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:40:09,883 [38] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:40:10,147 [38] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:40:10,163 [38] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all files for dscoduc/PowerShellScripts
+2015-07-30 21:40:10,163 [38] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-30 21:40:10,179 [38] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents]
+2015-07-30 21:40:10,179 [38] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:40:10,444 [38] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:40:10,444 [38] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:45:25,774 [44] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:45:25,804 [44] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:45:25,835 [44] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:45:25,835 [44] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:45:26,492 [44] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:45:26,742 [44] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:45:26,757 [44] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:45:26,757 [44] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:45:26,757 [44] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:45:26,992 [44] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:45:26,992 [44] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:46:09,835 [43] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:46:09,882 [43] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:46:09,898 [43] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:46:09,898 [43] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:46:10,649 [43] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:46:10,914 [43] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:46:10,929 [43] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:46:10,929 [43] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:46:10,929 [43] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:46:11,179 [43] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:46:11,179 [43] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:46:13,226 [38] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:46:13,226 [38] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:46:13,242 [38] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:46:13,382 [38] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 21:46:13,382 [38] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:46:13,382 [38] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:46:13,382 [38] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:46:13,523 [38] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 21:46:13,523 [38] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:50:30,883 [49] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 21:50:30,929 [49] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:50:30,929 [49] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:50:30,945 [49] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:50:30,945 [49] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:50:31,601 [49] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:50:31,868 [49] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:50:31,883 [49] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 21:50:31,883 [49] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 21:50:31,883 [49] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:50:32,024 [49] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:50:32,039 [49] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 21:50:48,181 [47] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:50:48,181 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:50:48,195 [47] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:50:48,664 [47] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 21:50:48,664 [47] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:50:48,664 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:50:48,664 [47] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 21:50:48,664 [47] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:50:48,929 [47] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:50:48,929 [47] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 21:50:56,180 [53] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:50:56,180 [53] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:50:56,180 [53] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:50:56,320 [53] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 21:50:56,320 [53] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:50:56,320 [53] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 21:50:56,336 [53] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 21:50:56,336 [53] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:50:56,461 [53] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:50:56,461 [53] INFO  GitHubAPIClient.GitHubClient - Returning 2 content items
+2015-07-30 21:51:15,508 [47] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 21:51:15,508 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:51:15,523 [47] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 21:51:16,133 [47] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 21:51:16,133 [47] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 21:51:16,133 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 21:51:16,133 [47] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 21:51:16,133 [47] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:51:16,273 [47] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:51:16,273 [47] INFO  GitHubAPIClient.GitHubClient - Returning 1 content items
+2015-07-30 21:51:32,961 [47] INFO  PowerShellOnlineSigningService.DownloadFile - New download request initiated for TestFolder/testfolder2/GetDCNetInfo.ps1
+2015-07-30 21:51:32,976 [47] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-30 21:51:32,992 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2/GetDCNetInfo.ps1]
+2015-07-30 21:51:32,992 [47] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2/GetDCNetInfo.ps1]
+2015-07-30 21:51:32,992 [47] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:51:33,414 [47] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:51:33,430 [47] ERROR PowerShellOnlineSigningService.DownloadFile - System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\TestFolder\testfolder2\GetDCNetInfo.ps1'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding, Boolean checkHost)
+   at PowerShellOnlineSigningService.DownloadFile.ProcessRequest(HttpContext context) in c:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\DownloadFile.ashx.cs:line 58
+2015-07-30 21:51:33,445 [47] WARN  PowerShellOnlineSigningService.WebUtils - Unable to delete C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\TestFolder/testfolder2/GetDCNetInfo.ps1 - file not found
+2015-07-30 21:56:23,930 [47] INFO  PowerShellOnlineSigningService.DownloadFile - New download request initiated for TestFolder/testfolder2/GetDCNetInfo.ps1
+2015-07-30 21:56:23,977 [47] INFO  GitHubAPIClient.GitHubClient - Requesting the content of a file
+2015-07-30 21:56:23,992 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2/GetDCNetInfo.ps1]
+2015-07-30 21:56:23,992 [47] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2/GetDCNetInfo.ps1]
+2015-07-30 21:56:23,992 [47] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 21:56:24,524 [47] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 21:56:24,758 [47] INFO  PowerShellOnlineSigningService.DownloadFile - Created temp file C:\windows\TEMP\tmp7886.tmp
+2015-07-30 21:56:24,758 [47] INFO  PowerShellOnlineSigningService.DownloadFile - Adding new author header to C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\GetDCNetInfo.ps1
+2015-07-30 21:56:24,774 [47] INFO  PowerShellOnlineSigningService.DownloadFile - Finished updating C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\GetDCNetInfo.ps1
+2015-07-30 21:56:24,774 [47] INFO  PowerShellOnlineSigningService.WebUtils - Deleted C:\windows\TEMP\tmp7886.tmp
+2015-07-30 21:56:24,820 [47] INFO  PowerShellOnlineSigningService.DownloadFile - Executing PowerShell syntax 'Set-AuthenticodeSignature -FilePath 'C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\GetDCNetInfo.ps1' @(Get-ChildItem cert:\LocalMachine\My -codesign)[0]'
+2015-07-30 21:56:26,055 [47] INFO  PowerShellOnlineSigningService.DownloadFile - PowerShell status message: Signature verified.
+2015-07-30 21:56:26,086 [47] INFO  PowerShellOnlineSigningService.DownloadFile - File downloaded: GetDCNetInfo.ps1
+2015-07-30 21:56:26,086 [47] INFO  PowerShellOnlineSigningService.WebUtils - Deleted C:\Users\Administrator\Documents\Visual Studio 2013\Projects\PowerShellOnlineSigningService\PowerShellOnlineSigningService\App_Data\GetDCNetInfo.ps1
+2015-07-30 22:03:08,654 [58] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:03:08,679 [58] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:08,692 [58] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:08,692 [58] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:03:09,251 [58] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:03:09,458 [58] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:03:09,471 [58] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 22:03:09,471 [58] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 22:03:09,471 [58] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:03:09,575 [58] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:03:09,575 [58] INFO  GitHubAPIClient.GitHubClient - Returning 1 content items
+2015-07-30 22:03:12,559 [49] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:03:12,572 [49] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:12,585 [49] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:12,702 [49] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:12,702 [49] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:03:12,702 [49] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 22:03:12,702 [49] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 22:03:12,793 [49] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:12,793 [49] INFO  GitHubAPIClient.GitHubClient - Returning 1 content items
+2015-07-30 22:03:14,674 [47] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:03:14,689 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:14,689 [47] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:14,803 [47] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:14,803 [47] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:03:14,803 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 22:03:14,803 [47] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 22:03:14,917 [47] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:14,917 [47] INFO  GitHubAPIClient.GitHubClient - Returning 1 content items
+2015-07-30 22:03:21,768 [47] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:03:21,768 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:21,768 [47] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:21,883 [47] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:21,883 [47] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:03:21,883 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 22:03:21,883 [47] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 22:03:21,897 [47] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:03:21,997 [47] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:03:21,997 [47] INFO  GitHubAPIClient.GitHubClient - Returning 2 content items
+2015-07-30 22:03:23,817 [58] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:03:23,832 [58] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:23,848 [58] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:23,974 [58] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:23,974 [58] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:03:23,974 [58] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 22:03:23,974 [58] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 22:03:24,084 [58] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:24,099 [58] INFO  GitHubAPIClient.GitHubClient - Returning 2 content items
+2015-07-30 22:03:26,298 [56] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:03:26,313 [56] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:26,329 [56] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:03:26,455 [56] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:26,470 [56] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:03:26,470 [56] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 22:03:26,470 [56] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 22:03:26,580 [56] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:03:26,580 [56] INFO  GitHubAPIClient.GitHubClient - Returning 2 content items
+2015-07-30 22:06:52,404 [47] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 22:06:52,452 [47] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:06:52,452 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:06:52,531 [47] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:06:52,531 [47] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:06:53,272 [47] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:06:53,477 [47] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:06:53,493 [47] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:06:53,493 [47] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:06:53,493 [47] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:06:53,636 [47] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:06:53,636 [47] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 22:30:37,493 [8] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 22:30:37,524 [8] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:30:37,540 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:30:37,555 [8] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:30:37,555 [8] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:30:38,305 [8] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:30:38,649 [8] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:30:38,649 [8] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:30:38,665 [8] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:30:38,665 [8] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:30:38,775 [8] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:30:38,790 [8] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 22:30:51,399 [10] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:30:51,399 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:30:51,415 [10] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:30:51,883 [10] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:30:51,899 [10] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:30:51,899 [10] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:30:51,899 [10] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:30:52,071 [10] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:30:52,071 [10] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 22:32:09,321 [7] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:32:09,368 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:32:09,400 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:32:09,400 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:32:10,196 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:32:10,462 [7] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:32:10,477 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 22:32:10,477 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 22:32:10,477 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:32:10,727 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:32:10,743 [7] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 22:32:25,727 [7] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:32:25,743 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:32:25,743 [7] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:32:26,165 [7] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:32:26,165 [7] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:32:26,165 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 22:32:26,180 [7] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 22:32:26,352 [7] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:32:26,352 [7] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 22:33:12,055 [7] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 22:33:12,102 [7] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:33:12,102 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:33:12,196 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:33:12,196 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:33:12,978 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:33:13,196 [7] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:33:13,212 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:33:13,212 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:33:13,212 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:33:13,338 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:33:13,352 [7] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 22:33:52,462 [7] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 22:33:52,509 [7] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:33:52,525 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:33:52,540 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:33:52,540 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:33:53,274 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:33:53,524 [7] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:33:53,541 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:33:53,541 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:33:53,555 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:33:53,681 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:33:53,696 [7] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 22:34:17,774 [7] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:34:17,774 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:34:17,790 [7] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:34:18,352 [7] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:34:18,352 [7] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:34:18,352 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 22:34:18,352 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 22:34:18,352 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:34:18,572 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:34:18,587 [7] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 22:38:51,618 [7] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 22:38:51,650 [7] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:38:51,666 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:38:51,681 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:38:51,681 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:38:52,416 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:38:52,681 [7] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:38:52,696 [7] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:38:52,696 [7] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:38:52,696 [7] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:38:52,854 [7] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:38:52,868 [7] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 22:38:57,469 [24] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:38:57,478 [24] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:38:57,493 [24] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:38:57,635 [24] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:38:57,650 [24] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:38:57,650 [24] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 22:38:57,650 [24] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 22:38:57,650 [24] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:38:57,900 [24] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:38:57,900 [24] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 22:50:50,057 [34] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 22:50:50,088 [34] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:50:50,104 [34] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:50:50,119 [34] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:50:50,119 [34] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:50:50,854 [34] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:50:51,182 [34] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:50:51,197 [34] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:50:51,197 [34] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:50:51,197 [34] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:50:51,322 [34] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:50:51,322 [34] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 22:51:03,963 [32] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:51:03,963 [32] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:51:03,979 [32] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:51:04,432 [32] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:51:04,447 [32] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:51:04,447 [32] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:51:04,447 [32] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:51:04,619 [32] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 22:51:04,619 [32] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 22:51:43,932 [32] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 22:51:43,963 [32] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 22:51:43,979 [32] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:51:44,057 [32] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 22:51:44,072 [32] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:51:44,744 [32] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:51:44,948 [32] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 22:51:44,963 [32] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:51:44,963 [32] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 22:51:44,963 [32] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 22:51:45,088 [32] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 22:52:47,479 [32] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:08:56,464 [48] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 23:08:56,527 [48] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:08:56,527 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:08:56,542 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:08:56,542 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:08:57,464 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:08:57,730 [48] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:08:57,745 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:08:57,745 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:08:57,745 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:08:57,871 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:08:57,886 [48] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:09:09,417 [55] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:09:09,433 [55] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:09:09,433 [55] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:09:09,933 [55] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:09:09,933 [55] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:09:09,933 [55] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:09:09,933 [55] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:09:10,105 [55] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:09:10,105 [55] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:09:32,105 [45] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 23:09:32,136 [45] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:09:32,152 [45] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:09:32,230 [45] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:09:32,230 [45] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:09:33,042 [45] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:09:33,261 [45] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:09:33,261 [45] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:09:33,261 [45] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:09:33,261 [45] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:09:33,402 [45] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:10:17,511 [45] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:10:25,324 [55] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:10:25,339 [55] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:10:25,339 [55] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:10:26,027 [55] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:10:26,027 [55] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:10:26,027 [55] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:10:26,042 [55] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:10:26,277 [55] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:11:00,949 [55] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:12:54,480 [48] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 23:12:54,511 [48] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:12:54,527 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:12:54,605 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:12:54,605 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:12:55,402 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:12:55,605 [48] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:12:55,605 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:12:55,621 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:12:55,621 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:12:55,746 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:13:32,237 [48] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:17:18,715 [35] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 23:17:18,746 [35] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:17:18,762 [35] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:17:18,778 [35] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:17:18,778 [35] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:17:19,481 [35] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:17:19,746 [35] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:17:19,762 [35] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:17:19,762 [35] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:17:19,777 [35] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:17:19,934 [35] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:17:19,934 [35] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:17:31,152 [48] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:17:31,168 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:17:31,184 [48] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:17:31,715 [48] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:17:31,715 [48] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:17:31,715 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:17:31,730 [48] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:17:31,902 [48] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:17:31,902 [48] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:17:57,277 [48] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 23:17:57,309 [48] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:17:57,309 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:17:57,402 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:17:57,402 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:17:58,059 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:17:58,277 [48] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:17:58,277 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:17:58,277 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:17:58,277 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:17:58,402 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:18:48,621 [48] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:19:22,684 [48] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 23:19:22,715 [48] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:19:22,731 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:19:22,887 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:19:22,887 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:19:23,621 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:19:23,840 [48] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:19:23,840 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:19:23,856 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:19:23,856 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:19:23,997 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:20:39,965 [48] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:21:20,481 [26] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 23:21:20,512 [26] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:21:20,512 [26] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:21:20,528 [26] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:21:20,543 [26] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:21:21,357 [26] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:21:21,606 [26] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:21:21,621 [26] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:21:21,621 [26] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:21:21,621 [26] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:21:21,762 [26] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:21:21,762 [26] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:21:26,517 [26] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:21:26,528 [26] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:21:26,544 [26] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:21:26,668 [26] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:21:26,668 [26] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:21:26,684 [26] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 23:21:26,684 [26] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 23:21:26,684 [26] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:21:26,824 [26] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:21:26,824 [26] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 23:26:57,106 [48] INFO  PowerShellOnlineSigningService.Default - Repository owner changed from  to dscoduc
+2015-07-30 23:26:57,137 [48] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:26:57,153 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:26:57,169 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:26:57,169 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:26:57,950 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:26:58,216 [48] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:26:58,231 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:26:58,231 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/GitHubAPIClient/contents/]
+2015-07-30 23:26:58,231 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:26:58,372 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:26:58,372 [48] INFO  GitHubAPIClient.GitHubClient - Returning 8 content items
+2015-07-30 23:27:03,092 [22] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:27:03,107 [22] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:27:03,107 [22] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:27:03,247 [22] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:27:03,262 [22] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:27:03,262 [22] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 23:27:03,262 [22] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/]
+2015-07-30 23:27:03,262 [22] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:27:03,403 [22] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:27:03,403 [22] INFO  GitHubAPIClient.GitHubClient - Returning 22 content items
+2015-07-30 23:27:07,248 [48] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:27:07,262 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:27:07,278 [48] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:27:07,420 [48] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:27:07,420 [48] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:27:07,420 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 23:27:07,420 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder]
+2015-07-30 23:27:07,420 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:27:07,544 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:27:07,544 [48] INFO  GitHubAPIClient.GitHubClient - Returning 2 content items
+2015-07-30 23:27:13,653 [48] INFO  GitHubAPIClient.GitHubClient - Requesting a list of all repositories for dscoduc
+2015-07-30 23:27:13,669 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:27:13,684 [48] INFO  GitHubAPIClient.Utils - Cached data found for [https://api.github.com/users/dscoduc/repos]
+2015-07-30 23:27:13,825 [48] INFO  GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-07-30 23:27:13,825 [48] INFO  GitHubAPIClient.GitHubClient - Returning 3 content items
+2015-07-30 23:27:13,825 [48] INFO  GitHubAPIClient.GitHubClient - Request: GET [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 23:27:13,825 [48] INFO  GitHubAPIClient.Utils - Cache data not found for [https://api.github.com/repos/dscoduc/PowerShellScripts/contents/TestFolder/testfolder2]
+2015-07-30 23:27:13,825 [48] INFO  GitHubAPIClient.GitHubClient - Initiating a new request
+2015-07-30 23:27:13,950 [48] INFO  GitHubAPIClient.GitHubClient - Updating memory cache with latest and greatest
+2015-07-30 23:27:13,950 [48] INFO  GitHubAPIClient.GitHubClient - Returning 1 content items

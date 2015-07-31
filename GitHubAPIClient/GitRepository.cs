@@ -1,7 +1,8 @@
 ﻿
+using System;
 namespace GitHubAPIClient
 {
-    public class GitRepository
+    public class GitRepository : IComparable<GitRepository>
     {
         public int id { get; set; }
         public Owner owner { get; set; }
@@ -33,6 +34,12 @@ namespace GitHubAPIClient
         public string created_at { get; set; }
         public string updated_at { get; set; }
         public Permissions permissions { get; set; }
+
+        public int CompareTo(GitRepository other)
+        {
+            // Default to type sort. [A to Z]
+            return this.name.CompareTo(other.name);
+        } 
     }
     public class Owner
     {

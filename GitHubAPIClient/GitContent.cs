@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GitHubAPIClient
 {
-    public class GitContent
+    public class GitContent : IComparable<GitContent>
     {
         public string type { get; set; }
         public string encoding { get; set; }
@@ -67,6 +67,18 @@ namespace GitHubAPIClient
         {
             get { return Utils.Base64Decode(this.content); }
         }
+
+        public int CompareTo(GitContent other)
+        {
+            // Alphabetic sort if type is equal. [A to Z]
+            if (this.type == other.type)
+            {
+                return this.name.CompareTo(other.name);
+            }
+
+            // Default to type sort. [A to Z]
+            return this.type.CompareTo(other.type);
+        }   
     }
 
     public class Content_Links
