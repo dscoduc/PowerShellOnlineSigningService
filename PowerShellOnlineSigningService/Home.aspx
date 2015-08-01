@@ -16,7 +16,8 @@
         </div> <%--header_wrapper--%>
 
         <div id="content_wrapper">
-            <div id="sitemap_wrapper">
+            <div id="breadcrumb_wrapper" runat="server">
+                <asp:TextBox ID="tbOwner" runat="server" />
                 <span id="currentPath" runat="server"></span>
             </div>
             <asp:GridView ID="gvFiles" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="gvFiles" PageSize="20"
@@ -42,7 +43,7 @@
                     <asp:TemplateField Visible="false">
                         <ItemTemplate><asp:Label ID="Path" runat="server" /></ItemTemplate>
                     </asp:TemplateField>
-
+                      
                     <asp:TemplateField Visible="false">
                         <ItemTemplate><asp:Label ID="Type" runat="server" /></ItemTemplate>
                     </asp:TemplateField>

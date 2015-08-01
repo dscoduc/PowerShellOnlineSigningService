@@ -1,8 +1,10 @@
 ﻿using GitHubAPIClient;
 using log4net;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -17,8 +19,8 @@ namespace PowerShellOnlineSigningService
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private Requestor requestor = new Requestor();
-        //private string folderURLPath = "<a href='?owner={0}&repository={1}&path={2}'>{2}</a>";
-        //private string fileURLPath = "<a href='DownloadFile.ashx?owner={0}&repository={1}&path={2}' title='Click to download'>{2}</a>";
+        private static string defaultOwner = ConfigurationManager.AppSettings["default_owner"] ?? string.Empty;
+        private static string defaultRepository = ConfigurationManager.AppSettings["default_repository"] ?? string.Empty;
         private string folderImagePath = "~/images/folder.tiff";
         private string fileImagePath = "~/images/file.tiff";
         private string approvedExtensions = @"^.+\.((ps1)|(txt))$";
@@ -63,40 +65,80 @@ namespace PowerShellOnlineSigningService
             string r = Server.HtmlEncode(n["repository"]) ?? string.Empty;
             string p = Server.HtmlEncode(n["path"]) ?? string.Empty;
 
-            string baseP = "<a href='{0}'>{1}</a>";
-
-            string owner = string.Format(baseP, "?owner=" + o, o);
-            string repository = string.Format(baseP, "?owner=" + o + "&repository=" + r, r);
-            string path = string.Format(baseP, "?owner=" + o + "&repository=" + r + "&path=" + p, p);
+            string urlTemplate = "<a href='{0}'>{1}</a>";
+            
+            string pathURL = string.Format(urlTemplate, "?owner=" + o + "&repository=" + r + "&path=" + p, p);
 
             string breadcrumb = string.Empty;
 
             if (!string.IsNullOrEmpty(o))
             {
-                breadcrumb = owner;
+                string ownerURL = string.Format(urlTemplate, "?owner=" + o, o);
+                breadcrumb = ownerURL;
 
                 if (!string.IsNullOrEmpty(r))
                 {
-                    breadcrumb = string.Format("{0} / {1}", owner, repository);
+                    string repositoryURL = string.Format(urlTemplate, "?owner=" + o + "&repository=" + r, r);
+                    breadcrumb = string.Format("{0} / {1}", ownerURL, repositoryURL);
 
                     if (!string.IsNullOrEmpty(p))
                     {
-                        string[] paths = p.Split(new char[] { '/' });
-
-                        string fp = string.Join(" / ", paths);
-                        breadcrumb = string.Format("{0} / {1} / {2}", owner, repository, fp);
+                        breadcrumb = string.Format("{0} / {1} / {2}", ownerURL, repositoryURL, buildPathBreadcrumb());
                     }
                 }
             }
             currentPath.InnerHtml = breadcrumb;
         }
 
+        private string buildPathBreadcrumb()
+        {
+            NameValueCollection n = Request.QueryString;
+            if (!n.HasKeys()) { return string.Empty; }
+
+            string o = Server.HtmlEncode(n["owner"]) ?? defaultOwner;
+            string r = Server.HtmlEncode(n["repository"]) ?? string.Empty;
+            string p = Server.HtmlEncode(n["path"]) ?? string.Empty;
+
+            string urlTemplate = "<a href='?owner=" + o + "&repository=" + r + "&path={0}'>{1}</a>";
+            string breadcrumb = string.Empty;
+            ArrayList al = new ArrayList();
+
+            if (p.Contains("/"))
+            {
+                do
+                {
+                    string folderName = p.Substring(p.LastIndexOf("/") + 1);
+                    string link = string.Format(urlTemplate, p, folderName);
+
+                    al.Add(link);
+
+                    // advance through the paths
+                    p = p.Substring(0, p.LastIndexOf("/"));
+
+                } while (p.Contains("/"));
+            }
+
+            al.Add(string.Format(urlTemplate, p, p));
+
+            for (int x = al.Count - 1; x >= 0; x--)
+            {
+                breadcrumb = string.Format("{0} / {1}", breadcrumb, al[x]);
+            }
+
+            return breadcrumb.Substring(3);
+        }
+
         private void gvFiles_LoadData()
         {
             NameValueCollection n = Request.QueryString;
-            if (!n.HasKeys()) { return; }
+            if (!n.HasKeys())
+            {
+                string redirectUrl = string.Format("home.aspx?owner={0}", ConfigurationManager.AppSettings["default_owner"]);
+                Response.Redirect(redirectUrl);
+                return;
+            }
 
-            string o = Server.HtmlEncode(n["owner"]) ?? string.Empty;
+            string o = Server.HtmlEncode(n["owner"]) ?? ConfigurationManager.AppSettings["default_owner"];
             string r = Server.HtmlEncode(n["repository"]) ?? string.Empty;
             string p = Server.HtmlEncode(n["path"]) ?? string.Empty;
 
