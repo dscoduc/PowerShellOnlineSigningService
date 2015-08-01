@@ -169,17 +169,20 @@ namespace PowerShellOnlineSigningService
                     }
                     else
                     {
-                        using (cell = new TableCell())
+                        if (Regex.IsMatch(entry.name, approvedExtensions))
                         {
-                            cell.Text = string.Format("<a href='DownloadFile.ashx?owner={0}&repository={1}&path={2}' title='Click to download'>{2}</a>", cachedOwner, cachedRepoName, entry.path);
-                            row.Cells.Add(cell);
-                        }
+                            using (cell = new TableCell())
+                            {
+                                cell.Text = string.Format("<a href='DownloadFile.ashx?owner={0}&repository={1}&path={2}' title='Click to download'>{2}</a>", cachedOwner, cachedRepoName, entry.path);
+                                row.Cells.Add(cell);
+                            }
 
-                        using (cell = new TableCell())
-                        {
-                            cell.Text = string.Format("<span class='size' title='{1} bytes'>{0}</span>", WebUtils.GetFileSizeString(entry.size), entry.size);
-                            row.Cells.Add(cell);
-                        }
+                            using (cell = new TableCell())
+                            {
+                                cell.Text = string.Format("<span class='size' title='{1} bytes'>{0}</span>", WebUtils.GetFileSizeString(entry.size), entry.size);
+                                row.Cells.Add(cell);
+                            }
+                        }                        
                     }
 
                     tblFileList.Rows.Add(row);

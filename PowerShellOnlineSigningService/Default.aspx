@@ -36,7 +36,7 @@
                 <span id="resultsInfo" runat="server" class="clean" />
             </div> <%--results--%>
             <div id="downloads">
-                <asp:Table runat="server" ID="tblFileList" />
+                <asp:Table runat="server" ID="tblFileList" CssClass="files" />
             </div> <%--downloads--%>
         </div> <%--content_wrapper--%>
         <div id="footer_wrapper">

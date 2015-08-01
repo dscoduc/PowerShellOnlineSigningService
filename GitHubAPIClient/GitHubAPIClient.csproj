@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="GitContent.cs" />
     <Compile Include="GitHubClient.cs" />
+    <Compile Include="GitObject.cs" />
     <Compile Include="GitRateLimit.cs" />
     <Compile Include="GitRepository.cs" />
     <Compile Include="GitResponse.cs" />

@@ -78,11 +78,6 @@
         #downloads table td {
             border-bottom:1px dotted #ccc;
         }
-        #downloads .size { 
-            color: #666;  
-            float: right; 
-            padding-right: 10px;
-        }
         #downloads a {
             color: inherit;
             text-decoration: none;
@@ -113,4 +108,24 @@
         }
         #middle_footer {
             text-align: center;
+        }
+
+        table.gvFiles a {
+            color: 	#4078c0;
+            text-decoration: none;
+        }
+        /*table.gvFiles a:hover {
+            color: forestgreen;
+            text-decoration: none;
+        }*/
+        table.gvFiles a:visited {
+            text-decoration: none;
+        }
+        table.info {
+            color: #888;
+        }
+        table#gvFiles .size { 
+            color: #888;  
+            /*float: right;*/ 
+            padding-right: 10px;
         }

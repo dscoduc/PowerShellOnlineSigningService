@@ -72,4 +72,27 @@ namespace PowerShellOnlineSigningService
         }
 
     }
+
+    //public class GitObject
+    //{
+    //    public string type { get; set; }
+    //    public int size { get; set; }
+    //    public string name { get; set; }
+    //    public string path { get; set; }
+        
+    //    public GitObject(GitHubAPIClient.GitContent entry) 
+    //    {
+    //        this.name = entry.name;
+    //        this.type = entry.type;
+    //        this.size = entry.size;
+    //        this.path = entry.path;
+    //    }
+
+    //    public GitObject(GitHubAPIClient.GitRepository entry)
+    //    {
+    //        this.name = entry.name;
+    //        this.size = entry.size;
+    //        this.type = "repository";
+    //    }
+    //}
 }
