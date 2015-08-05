@@ -92,7 +92,7 @@ namespace PowerShellOnlineSigningService
             finally
             {
                 // remove any remaining files
-                WebUtils.DeleteFile(filePath);
+                Utils.DeleteFile(filePath);
 
                 // close response on the way out...
                 context.Response.End();
@@ -168,7 +168,7 @@ namespace PowerShellOnlineSigningService
             log.InfoFormat("Finished updating {0}", fileToBeDownloaded);
 
             if (!string.IsNullOrEmpty(tempfile))
-                WebUtils.DeleteFile(tempfile);
+                Utils.DeleteFile(tempfile);
         }
     }
 }

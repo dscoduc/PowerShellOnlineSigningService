@@ -20,9 +20,9 @@
                 <asp:TextBox ID="tbOwner" runat="server" />
                 <span id="currentPath" runat="server"></span>
             </div>
-            <asp:GridView ID="gvFiles" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="gvFiles" PageSize="20"
+            <asp:GridView ID="gvFiles" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="gvFiles" PageSize="20" ShowHeader="false"
                 Width="100%" Height="100%" BackColor="White" BorderColor="#E7E7FF" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" EnableModelValidation="True" 
-                GridLines="Horizontal" OnPageIndexChanging="gvFiles_PageIndexChanging" OnRowDataBound="gvFiles_RowDataBound" OnRowCommand="gvFiles_RowCommand" >
+                GridLines="Horizontal" OnPageIndexChanging="gvFiles_PageIndexChanging" OnRowDataBound="gvFiles_RowDataBound" >
                 <Columns>
 
                     <asp:TemplateField>
@@ -50,8 +50,8 @@
 
                 </Columns> 
 
-                <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
-                <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+                <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" BorderStyle="None" />
+                <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Center" />
             </asp:GridView>
         </div> <%--content_wrapper--%> 
 

@@ -75,10 +75,13 @@
     <Content Include="bin\Newtonsoft.Json.xml" />
     <Content Include="bin\PowerShellOnlineSigningService.dll" />
     <Content Include="bin\PowerShellOnlineSigningService.pdb" />
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\file.jpg" />
+    <Content Include="images\folder.jpg" />
+    <Content Include="images\github.jpg" />
+    <Content Include="images\repository.jpg" />
     <Content Include="style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -87,13 +90,6 @@
   <ItemGroup>
     <Compile Include="App_Code\Requestor.cs" />
     <Compile Include="App_Code\serverHeaderModule.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DownloadFile.ashx.cs">
       <DependentUpon>DownloadFile.ashx</DependentUpon>
     </Compile>
@@ -108,7 +104,6 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

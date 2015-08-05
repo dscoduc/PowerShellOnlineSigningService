@@ -3,9 +3,10 @@ using log4net;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Configuration;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -16,27 +17,39 @@ namespace PowerShellOnlineSigningService
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private Requestor requestor = new Requestor();
-        private string folderImagePath = "~/images/folder.tiff";
-        private string fileImagePath = "~/images/file.tiff";
         private string approvedExtensions = @"^.+\.((ps1)|(txt))$";
         private List<GitObject> gitObjects = new List<GitObject>();
+        private static string defaultOwner = ConfigurationManager.AppSettings["default_owner"] ?? string.Empty;
+        private static string defaultRepository = ConfigurationManager.AppSettings["default_repository"] ?? string.Empty;
+        private string requestOwner = HttpContext.Current.Request.QueryString["owner"] ?? string.Empty;
+        private string requestRepository = HttpContext.Current.Request.QueryString["repository"] ?? string.Empty;
+        private string requestPath = HttpContext.Current.Request.QueryString["path"] ?? string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string redirectURL = "home.aspx";
+
             if (Page.IsPostBack)
-            {
-                string redirectURL = "home.aspx";
+            {                
                 if(string.IsNullOrEmpty(tbOwner.Text))
                 {
-                    Response.Redirect(redirectURL);
+                    Response.Redirect(redirectURL, true);
                 }
                 else
                 {
-                    Response.Redirect(string.Format("{0}?owner={1}", redirectURL, tbOwner.Text));
+                    Response.Redirect(string.Format("{0}?owner={1}", redirectURL, tbOwner.Text), true);
                 }
             }
             else
             {
+                if (string.IsNullOrEmpty(requestOwner) && !string.IsNullOrEmpty(defaultOwner))
+                {
+                    if (string.IsNullOrEmpty(requestRepository) && !string.IsNullOrEmpty(defaultRepository))
+                        Response.Redirect(string.Format("{0}?owner={1}&repository={2}", redirectURL, defaultOwner, defaultRepository), true);
+                    else
+                        Response.Redirect(string.Format("{0}?owner={1}", redirectURL, defaultOwner), true);
+                }
+
                 displaySessionInfo();
 
                 gvFiles_LoadData();
@@ -60,27 +73,23 @@ namespace PowerShellOnlineSigningService
         {
             if (!Request.QueryString.HasKeys()) { return; }
 
-            string o = Server.HtmlEncode(Request.QueryString["owner"]) ?? string.Empty;
-            string r = Server.HtmlEncode(Request.QueryString["repository"]) ?? string.Empty;
-            string p = Server.HtmlEncode(Request.QueryString["path"]) ?? string.Empty;
-
             string urlTemplate = "<a href='{0}'>{1}</a>";
             
-            string pathURL = string.Format(urlTemplate, "?owner=" + o + "&repository=" + r + "&path=" + p, p);
+            string pathURL = string.Format(urlTemplate, "?owner=" + requestOwner + "&repository=" + requestRepository + "&path=" + requestPath, requestPath);
 
             string breadcrumb = string.Empty;
 
-            if (!string.IsNullOrEmpty(o))
+            if (!string.IsNullOrEmpty(requestOwner))
             {
-                string ownerURL = string.Format(urlTemplate, "?owner=" + o, o);
+                string ownerURL = string.Format(urlTemplate, "?owner=" + requestOwner, requestOwner);
                 breadcrumb = ownerURL;
 
-                if (!string.IsNullOrEmpty(r))
+                if (!string.IsNullOrEmpty(requestRepository))
                 {
-                    string repositoryURL = string.Format(urlTemplate, "?owner=" + o + "&repository=" + r, r);
+                    string repositoryURL = string.Format(urlTemplate, "?owner=" + requestOwner + "&repository=" + requestRepository, requestRepository);
                     breadcrumb = string.Format("{0} / {1}", ownerURL, repositoryURL);
 
-                    if (!string.IsNullOrEmpty(p))
+                    if (!string.IsNullOrEmpty(requestPath))
                     {
                         breadcrumb = string.Format("{0} / {1} / {2}", ownerURL, repositoryURL, buildPathBreadcrumb());
                     }
@@ -93,30 +102,26 @@ namespace PowerShellOnlineSigningService
         {
             if (!Request.QueryString.HasKeys()) { return string.Empty; }
 
-            string o = Server.HtmlEncode(Request.QueryString["owner"]);
-            string r = Server.HtmlEncode(Request.QueryString["repository"]) ?? string.Empty;
-            string p = Server.HtmlEncode(Request.QueryString["path"]) ?? string.Empty;
-
-            string urlTemplate = "<a href='?owner=" + o + "&repository=" + r + "&path={0}'>{1}</a>";
+            string urlTemplate = "<a href='?owner=" + requestOwner + "&repository=" + requestRepository + "&path={0}'>{1}</a>";
             string breadcrumb = string.Empty;
             ArrayList al = new ArrayList();
 
-            if (p.Contains("/"))
+            if (requestPath.Contains("/"))
             {
                 do
                 {
-                    string folderName = p.Substring(p.LastIndexOf("/") + 1);
-                    string link = string.Format(urlTemplate, p, folderName);
+                    string folderName = requestPath.Substring(requestPath.LastIndexOf("/") + 1);
+                    string link = string.Format(urlTemplate, requestPath, folderName);
 
                     al.Add(link);
 
                     // advance through the paths
-                    p = p.Substring(0, p.LastIndexOf("/"));
+                    requestPath = requestPath.Substring(0, requestPath.LastIndexOf("/"));
 
-                } while (p.Contains("/"));
+                } while (requestPath.Contains("/"));
             }
 
-            al.Add(string.Format(urlTemplate, p, p));
+            al.Add(string.Format(urlTemplate, requestPath, requestPath));
 
             for (int x = al.Count - 1; x >= 0; x--)
             {
@@ -128,25 +133,27 @@ namespace PowerShellOnlineSigningService
 
         private void gvFiles_LoadData()
         {
-            string o = Server.HtmlEncode(Request.QueryString["owner"]);
-            string r = Server.HtmlEncode(Request.QueryString["repository"]) ?? string.Empty;
-            string p = Server.HtmlEncode(Request.QueryString["path"]) ?? string.Empty;
-
-            if (string.IsNullOrEmpty(o)) 
+            if (string.IsNullOrEmpty(requestOwner)) 
             {
-                gitObjects.Add(new GitObject("Specify a GitHub account to view the available repositories..."));                
+                GitObject m = new GitObject();
+                m.name = "Specify a GitHub account to view the available repositories...";
+                m.type = "github";
+                gitObjects.Add(m);
             }
-            else if (string.IsNullOrEmpty(r))
+            else if (string.IsNullOrEmpty(requestRepository))
             {
                 List<GitRepository> Repositories = null;
                 
-                try { Repositories = GitHubClient.GetRepositories(o); }
+                try { Repositories = GitHubClient.GetRepositories(requestOwner); }
                 catch (Exception) { } // Continue - Repositories will be null and will exit gracefully
 
                 if (null == Repositories || Repositories.Count < 1)
                 {
-                    log.InfoFormat("Notifying user no repositories were found for {0}", o);
-                    gitObjects.Add(new GitObject("No repositories found..."));
+                    log.InfoFormat("Notifying user no repositories were found for {0}", requestOwner);
+                    GitObject m = new GitObject();
+                    m.name = "No repositories found...";
+                    m.type = "github";
+                    gitObjects.Add(m);
                 }
                 else
                 {
@@ -156,7 +163,7 @@ namespace PowerShellOnlineSigningService
             }
             else
             {
-                List<GitContent> unfilteredContents = GitHubClient.GetContents(o, r, p);
+                List<GitContent> unfilteredContents = GitHubClient.GetContents(requestOwner, requestRepository, requestPath);
 
                 foreach (GitContent entry in unfilteredContents)
                 {
@@ -166,6 +173,8 @@ namespace PowerShellOnlineSigningService
                         m.name = entry.name;
                         m.path = entry.path;
                         m.type = entry.type;
+
+                        gitObjects.Add(m);
                     }
                     else
                     {
@@ -176,9 +185,10 @@ namespace PowerShellOnlineSigningService
                             m.path = entry.path;
                             m.size = entry.size;
                             m.type = entry.type;
+
+                            gitObjects.Add(m);
                         }
                     }
-                    gitObjects.Add(m);
                 }
             }
 
@@ -195,9 +205,9 @@ namespace PowerShellOnlineSigningService
                 
             if (entry.type == "dir")
             {
-                ((Image)e.Row.FindControl("typeImage")).ImageUrl = folderImagePath;
+                ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/folder.jpg";
                         
-                ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("?owner={0}&repository={1}&path={2}", "Dscoduc", "PowerShellScripts", entry.path);
+                ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("?owner={0}&repository={1}&path={2}", requestOwner, requestRepository, entry.path);
 
                 ((Label)e.Row.FindControl("Size")).Text = string.Empty;
 
@@ -205,34 +215,26 @@ namespace PowerShellOnlineSigningService
             }
             else if (entry.type == "file")
             {
-                ((Image)e.Row.FindControl("typeImage")).ImageUrl = fileImagePath;
+                ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/file.jpg";
 
-                ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("DownloadFile.ashx?owner={0}&repository={1}&path={2}", "Dscoduc", "PowerShellScripts", entry.path);
+                ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("DownloadFile.ashx?owner={0}&repository={1}&path={2}", requestOwner, requestRepository, entry.path);
 
-                ((Label)e.Row.FindControl("Size")).Text = WebUtils.GetFileSizeString(entry.size);
+                ((Label)e.Row.FindControl("Size")).Text = Utils.GetFileSizeString(entry.size);
 
                 ((Label)e.Row.FindControl("Path")).Text = entry.path;
             }
             else if (entry.type == "repository")
             {
-                ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("?owner={0}&repository={1}", "Dscoduc", "PowerShellScripts");
-            }                    
+                ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/repository.jpg";
+                ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("?owner={0}&repository={1}", requestOwner, entry.name);
+            }
+            else if (entry.type == "github")
+            {
+                ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/github.jpg";
+            }
 
             ((HyperLink)e.Row.FindControl("contentLink")).Text = entry.name;
             ((Label)e.Row.FindControl("Type")).Text = entry.type;           
-        }
-
-        protected void gvFiles_RowCommand(object sender, CommandEventArgs e)
-        {
-            int index = Convert.ToInt32(e.CommandArgument);
-            Label contentPath = (Label)gvFiles.Rows[index].FindControl("Path");
-            Label contentName = (Label)gvFiles.Rows[index].FindControl("Name");
-            Label contentType = (Label)gvFiles.Rows[index].FindControl("Type");
-
-            if (e.CommandName == "HandleRequest")
-            {
-                // placeholder
-            }            
         }
 
         protected void gvFiles_PageIndexChanging(object sender, GridViewPageEventArgs e)

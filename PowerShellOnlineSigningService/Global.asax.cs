@@ -18,8 +18,7 @@ namespace PowerShellOnlineSigningService
 
         protected void Application_BeginRequest(Object sender, EventArgs e)
         {
-            // Keep in place to show render time in response header
-            // via the ServerHeaderModule
+            // Keep in place to show render time in response header via the ServerHeaderModule
             HttpContext.Current.Items["renderStartTime"] = DateTime.Now;
         }
 
@@ -56,6 +55,8 @@ namespace PowerShellOnlineSigningService
         }
 
         void Session_End(object sender, EventArgs e)
-        { }
+        {
+            log.Debug(string.Format("Session Ended [Session ID:{0}]", HttpContext.Current.Session.SessionID));
+        }
     }
 }

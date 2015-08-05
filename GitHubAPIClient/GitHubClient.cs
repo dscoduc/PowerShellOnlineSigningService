@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,6 +14,7 @@ namespace GitHubAPIClient
     {
         #region private declarations
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private static string github_root_url = ConfigurationManager.AppSettings["github_root_url"] ?? "api.github.com";
         #endregion // private declarations
 
         #region public functions
@@ -63,7 +65,7 @@ namespace GitHubAPIClient
             log.Info("Requesting the content of a file");
 
             // GET /repos/:owner/:repo/contents/:path
-            string url = string.Format("https://api.github.com/repos/{0}/{1}/contents/{2}", owner, repository, contentPath);
+            string url = string.Format("https://{0}/repos/{1}/{2}/contents/{3}", github_root_url, owner, repository, contentPath);
 
             // Build request
             HttpWebRequest request = buildWebRequest(method.GET, url);
@@ -99,7 +101,8 @@ namespace GitHubAPIClient
             string jsonResult = string.Empty;
 
             // GET /repos/:owner/:repo/contents
-            string url = string.Format("https://api.github.com/repos/{0}/{1}/contents/{2}", owner, repository, contentPath);
+            //string url = string.Format("https://api.github.com/repos/{0}/{1}/contents/{2}", owner, repository, contentPath);
+            string url = string.Format("https://{0}/repos/{1}/{2}/contents/{3}", github_root_url, owner, repository, contentPath);
 
             // Build request
             HttpWebRequest request = buildWebRequest(method.GET, url);
@@ -167,7 +170,7 @@ namespace GitHubAPIClient
             //      into a single array...
 
             // GET /repos/:owner/:repo/contents
-            string url = string.Format("https://api.github.com/repos/{0}/{1}/contents", owner, repository);
+            string url = string.Format("https://{0}/repos/{1}/{2}/contents", github_root_url, owner, repository);
 
             log.InfoFormat("Requesting a list of all files for {0}/{1}", owner, repository);
 
@@ -250,7 +253,7 @@ namespace GitHubAPIClient
             string jsonResult = string.Empty;
 
             // GET /users/:username/repos
-            string url = string.Format("https://api.github.com/users/{0}/repos", owner);
+            string url = string.Format("https://{0}/users/{1}/repos", github_root_url, owner);
 
             log.InfoFormat("Requesting a list of all repositories for {0}", owner);
 
