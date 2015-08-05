@@ -13,7 +13,7 @@ using System.Web.UI.WebControls;
 
 namespace PowerShellOnlineSigningService
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private Requestor requestor = new Requestor();
@@ -27,7 +27,7 @@ namespace PowerShellOnlineSigningService
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string redirectURL = "home.aspx";
+            string redirectURL = "Default.aspx";
 
             if (Page.IsPostBack)
             {                
@@ -208,6 +208,7 @@ namespace PowerShellOnlineSigningService
                 ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/folder.jpg";
                         
                 ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("?owner={0}&repository={1}&path={2}", requestOwner, requestRepository, entry.path);
+                ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to list folder contents";
 
                 ((Label)e.Row.FindControl("Size")).Text = string.Empty;
 
@@ -218,6 +219,7 @@ namespace PowerShellOnlineSigningService
                 ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/file.jpg";
 
                 ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("DownloadFile.ashx?owner={0}&repository={1}&path={2}", requestOwner, requestRepository, entry.path);
+                ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to download a PowerShell digitally signed copy of this file";
 
                 ((Label)e.Row.FindControl("Size")).Text = Utils.GetFileSizeString(entry.size);
 
@@ -227,6 +229,7 @@ namespace PowerShellOnlineSigningService
             {
                 ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/repository.jpg";
                 ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("?owner={0}&repository={1}", requestOwner, entry.name);
+                ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to list repository contents";
             }
             else if (entry.type == "github")
             {

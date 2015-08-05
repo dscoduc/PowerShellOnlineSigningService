@@ -10,7 +10,7 @@
 namespace PowerShellOnlineSigningService {
     
     
-    public partial class Home {
+    public partial class Default {
         
         /// <summary>
         /// form1 control.

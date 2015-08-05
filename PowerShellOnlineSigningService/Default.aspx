@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="PowerShellOnlineSigningService.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PowerShellOnlineSigningService.Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -17,7 +17,7 @@
 
         <div id="content_wrapper">
             <div id="breadcrumb_wrapper" runat="server">
-                <asp:TextBox ID="tbOwner" runat="server" />
+                <asp:TextBox ID="tbOwner" runat="server" ToolTip="Enter the name of a GitHub Owner to see the available repositories" />
                 <span id="currentPath" runat="server"></span>
             </div>
             <asp:GridView ID="gvFiles" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="gvFiles" PageSize="20" ShowHeader="false"
