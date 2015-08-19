@@ -59,6 +59,17 @@
         .clean {
             color: black; 
         }
+        #currentPath a {
+            color: #4078c0;
+            text-decoration: none;
+        }
+        #currentPath a:hover {
+            color: forestgreen;
+            text-decoration: none;
+        }
+        #currentPath a:visited {
+            text-decoration: none;
+        }
         #downloads { 
             padding: 15px; 
             color: #666; 
@@ -114,10 +125,9 @@
             color: 	#4078c0;
             text-decoration: none;
         }
-        /*table.gvFiles a:hover {
+        table.gvFiles a:hover {
             color: forestgreen;
-            text-decoration: none;
-        }*/
+        }
         table.gvFiles a:visited {
             text-decoration: none;
         }
