@@ -362,7 +362,7 @@ namespace GitHubAPIClient
                         // else it will contain updated information
                         using (getResponse = (HttpWebResponse)request.GetResponse())
                         {
-                            log.Info("Cached data is stale - updating memory cache with latest and greatest");
+                            log.Debug("Cached data is stale - updating memory cache with latest and greatest");
                             using (StreamReader streamReader = new StreamReader(getResponse.GetResponseStream()))
                             {
                                 jsonResponse = streamReader.ReadToEnd();
