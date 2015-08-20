@@ -32,13 +32,13 @@ namespace PowerShellOnlineSigningService
             {
                 if (string.IsNullOrEmpty(contentPath))
                 {
-                    log.Info("Request made without a proper File query string value");
+                    log.Debug("Request made without a proper File query string value");
                     context.Response.Clear();
-                    context.Response.StatusCode = 200;
+                    context.Response.StatusCode = 404;
                     return;
                 }
 
-                log.InfoFormat("New download request initiated for {0}", contentPath);
+                log.InfoFormat("Download request for {0} by {1}", contentPath, requestor.samAccountName);
 
                 // load decoded content from requested file
                 string rawContent = GitHubClient.GetFileContents(owner, repository, contentPath);
@@ -60,34 +60,25 @@ namespace PowerShellOnlineSigningService
                 // clean any previos signing
                 cleanFileToBeDownloaded(filePath);
 
-                string length = new FileInfo(filePath).Length.ToString();
-               
-                if (signFile(filePath))
-                {
-                    context.Response.Clear();
-                    context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
-                    context.Response.ContentType = "application/octet-stream";
-                    context.Response.AddHeader("Content-Length", new FileInfo(filePath).Length.ToString());
-                    context.Response.AppendHeader("Content-Disposition", "attachment; filename=\"" + contentFileName + "\"");
-                    context.Response.TransmitFile(filePath);
-                    context.Response.Flush();
+                if (!signFile(filePath))
+                    throw new Exception("Attempt to sign digital file failed");
+                
+                context.Response.Clear();
+                context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                context.Response.ContentType = "application/octet-stream";
+                context.Response.AddHeader("Content-Length", new FileInfo(filePath).Length.ToString());
+                context.Response.AppendHeader("Content-Disposition", "attachment; filename=\"" + contentFileName + "\"");
+                context.Response.TransmitFile(filePath);
+                context.Response.Flush();
 
-                    log.InfoFormat("File downloaded: {0}", contentFileName);
-                }
-                else
-                {
-                    log.Warn("Notifying user that signing file failed");
-                    context.Response.Clear();
-                    context.Response.StatusCode = 500;
-                    context.Response.StatusDescription = "An unknown error occurred while signing " + contentFileName;
-                }
+                log.InfoFormat("Downloaded of {0} completed for {1}", contentFileName, requestor.samAccountName);
             }
             catch (Exception ex)
             {
                 log.Error(ex);
                 context.Response.Clear();
                 context.Response.StatusCode = 500;
-                context.Response.StatusDescription = "Internal Server Error";
+                context.Response.StatusDescription = "An unknown error occurred";
             }
             finally
             {
@@ -106,7 +97,7 @@ namespace PowerShellOnlineSigningService
             using (PowerShell PowerShellInstance = PowerShell.Create())
             {
                 PowerShellInstance.AddScript(commandSyntax);
-                log.InfoFormat("Executing PowerShell syntax '{0}'", commandSyntax);
+                log.DebugFormat("Executing PowerShell syntax '{0}'", commandSyntax);
 
                 // execute PowerShell script
                 Collection<PSObject> PSOutput = PowerShellInstance.Invoke();
@@ -119,7 +110,7 @@ namespace PowerShellOnlineSigningService
                 }
 
                 string statusMessage = ((System.Management.Automation.Signature)(PSOutput[0].BaseObject)).StatusMessage;
-                log.InfoFormat("PowerShell status message: {0}", statusMessage);
+                log.DebugFormat("PowerShell status message: {0}", statusMessage);
 
                 // return results of status message comparison
                 return (statusMessage == "Signature verified.");
@@ -129,7 +120,7 @@ namespace PowerShellOnlineSigningService
         private void cleanFileToBeDownloaded(string fileToBeDownloaded)
         {
             string tempfile = Path.GetTempFileName();
-            log.InfoFormat("Created temp file {0}", tempfile);
+            log.DebugFormat("Created temp file {0}", tempfile);
 
             using (StreamWriter writer = new StreamWriter(tempfile))
             using (StreamReader reader = new StreamReader(fileToBeDownloaded))
@@ -137,12 +128,12 @@ namespace PowerShellOnlineSigningService
                 string firstLine = reader.ReadLine();
                 if (firstLine.StartsWith("<#--"))
                 {
-                    log.InfoFormat("Replacing pre-existing author header [{0}]", firstLine);
+                    log.DebugFormat("Replacing pre-existing author header [{0}]", firstLine);
                     writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
                 }
                 else
                 {
-                    log.InfoFormat("Adding new author header to {0}", fileToBeDownloaded);
+                    log.DebugFormat("Adding new author header to {0}", fileToBeDownloaded);
                     writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
                     writer.WriteLine(firstLine);
                 }
@@ -154,7 +145,7 @@ namespace PowerShellOnlineSigningService
 
                     if (line.StartsWith("# SIG # Begin signature block"))
                     {
-                        log.Info("Stripping off previous signature block");
+                        log.Debug("Stripping off previous signature block");
                         break;  // reached the end of the file, strip off previous signature if found
                     }
                     else
@@ -165,7 +156,7 @@ namespace PowerShellOnlineSigningService
             }
 
             File.Copy(tempfile, fileToBeDownloaded, true);
-            log.InfoFormat("Finished updating {0}", fileToBeDownloaded);
+            log.DebugFormat("Finished updating {0}", fileToBeDownloaded);
 
             if (!string.IsNullOrEmpty(tempfile))
                 Utils.DeleteFile(tempfile);
