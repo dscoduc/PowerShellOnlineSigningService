@@ -14,7 +14,8 @@ namespace GitHubAPIClient
     {
         #region private declarations
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private static string github_root_url = ConfigurationManager.AppSettings["github_root_url"] ?? "api.github.com";
+        private static string github_root_url = (string)ConfigurationManager.AppSettings["github_root_url"] ?? "api.github.com";
+        private static string auth_token = (string)ConfigurationManager.AppSettings["auth_token"];
         #endregion // private declarations
 
         #region public functions
@@ -328,6 +329,10 @@ namespace GitHubAPIClient
             request.Method = requestMethod.ToString();
             request.ContentType = "text/json";  // everything we're doing here is json based
             request.UserAgent = "curl"; //userAgent;  // GitHub requires userAgent be your username or repository
+            
+            if (!string.IsNullOrEmpty(auth_token))
+                request.Headers.Add("authorization: token " + auth_token);
+
             request.Accept = "*/*";
 
             return request;
