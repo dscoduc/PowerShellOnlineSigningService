@@ -17,7 +17,6 @@ namespace PowerShellOnlineSigningService
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private Requestor requestor = new Requestor();
-        //private string approvedExtensions = @"^.+\.((ps1)|(txt))$";
         private string approvedExtensions = ConfigurationManager.AppSettings["approved_extensions"];
         private List<GitObject> gitObjects = new List<GitObject>();
         private static string defaultOwner = ConfigurationManager.AppSettings["default_owner"] ?? string.Empty;

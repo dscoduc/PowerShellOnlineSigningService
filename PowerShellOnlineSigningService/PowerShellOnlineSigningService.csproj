@@ -82,6 +82,8 @@
     <Content Include="images\folder.jpg" />
     <Content Include="images\github.jpg" />
     <Content Include="images\repository.jpg" />
+    <Content Include="images\user.jpg" />
+    <Content Include="OwnerList.aspx" />
     <Content Include="style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -102,6 +104,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OwnerList.aspx.cs">
+      <DependentUpon>OwnerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OwnerList.aspx.designer.cs">
+      <DependentUpon>OwnerList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

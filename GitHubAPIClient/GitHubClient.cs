@@ -94,6 +94,61 @@ namespace GitHubAPIClient
             return content;
         }
 
+        public static List<GitUser> GetUsers(string searchString)
+        {
+            if (string.IsNullOrEmpty(searchString)) { throw new ArgumentNullException(); }
+
+            string jsonResult = string.Empty;
+
+            // GET /search/users
+            string url = string.Format("https://{0}/search/users?q={1}", github_root_url, searchString);
+
+            // Build request
+            HttpWebRequest request = buildWebRequest(method.GET, url);
+
+            try
+            {
+                jsonResult = getResponse(request);
+            }
+            catch (WebException wex)
+            {
+                if ((wex.Response).Headers["status"] == "404 Not Found")
+                {
+                    log.Warn(wex.Message);
+                    return null;
+                }
+                else
+                {
+                    log.Warn(wex);
+                }
+            }
+
+            GitUsers rawUsersContent = JsonConvert.DeserializeObject<GitUsers>(jsonResult);
+
+            List<GitUser> users = rawUsersContent.items;
+
+            //TODO:  Need to parse the jsonResult
+
+            //users = JsonConvert.DeserializeObject<List<GitUsers>>(jsonResult);
+            
+            // No obvious way to tell difference between a json result with a 
+            // single entry result (non-array) or a json with multiple entries (array).  
+            // This hack handles it for now...
+            //if (jsonResult.StartsWith("["))
+            //{
+            //    users = JsonConvert.DeserializeObject<List<GitUser>>(jsonResult);
+            //}
+            //else
+            //{
+            //    GitUser user = JsonConvert.DeserializeObject<GitUser>(jsonResult);
+            //    users.Add(user);
+            //}
+
+            log.DebugFormat("Returning {0} owner entries", users.Count);
+            return users;
+        }
+
+
         public static List<GitContent> GetContents(string owner, string repository, string contentPath)
         {
             if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
