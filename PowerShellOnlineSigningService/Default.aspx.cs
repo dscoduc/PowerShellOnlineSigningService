@@ -229,7 +229,7 @@ namespace PowerShellOnlineSigningService
                 ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/file.jpg";
 
                 ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("DownloadFile.ashx?owner={0}&repository={1}&path={2}", requestOwner, requestRepository, entry.path);
-                ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to download a PowerShell digitally signed copy of this file";
+                ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to download a digitally signed copy of this file";
 
                 ((Label)e.Row.FindControl("Size")).Text = Utils.GetFileSizeString(entry.size);
 
