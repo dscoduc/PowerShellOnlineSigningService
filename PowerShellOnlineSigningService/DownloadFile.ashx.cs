@@ -38,7 +38,7 @@ namespace PowerShellOnlineSigningService
                     return;
                 }
 
-                log.InfoFormat("Download request for {0} by {1}", contentPath, requestor.samAccountName);
+                log.DebugFormat("Download request for {0} by {1}", contentPath, requestor.samAccountName);
 
                 // load decoded content from requested file
                 string rawContent = GitHubClient.GetFileContents(owner, repository, contentPath);
@@ -71,7 +71,7 @@ namespace PowerShellOnlineSigningService
                 context.Response.TransmitFile(filePath);
                 context.Response.Flush();
 
-                log.InfoFormat("Downloaded of {0} completed for {1}", contentFileName, requestor.samAccountName);
+                log.DebugFormat("Downloaded of {0} completed for {1}", contentFileName, requestor.samAccountName);
             }
             catch (Exception ex)
             {
