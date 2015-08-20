@@ -27,13 +27,14 @@ namespace GitHubAPIClient
         /// <returns>Returns the RateLimit object</returns>
         public static GitRateLimit GetRateLimit()
         {
-            log.Info("Requesting the Rate Limit from GitHub");
+            log.Debug("Requesting the Rate Limit from GitHub");
 
             HttpWebRequest request = buildWebRequest("https://api.github.com/rate_limit");
 
             string jsonResult = getResponse(request);
 
             GitRateLimit rateLimit = JsonConvert.DeserializeObject<GitRateLimit>(jsonResult);
+            log.DebugFormat("Current rate limit {0}", rateLimit.rate);
             return rateLimit;
         }
 
@@ -63,8 +64,6 @@ namespace GitHubAPIClient
 
             string jsonResult = string.Empty;
 
-            log.Info("Requesting the content of a file");
-
             // GET /repos/:owner/:repo/contents/:path
             string url = string.Format("https://{0}/repos/{1}/{2}/contents/{3}", github_root_url, owner, repository, contentPath);
 
@@ -80,7 +79,7 @@ namespace GitHubAPIClient
             {
                 if ((wex.Response).Headers["status"] == "404 Not Found")
                 {
-                    log.Info(wex.Message);
+                    log.Debug(wex.Message);
                     return null;
                 }
                 else
@@ -102,7 +101,6 @@ namespace GitHubAPIClient
             string jsonResult = string.Empty;
 
             // GET /repos/:owner/:repo/contents
-            //string url = string.Format("https://api.github.com/repos/{0}/{1}/contents/{2}", owner, repository, contentPath);
             string url = string.Format("https://{0}/repos/{1}/{2}/contents/{3}", github_root_url, owner, repository, contentPath);
 
             // Build request
@@ -149,7 +147,7 @@ namespace GitHubAPIClient
             // sort by content type, then by content name
             //List<GitContent> sortedContents = contents.OrderBy(o => o.type).ThenBy(o => o.name).ToList();
 
-            log.InfoFormat("Returning {0} content items", contents.Count);
+            log.DebugFormat("Returning {0} content items", contents.Count);
             return contents;
         }
 
@@ -167,13 +165,10 @@ namespace GitHubAPIClient
             List<GitContent> contents = new List<GitContent>();
             string jsonResult = string.Empty;
 
-            //TODO: Need to figure out how to loop through nested folders and grab the file info, then put them
-            //      into a single array...
-
             // GET /repos/:owner/:repo/contents
             string url = string.Format("https://{0}/repos/{1}/{2}/contents", github_root_url, owner, repository);
 
-            log.InfoFormat("Requesting a list of all files for {0}/{1}", owner, repository);
+            log.DebugFormat("Requesting a list of all files for {0}/{1}", owner, repository);
 
             // Build request
             HttpWebRequest request = buildWebRequest(method.GET, url);
@@ -186,7 +181,7 @@ namespace GitHubAPIClient
             {
                 if ((wex.Response).Headers["status"] == "404 Not Found")
                 {
-                    log.Warn(wex.Message);
+                    log.Debug(wex.Message);
                     return null;
                 }
                 else
@@ -209,7 +204,7 @@ namespace GitHubAPIClient
                 contents.Add(content);
             }
 
-            log.InfoFormat("Returning {0} content items", contents.Count);
+            log.DebugFormat("Returning {0} content items", contents.Count);
             return contents;
  
         }
@@ -227,7 +222,7 @@ namespace GitHubAPIClient
             GitContent content = GitHubClient.GetContent(owner, repository, contentPath);
             if (content == null)
             {
-                log.Warn("No file matching the request was found in the Repository");
+                log.Debug("No file matching the request was found in the Repository");
                 return string.Empty;
             }
             return GetFileContents(content);
@@ -256,7 +251,7 @@ namespace GitHubAPIClient
             // GET /users/:username/repos
             string url = string.Format("https://{0}/users/{1}/repos", github_root_url, owner);
 
-            log.InfoFormat("Requesting a list of all repositories for {0}", owner);
+            log.DebugFormat("Requesting a list of all repositories for {0}", owner);
 
             // Build request
             HttpWebRequest request = buildWebRequest(method.GET, url);
@@ -269,7 +264,7 @@ namespace GitHubAPIClient
             {
                 if ((wex.Response).Headers["status"] == "404 Not Found")
                 {
-                    log.Warn(wex.Message);
+                    log.Debug(wex.Message);
                     return null;
                 }
                 else
@@ -295,7 +290,7 @@ namespace GitHubAPIClient
             // sort repositories by name
             contents.Sort();
 
-            log.InfoFormat("Returning {0} content items", contents.Count);
+            log.DebugFormat("Returning {0} content items", contents.Count);
             return contents;
         
         }        
@@ -323,7 +318,7 @@ namespace GitHubAPIClient
         {
             if (string.IsNullOrEmpty(requestURL)) { throw new ArgumentNullException("Must provide request URL"); }
 
-            log.InfoFormat("Request: {0} [{1}]", requestMethod, requestURL);
+            log.DebugFormat("Request: {0} [{1}]", requestMethod, requestURL);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestURL);
             request.Method = requestMethod.ToString();
@@ -385,7 +380,7 @@ namespace GitHubAPIClient
                     {
                         if (wex.Response != null && wex.Response.Headers.Get("Status") == "304 Not Modified")
                         {
-                            log.Info("Cached data is still valid - new request not necessary");
+                            log.Debug("Cached data is still valid - new request not necessary");
                             return cachedResponse.JsonResponse;
                         }
                         else
@@ -402,7 +397,7 @@ namespace GitHubAPIClient
                 }
                 else
                 {
-                    log.Info("Initiating a new request");
+                    log.Debug("Initiating a new request");
                     using (getResponse = (HttpWebResponse)request.GetResponse())
                     {
                         using (StreamReader streamReader = new StreamReader(getResponse.GetResponseStream()))
@@ -411,7 +406,7 @@ namespace GitHubAPIClient
                             log.DebugFormat("JSON response received:{0}{1}", Environment.NewLine, jsonResponse);
 
                             // add latest info to memory cache
-                            log.Info("Updating memory cache with latest and greatest");
+                            log.Debug("Updating memory cache with latest and greatest");
                             Utils.AddCache(request.Address.AbsoluteUri, new GitResponse(jsonResponse, getResponse.Headers));
 
                             return jsonResponse;

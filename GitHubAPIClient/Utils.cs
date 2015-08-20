@@ -41,12 +41,12 @@ namespace GitHubAPIClient
             object cacheData = (object)memoryCache.Get(cacheKey);
             if (cacheData != null)
             {
-                log.InfoFormat("Cached data found for [{0}]", cacheKey);
+                log.DebugFormat("Cached data found for [{0}]", cacheKey);
                 return cacheData;
             }
             else
             {
-                log.InfoFormat("Cache data not found for [{0}]", cacheKey);
+                log.DebugFormat("Cache data not found for [{0}]", cacheKey);
                 return null;
             }
         }
@@ -62,7 +62,7 @@ namespace GitHubAPIClient
                 if (file.Exists)
                 {
                     file.Delete();
-                    log.InfoFormat("Deleted {0}", filePath);
+                    log.DebugFormat("Deleted {0}", filePath);
                 }
                 else
                 {
