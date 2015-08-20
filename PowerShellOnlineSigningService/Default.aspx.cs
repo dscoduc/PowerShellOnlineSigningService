@@ -52,7 +52,17 @@ namespace PowerShellOnlineSigningService
 
                 displaySessionInfo();
 
-                gvFiles_LoadData();
+                try
+                {
+                    gvFiles_LoadData();
+                }
+                catch (Exception)
+                {
+                    Response.Clear();
+                    Response.StatusCode = 404;
+                    Response.StatusDescription = "Unable to locate the requested information";
+                    return;
+                }
 
                 displayBreadcrumb();
             }
