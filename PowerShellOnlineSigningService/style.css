@@ -8,16 +8,16 @@
             padding:0;
             /*background: url('images/banner.jpg') no-repeat right;*/
             width: 100%;
-            height: 175px;
+            height: 115px;
         }
         #header {
             width: 99%;
             /*margin: 0px 30px;*/
-            padding: 30px 15px;
+            padding: 25px 15px;
             border-bottom: 0px solid #ccc;
             text-align: right;
             color: navy;
-            padding-top: 50px;
+            padding-top: 25px;
             padding-bottom: 0px;
         }
         #header h1 {
