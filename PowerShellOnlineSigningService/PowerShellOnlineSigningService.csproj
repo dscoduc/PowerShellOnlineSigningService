@@ -84,6 +84,7 @@
     <Content Include="images\githubrobot.png" />
     <Content Include="images\repository.jpg" />
     <Content Include="images\searchman.jpg" />
+    <Content Include="images\securityguy1.png" />
     <Content Include="images\user.jpg" />
     <Content Include="OwnerList.aspx" />
     <Content Include="SearchUsers.aspx" />

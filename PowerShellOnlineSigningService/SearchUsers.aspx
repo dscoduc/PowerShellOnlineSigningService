@@ -1,9 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="SearchUsers.aspx.cs" Inherits="PowerShellOnlineSigningService.SearchUsers" %>
 
-<asp:Content ID="cphHead" ContentPlaceHolderID="cphHead" runat="server" />
+<asp:Content ID="cphHead" ContentPlaceHolderID="cphHead" runat="server" >
+
+</asp:Content>
 
 <asp:Content ID="cphBody" ContentPlaceHolderID="cphBody" runat="server">
     <div class="search_wrapper">
+        <p>Let me help you find someone's GitHub Repository...</p>
         <asp:TextBox ID="tbSearch" runat="server" ToolTip="Enter a search criteria of the name of a GitHub User (only top 10 results are shown)" Wrap="False" OnTextChanged="btnSearch_Click" />
         <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
     </div>

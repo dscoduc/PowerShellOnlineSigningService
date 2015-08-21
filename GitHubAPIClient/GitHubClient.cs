@@ -126,15 +126,15 @@ namespace GitHubAPIClient
             GitUsers rawUsersContent = JsonConvert.DeserializeObject<GitUsers>(jsonResult);
             List<GitUserDetails> users = new List<GitUserDetails>();
 
-            int iCount = 0;
+            //int iCount = 0;
             foreach (GitUser u in rawUsersContent.items)
             {
                 users.Add(GetUserDetails(u));
-                iCount++;
+            //    iCount++;
 
                 /// have to limit query down to avoid bumping
                 /// into github search limit of 30 per minute                
-                if (iCount > 10) { break; }
+             //   if (iCount > 10) { break; }
             }
 
             users.Sort();
@@ -222,12 +222,6 @@ namespace GitHubAPIClient
 
             // sort contents by type and then name
             contents.Sort();
-
-            // sort by content type
-            //contents.Sort((x,y) => x.type.CompareTo(y.type));
-            
-            // sort by content type, then by content name
-            //List<GitContent> sortedContents = contents.OrderBy(o => o.type).ThenBy(o => o.name).ToList();
 
             log.DebugFormat("Returning {0} content items", contents.Count);
             return contents;

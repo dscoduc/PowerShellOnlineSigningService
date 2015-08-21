@@ -5,19 +5,18 @@ body{
     padding: 0;
 }
 .header_wrapper {
-    margin:0 auto;
+    margin:25px auto 0;
     padding:0;
-    /*background: url('images/banner.jpg') no-repeat right;*/
+    background: url('images/securityguy1.png') no-repeat left;
     width: 100%;
-    height: 115px;
+    height: 165px;
 }
 .header {
     width: 99%;
-    /*margin: 0px 30px;*/
     padding: 25px 15px;
     border-bottom: 0px solid #ccc;
-    text-align: center;
     color: navy;
+    margin-left: 225px;
     padding-top: 25px;
     padding-bottom: 0px;
 }

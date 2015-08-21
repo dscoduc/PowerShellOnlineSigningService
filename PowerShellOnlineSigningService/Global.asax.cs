@@ -51,12 +51,10 @@ namespace PowerShellOnlineSigningService
 
         void Session_Start(object sender, EventArgs e)
         {
-            log.Debug(string.Format("New Session Started [Session ID:{0}]", HttpContext.Current.Session.SessionID));
         }
 
         void Session_End(object sender, EventArgs e)
         {
-            log.Debug(string.Format("Session Ended [Session ID:{0}]", HttpContext.Current.Session.SessionID));
         }
     }
 }
