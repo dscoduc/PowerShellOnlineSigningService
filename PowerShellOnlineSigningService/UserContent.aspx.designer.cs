@@ -13,21 +13,30 @@ namespace PowerShellOnlineSigningService {
     public partial class UserContent {
         
         /// <summary>
-        /// default_link control.
+        /// LinkButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink default_link;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
-        /// search_link control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink search_link;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

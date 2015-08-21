@@ -76,7 +76,6 @@
     <Content Include="bin\PowerShellOnlineSigningService.dll" />
     <Content Include="bin\PowerShellOnlineSigningService.pdb" />
     <Content Include="Global.asax" />
-    <Content Include="Default.aspx" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\file.jpg" />
     <Content Include="images\folder.jpg" />
@@ -99,13 +98,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
