@@ -68,7 +68,6 @@ body{
     width: 150px;
 }
 
-
 /* UserContent.aspx */
 .gvFiles {
     background-color: White;
@@ -91,20 +90,6 @@ body{
 }
 
 /* SearchUsers.aspx */
-.gvUsers {
-    background-color: White;
-    margin: 0 auto;
-}
-.gvUsers_loginName {
-    text-align: left;
-}
-.gvUsers_email, .gvUsers_fullName {
-    text-align: center;
-}
-.gvUsers img {
-    height: 60px;
-    width: 60px;
-}
 .search_wrapper{
     padding: 10px;
     font-size: 1.1em;
@@ -146,4 +131,10 @@ body{
 .emptyreproman {
     height: 111px !important;
     width: 75px !important;
+}
+
+.oops, .lost {
+    margin-top: 75px;
+    width: 100% auto;
+    text-align: center;
 }
