@@ -16,9 +16,10 @@ namespace PowerShellOnlineSigningService
     public partial class OwnerList : System.Web.UI.Page
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private Requestor requestor = new Requestor();
         private List<GitUser> gitUsers = new List<GitUser>();
         private string searchString = HttpContext.Current.Request.QueryString["s"] ?? string.Empty;
+        private static string IIS_Auth_Name = HttpContext.Current.User.Identity.Name;
+        private static string samAccountName = IIS_Auth_Name.Remove(0, IIS_Auth_Name.LastIndexOf(@"\") + 1);
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace PowerShellOnlineSigningService
         {
             HtmlGenericControl userInfo = (HtmlGenericControl)Page.FindControl("userInfo");
             if (userInfo != null)
-                userInfo.InnerText = string.Format("Welcome {0}", requestor.samAccountName);
+                userInfo.InnerText = string.Format("Welcome {0}", samAccountName);
 
             HtmlGenericControl serverInfo = (HtmlGenericControl)Page.FindControl("serverInfo");
             if (serverInfo != null)

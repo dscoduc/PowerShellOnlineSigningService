@@ -15,7 +15,8 @@ namespace PowerShellOnlineSigningService
     public class DownloadFile : IHttpHandler
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private Requestor requestor = new Requestor();
+        private static string IIS_Auth_Name = HttpContext.Current.User.Identity.Name;
+        private static string samAccountName = IIS_Auth_Name.Remove(0, IIS_Auth_Name.LastIndexOf(@"\") + 1);
 
         public bool IsReusable
         { get { return false; } }
@@ -38,7 +39,7 @@ namespace PowerShellOnlineSigningService
                     return;
                 }
 
-                log.DebugFormat("Download request for {0} by {1}", contentPath, requestor.samAccountName);
+                log.DebugFormat("Download request for {0} by {1}", contentPath, samAccountName);
 
                 // load decoded content from requested file
                 string rawContent = GitHubClient.GetFileContents(owner, repository, contentPath);
@@ -71,7 +72,7 @@ namespace PowerShellOnlineSigningService
                 context.Response.TransmitFile(filePath);
                 context.Response.Flush();
 
-                log.DebugFormat("Downloaded of {0} completed for {1}", contentFileName, requestor.samAccountName);
+                log.DebugFormat("Downloaded of {0} completed for {1}", contentFileName, samAccountName);
             }
             catch (Exception ex)
             {
@@ -129,12 +130,12 @@ namespace PowerShellOnlineSigningService
                 if (firstLine.StartsWith("<#--"))
                 {
                     log.DebugFormat("Replacing pre-existing author header [{0}]", firstLine);
-                    writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
+                    writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", IIS_Auth_Name));
                 }
                 else
                 {
                     log.DebugFormat("Adding new author header to {0}", fileToBeDownloaded);
-                    writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", requestor.IIS_Auth_Name));
+                    writer.WriteLine(string.Format("<#-- Digital Signing requested by {0} --#>", IIS_Auth_Name));
                     writer.WriteLine(firstLine);
                 }
 

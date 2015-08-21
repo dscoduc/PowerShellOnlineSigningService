@@ -91,7 +91,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\Requestor.cs" />
     <Compile Include="App_Code\serverHeaderModule.cs" />
     <Compile Include="DownloadFile.ashx.cs">
       <DependentUpon>DownloadFile.ashx</DependentUpon>
