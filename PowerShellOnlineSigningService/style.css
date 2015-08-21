@@ -127,6 +127,6 @@ body{
     text-decoration: none;
 }
 .emptyreproman {
-    height: 111px;
-    width: 75px;
+    height: 111px !important;
+    width: 75px !important;
 }
