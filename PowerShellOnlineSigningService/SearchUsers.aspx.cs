@@ -25,7 +25,7 @@ namespace PowerShellOnlineSigningService
             {
                 try
                 {
-                    gvUsers_LoadData();
+                    loadData();
                 }
                 catch (ThreadAbortException)
                 {
@@ -56,7 +56,7 @@ namespace PowerShellOnlineSigningService
             site_breadcrumb.InnerHtml = breadcrumb;
         }
 
-        private void gvUsers_LoadData()
+        private void loadData()
         {
             List<GitUserDetails> Users = null;
 
@@ -83,31 +83,49 @@ namespace PowerShellOnlineSigningService
                 Context.ApplicationInstance.CompleteRequest();
             }
 
-            GridView gvUsers = (GridView)Master.FindControl("cphBody").FindControl("gvUsers");
-            gvUsers.DataSource = Users;
-            gvUsers.DataBind();
+            //GridView gvUsers = (GridView)Master.FindControl("cphBody").FindControl("gvUsers");
+            //gvUsers.DataSource = Users;
+            //gvUsers.DataBind();
+
+            DataList dtlist = (DataList)Master.FindControl("cphBody").FindControl("dtUsers");
+            dtlist.DataSource = Users;
+            dtlist.DataBind();
+
         }
 
-        protected void gvUsers_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType != DataControlRowType.DataRow) { return; }
-
-            GitUserDetails user = (GitUserDetails)e.Row.DataItem;
-            if (null == user) { return; }
-
+        protected void dtUsers_DataBound(object sender, DataListItemEventArgs e)
+        { 
+            GitUserDetails user = (GitUserDetails)e.Item.DataItem;
             string formattedUsername = (string.IsNullOrEmpty(user.name)) ? string.Empty : string.Format("<br />({0})", user.name);
 
-            ((Image)e.Row.FindControl("avatarURL")).ImageUrl = string.Format("{0}&s=60", user.avatar_url);
+            ((Image)e.Item.FindControl("avatar")).ImageUrl = string.Format("{0}&s=60", user.avatar_url);
 
-            ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("~/UserContent.aspx?owner={0}", user.login);
-            ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to view GitHub Repositories";
-            ((HyperLink)e.Row.FindControl("contentLink")).Text = string.Format("{0}{1}", user.login, formattedUsername);
-
-            // hidden fields for later use maybe
-            ((Label)e.Row.FindControl("Login")).Text = user.login;
-            ((Label)e.Row.FindControl("userURL")).Text = user.url;
+            ((HyperLink)e.Item.FindControl("avatarLink")).Text = string.Format("{0}{1}", user.login, formattedUsername);
+            ((HyperLink)e.Item.FindControl("avatarLink")).NavigateUrl = string.Format("~/UserContent.aspx?owner={0}", user.login);
+            ((HyperLink)e.Item.FindControl("avatarLink")).ToolTip = "Click to view GitHub Repositories";
 
         }
+
+        //protected void gvUsers_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    if (e.Row.RowType != DataControlRowType.DataRow) { return; }
+
+        //    GitUserDetails user = (GitUserDetails)e.Row.DataItem;
+        //    if (null == user) { return; }
+
+        //    string formattedUsername = (string.IsNullOrEmpty(user.name)) ? string.Empty : string.Format("<br />({0})", user.name);
+
+        //    ((Image)e.Row.FindControl("avatarURL")).ImageUrl = string.Format("{0}&s=60", user.avatar_url);
+
+        //    ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("~/UserContent.aspx?owner={0}", user.login);
+        //    ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to view GitHub Repositories";
+        //    ((HyperLink)e.Row.FindControl("contentLink")).Text = string.Format("{0}{1}", user.login, formattedUsername);
+
+        //    // hidden fields for later use maybe
+        //    ((Label)e.Row.FindControl("Login")).Text = user.login;
+        //    ((Label)e.Row.FindControl("userURL")).Text = user.url;
+
+        //}
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {

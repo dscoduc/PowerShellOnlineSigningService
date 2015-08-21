@@ -108,10 +108,25 @@ body{
 .search_wrapper{
     padding: 10px;
     font-size: 1.1em;
-    /*border-bottom: 1px solid #ccc;*/
     margin-bottom: 10px;
     text-align: center;
 }
+.search_wrapper input[type=text] {
+    width: 200px;
+}
+.dlUsers {
+    background-color: White;
+    margin: 0 auto;
+}
+.dlUsers img {
+    height: 60px;
+    width: 60px;
+}
+.dlUsers td {
+    padding: 20px;
+    text-align: center;
+}
+
 
 /* Shared classes*/
 .master_image {
