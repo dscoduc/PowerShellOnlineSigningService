@@ -227,6 +227,7 @@ namespace PowerShellOnlineSigningService
             else if (entry.type == "empty")
             {
                 ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/emptyrepo.png";
+                ((Image)e.Row.FindControl("typeImage")).CssClass = "emptyreproman";
             }
 
             ((HyperLink)e.Row.FindControl("contentLink")).Text = entry.name;
