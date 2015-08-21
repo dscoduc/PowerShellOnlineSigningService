@@ -87,10 +87,6 @@ body{
     text-align: right;
     padding-right: 10px;
 }
-.emptyreproman {
-    height: 111px;
-    width: 75px;
-}
 
 /* SearchUsers.aspx */
 .gvUsers {
@@ -129,4 +125,8 @@ body{
 }
 .master_link a:visited {
     text-decoration: none;
+}
+.emptyreproman {
+    height: 111px;
+    width: 75px;
 }
