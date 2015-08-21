@@ -4,7 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="content2" ContentPlaceHolderID="cphBody" runat="server">
-    <div class="summary">
+    <div class="summary master_link">
         <p>
             This site provides the ability to download a digitally signed PowerShell script directly from
             Enterprise Github.  Choose from either the default PowerShell Repository or search for a

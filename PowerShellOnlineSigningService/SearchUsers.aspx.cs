@@ -40,6 +40,20 @@ namespace PowerShellOnlineSigningService
                     return;
                 }
             }
+            displayBreadcrumb();
+        }
+
+        private void displayBreadcrumb()
+        {
+            string urlTemplate = "<a href='{0}'>{1}</a>";
+            string homeURL = string.Format(urlTemplate, "Default.aspx", "Home");
+
+            string currentPage = string.Format(urlTemplate, "SearchUsers.aspx", "Search Users");
+
+            string breadcrumb = string.Format("{0} / {1}", homeURL, currentPage);
+            HtmlGenericControl site_breadcrumb = (HtmlGenericControl)Master.FindControl("site_breadcrumb");
+            site_breadcrumb.Visible = true;
+            site_breadcrumb.InnerHtml = breadcrumb;
         }
 
         private void gvUsers_LoadData()
@@ -81,14 +95,13 @@ namespace PowerShellOnlineSigningService
             GitUserDetails user = (GitUserDetails)e.Row.DataItem;
             if (null == user) { return; }
 
-            ((Image)e.Row.FindControl("avatarURL")).ImageUrl = "~/images/github.jpg";
+            string formattedUsername = (string.IsNullOrEmpty(user.name)) ? string.Empty : string.Format(" ({0})", user.name);
+
+            ((Image)e.Row.FindControl("avatarURL")).ImageUrl = string.Format("{0}&s=60", user.avatar_url);
 
             ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("~/Default.aspx?owner={0}", user.login);
-            ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to view owner repositories";
-            ((HyperLink)e.Row.FindControl("contentLink")).Text = user.login;
-
-            ((Label)e.Row.FindControl("Name")).Text = user.name;
-            ((Label)e.Row.FindControl("Email")).Text = user.email;
+            ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to view GitHub Repositories";
+            ((HyperLink)e.Row.FindControl("contentLink")).Text = string.Format("{0}{1}", user.login, formattedUsername);
 
             // hidden fields for later use maybe
             ((Label)e.Row.FindControl("Login")).Text = user.login;

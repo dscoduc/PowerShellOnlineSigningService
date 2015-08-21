@@ -60,29 +60,31 @@ namespace PowerShellOnlineSigningService
                 return;
 
             string urlTemplate = "<a href='{0}'>{1}</a>";
-
-            string pathURL = string.Format(urlTemplate, "?owner=" + requestOwner + "&repository=" + requestRepository + "&path=" + requestPath, requestPath);
+            string homeURL = "<a href='Default.aspx'>Home</a>";
 
             string breadcrumb = string.Empty;
 
             if (!string.IsNullOrEmpty(requestOwner))
             {
                 string ownerURL = string.Format(urlTemplate, "?owner=" + requestOwner, requestOwner);
-                breadcrumb = ownerURL;
+                
+                breadcrumb = string.Format("{0} / {1}", homeURL, ownerURL);
 
                 if (!string.IsNullOrEmpty(requestRepository))
                 {
                     string repositoryURL = string.Format(urlTemplate, "?owner=" + requestOwner + "&repository=" + requestRepository, requestRepository);
-                    breadcrumb = string.Format("{0} / {1}", ownerURL, repositoryURL);
+                    breadcrumb = string.Format("{0} / {1}", breadcrumb, repositoryURL);
 
                     if (!string.IsNullOrEmpty(requestPath))
                     {
-                        breadcrumb = string.Format("{0} / {1} / {2}", ownerURL, repositoryURL, buildPathBreadcrumb());
+                        breadcrumb = string.Format("{0} / {1} ", breadcrumb, buildPathBreadcrumb());
                     }
                 }
             }
-            HtmlGenericControl currentPath = (HtmlGenericControl)Master.FindControl("cphBody").FindControl("currentPath");
-            currentPath.InnerHtml = breadcrumb;
+
+            HtmlGenericControl site_breadcrumb = (HtmlGenericControl)Master.FindControl("site_breadcrumb");
+            site_breadcrumb.Visible = true;
+            site_breadcrumb.InnerHtml = breadcrumb;
         }
 
         private string buildPathBreadcrumb()

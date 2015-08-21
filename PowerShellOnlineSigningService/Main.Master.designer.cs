@@ -31,6 +31,15 @@ namespace PowerShellOnlineSigningService {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// site_breadcrumb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl site_breadcrumb;
+        
+        /// <summary>
         /// cphBody control.
         /// </summary>
         /// <remarks>

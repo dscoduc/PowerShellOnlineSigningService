@@ -4,28 +4,20 @@
 <asp:Content ID="cphHead" ContentPlaceHolderID="cphHead" runat="server" />
 
 <asp:Content ID="cphBody" ContentPlaceHolderID="cphBody" runat="server">
-    <div id="breadcrumb_wrapper" runat="server">
-
-        <span id="currentPath" runat="server"></span>
-    </div>
-    <asp:GridView ID="gvFiles" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="gvFiles" PageSize="20" ShowHeader="false"
-        Width="100%" Height="100%" BackColor="White" BorderColor="#E7E7FF" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" EnableModelValidation="True" 
-        GridLines="Horizontal" OnPageIndexChanging="gvFiles_PageIndexChanging" OnRowDataBound="gvFiles_RowDataBound" >
+    <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="False" CssClass="gvFiles" GridLines="None"
+        CellPadding="3" EnableModelValidation="True" ShowHeader="false" OnRowDataBound="gvFiles_RowDataBound" >
         <Columns>
 
-            <asp:TemplateField>
+            <asp:TemplateField ItemStyle-CssClass="master_image">
                 <ItemTemplate><asp:Image runat="server" ID="typeImage" /></ItemTemplate>
-                <ItemStyle HorizontalAlign="Center" Width="17px" />
             </asp:TemplateField>
 
-            <asp:TemplateField>
+            <asp:TemplateField ItemStyle-CssClass="gvFiles_link master_link">
                 <ItemTemplate><asp:HyperLink ID="contentLink" runat="server" /></ItemTemplate>
-                <ItemStyle HorizontalAlign="Left" Width="450px" />
             </asp:TemplateField>
 
-            <asp:TemplateField>
-                <ItemTemplate><asp:Label ID="Size" runat="server" CssClass="size" /></ItemTemplate>
-                <ItemStyle HorizontalAlign="Right" Width="100px" />
+            <asp:TemplateField ItemStyle-CssClass="gvFiles_size">
+                <ItemTemplate><asp:Label ID="Size" runat="server" /></ItemTemplate>
             </asp:TemplateField>
 
             <asp:TemplateField Visible="false">
@@ -37,9 +29,6 @@
             </asp:TemplateField>
 
         </Columns> 
-
-        <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" BorderStyle="None" />
-        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Center" />
     </asp:GridView>
 </asp:Content>
 

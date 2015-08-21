@@ -1,181 +1,125 @@
-﻿        body{
-            width: 800px;
-            margin:0 auto;
-            padding: 0;
-        }
-        #header_wrapper {
-            margin:0 auto;
-            padding:0;
-            /*background: url('images/banner.jpg') no-repeat right;*/
-            width: 100%;
-            height: 115px;
-        }
-        #header {
-            width: 99%;
-            /*margin: 0px 30px;*/
-            padding: 25px 15px;
-            border-bottom: 0px solid #ccc;
-            text-align: right;
-            color: navy;
-            padding-top: 25px;
-            padding-bottom: 0px;
-        }
-        #header h1 {
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        #breadcrumb_wrapper {
-            padding: 10px;
-        }
-        #tbOwner {
-            width: 250px;
+﻿/* Main.Master settings */
+body{
+    width: 800px;
+    margin:0 auto;
+    padding: 0;
+}
+.header_wrapper {
+    margin:0 auto;
+    padding:0;
+    /*background: url('images/banner.jpg') no-repeat right;*/
+    width: 100%;
+    height: 115px;
+}
+.header {
+    width: 99%;
+    /*margin: 0px 30px;*/
+    padding: 25px 15px;
+    border-bottom: 0px solid #ccc;
+    text-align: center;
+    color: navy;
+    padding-top: 25px;
+    padding-bottom: 0px;
+}
+.header h1 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.breadcrumb {
+    padding: 10px;
+    font-size: 1.1em;
+    border-bottom: 1px solid #ccc;
+}
+.content_wrapper {
+    margin: 10px auto 15px; 
+    width: 100%;
+    min-height: 500px;
+}
+.footer_wrapper {
+    border-top: 1px solid #ccc;
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+.footer_right {
+    float: right;
+    font-size: x-small;
+    color: ghostwhite;
+}
+.footer_left {
+    float: left;
+    font-size: x-small;
+    color: #666;
+}
 
-        }
-        #currentPath {
-            display: block;
-            padding-top: 5px;
-        }
-        #content_wrapper {
-            border-top: 1px solid #ccc;
-            margin: 10px auto 0px; 
-            width: 100%;
-            min-height: 500px;
-        }
-        #settings_table {
-            width: 500px;
-            margin: 20px auto;
-        }
-        #settings_table .tLabel {
-            width: 125px;
-            color: #666;
-            text-align: right;
-        }
-        #settings_table input[type='text'] {
-            width: 96%;
-            font-size: 1.1em;
-            padding-left: 10px;
-        }
-        #settings_table select {
-            width: 100%;
-            font-size: 1.1em;
-            padding-left: 8px;
-        }
-        #results {
-            width: 600px; 
-            margin: 10px auto;
-            text-align: center;
-        }
-        .error { 
-            color: maroon; 
-        }
-        .clean {
-            color: black; 
-        }
-        #currentPath a {
-            color: #4078c0;
-            text-decoration: none;
-        }
-        #currentPath a:hover {
-            color: forestgreen;
-            text-decoration: none;
-        }
-        #currentPath a:visited {
-            text-decoration: none;
-        }
-        #downloads { 
-            padding: 15px; 
-            color: #666; 
-            width: 600px; 
-            margin: 10px auto;
-            min-height: 200px;
-            border: 0px #ccc solid;
-        }
-        #downloads table { 
-            width: 100%;
-        }
-        #downloads table th {
-            border-bottom:1px solid #ccc;
-            font-weight: bold;
-            color: black;
-        }
-        #downloads table td {
-            border-bottom:1px dotted #ccc;
-        }
-        #downloads a {
-            color: inherit;
-            text-decoration: none;
-        }
-        #downloads a:hover {
-            color: forestgreen;
-            text-decoration: none;
-        }
-        #downloads a:visited {
-            text-decoration: none;
-        }
-        #footer_wrapper {
-            border-top: 1px solid #ccc;
-            width: 100%;
-            height: 40px;
-            margin: 0 auto;
-            padding: 10px 0;
-        }
-        .footer_right {
-            float: right;
-            font-size: x-small;
-            color: ghostwhite;
-        }
-        .footer_left {
-            float: left;
-            font-size: x-small;
-            color: #666;
-        }
-        #ctl00_serverInfo {
-            float: right;
-            color: ghostwhite;
-        }
-        #ctl00_userInfo {
-            float: left;
-            color: #666;
-        }
-        #middle_footer {
-            text-align: center;
-        }
-
-        table.gvFiles a {
-            color: 	#4078c0;
-            text-decoration: none;
-        }
-        table.gvFiles a:hover {
-            color: forestgreen;
-        }
-        table.gvFiles a:visited {
-            text-decoration: none;
-        }
-        table.info {
-            color: #888;
-        }
-        table#gvFiles .size { 
-            color: #888;  
-            /*float: right;*/ 
-            padding-right: 10px;
-        }
-
+/* Default.aspx */
 .summary {
     width: 600px;
-    margin: 20px auto;
+    margin: 40px auto 0px
 }
 .summary table {
-    padding-top: 15px;
+    padding-top: 25px;
     margin: 0 auto;
 }
-.summary table a {
+.summary table td {
+    padding: 10px;
+}
+
+
+/* UserContent.aspx */
+.gvFiles {
+    background-color: White;
+    width: 500px;
+    margin: 0 auto;
+}
+.gvFiles_image {
+    text-align: center;
+    width: 17px;
+}
+.gvFiles_link {
+    text-align:left;
+    width: 350px;
+    height: 30px;
+}
+.gvFiles_size { 
+    color: #888; 
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* SearchUsers.aspx */
+.gvUsers {
+    background-color: White;
+    margin: 0 auto;
+}
+.gvUsers_loginName {
+    text-align: left;
+}
+.gvUsers_email, .gvUsers_fullName {
+    text-align: center;
+}
+.search_wrapper{
+    padding: 10px;
+    font-size: 1.1em;
+    /*border-bottom: 1px solid #ccc;*/
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Shared classes*/
+.master_image {
+    text-align: center;
+    width: 17px;
+    padding: 2px 10px;
+}
+.master_link a {
     color: 	#4078c0;
     text-decoration: none;
 }
-.summary table a:hover {
-    /*color: forestgreen;*/
+.master_link a:hover {
+    color: forestgreen;
 }
-.summary table a:visited {
-    color: 	#4078c0;
+.master_link a:visited {
     text-decoration: none;
 }
