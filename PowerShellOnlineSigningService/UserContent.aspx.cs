@@ -142,7 +142,7 @@ namespace PowerShellOnlineSigningService
                     log.InfoFormat("Notifying user no repositories were found for {0}", requestOwner);
                     GitObject m = new GitObject();
                     m.name = "No repositories found...";
-                    m.type = "github";
+                    m.type = "empty";
                     gitObjects.Add(m);
                 }
                 else
@@ -224,9 +224,9 @@ namespace PowerShellOnlineSigningService
                 ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("?owner={0}&repository={1}", requestOwner, entry.name);
                 ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to list repository contents";
             }
-            else if (entry.type == "github")
+            else if (entry.type == "empty")
             {
-                ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/github.jpg";
+                ((Image)e.Row.FindControl("typeImage")).ImageUrl = "~/images/emptyrepo.png";
             }
 
             ((HyperLink)e.Row.FindControl("contentLink")).Text = entry.name;
