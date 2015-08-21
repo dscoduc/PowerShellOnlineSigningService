@@ -125,11 +125,19 @@ namespace GitHubAPIClient
 
             GitUsers rawUsersContent = JsonConvert.DeserializeObject<GitUsers>(jsonResult);
             List<GitUserDetails> users = new List<GitUserDetails>();
- 
+
+            int iCount = 0;
             foreach (GitUser u in rawUsersContent.items)
             {
                 users.Add(GetUserDetails(u));
+                iCount++;
+
+                /// have to limit query down to avoid bumping
+                /// into github search limit of 30 per minute                
+                if (iCount > 10) { break; }
             }
+
+            users.Sort();
 
             log.DebugFormat("Returning {0} user entries", users.Count);
             return users;

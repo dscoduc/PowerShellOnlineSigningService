@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -24,29 +25,25 @@ namespace PowerShellOnlineSigningService
         {
             displaySessionInfo();
 
-            try
+            if (!Page.IsPostBack)
             {
-                gvUsers_LoadData();
+                try
+                {
+                    gvUsers_LoadData();
+                }
+                catch (ThreadAbortException)
+                {
+                    // do nothing - it's needed to handle Response.Redirect
+                }
+                catch (Exception ex)
+                {
+                    log.Warn(ex);
+                    Response.Clear();
+                    Response.StatusCode = 404;
+                    Response.StatusDescription = "Unable to locate the requested information";
+                    return;
+                }
             }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                Response.Clear();
-                Response.StatusCode = 404;
-                Response.StatusDescription = "Unable to locate the requested information";
-                return;
-            }
-
-
-            if (Page.IsPostBack)
-            {
-
-            }
-            else
-            {
-
-            }
-
         }
 
         private void displaySessionInfo()
@@ -59,7 +56,6 @@ namespace PowerShellOnlineSigningService
             if (serverInfo != null)
                 serverInfo.InnerText = System.Environment.MachineName.ToLower();
         }
-
 
         private void gvUsers_LoadData()
         {
@@ -81,6 +77,13 @@ namespace PowerShellOnlineSigningService
                 Users.Add(u);
             }
 
+            if (Users.Count == 1)
+            {
+                string url = string.Format("~/Default.aspx?owner={0}", Users[0].login);
+                Response.Redirect(url, false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
+
             gvUsers.DataSource = Users;
             gvUsers.DataBind();
         }
@@ -100,19 +103,20 @@ namespace PowerShellOnlineSigningService
 
             ((Label)e.Row.FindControl("Name")).Text = user.name;
             ((Label)e.Row.FindControl("Email")).Text = user.email;
+
+            // hidden fields for later use maybe
+            ((Label)e.Row.FindControl("Login")).Text = user.login;
             ((Label)e.Row.FindControl("userURL")).Text = user.url;
 
         }
 
-        protected void gvUsers_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
-            if (e != null && e.NewPageIndex > -1)
-            {
-                gvUsers.PageIndex = e.NewPageIndex;
+            if (string.IsNullOrEmpty(tbSearch.Text))
+                return;
+            
+            Response.Redirect(string.Format("{0}?s={1}", Request.Url.AbsolutePath, tbSearch.Text), true);
 
-                gvUsers.DataSource = gitUsers;
-                gvUsers.DataBind();
-            }
         }
 
     }

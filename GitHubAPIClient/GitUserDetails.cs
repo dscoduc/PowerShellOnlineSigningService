@@ -1,7 +1,8 @@
 ﻿
+using System;
 namespace GitHubAPIClient
 {
-    public class GitUserDetails
+    public class GitUserDetails : IComparable<GitUserDetails>
     {
         public string login { get; set; }
         public int id { get; set; }
@@ -33,5 +34,12 @@ namespace GitHubAPIClient
         public int following { get; set; }
         public string created_at { get; set; }
         public string updated_at { get; set; }
+
+        public int CompareTo(GitUserDetails other)
+        {
+            // Default to type sort. [A to Z]
+            return this.login.CompareTo(other.login);
+        } 
+    
     }
 }
