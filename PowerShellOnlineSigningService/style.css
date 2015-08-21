@@ -128,6 +128,14 @@
             font-size: x-small;
             color: #666;
         }
+        #ctl00_serverInfo {
+            float: right;
+            color: ghostwhite;
+        }
+        #ctl00_userInfo {
+            float: left;
+            color: #666;
+        }
         #middle_footer {
             text-align: center;
         }

@@ -59,7 +59,7 @@
 
                 <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" BorderStyle="None" />
             </asp:GridView>
-        </div> <%--content_wrapper--%> 
+        </div> <%--content_wrapper--%>
 
         <div id="footer_wrapper">
             <div id="serverInfo" runat="server" /> <%--serverinfo--%>
