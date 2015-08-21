@@ -95,11 +95,11 @@ namespace PowerShellOnlineSigningService
             GitUserDetails user = (GitUserDetails)e.Row.DataItem;
             if (null == user) { return; }
 
-            string formattedUsername = (string.IsNullOrEmpty(user.name)) ? string.Empty : string.Format(" ({0})", user.name);
+            string formattedUsername = (string.IsNullOrEmpty(user.name)) ? string.Empty : string.Format("<br />({0})", user.name);
 
             ((Image)e.Row.FindControl("avatarURL")).ImageUrl = string.Format("{0}&s=60", user.avatar_url);
 
-            ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("~/Default.aspx?owner={0}", user.login);
+            ((HyperLink)e.Row.FindControl("contentLink")).NavigateUrl = string.Format("~/UserContent.aspx?owner={0}", user.login);
             ((HyperLink)e.Row.FindControl("contentLink")).ToolTip = "Click to view GitHub Repositories";
             ((HyperLink)e.Row.FindControl("contentLink")).Text = string.Format("{0}{1}", user.login, formattedUsername);
 

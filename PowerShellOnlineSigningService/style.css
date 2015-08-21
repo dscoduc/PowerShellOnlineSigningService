@@ -110,8 +110,11 @@ body{
 /* Shared classes*/
 .master_image {
     text-align: center;
-    width: 17px;
     padding: 2px 10px;
+}
+.master_image img {
+    height: 60px;
+    width: 60px;
 }
 .master_link a {
     color: 	#4078c0;
