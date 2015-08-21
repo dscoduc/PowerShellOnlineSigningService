@@ -155,29 +155,52 @@ namespace PowerShellOnlineSigningService
             {
                 List<GitContent> unfilteredContents = GitHubClient.GetContents(requestOwner, requestRepository, requestPath);
 
-                foreach (GitContent entry in unfilteredContents)
+                if (null == unfilteredContents || unfilteredContents.Count < 1)
                 {
-                    GitObject m = new GitObject(entry);
-                    if (entry.type == "dir")
+                    log.InfoFormat("Notifying user no files were found for {0}", requestOwner);
+                    GitObject m = new GitObject();
+                    m.name = "No files found...";
+                    m.type = "empty";
+                    gitObjects.Add(m);
+                }
+                else
+                {
+                    int iCount = 0;
+                    foreach (GitContent entry in unfilteredContents)
                     {
-                        m.name = entry.name;
-                        m.path = entry.path;
-                        m.type = entry.type;
-
-                        gitObjects.Add(m);
-                    }
-                    else
-                    {
-                        if (Regex.IsMatch(entry.name, approvedExtensions))
+                        GitObject m = new GitObject(entry);
+                        if (entry.type == "dir")
                         {
-                            //gitContents.Add(entry); 
                             m.name = entry.name;
                             m.path = entry.path;
-                            m.size = entry.size;
                             m.type = entry.type;
 
                             gitObjects.Add(m);
+                            iCount++;
                         }
+                        else
+                        {
+                            if (Regex.IsMatch(entry.name, approvedExtensions))
+                            {
+                                //gitContents.Add(entry); 
+                                m.name = entry.name;
+                                m.path = entry.path;
+                                m.size = entry.size;
+                                m.type = entry.type;
+
+                                gitObjects.Add(m);
+                                iCount++;
+                            }
+                        }
+                    }
+
+                    if (iCount == 0)
+                    {
+                        log.InfoFormat("Notifying user no files were found for {0}", requestOwner);
+                        GitObject m = new GitObject();
+                        m.name = "No files found...";
+                        m.type = "empty";
+                        gitObjects.Add(m);
                     }
                 }
             }

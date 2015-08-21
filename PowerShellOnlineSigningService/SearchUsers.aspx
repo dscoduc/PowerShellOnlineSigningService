@@ -12,7 +12,7 @@
 
         <Columns>
 
-            <asp:TemplateField ItemStyle-CssClass="master_image">
+            <asp:TemplateField ItemStyle-CssClass="gvUsers_image">
                 <ItemTemplate><asp:Image runat="server" ID="avatarURL" /></ItemTemplate>
             </asp:TemplateField>
 

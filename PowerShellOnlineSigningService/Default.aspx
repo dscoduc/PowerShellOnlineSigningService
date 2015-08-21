@@ -6,9 +6,9 @@
 <asp:Content ID="content2" ContentPlaceHolderID="cphBody" runat="server">
     <div class="summary master_link">
         <p>
-            This site provides the ability to download a digitally signed PowerShell script directly from
+            Download a digitally signed PowerShell scripts directly from Rackspace 
             Enterprise Github.  Choose from either the default PowerShell Repository or search for a
-            specific users GitHub Repository.            
+            specific users GitHub Repository.
         </p>
         <table>
             <tr>
