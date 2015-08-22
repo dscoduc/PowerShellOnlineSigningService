@@ -46,7 +46,7 @@ Install Code Signing Certificate into Local Machine Certificate store
 Grant read access to private key on Code Signing Certificate to App Pool account
 	Ex. username = "App Pool\PowerShell"
 
-![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/HomePage.PNG)
-![User list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/UserList.PNG)
-![Repository list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/RepoView.PNG)
-![File list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/FileList.PNG)
+![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/HomePage.png)
+![User list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/UserList.png)
+![Repository list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/RepoView.png)
+![File list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/FileList.png)
