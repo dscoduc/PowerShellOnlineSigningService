@@ -6,9 +6,8 @@
 <asp:Content ID="content2" ContentPlaceHolderID="cphBody" runat="server">
     <div class="summary master_link">
         <p>
-            Download a digitally signed PowerShell scripts directly from Rackspace 
-            Enterprise Github.  Choose from either the default PowerShell Repository or search for a
-            specific users GitHub Repository.
+            Download a digitally signed PowerShell scripts directly from Github.  
+            Choose from either the default PowerShell Repository or search for a specific users Repository.
         </p>
         <table>
             <tr>
@@ -16,7 +15,7 @@
                     <a href="UserContent.aspx"><asp:Image ID="imgGitHub" runat="server" ImageUrl="~/images/githubrobot.png" /></a>
                 </td>
                 <td>
-                    <span class="menuItem"><a href="UserContent.aspx">Rackspace PowerShell Repository</a></span>
+                    <span class="menuItem"><a href="UserContent.aspx">Default PowerShell Repository</a></span>
                 </td>
             </tr>
             <tr>

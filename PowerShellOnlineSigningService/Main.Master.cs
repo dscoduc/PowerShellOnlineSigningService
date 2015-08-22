@@ -19,7 +19,7 @@ namespace PowerShellOnlineSigningService
         {
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                string IIS_Auth_Name = HttpContext.Current.User.Identity.Name;
+                string IIS_Auth_Name = HttpContext.Current.User.Identity.Name ?? "Anonymous";
                 string samAccountName = IIS_Auth_Name.Remove(0, IIS_Auth_Name.LastIndexOf(@"\") + 1);
 
                 HtmlGenericControl userInfo = (HtmlGenericControl)Page.Master.FindControl("userInfo");
