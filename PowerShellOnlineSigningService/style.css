@@ -1,13 +1,13 @@
 ﻿/* Main.Master settings */
 body{
-    width: 800px;
+    width: 700px;
     margin:0 auto;
     padding: 0;
 }
 .header_wrapper {
-    margin:25px auto 0;
+    margin: 5px auto 0;
     padding:0;
-    background: url('images/securityguy1.png') no-repeat left;
+    background: url('images/securityguy1.png') no-repeat right;
     width: 100%;
     height: 165px;
 }
@@ -16,8 +16,8 @@ body{
     padding: 25px 15px;
     border-bottom: 0px solid #ccc;
     color: navy;
-    margin-left: 225px;
-    padding-top: 25px;
+    /*margin-left: 225px;*/
+    padding-top: 50px;
     padding-bottom: 0px;
 }
 .header h1 {
@@ -25,7 +25,7 @@ body{
     padding-bottom: 0;
 }
 .breadcrumb {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     font-size: 1.1em;
     border-bottom: 1px solid #ccc;
 }
