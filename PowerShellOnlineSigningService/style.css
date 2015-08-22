@@ -5,7 +5,7 @@ body{
     padding: 0;
 }
 .header_wrapper {
-    margin: 5px auto 0;
+    margin: 5px auto -29px;
     padding:0;
     background: url('images/securityguy1.png') no-repeat right;
     width: 100%;
@@ -13,12 +13,10 @@ body{
 }
 .header {
     width: 99%;
-    padding: 25px 15px;
+    padding: 35px 15px 0;
     border-bottom: 0px solid #ccc;
     color: navy;
     /*margin-left: 225px;*/
-    padding-top: 50px;
-    padding-bottom: 0px;
 }
 .header h1 {
     margin-bottom: 0;
