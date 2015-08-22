@@ -32,21 +32,21 @@ something native to C#.
 
 Install Steps:
 
-Create new folder for root of Web Application 
-	Ex. c:\InetPub\PowerShellSigning)
-Copy Web Application files into new Web Applicaton folder
-Create Application Pool 
-	Ex. Name=PowerShell CLR=v4 Pipeline=Integrated
-Create new Website using new AppPool
-	Ex. PowerShell Signing
-Configure Web Site Authentication to only accept Windows Integrated
-Delegate Modify rights to App_Data folder to IIS AppPool account 
-	Ex. icacls c:\inetpub\PowerShellSigning\App_Data /grant "IIS APPPOOL\PowerShell":(OI)(CI)(F)
-Install Code Signing Certificate into Local Machine Certificate store
-Grant read access to private key on Code Signing Certificate to App Pool account
-	Ex. username = "App Pool\PowerShell"
+- Create new folder for root of Web Application (Ex. c:\InetPub\PowerShellSigning)
+- Copy Web Application files into new Web Applicaton folder
+- Create Application Pool  (Ex. Name=PowerShell CLR=v4 Pipeline=Integrated)
+- Create new Website using new AppPool (Ex. PowerShell Signing)
+- Configure Web Site Authentication to only accept Windows Integrated
+- Delegate Modify rights to App_Data folder to IIS AppPool account 
+-- Ex. icacls c:\inetpub\PowerShellSigning\App_Data /grant "IIS APPPOOL\PowerShell":(OI)(CI)(F)
+- Install Code Signing Certificate into Local Machine Certificate store
+- Grant read access to private key on Code Signing Certificate to App Pool account
+--	Ex. username = "App Pool\PowerShell"
 
 ![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/HomePage.png)
+
 ![User list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/UserList.png)
+
 ![Repository list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/RepoView.png)
+
 ![File list](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/FileList.png)
