@@ -5,8 +5,8 @@ write a web based interface to the PowerShell commands that ties into a GitHub
 Repository.  The goal is to allow you to download a PowerShell script that you
 have stored in GitHub and have that script digitally signed.
 
-## This solution is designed to be run on your own system using your own CA
-infrastructure, Web Server, and GitHub repositories.
+** This solution is designed to be run on your own system using your own CA
+infrastructure, Web Server, and GitHub repositories.**
 
 The project is configured with a default owner and repository option which will
 allow the user to quickly go to a common store while still having the option
