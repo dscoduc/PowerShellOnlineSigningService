@@ -3,6 +3,7 @@ using log4net;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Security;
 using System.Threading;
 using System.Web;
 using System.Web.UI;
@@ -15,8 +16,6 @@ namespace PowerShellOnlineSigningService
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private List<GitUser> gitUsers = new List<GitUser>();
-        private string searchString = HttpContext.Current.Request.QueryString["s"] ?? string.Empty;
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -57,12 +56,17 @@ namespace PowerShellOnlineSigningService
 
         private void loadData()
         {
-            List<GitUserDetails> Users = null;
+
+            string searchString = HttpContext.Current.Request.QueryString["s"];
 
             if (string.IsNullOrEmpty(searchString))
                 return;
 
-            try { Users = GitHubClient.GetUsers(searchString); }
+            List<GitUserDetails> Users = null;
+            try 
+            { 
+                Users = GitHubClient.GetUsers(searchString); 
+            }
             catch (Exception) { } // Continue - Repositories will be null and will exit gracefully
 
             if (null == Users || Users.Count < 1)
@@ -77,7 +81,7 @@ namespace PowerShellOnlineSigningService
 
             if (Users.Count == 1)
             {
-                string url = string.Format("~/UserContent.aspx?owner={0}", Users[0].login);
+                string url = string.Format("~/User.aspx?owner={0}", Users[0].login);
                 Response.Redirect(url, false);
                 Context.ApplicationInstance.CompleteRequest();
             }
@@ -91,13 +95,14 @@ namespace PowerShellOnlineSigningService
         protected void dtUsers_DataBound(object sender, DataListItemEventArgs e)
         { 
             GitUserDetails user = (GitUserDetails)e.Item.DataItem;
-            string formattedUsername = (string.IsNullOrEmpty(user.name)) ? string.Empty : string.Format("<br />({0})", user.name);
+
+            string formattedUsername = (string.IsNullOrEmpty(user.name)) ? string.Empty : string.Format("<br />({0})", SecurityElement.Escape(user.name));
 
             ((Image)e.Item.FindControl("avatar")).ImageUrl = string.Format("{0}&s=60", user.avatar_url);
 
             ((HyperLink)e.Item.FindControl("avatarLink")).Text = string.Format("{0}{1}", user.login, formattedUsername);
-            ((HyperLink)e.Item.FindControl("avatarLink")).NavigateUrl = string.Format("~/UserContent.aspx?owner={0}", user.login);
-            ((HyperLink)e.Item.FindControl("avatarLink")).ToolTip = "Click to view GitHub Repositories";
+            ((HyperLink)e.Item.FindControl("avatarLink")).NavigateUrl = string.Format("~/User.aspx?owner={0}", user.login);
+            ((HyperLink)e.Item.FindControl("avatarLink")).ToolTip = "Click to view repositories";
 
         }
 
@@ -110,5 +115,6 @@ namespace PowerShellOnlineSigningService
             Response.Redirect(string.Format("{0}?s={1}", Request.Url.AbsolutePath, tbSearch.Text), true);
 
         }
+    
     }
 }

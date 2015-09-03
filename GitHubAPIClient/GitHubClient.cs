@@ -6,6 +6,7 @@ using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Runtime.Caching;
 
 namespace GitHubAPIClient
 {
@@ -19,7 +20,6 @@ namespace GitHubAPIClient
         #endregion // private declarations
 
         #region public functions
-
         public static List<GitUserDetails> GetUsers(string searchString)
         {
             if (string.IsNullOrEmpty(searchString))
@@ -61,7 +61,6 @@ namespace GitHubAPIClient
             log.DebugFormat("Returning {0} user entries", usersList.Count);
             return usersList;
         }
-
 
         /// <summary>
         /// Ex. 
@@ -246,9 +245,10 @@ namespace GitHubAPIClient
             }
 
             // decode from base64
-            byte[] base64EncodedBytes = System.Convert.FromBase64String(jsonResponse.content);
+            //byte[] base64EncodedBytes = System.Convert.FromBase64String(jsonResponse.content);
 
-            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+            //return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+            return jsonResponse.DecodedContent;
         }
 
         public static List<GitRepository> GetRepositories(string owner) 
@@ -296,30 +296,6 @@ namespace GitHubAPIClient
         #endregion // public functions
 
         #region private web functions
-        /// <summary>
-        /// Builds the web request with pre-set properties needed for GitHub
-        /// </summary>
-        /// <param name="requestMethod">a http request method type (ex. GET, PUT, POST)</param>
-        /// <param name="requestURL">The URL to perform the request against</param>
-        /// <returns>Prepared request object</returns>
-        //private static HttpWebRequest buildWebRequest(method requestMethod, string requestURL)
-        //{
-        //    if (string.IsNullOrEmpty(requestURL)) { throw new ArgumentNullException("Must provide request URL"); }
-
-        //    log.DebugFormat("Request: {0} [{1}]", requestMethod, requestURL);
-
-        //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestURL);
-        //    request.Accept = "*/*";
-        //    request.Method = "GET";
-        //    request.ContentType = "application/json";  // everything we're doing here is json based
-        //    request.UserAgent = user_agent;     // GitHub requires userAgent be your username or repository
-            
-        //    if (!string.IsNullOrEmpty(auth_token))
-        //        request.Headers.Add("authorization: token " + auth_token);
-
-        //    return request;
-        //}
-
         private static string getResponse(HttpWebRequest request)
         {
             if ((null == request)) { throw new ArgumentNullException("An empty request object was passed"); }
@@ -338,7 +314,7 @@ namespace GitHubAPIClient
                 request.Headers.Add("authorization: token " + auth_token);
 
             // check if the url is in cache
-            object cacheData = Utils.GetCache(request.Address.AbsoluteUri);
+            object cacheData = GetCache(request.Address.AbsoluteUri);
                 
             if (null != cacheData && request.Method == "GET")
             {
@@ -355,14 +331,14 @@ namespace GitHubAPIClient
                     // else it will contain updated information
                     using (getResponse = (HttpWebResponse)request.GetResponse())
                     {
-                        log.Debug("Cached data is stale - updating memory cache with latest and greatest");
+                        log.DebugFormat("Updating cache for [{0}]", request.Address.AbsoluteUri);
                         using (StreamReader streamReader = new StreamReader(getResponse.GetResponseStream()))
                         {
                             jsonResponse = streamReader.ReadToEnd();
                             log.DebugFormat("JSON response received:{0}{1}", Environment.NewLine, jsonResponse);
 
                             // add latest info to memory cache
-                            Utils.AddCache(request.Address.AbsoluteUri, new GitResponse(jsonResponse, getResponse.Headers));
+                            AddCache(request.Address.AbsoluteUri, new GitResponse(jsonResponse, getResponse.Headers));
 
                             // send back the jsonResponse
                             return jsonResponse;
@@ -382,7 +358,6 @@ namespace GitHubAPIClient
             }
             else
             {
-                log.Debug("Initiating a new request");
                 using (getResponse = (HttpWebResponse)request.GetResponse())
                 {
                     using (StreamReader streamReader = new StreamReader(getResponse.GetResponseStream()))
@@ -393,8 +368,8 @@ namespace GitHubAPIClient
                         if (!string.IsNullOrEmpty(getResponse.GetResponseHeader("ETag")))
                         {
                             // add latest info to memory cache
-                            log.Debug("Updating memory cache with latest and greatest");
-                            Utils.AddCache(request.Address.AbsoluteUri, new GitResponse(jsonResponse, getResponse.Headers));
+                            log.DebugFormat("Updating cache for [{0}]", request.Address.AbsoluteUri);
+                            AddCache(request.Address.AbsoluteUri, new GitResponse(jsonResponse, getResponse.Headers));
                         }
                         else
                         {
@@ -407,5 +382,35 @@ namespace GitHubAPIClient
             }
         }
         #endregion // private web functions
+
+        #region utility functions
+        public static void AddCache(string cacheKey, object cacheData)
+        {
+            string cache_timeout_min = (string)ConfigurationManager.AppSettings["cache_timeout_min"] ?? "30";
+
+            ObjectCache cache = MemoryCache.Default;
+            CacheItemPolicy policy = new CacheItemPolicy { 
+                SlidingExpiration = TimeSpan.FromMinutes(Convert.ToDouble(cache_timeout_min)) 
+            };
+
+            cache.Add(cacheKey, cacheData, policy);
+        }
+
+        public static object GetCache(string cacheKey)
+        {
+            ObjectCache memoryCache = MemoryCache.Default;
+            object cacheData = (object)memoryCache.Get(cacheKey);
+            if (cacheData != null)
+            {
+                log.DebugFormat("Cached data found for [{0}]", cacheKey);
+                return cacheData;
+            }
+            else
+            {
+                log.DebugFormat("Cache data not found for [{0}]", cacheKey);
+                return null;
+            }
+        }
+        #endregion // utility functions
     }
 }

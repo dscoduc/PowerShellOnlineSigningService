@@ -84,7 +84,7 @@ namespace PowerShellOnlineSigningService
             finally
             {
                 // remove any remaining files
-                Utils.DeleteFile(filePath);
+                DeleteFile(filePath);
 
                 // close response on the way out...
                 context.Response.End();
@@ -160,7 +160,31 @@ namespace PowerShellOnlineSigningService
             log.DebugFormat("Finished updating {0}", fileToBeDownloaded);
 
             if (!string.IsNullOrEmpty(tempfile))
-                Utils.DeleteFile(tempfile);
+                DeleteFile(tempfile);
+        }
+
+        private void DeleteFile(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+                return;
+
+            try
+            {
+                FileInfo file = new FileInfo(filePath);
+                if (file.Exists)
+                {
+                    file.Delete();
+                    log.DebugFormat("Deleted {0}", filePath);
+                }
+                else
+                {
+                    log.WarnFormat("Unable to delete {0} - file not found", filePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
         }
     }
 }

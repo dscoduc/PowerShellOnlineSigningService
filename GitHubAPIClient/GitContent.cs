@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GitHubAPIClient
 {
@@ -65,7 +61,11 @@ namespace GitHubAPIClient
         /// </summary>
         public string DecodedContent
         {
-            get { return Utils.Base64Decode(this.content); }
+            get 
+            {
+                byte[] base64EncodedBytes = System.Convert.FromBase64String(this.content);
+                return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+            }
         }
 
         public int CompareTo(GitContent other)

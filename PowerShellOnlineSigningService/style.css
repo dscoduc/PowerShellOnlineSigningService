@@ -1,4 +1,14 @@
 ﻿/* Main.Master settings */
+a {
+    color: #4078c0;
+    text-decoration: none;
+}
+a:hover {
+    color: forestgreen;
+}
+a:visited {
+    text-decoration: none;
+}
 body{
     width: 700px;
     margin:0 auto;
@@ -23,9 +33,11 @@ body{
     padding-bottom: 0;
 }
 .breadcrumb {
-    padding: 0 10px 10px 10px;
-    font-size: 1.1em;
+    padding: 0 10px 13px;
+    font-size: 14px;
+    /*margin-right: 130px;*/
     border-bottom: 1px solid #ccc;
+    white-space:nowrap;
 }
 .content_wrapper {
     margin: 10px auto 15px; 
@@ -63,7 +75,53 @@ body{
     padding: 10px;
 }
 .summary input[type=text] {
-    width: 150px;
+    width: 200px;
+}
+
+/* User.aspx */
+
+.contentList {
+    border-collapse: collapse;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-left: 0;
+    width: 500px;
+}
+.contentList li {
+    border-bottom: 1px dotted #eee;
+    list-style: outside none none;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+.contentList .file {
+    background: rgba(0, 0, 0, 0) url("images/file.jpg") no-repeat scroll left 10px;
+}
+.contentList .dir {
+    background: rgba(0, 0, 0, 0) url("images/folder.jpg") no-repeat scroll left 10px;
+}
+.contentList .repo {
+    background: rgba(0, 0, 0, 0) url("images/repository.jpg") no-repeat scroll left 17px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+.contentList .repoList_description {
+    color: #666;
+    font: 200 12px/1.5 Georgia,Times New Roman,serif;
+    margin-bottom: 0;
+    margin-top: -5px;
+    max-width: 550px;
+}
+.contentList .repoList_name {
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 0 0 8px;
+}
+.contentList_size {
+    color: #888;
+    float: right;
+    font-size: 14px;
+    text-align: right;
 }
 
 /* UserContent.aspx */

@@ -6,8 +6,7 @@
 
 <asp:Content ID="cphBody" ContentPlaceHolderID="cphBody" runat="server">
     <div class="search_wrapper">
-        <p>Enter a search string and I will help you find a GitHub Repository...</p>
-        <asp:TextBox ID="tbSearch" runat="server" ToolTip="Enter a search criteria of the name of a GitHub User (only top 10 results are shown)" Wrap="False" OnTextChanged="btnSearch_Click" />
+        <asp:TextBox ID="tbSearch" runat="server" placeholder='Tell me who you are looking for...' ToolTip="Enter a search criteria of the name of a GitHub User (only top 10 results are shown)" Wrap="False" OnTextChanged="btnSearch_Click" />
         <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
     </div>
 

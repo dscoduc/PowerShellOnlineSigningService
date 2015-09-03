@@ -90,8 +90,10 @@
     <Content Include="images\user.jpg" />
     <Content Include="Lost.aspx" />
     <Content Include="Oops.aspx" />
+    <Content Include="Search.aspx" />
     <Content Include="SearchUsers.aspx" />
     <Content Include="style.css" />
+    <Content Include="User.aspx" />
     <Content Include="UserContent.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -134,12 +136,26 @@
       <DependentUpon>Oops.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SearchUsers.aspx.cs">
       <DependentUpon>SearchUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SearchUsers.aspx.designer.cs">
       <DependentUpon>SearchUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserContent.aspx.cs">
       <DependentUpon>UserContent.aspx</DependentUpon>

@@ -12,10 +12,10 @@
         <table>
             <tr>
                 <td>
-                    <a href="UserContent.aspx"><asp:Image ID="imgGitHub" runat="server" ImageUrl="~/images/githubrobot.png" /></a>
+                    <a href="User.aspx"><asp:Image ID="imgGitHub" runat="server" ImageUrl="~/images/githubrobot.png" /></a>
                 </td>
                 <td>
-                    <span class="menuItem"><a href="UserContent.aspx">Default PowerShell Repository</a></span>
+                    <span class="menuItem"><a href="User.aspx">Default PowerShell Repository</a></span>
                 </td>
             </tr>
             <tr>
@@ -23,7 +23,9 @@
                     <asp:Image ID="imgSearch" runat="server" ImageUrl="~/images/searchman.jpg" />
                 </td>
                 <td>
-                    <asp:TextBox ID="tbSearch" runat="server" ToolTip="Search for login name, username, or email address" /> &nbsp<asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+                    <asp:TextBox ID="tbSearch" runat="server" placeholder='Tell me who you are looking for...' 
+                        ToolTip="Search for login name, username, or email address" /> &nbsp
+                    <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
                 </td>
             </tr>
         </table>
