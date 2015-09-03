@@ -1,2 +1,2091 @@
+2015-09-03 15:56:26,922 [41] DEBUG GitHubAPIClient.GitHubClient - Not caching due to an absence of ETag data
+2015-09-03 15:56:26,938 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/a]
+2015-09-03 15:56:27,063 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:27,063 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/snyff]
+2015-09-03 15:56:27,188 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:27,203 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/prodigeni]
+2015-09-03 15:56:27,328 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:27,328 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/adamwiggins]
+2015-09-03 15:56:27,453 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:27,453 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/Amichai]
+2015-09-03 15:56:27,594 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:27,594 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/aarizaq]
+2015-09-03 15:56:27,704 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:27,719 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/schachmat]
+2015-09-03 15:56:27,844 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:27,844 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/adulau]
+2015-09-03 15:56:27,970 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:27,970 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/Saqoosha]
+2015-09-03 15:56:28,094 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:28,094 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/ngs]
+2015-09-03 15:56:28,235 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:28,235 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/anneCarlson]
+2015-09-03 15:56:28,360 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:28,360 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/machinaut]
+2015-09-03 15:56:28,485 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:28,485 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/noidontdig]
+2015-09-03 15:56:28,609 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:28,609 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abinoda]
+2015-09-03 15:56:28,734 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:28,734 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/alvatar]
+2015-09-03 15:56:28,875 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:28,875 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abrkn]
+2015-09-03 15:56:29,016 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:29,016 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/vinyll]
+2015-09-03 15:56:29,142 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:29,142 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/antiface]
+2015-09-03 15:56:29,266 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:29,266 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/robotlolita]
+2015-09-03 15:56:29,391 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:29,391 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/zedshaw]
+2015-09-03 15:56:29,531 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:29,531 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/vmatreshke]
+2015-09-03 15:56:29,657 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:29,657 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/haozide]
+2015-09-03 15:56:29,781 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:29,781 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/enyim]
+2015-09-03 15:56:29,906 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:29,906 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abemassry]
+2015-09-03 15:56:30,047 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:30,047 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abrookins]
+2015-09-03 15:56:30,188 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:30,188 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/alexeypro]
+2015-09-03 15:56:30,313 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:30,313 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/AndyFang1998]
+2015-09-03 15:56:30,438 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:30,438 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/bluetomlee]
+2015-09-03 15:56:30,563 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:30,578 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/macool]
+2015-09-03 15:56:30,703 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:30,703 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/expandrew]
+2015-09-03 15:56:30,829 [41] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:56:30,829 [41] DEBUG GitHubAPIClient.GitHubClient - Returning 30 user entries
+2015-09-03 15:56:30,829 [41] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/Search.aspx?s=a] Render time: 4s 891ms 
+2015-09-03 15:56:30,875 [43] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/style.css] Render time: 
+2015-09-03 15:56:30,891 [41] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/images/repository.jpg] Render time: 
+2015-09-03 15:56:30,906 [37] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/images/securityguy1.png] Render time: 
+2015-09-03 15:57:36,172 [31] DEBUG GitHubAPIClient.GitHubClient - Cache data not found for [https://api.github.com/search/users?q=a]
+2015-09-03 15:57:37,000 [31] DEBUG GitHubAPIClient.GitHubClient - JSON response received:
+{
+  "total_count": 12531,
+  "incomplete_results": false,
+  "items": [
+    {
+      "login": "a",
+      "id": 6014599,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6014599?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/a",
+      "html_url": "https://github.com/a",
+      "followers_url": "https://api.github.com/users/a/followers",
+      "following_url": "https://api.github.com/users/a/following{/other_user}",
+      "gists_url": "https://api.github.com/users/a/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/a/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/a/subscriptions",
+      "organizations_url": "https://api.github.com/users/a/orgs",
+      "repos_url": "https://api.github.com/users/a/repos",
+      "events_url": "https://api.github.com/users/a/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/a/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 49.96547
+    },
+    {
+      "login": "snyff",
+      "id": 45491,
+      "avatar_url": "https://avatars.githubusercontent.com/u/45491?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/snyff",
+      "html_url": "https://github.com/snyff",
+      "followers_url": "https://api.github.com/users/snyff/followers",
+      "following_url": "https://api.github.com/users/snyff/following{/other_user}",
+      "gists_url": "https://api.github.com/users/snyff/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/snyff/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/snyff/subscriptions",
+      "organizations_url": "https://api.github.com/users/snyff/orgs",
+      "repos_url": "https://api.github.com/users/snyff/repos",
+      "events_url": "https://api.github.com/users/snyff/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/snyff/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 29.359722
+    },
+    {
+      "login": "prodigeni",
+      "id": 1476070,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1476070?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/prodigeni",
+      "html_url": "https://github.com/prodigeni",
+      "followers_url": "https://api.github.com/users/prodigeni/followers",
+      "following_url": "https://api.github.com/users/prodigeni/following{/other_user}",
+      "gists_url": "https://api.github.com/users/prodigeni/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/prodigeni/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/prodigeni/subscriptions",
+      "organizations_url": "https://api.github.com/users/prodigeni/orgs",
+      "repos_url": "https://api.github.com/users/prodigeni/repos",
+      "events_url": "https://api.github.com/users/prodigeni/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/prodigeni/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 29.359722
+    },
+    {
+      "login": "adamwiggins",
+      "id": 177,
+      "avatar_url": "https://avatars.githubusercontent.com/u/177?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adamwiggins",
+      "html_url": "https://github.com/adamwiggins",
+      "followers_url": "https://api.github.com/users/adamwiggins/followers",
+      "following_url": "https://api.github.com/users/adamwiggins/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adamwiggins/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adamwiggins/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adamwiggins/subscriptions",
+      "organizations_url": "https://api.github.com/users/adamwiggins/orgs",
+      "repos_url": "https://api.github.com/users/adamwiggins/repos",
+      "events_url": "https://api.github.com/users/adamwiggins/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adamwiggins/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 24.886105
+    },
+    {
+      "login": "Amichai",
+      "id": 313874,
+      "avatar_url": "https://avatars.githubusercontent.com/u/313874?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Amichai",
+      "html_url": "https://github.com/Amichai",
+      "followers_url": "https://api.github.com/users/Amichai/followers",
+      "following_url": "https://api.github.com/users/Amichai/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Amichai/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Amichai/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Amichai/subscriptions",
+      "organizations_url": "https://api.github.com/users/Amichai/orgs",
+      "repos_url": "https://api.github.com/users/Amichai/repos",
+      "events_url": "https://api.github.com/users/Amichai/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Amichai/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.487778
+    },
+    {
+      "login": "aarizaq",
+      "id": 62071,
+      "avatar_url": "https://avatars.githubusercontent.com/u/62071?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aarizaq",
+      "html_url": "https://github.com/aarizaq",
+      "followers_url": "https://api.github.com/users/aarizaq/followers",
+      "following_url": "https://api.github.com/users/aarizaq/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aarizaq/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aarizaq/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aarizaq/subscriptions",
+      "organizations_url": "https://api.github.com/users/aarizaq/orgs",
+      "repos_url": "https://api.github.com/users/aarizaq/repos",
+      "events_url": "https://api.github.com/users/aarizaq/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aarizaq/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.487778
+    },
+    {
+      "login": "schachmat",
+      "id": 2626530,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2626530?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/schachmat",
+      "html_url": "https://github.com/schachmat",
+      "followers_url": "https://api.github.com/users/schachmat/followers",
+      "following_url": "https://api.github.com/users/schachmat/following{/other_user}",
+      "gists_url": "https://api.github.com/users/schachmat/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/schachmat/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/schachmat/subscriptions",
+      "organizations_url": "https://api.github.com/users/schachmat/orgs",
+      "repos_url": "https://api.github.com/users/schachmat/repos",
+      "events_url": "https://api.github.com/users/schachmat/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/schachmat/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.487778
+    },
+    {
+      "login": "adulau",
+      "id": 3309,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3309?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adulau",
+      "html_url": "https://github.com/adulau",
+      "followers_url": "https://api.github.com/users/adulau/followers",
+      "following_url": "https://api.github.com/users/adulau/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adulau/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adulau/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adulau/subscriptions",
+      "organizations_url": "https://api.github.com/users/adulau/orgs",
+      "repos_url": "https://api.github.com/users/adulau/repos",
+      "events_url": "https://api.github.com/users/adulau/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adulau/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.775341
+    },
+    {
+      "login": "Saqoosha",
+      "id": 27694,
+      "avatar_url": "https://avatars.githubusercontent.com/u/27694?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Saqoosha",
+      "html_url": "https://github.com/Saqoosha",
+      "followers_url": "https://api.github.com/users/Saqoosha/followers",
+      "following_url": "https://api.github.com/users/Saqoosha/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Saqoosha/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Saqoosha/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Saqoosha/subscriptions",
+      "organizations_url": "https://api.github.com/users/Saqoosha/orgs",
+      "repos_url": "https://api.github.com/users/Saqoosha/repos",
+      "events_url": "https://api.github.com/users/Saqoosha/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Saqoosha/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.775341
+    },
+    {
+      "login": "ngs",
+      "id": 18631,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18631?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ngs",
+      "html_url": "https://github.com/ngs",
+      "followers_url": "https://api.github.com/users/ngs/followers",
+      "following_url": "https://api.github.com/users/ngs/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ngs/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ngs/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ngs/subscriptions",
+      "organizations_url": "https://api.github.com/users/ngs/orgs",
+      "repos_url": "https://api.github.com/users/ngs/repos",
+      "events_url": "https://api.github.com/users/ngs/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ngs/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.775341
+    },
+    {
+      "login": "anneCarlson",
+      "id": 1570088,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1570088?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anneCarlson",
+      "html_url": "https://github.com/anneCarlson",
+      "followers_url": "https://api.github.com/users/anneCarlson/followers",
+      "following_url": "https://api.github.com/users/anneCarlson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anneCarlson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anneCarlson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anneCarlson/subscriptions",
+      "organizations_url": "https://api.github.com/users/anneCarlson/orgs",
+      "repos_url": "https://api.github.com/users/anneCarlson/repos",
+      "events_url": "https://api.github.com/users/anneCarlson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anneCarlson/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 20.551805
+    },
+    {
+      "login": "machinaut",
+      "id": 79779,
+      "avatar_url": "https://avatars.githubusercontent.com/u/79779?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/machinaut",
+      "html_url": "https://github.com/machinaut",
+      "followers_url": "https://api.github.com/users/machinaut/followers",
+      "following_url": "https://api.github.com/users/machinaut/following{/other_user}",
+      "gists_url": "https://api.github.com/users/machinaut/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/machinaut/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/machinaut/subscriptions",
+      "organizations_url": "https://api.github.com/users/machinaut/orgs",
+      "repos_url": "https://api.github.com/users/machinaut/repos",
+      "events_url": "https://api.github.com/users/machinaut/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/machinaut/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664577
+    },
+    {
+      "login": "noidontdig",
+      "id": 1229810,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1229810?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/noidontdig",
+      "html_url": "https://github.com/noidontdig",
+      "followers_url": "https://api.github.com/users/noidontdig/followers",
+      "following_url": "https://api.github.com/users/noidontdig/following{/other_user}",
+      "gists_url": "https://api.github.com/users/noidontdig/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/noidontdig/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/noidontdig/subscriptions",
+      "organizations_url": "https://api.github.com/users/noidontdig/orgs",
+      "repos_url": "https://api.github.com/users/noidontdig/repos",
+      "events_url": "https://api.github.com/users/noidontdig/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/noidontdig/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664577
+    },
+    {
+      "login": "abinoda",
+      "id": 50083,
+      "avatar_url": "https://avatars.githubusercontent.com/u/50083?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abinoda",
+      "html_url": "https://github.com/abinoda",
+      "followers_url": "https://api.github.com/users/abinoda/followers",
+      "following_url": "https://api.github.com/users/abinoda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abinoda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abinoda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abinoda/subscriptions",
+      "organizations_url": "https://api.github.com/users/abinoda/orgs",
+      "repos_url": "https://api.github.com/users/abinoda/repos",
+      "events_url": "https://api.github.com/users/abinoda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abinoda/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664577
+    },
+    {
+      "login": "alvatar",
+      "id": 191694,
+      "avatar_url": "https://avatars.githubusercontent.com/u/191694?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alvatar",
+      "html_url": "https://github.com/alvatar",
+      "followers_url": "https://api.github.com/users/alvatar/followers",
+      "following_url": "https://api.github.com/users/alvatar/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alvatar/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alvatar/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alvatar/subscriptions",
+      "organizations_url": "https://api.github.com/users/alvatar/orgs",
+      "repos_url": "https://api.github.com/users/alvatar/repos",
+      "events_url": "https://api.github.com/users/alvatar/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alvatar/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664577
+    },
+    {
+      "login": "abrkn",
+      "id": 843958,
+      "avatar_url": "https://avatars.githubusercontent.com/u/843958?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abrkn",
+      "html_url": "https://github.com/abrkn",
+      "followers_url": "https://api.github.com/users/abrkn/followers",
+      "following_url": "https://api.github.com/users/abrkn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abrkn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abrkn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abrkn/subscriptions",
+      "organizations_url": "https://api.github.com/users/abrkn/orgs",
+      "repos_url": "https://api.github.com/users/abrkn/repos",
+      "events_url": "https://api.github.com/users/abrkn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abrkn/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664577
+    },
+    {
+      "login": "vinyll",
+      "id": 145172,
+      "avatar_url": "https://avatars.githubusercontent.com/u/145172?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vinyll",
+      "html_url": "https://github.com/vinyll",
+      "followers_url": "https://api.github.com/users/vinyll/followers",
+      "following_url": "https://api.github.com/users/vinyll/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vinyll/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vinyll/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vinyll/subscriptions",
+      "organizations_url": "https://api.github.com/users/vinyll/orgs",
+      "repos_url": "https://api.github.com/users/vinyll/repos",
+      "events_url": "https://api.github.com/users/vinyll/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vinyll/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 17.615833
+    },
+    {
+      "login": "antiface",
+      "id": 1619852,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1619852?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/antiface",
+      "html_url": "https://github.com/antiface",
+      "followers_url": "https://api.github.com/users/antiface/followers",
+      "following_url": "https://api.github.com/users/antiface/following{/other_user}",
+      "gists_url": "https://api.github.com/users/antiface/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/antiface/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/antiface/subscriptions",
+      "organizations_url": "https://api.github.com/users/antiface/orgs",
+      "repos_url": "https://api.github.com/users/antiface/repos",
+      "events_url": "https://api.github.com/users/antiface/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/antiface/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.63581
+    },
+    {
+      "login": "robotlolita",
+      "id": 406477,
+      "avatar_url": "https://avatars.githubusercontent.com/u/406477?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/robotlolita",
+      "html_url": "https://github.com/robotlolita",
+      "followers_url": "https://api.github.com/users/robotlolita/followers",
+      "following_url": "https://api.github.com/users/robotlolita/following{/other_user}",
+      "gists_url": "https://api.github.com/users/robotlolita/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/robotlolita/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/robotlolita/subscriptions",
+      "organizations_url": "https://api.github.com/users/robotlolita/orgs",
+      "repos_url": "https://api.github.com/users/robotlolita/repos",
+      "events_url": "https://api.github.com/users/robotlolita/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/robotlolita/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.63581
+    },
+    {
+      "login": "zedshaw",
+      "id": 358171,
+      "avatar_url": "https://avatars.githubusercontent.com/u/358171?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/zedshaw",
+      "html_url": "https://github.com/zedshaw",
+      "followers_url": "https://api.github.com/users/zedshaw/followers",
+      "following_url": "https://api.github.com/users/zedshaw/following{/other_user}",
+      "gists_url": "https://api.github.com/users/zedshaw/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/zedshaw/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/zedshaw/subscriptions",
+      "organizations_url": "https://api.github.com/users/zedshaw/orgs",
+      "repos_url": "https://api.github.com/users/zedshaw/repos",
+      "events_url": "https://api.github.com/users/zedshaw/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/zedshaw/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.63581
+    },
+    {
+      "login": "vmatreshke",
+      "id": 519597,
+      "avatar_url": "https://avatars.githubusercontent.com/u/519597?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vmatreshke",
+      "html_url": "https://github.com/vmatreshke",
+      "followers_url": "https://api.github.com/users/vmatreshke/followers",
+      "following_url": "https://api.github.com/users/vmatreshke/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vmatreshke/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vmatreshke/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vmatreshke/subscriptions",
+      "organizations_url": "https://api.github.com/users/vmatreshke/orgs",
+      "repos_url": "https://api.github.com/users/vmatreshke/repos",
+      "events_url": "https://api.github.com/users/vmatreshke/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vmatreshke/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "haozide",
+      "id": 4150641,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4150641?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/haozide",
+      "html_url": "https://github.com/haozide",
+      "followers_url": "https://api.github.com/users/haozide/followers",
+      "following_url": "https://api.github.com/users/haozide/following{/other_user}",
+      "gists_url": "https://api.github.com/users/haozide/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/haozide/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/haozide/subscriptions",
+      "organizations_url": "https://api.github.com/users/haozide/orgs",
+      "repos_url": "https://api.github.com/users/haozide/repos",
+      "events_url": "https://api.github.com/users/haozide/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/haozide/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "enyim",
+      "id": 78400,
+      "avatar_url": "https://avatars.githubusercontent.com/u/78400?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/enyim",
+      "html_url": "https://github.com/enyim",
+      "followers_url": "https://api.github.com/users/enyim/followers",
+      "following_url": "https://api.github.com/users/enyim/following{/other_user}",
+      "gists_url": "https://api.github.com/users/enyim/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/enyim/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/enyim/subscriptions",
+      "organizations_url": "https://api.github.com/users/enyim/orgs",
+      "repos_url": "https://api.github.com/users/enyim/repos",
+      "events_url": "https://api.github.com/users/enyim/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/enyim/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "abemassry",
+      "id": 1616275,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1616275?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abemassry",
+      "html_url": "https://github.com/abemassry",
+      "followers_url": "https://api.github.com/users/abemassry/followers",
+      "following_url": "https://api.github.com/users/abemassry/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abemassry/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abemassry/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abemassry/subscriptions",
+      "organizations_url": "https://api.github.com/users/abemassry/orgs",
+      "repos_url": "https://api.github.com/users/abemassry/repos",
+      "events_url": "https://api.github.com/users/abemassry/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abemassry/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "abrookins",
+      "id": 97182,
+      "avatar_url": "https://avatars.githubusercontent.com/u/97182?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abrookins",
+      "html_url": "https://github.com/abrookins",
+      "followers_url": "https://api.github.com/users/abrookins/followers",
+      "following_url": "https://api.github.com/users/abrookins/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abrookins/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abrookins/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abrookins/subscriptions",
+      "organizations_url": "https://api.github.com/users/abrookins/orgs",
+      "repos_url": "https://api.github.com/users/abrookins/repos",
+      "events_url": "https://api.github.com/users/abrookins/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abrookins/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "alexeypro",
+      "id": 51543,
+      "avatar_url": "https://avatars.githubusercontent.com/u/51543?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alexeypro",
+      "html_url": "https://github.com/alexeypro",
+      "followers_url": "https://api.github.com/users/alexeypro/followers",
+      "following_url": "https://api.github.com/users/alexeypro/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alexeypro/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alexeypro/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alexeypro/subscriptions",
+      "organizations_url": "https://api.github.com/users/alexeypro/orgs",
+      "repos_url": "https://api.github.com/users/alexeypro/repos",
+      "events_url": "https://api.github.com/users/alexeypro/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alexeypro/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "AndyFang1998",
+      "id": 5637822,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5637822?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AndyFang1998",
+      "html_url": "https://github.com/AndyFang1998",
+      "followers_url": "https://api.github.com/users/AndyFang1998/followers",
+      "following_url": "https://api.github.com/users/AndyFang1998/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AndyFang1998/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AndyFang1998/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AndyFang1998/subscriptions",
+      "organizations_url": "https://api.github.com/users/AndyFang1998/orgs",
+      "repos_url": "https://api.github.com/users/AndyFang1998/repos",
+      "events_url": "https://api.github.com/users/AndyFang1998/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AndyFang1998/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "bluetomlee",
+      "id": 3226165,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3226165?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bluetomlee",
+      "html_url": "https://github.com/bluetomlee",
+      "followers_url": "https://api.github.com/users/bluetomlee/followers",
+      "following_url": "https://api.github.com/users/bluetomlee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bluetomlee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bluetomlee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bluetomlee/subscriptions",
+      "organizations_url": "https://api.github.com/users/bluetomlee/orgs",
+      "repos_url": "https://api.github.com/users/bluetomlee/repos",
+      "events_url": "https://api.github.com/users/bluetomlee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bluetomlee/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "macool",
+      "id": 1407000,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1407000?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/macool",
+      "html_url": "https://github.com/macool",
+      "followers_url": "https://api.github.com/users/macool/followers",
+      "following_url": "https://api.github.com/users/macool/following{/other_user}",
+      "gists_url": "https://api.github.com/users/macool/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/macool/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/macool/subscriptions",
+      "organizations_url": "https://api.github.com/users/macool/orgs",
+      "repos_url": "https://api.github.com/users/macool/repos",
+      "events_url": "https://api.github.com/users/macool/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/macool/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    },
+    {
+      "login": "expandrew",
+      "id": 3157928,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3157928?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/expandrew",
+      "html_url": "https://github.com/expandrew",
+      "followers_url": "https://api.github.com/users/expandrew/followers",
+      "following_url": "https://api.github.com/users/expandrew/following{/other_user}",
+      "gists_url": "https://api.github.com/users/expandrew/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/expandrew/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/expandrew/subscriptions",
+      "organizations_url": "https://api.github.com/users/expandrew/orgs",
+      "repos_url": "https://api.github.com/users/expandrew/repos",
+      "events_url": "https://api.github.com/users/expandrew/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/expandrew/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553816
+    }
+  ]
+}
 
+2015-09-03 15:57:37,000 [31] DEBUG GitHubAPIClient.GitHubClient - Not caching due to an absence of ETag data
+2015-09-03 15:57:37,000 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/a]
+2015-09-03 15:57:37,126 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:37,141 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/snyff]
+2015-09-03 15:57:37,281 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:37,281 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/prodigeni]
+2015-09-03 15:57:37,422 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:37,422 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/adamwiggins]
+2015-09-03 15:57:37,547 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:37,563 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/Amichai]
+2015-09-03 15:57:37,688 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:37,703 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/aarizaq]
+2015-09-03 15:57:37,844 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:37,844 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/schachmat]
+2015-09-03 15:57:37,986 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:37,986 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/adulau]
+2015-09-03 15:57:38,125 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:38,125 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/Saqoosha]
+2015-09-03 15:57:38,250 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:38,250 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/ngs]
+2015-09-03 15:57:38,392 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:38,392 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/anneCarlson]
+2015-09-03 15:57:38,531 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:38,531 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/machinaut]
+2015-09-03 15:57:38,672 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:38,672 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/noidontdig]
+2015-09-03 15:57:38,813 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:38,813 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abinoda]
+2015-09-03 15:57:38,969 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:38,969 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/alvatar]
+2015-09-03 15:57:39,110 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:39,110 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abrkn]
+2015-09-03 15:57:39,250 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:39,250 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/vinyll]
+2015-09-03 15:57:39,392 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:39,392 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/antiface]
+2015-09-03 15:57:39,531 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:39,531 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/robotlolita]
+2015-09-03 15:57:39,672 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:39,672 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/zedshaw]
+2015-09-03 15:57:39,813 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:39,828 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/vmatreshke]
+2015-09-03 15:57:39,953 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:39,969 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/haozide]
+2015-09-03 15:57:40,110 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:40,110 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/enyim]
+2015-09-03 15:57:40,235 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:40,250 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abemassry]
+2015-09-03 15:57:40,375 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:40,375 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abrookins]
+2015-09-03 15:57:40,516 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:40,516 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/alexeypro]
+2015-09-03 15:57:40,656 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:40,656 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/AndyFang1998]
+2015-09-03 15:57:40,797 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:40,797 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/bluetomlee]
+2015-09-03 15:57:40,938 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:40,938 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/macool]
+2015-09-03 15:57:41,078 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:41,078 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/expandrew]
+2015-09-03 15:57:41,220 [31] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:57:41,220 [31] DEBUG GitHubAPIClient.GitHubClient - Returning 30 user entries
+2015-09-03 15:57:41,220 [31] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/Search.aspx?s=a] Render time: 5s 47ms 
+2015-09-03 15:57:41,250 [41] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/style.css] Render time: 
+2015-09-03 15:57:41,266 [41] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/images/repository.jpg] Render time: 
+2015-09-03 15:57:41,297 [31] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/images/securityguy1.png] Render time: 
+2015-09-03 15:58:01,891 [37] DEBUG GitHubAPIClient.GitHubClient - Cache data not found for [https://api.github.com/search/users?q=a]
+2015-09-03 15:58:02,672 [37] DEBUG GitHubAPIClient.GitHubClient - JSON response received:
+{
+  "total_count": 12531,
+  "incomplete_results": false,
+  "items": [
+    {
+      "login": "a",
+      "id": 6014599,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6014599?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/a",
+      "html_url": "https://github.com/a",
+      "followers_url": "https://api.github.com/users/a/followers",
+      "following_url": "https://api.github.com/users/a/following{/other_user}",
+      "gists_url": "https://api.github.com/users/a/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/a/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/a/subscriptions",
+      "organizations_url": "https://api.github.com/users/a/orgs",
+      "repos_url": "https://api.github.com/users/a/repos",
+      "events_url": "https://api.github.com/users/a/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/a/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 49.965477
+    },
+    {
+      "login": "snyff",
+      "id": 45491,
+      "avatar_url": "https://avatars.githubusercontent.com/u/45491?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/snyff",
+      "html_url": "https://github.com/snyff",
+      "followers_url": "https://api.github.com/users/snyff/followers",
+      "following_url": "https://api.github.com/users/snyff/following{/other_user}",
+      "gists_url": "https://api.github.com/users/snyff/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/snyff/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/snyff/subscriptions",
+      "organizations_url": "https://api.github.com/users/snyff/orgs",
+      "repos_url": "https://api.github.com/users/snyff/repos",
+      "events_url": "https://api.github.com/users/snyff/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/snyff/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 29.359722
+    },
+    {
+      "login": "prodigeni",
+      "id": 1476070,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1476070?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/prodigeni",
+      "html_url": "https://github.com/prodigeni",
+      "followers_url": "https://api.github.com/users/prodigeni/followers",
+      "following_url": "https://api.github.com/users/prodigeni/following{/other_user}",
+      "gists_url": "https://api.github.com/users/prodigeni/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/prodigeni/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/prodigeni/subscriptions",
+      "organizations_url": "https://api.github.com/users/prodigeni/orgs",
+      "repos_url": "https://api.github.com/users/prodigeni/repos",
+      "events_url": "https://api.github.com/users/prodigeni/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/prodigeni/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 29.359722
+    },
+    {
+      "login": "adamwiggins",
+      "id": 177,
+      "avatar_url": "https://avatars.githubusercontent.com/u/177?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adamwiggins",
+      "html_url": "https://github.com/adamwiggins",
+      "followers_url": "https://api.github.com/users/adamwiggins/followers",
+      "following_url": "https://api.github.com/users/adamwiggins/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adamwiggins/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adamwiggins/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adamwiggins/subscriptions",
+      "organizations_url": "https://api.github.com/users/adamwiggins/orgs",
+      "repos_url": "https://api.github.com/users/adamwiggins/repos",
+      "events_url": "https://api.github.com/users/adamwiggins/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adamwiggins/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 24.886108
+    },
+    {
+      "login": "Amichai",
+      "id": 313874,
+      "avatar_url": "https://avatars.githubusercontent.com/u/313874?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Amichai",
+      "html_url": "https://github.com/Amichai",
+      "followers_url": "https://api.github.com/users/Amichai/followers",
+      "following_url": "https://api.github.com/users/Amichai/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Amichai/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Amichai/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Amichai/subscriptions",
+      "organizations_url": "https://api.github.com/users/Amichai/orgs",
+      "repos_url": "https://api.github.com/users/Amichai/repos",
+      "events_url": "https://api.github.com/users/Amichai/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Amichai/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.487778
+    },
+    {
+      "login": "aarizaq",
+      "id": 62071,
+      "avatar_url": "https://avatars.githubusercontent.com/u/62071?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aarizaq",
+      "html_url": "https://github.com/aarizaq",
+      "followers_url": "https://api.github.com/users/aarizaq/followers",
+      "following_url": "https://api.github.com/users/aarizaq/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aarizaq/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aarizaq/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aarizaq/subscriptions",
+      "organizations_url": "https://api.github.com/users/aarizaq/orgs",
+      "repos_url": "https://api.github.com/users/aarizaq/repos",
+      "events_url": "https://api.github.com/users/aarizaq/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aarizaq/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.487778
+    },
+    {
+      "login": "schachmat",
+      "id": 2626530,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2626530?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/schachmat",
+      "html_url": "https://github.com/schachmat",
+      "followers_url": "https://api.github.com/users/schachmat/followers",
+      "following_url": "https://api.github.com/users/schachmat/following{/other_user}",
+      "gists_url": "https://api.github.com/users/schachmat/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/schachmat/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/schachmat/subscriptions",
+      "organizations_url": "https://api.github.com/users/schachmat/orgs",
+      "repos_url": "https://api.github.com/users/schachmat/repos",
+      "events_url": "https://api.github.com/users/schachmat/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/schachmat/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.487778
+    },
+    {
+      "login": "adulau",
+      "id": 3309,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3309?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adulau",
+      "html_url": "https://github.com/adulau",
+      "followers_url": "https://api.github.com/users/adulau/followers",
+      "following_url": "https://api.github.com/users/adulau/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adulau/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adulau/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adulau/subscriptions",
+      "organizations_url": "https://api.github.com/users/adulau/orgs",
+      "repos_url": "https://api.github.com/users/adulau/repos",
+      "events_url": "https://api.github.com/users/adulau/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adulau/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.775345
+    },
+    {
+      "login": "Saqoosha",
+      "id": 27694,
+      "avatar_url": "https://avatars.githubusercontent.com/u/27694?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Saqoosha",
+      "html_url": "https://github.com/Saqoosha",
+      "followers_url": "https://api.github.com/users/Saqoosha/followers",
+      "following_url": "https://api.github.com/users/Saqoosha/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Saqoosha/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Saqoosha/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Saqoosha/subscriptions",
+      "organizations_url": "https://api.github.com/users/Saqoosha/orgs",
+      "repos_url": "https://api.github.com/users/Saqoosha/repos",
+      "events_url": "https://api.github.com/users/Saqoosha/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Saqoosha/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.775345
+    },
+    {
+      "login": "ngs",
+      "id": 18631,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18631?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ngs",
+      "html_url": "https://github.com/ngs",
+      "followers_url": "https://api.github.com/users/ngs/followers",
+      "following_url": "https://api.github.com/users/ngs/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ngs/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ngs/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ngs/subscriptions",
+      "organizations_url": "https://api.github.com/users/ngs/orgs",
+      "repos_url": "https://api.github.com/users/ngs/repos",
+      "events_url": "https://api.github.com/users/ngs/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ngs/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.775345
+    },
+    {
+      "login": "anneCarlson",
+      "id": 1570088,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1570088?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anneCarlson",
+      "html_url": "https://github.com/anneCarlson",
+      "followers_url": "https://api.github.com/users/anneCarlson/followers",
+      "following_url": "https://api.github.com/users/anneCarlson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anneCarlson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anneCarlson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anneCarlson/subscriptions",
+      "organizations_url": "https://api.github.com/users/anneCarlson/orgs",
+      "repos_url": "https://api.github.com/users/anneCarlson/repos",
+      "events_url": "https://api.github.com/users/anneCarlson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anneCarlson/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 20.551805
+    },
+    {
+      "login": "machinaut",
+      "id": 79779,
+      "avatar_url": "https://avatars.githubusercontent.com/u/79779?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/machinaut",
+      "html_url": "https://github.com/machinaut",
+      "followers_url": "https://api.github.com/users/machinaut/followers",
+      "following_url": "https://api.github.com/users/machinaut/following{/other_user}",
+      "gists_url": "https://api.github.com/users/machinaut/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/machinaut/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/machinaut/subscriptions",
+      "organizations_url": "https://api.github.com/users/machinaut/orgs",
+      "repos_url": "https://api.github.com/users/machinaut/repos",
+      "events_url": "https://api.github.com/users/machinaut/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/machinaut/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664581
+    },
+    {
+      "login": "noidontdig",
+      "id": 1229810,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1229810?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/noidontdig",
+      "html_url": "https://github.com/noidontdig",
+      "followers_url": "https://api.github.com/users/noidontdig/followers",
+      "following_url": "https://api.github.com/users/noidontdig/following{/other_user}",
+      "gists_url": "https://api.github.com/users/noidontdig/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/noidontdig/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/noidontdig/subscriptions",
+      "organizations_url": "https://api.github.com/users/noidontdig/orgs",
+      "repos_url": "https://api.github.com/users/noidontdig/repos",
+      "events_url": "https://api.github.com/users/noidontdig/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/noidontdig/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664581
+    },
+    {
+      "login": "abinoda",
+      "id": 50083,
+      "avatar_url": "https://avatars.githubusercontent.com/u/50083?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abinoda",
+      "html_url": "https://github.com/abinoda",
+      "followers_url": "https://api.github.com/users/abinoda/followers",
+      "following_url": "https://api.github.com/users/abinoda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abinoda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abinoda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abinoda/subscriptions",
+      "organizations_url": "https://api.github.com/users/abinoda/orgs",
+      "repos_url": "https://api.github.com/users/abinoda/repos",
+      "events_url": "https://api.github.com/users/abinoda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abinoda/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664581
+    },
+    {
+      "login": "alvatar",
+      "id": 191694,
+      "avatar_url": "https://avatars.githubusercontent.com/u/191694?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alvatar",
+      "html_url": "https://github.com/alvatar",
+      "followers_url": "https://api.github.com/users/alvatar/followers",
+      "following_url": "https://api.github.com/users/alvatar/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alvatar/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alvatar/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alvatar/subscriptions",
+      "organizations_url": "https://api.github.com/users/alvatar/orgs",
+      "repos_url": "https://api.github.com/users/alvatar/repos",
+      "events_url": "https://api.github.com/users/alvatar/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alvatar/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664581
+    },
+    {
+      "login": "abrkn",
+      "id": 843958,
+      "avatar_url": "https://avatars.githubusercontent.com/u/843958?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abrkn",
+      "html_url": "https://github.com/abrkn",
+      "followers_url": "https://api.github.com/users/abrkn/followers",
+      "following_url": "https://api.github.com/users/abrkn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abrkn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abrkn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abrkn/subscriptions",
+      "organizations_url": "https://api.github.com/users/abrkn/orgs",
+      "repos_url": "https://api.github.com/users/abrkn/repos",
+      "events_url": "https://api.github.com/users/abrkn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abrkn/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.664581
+    },
+    {
+      "login": "vinyll",
+      "id": 145172,
+      "avatar_url": "https://avatars.githubusercontent.com/u/145172?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vinyll",
+      "html_url": "https://github.com/vinyll",
+      "followers_url": "https://api.github.com/users/vinyll/followers",
+      "following_url": "https://api.github.com/users/vinyll/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vinyll/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vinyll/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vinyll/subscriptions",
+      "organizations_url": "https://api.github.com/users/vinyll/orgs",
+      "repos_url": "https://api.github.com/users/vinyll/repos",
+      "events_url": "https://api.github.com/users/vinyll/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vinyll/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 17.615833
+    },
+    {
+      "login": "antiface",
+      "id": 1619852,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1619852?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/antiface",
+      "html_url": "https://github.com/antiface",
+      "followers_url": "https://api.github.com/users/antiface/followers",
+      "following_url": "https://api.github.com/users/antiface/following{/other_user}",
+      "gists_url": "https://api.github.com/users/antiface/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/antiface/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/antiface/subscriptions",
+      "organizations_url": "https://api.github.com/users/antiface/orgs",
+      "repos_url": "https://api.github.com/users/antiface/repos",
+      "events_url": "https://api.github.com/users/antiface/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/antiface/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.635815
+    },
+    {
+      "login": "robotlolita",
+      "id": 406477,
+      "avatar_url": "https://avatars.githubusercontent.com/u/406477?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/robotlolita",
+      "html_url": "https://github.com/robotlolita",
+      "followers_url": "https://api.github.com/users/robotlolita/followers",
+      "following_url": "https://api.github.com/users/robotlolita/following{/other_user}",
+      "gists_url": "https://api.github.com/users/robotlolita/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/robotlolita/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/robotlolita/subscriptions",
+      "organizations_url": "https://api.github.com/users/robotlolita/orgs",
+      "repos_url": "https://api.github.com/users/robotlolita/repos",
+      "events_url": "https://api.github.com/users/robotlolita/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/robotlolita/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.635815
+    },
+    {
+      "login": "zedshaw",
+      "id": 358171,
+      "avatar_url": "https://avatars.githubusercontent.com/u/358171?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/zedshaw",
+      "html_url": "https://github.com/zedshaw",
+      "followers_url": "https://api.github.com/users/zedshaw/followers",
+      "following_url": "https://api.github.com/users/zedshaw/following{/other_user}",
+      "gists_url": "https://api.github.com/users/zedshaw/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/zedshaw/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/zedshaw/subscriptions",
+      "organizations_url": "https://api.github.com/users/zedshaw/orgs",
+      "repos_url": "https://api.github.com/users/zedshaw/repos",
+      "events_url": "https://api.github.com/users/zedshaw/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/zedshaw/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.635815
+    },
+    {
+      "login": "vmatreshke",
+      "id": 519597,
+      "avatar_url": "https://avatars.githubusercontent.com/u/519597?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vmatreshke",
+      "html_url": "https://github.com/vmatreshke",
+      "followers_url": "https://api.github.com/users/vmatreshke/followers",
+      "following_url": "https://api.github.com/users/vmatreshke/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vmatreshke/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vmatreshke/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vmatreshke/subscriptions",
+      "organizations_url": "https://api.github.com/users/vmatreshke/orgs",
+      "repos_url": "https://api.github.com/users/vmatreshke/repos",
+      "events_url": "https://api.github.com/users/vmatreshke/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vmatreshke/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "haozide",
+      "id": 4150641,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4150641?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/haozide",
+      "html_url": "https://github.com/haozide",
+      "followers_url": "https://api.github.com/users/haozide/followers",
+      "following_url": "https://api.github.com/users/haozide/following{/other_user}",
+      "gists_url": "https://api.github.com/users/haozide/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/haozide/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/haozide/subscriptions",
+      "organizations_url": "https://api.github.com/users/haozide/orgs",
+      "repos_url": "https://api.github.com/users/haozide/repos",
+      "events_url": "https://api.github.com/users/haozide/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/haozide/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "enyim",
+      "id": 78400,
+      "avatar_url": "https://avatars.githubusercontent.com/u/78400?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/enyim",
+      "html_url": "https://github.com/enyim",
+      "followers_url": "https://api.github.com/users/enyim/followers",
+      "following_url": "https://api.github.com/users/enyim/following{/other_user}",
+      "gists_url": "https://api.github.com/users/enyim/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/enyim/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/enyim/subscriptions",
+      "organizations_url": "https://api.github.com/users/enyim/orgs",
+      "repos_url": "https://api.github.com/users/enyim/repos",
+      "events_url": "https://api.github.com/users/enyim/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/enyim/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "abemassry",
+      "id": 1616275,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1616275?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abemassry",
+      "html_url": "https://github.com/abemassry",
+      "followers_url": "https://api.github.com/users/abemassry/followers",
+      "following_url": "https://api.github.com/users/abemassry/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abemassry/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abemassry/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abemassry/subscriptions",
+      "organizations_url": "https://api.github.com/users/abemassry/orgs",
+      "repos_url": "https://api.github.com/users/abemassry/repos",
+      "events_url": "https://api.github.com/users/abemassry/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abemassry/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "abrookins",
+      "id": 97182,
+      "avatar_url": "https://avatars.githubusercontent.com/u/97182?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abrookins",
+      "html_url": "https://github.com/abrookins",
+      "followers_url": "https://api.github.com/users/abrookins/followers",
+      "following_url": "https://api.github.com/users/abrookins/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abrookins/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abrookins/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abrookins/subscriptions",
+      "organizations_url": "https://api.github.com/users/abrookins/orgs",
+      "repos_url": "https://api.github.com/users/abrookins/repos",
+      "events_url": "https://api.github.com/users/abrookins/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abrookins/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "alexeypro",
+      "id": 51543,
+      "avatar_url": "https://avatars.githubusercontent.com/u/51543?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alexeypro",
+      "html_url": "https://github.com/alexeypro",
+      "followers_url": "https://api.github.com/users/alexeypro/followers",
+      "following_url": "https://api.github.com/users/alexeypro/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alexeypro/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alexeypro/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alexeypro/subscriptions",
+      "organizations_url": "https://api.github.com/users/alexeypro/orgs",
+      "repos_url": "https://api.github.com/users/alexeypro/repos",
+      "events_url": "https://api.github.com/users/alexeypro/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alexeypro/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "AndyFang1998",
+      "id": 5637822,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5637822?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AndyFang1998",
+      "html_url": "https://github.com/AndyFang1998",
+      "followers_url": "https://api.github.com/users/AndyFang1998/followers",
+      "following_url": "https://api.github.com/users/AndyFang1998/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AndyFang1998/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AndyFang1998/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AndyFang1998/subscriptions",
+      "organizations_url": "https://api.github.com/users/AndyFang1998/orgs",
+      "repos_url": "https://api.github.com/users/AndyFang1998/repos",
+      "events_url": "https://api.github.com/users/AndyFang1998/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AndyFang1998/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "bluetomlee",
+      "id": 3226165,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3226165?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bluetomlee",
+      "html_url": "https://github.com/bluetomlee",
+      "followers_url": "https://api.github.com/users/bluetomlee/followers",
+      "following_url": "https://api.github.com/users/bluetomlee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bluetomlee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bluetomlee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bluetomlee/subscriptions",
+      "organizations_url": "https://api.github.com/users/bluetomlee/orgs",
+      "repos_url": "https://api.github.com/users/bluetomlee/repos",
+      "events_url": "https://api.github.com/users/bluetomlee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bluetomlee/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "macool",
+      "id": 1407000,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1407000?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/macool",
+      "html_url": "https://github.com/macool",
+      "followers_url": "https://api.github.com/users/macool/followers",
+      "following_url": "https://api.github.com/users/macool/following{/other_user}",
+      "gists_url": "https://api.github.com/users/macool/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/macool/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/macool/subscriptions",
+      "organizations_url": "https://api.github.com/users/macool/orgs",
+      "repos_url": "https://api.github.com/users/macool/repos",
+      "events_url": "https://api.github.com/users/macool/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/macool/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    },
+    {
+      "login": "expandrew",
+      "id": 3157928,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3157928?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/expandrew",
+      "html_url": "https://github.com/expandrew",
+      "followers_url": "https://api.github.com/users/expandrew/followers",
+      "following_url": "https://api.github.com/users/expandrew/following{/other_user}",
+      "gists_url": "https://api.github.com/users/expandrew/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/expandrew/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/expandrew/subscriptions",
+      "organizations_url": "https://api.github.com/users/expandrew/orgs",
+      "repos_url": "https://api.github.com/users/expandrew/repos",
+      "events_url": "https://api.github.com/users/expandrew/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/expandrew/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.553818
+    }
+  ]
+}
 
+2015-09-03 15:58:02,672 [37] DEBUG GitHubAPIClient.GitHubClient - Not caching due to an absence of ETag data
+2015-09-03 15:58:02,672 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/a]
+2015-09-03 15:58:02,814 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:02,814 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/snyff]
+2015-09-03 15:58:02,953 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:02,953 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/prodigeni]
+2015-09-03 15:58:03,094 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:03,110 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/adamwiggins]
+2015-09-03 15:58:03,251 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:03,251 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/Amichai]
+2015-09-03 15:58:03,391 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:03,391 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/aarizaq]
+2015-09-03 15:58:03,532 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:03,532 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/schachmat]
+2015-09-03 15:58:03,672 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:03,672 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/adulau]
+2015-09-03 15:58:03,813 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:03,813 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/Saqoosha]
+2015-09-03 15:58:03,953 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:03,953 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/ngs]
+2015-09-03 15:58:04,110 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:04,110 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/anneCarlson]
+2015-09-03 15:58:04,235 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:04,250 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/machinaut]
+2015-09-03 15:58:04,391 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:04,391 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/noidontdig]
+2015-09-03 15:58:04,532 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:04,532 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abinoda]
+2015-09-03 15:58:04,673 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:04,673 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/alvatar]
+2015-09-03 15:58:04,813 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:04,813 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abrkn]
+2015-09-03 15:58:04,953 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:04,953 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/vinyll]
+2015-09-03 15:58:05,094 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:05,094 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/antiface]
+2015-09-03 15:58:05,250 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:05,250 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/robotlolita]
+2015-09-03 15:58:05,375 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:05,391 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/zedshaw]
+2015-09-03 15:58:05,531 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:05,547 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/vmatreshke]
+2015-09-03 15:58:05,672 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:05,688 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/haozide]
+2015-09-03 15:58:05,829 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:05,829 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/enyim]
+2015-09-03 15:58:05,969 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:05,969 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abemassry]
+2015-09-03 15:58:06,110 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:06,110 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abrookins]
+2015-09-03 15:58:06,250 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:06,250 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/alexeypro]
+2015-09-03 15:58:06,407 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:06,407 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/AndyFang1998]
+2015-09-03 15:58:06,547 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:06,547 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/bluetomlee]
+2015-09-03 15:58:06,704 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:06,704 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/macool]
+2015-09-03 15:58:06,844 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:06,844 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/expandrew]
+2015-09-03 15:58:06,985 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:06,985 [37] DEBUG GitHubAPIClient.GitHubClient - Returning 30 user entries
+2015-09-03 15:58:06,985 [37] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/Search.aspx?s=a] Render time: 5s 93ms 
+2015-09-03 15:58:07,031 [41] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/style.css] Render time: 
+2015-09-03 15:58:07,047 [31] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/images/repository.jpg] Render time: 
+2015-09-03 15:58:07,063 [37] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/images/securityguy1.png] Render time: 
+2015-09-03 15:58:54,328 [37] DEBUG GitHubAPIClient.GitHubClient - Cache data not found for [https://api.github.com/search/users?q=a]
+2015-09-03 15:58:55,078 [37] DEBUG GitHubAPIClient.GitHubClient - JSON response received:
+{
+  "total_count": 12531,
+  "incomplete_results": false,
+  "items": [
+    {
+      "login": "a",
+      "id": 6014599,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6014599?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/a",
+      "html_url": "https://github.com/a",
+      "followers_url": "https://api.github.com/users/a/followers",
+      "following_url": "https://api.github.com/users/a/following{/other_user}",
+      "gists_url": "https://api.github.com/users/a/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/a/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/a/subscriptions",
+      "organizations_url": "https://api.github.com/users/a/orgs",
+      "repos_url": "https://api.github.com/users/a/repos",
+      "events_url": "https://api.github.com/users/a/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/a/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 49.139847
+    },
+    {
+      "login": "snyff",
+      "id": 45491,
+      "avatar_url": "https://avatars.githubusercontent.com/u/45491?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/snyff",
+      "html_url": "https://github.com/snyff",
+      "followers_url": "https://api.github.com/users/snyff/followers",
+      "following_url": "https://api.github.com/users/snyff/following{/other_user}",
+      "gists_url": "https://api.github.com/users/snyff/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/snyff/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/snyff/subscriptions",
+      "organizations_url": "https://api.github.com/users/snyff/orgs",
+      "repos_url": "https://api.github.com/users/snyff/repos",
+      "events_url": "https://api.github.com/users/snyff/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/snyff/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 29.23335
+    },
+    {
+      "login": "prodigeni",
+      "id": 1476070,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1476070?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/prodigeni",
+      "html_url": "https://github.com/prodigeni",
+      "followers_url": "https://api.github.com/users/prodigeni/followers",
+      "following_url": "https://api.github.com/users/prodigeni/following{/other_user}",
+      "gists_url": "https://api.github.com/users/prodigeni/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/prodigeni/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/prodigeni/subscriptions",
+      "organizations_url": "https://api.github.com/users/prodigeni/orgs",
+      "repos_url": "https://api.github.com/users/prodigeni/repos",
+      "events_url": "https://api.github.com/users/prodigeni/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/prodigeni/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 29.23335
+    },
+    {
+      "login": "adamwiggins",
+      "id": 177,
+      "avatar_url": "https://avatars.githubusercontent.com/u/177?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adamwiggins",
+      "html_url": "https://github.com/adamwiggins",
+      "followers_url": "https://api.github.com/users/adamwiggins/followers",
+      "following_url": "https://api.github.com/users/adamwiggins/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adamwiggins/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adamwiggins/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adamwiggins/subscriptions",
+      "organizations_url": "https://api.github.com/users/adamwiggins/orgs",
+      "repos_url": "https://api.github.com/users/adamwiggins/repos",
+      "events_url": "https://api.github.com/users/adamwiggins/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adamwiggins/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 24.441708
+    },
+    {
+      "login": "aarizaq",
+      "id": 62071,
+      "avatar_url": "https://avatars.githubusercontent.com/u/62071?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aarizaq",
+      "html_url": "https://github.com/aarizaq",
+      "followers_url": "https://api.github.com/users/aarizaq/followers",
+      "following_url": "https://api.github.com/users/aarizaq/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aarizaq/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aarizaq/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aarizaq/subscriptions",
+      "organizations_url": "https://api.github.com/users/aarizaq/orgs",
+      "repos_url": "https://api.github.com/users/aarizaq/repos",
+      "events_url": "https://api.github.com/users/aarizaq/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aarizaq/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.38668
+    },
+    {
+      "login": "Amichai",
+      "id": 313874,
+      "avatar_url": "https://avatars.githubusercontent.com/u/313874?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Amichai",
+      "html_url": "https://github.com/Amichai",
+      "followers_url": "https://api.github.com/users/Amichai/followers",
+      "following_url": "https://api.github.com/users/Amichai/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Amichai/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Amichai/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Amichai/subscriptions",
+      "organizations_url": "https://api.github.com/users/Amichai/orgs",
+      "repos_url": "https://api.github.com/users/Amichai/repos",
+      "events_url": "https://api.github.com/users/Amichai/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Amichai/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.38668
+    },
+    {
+      "login": "schachmat",
+      "id": 2626530,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2626530?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/schachmat",
+      "html_url": "https://github.com/schachmat",
+      "followers_url": "https://api.github.com/users/schachmat/followers",
+      "following_url": "https://api.github.com/users/schachmat/following{/other_user}",
+      "gists_url": "https://api.github.com/users/schachmat/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/schachmat/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/schachmat/subscriptions",
+      "organizations_url": "https://api.github.com/users/schachmat/orgs",
+      "repos_url": "https://api.github.com/users/schachmat/repos",
+      "events_url": "https://api.github.com/users/schachmat/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/schachmat/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 23.38668
+    },
+    {
+      "login": "adulau",
+      "id": 3309,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3309?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adulau",
+      "html_url": "https://github.com/adulau",
+      "followers_url": "https://api.github.com/users/adulau/followers",
+      "following_url": "https://api.github.com/users/adulau/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adulau/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adulau/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adulau/subscriptions",
+      "organizations_url": "https://api.github.com/users/adulau/orgs",
+      "repos_url": "https://api.github.com/users/adulau/repos",
+      "events_url": "https://api.github.com/users/adulau/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adulau/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.386494
+    },
+    {
+      "login": "Saqoosha",
+      "id": 27694,
+      "avatar_url": "https://avatars.githubusercontent.com/u/27694?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Saqoosha",
+      "html_url": "https://github.com/Saqoosha",
+      "followers_url": "https://api.github.com/users/Saqoosha/followers",
+      "following_url": "https://api.github.com/users/Saqoosha/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Saqoosha/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Saqoosha/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Saqoosha/subscriptions",
+      "organizations_url": "https://api.github.com/users/Saqoosha/orgs",
+      "repos_url": "https://api.github.com/users/Saqoosha/repos",
+      "events_url": "https://api.github.com/users/Saqoosha/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Saqoosha/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.386494
+    },
+    {
+      "login": "ngs",
+      "id": 18631,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18631?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ngs",
+      "html_url": "https://github.com/ngs",
+      "followers_url": "https://api.github.com/users/ngs/followers",
+      "following_url": "https://api.github.com/users/ngs/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ngs/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ngs/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ngs/subscriptions",
+      "organizations_url": "https://api.github.com/users/ngs/orgs",
+      "repos_url": "https://api.github.com/users/ngs/repos",
+      "events_url": "https://api.github.com/users/ngs/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ngs/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 21.386494
+    },
+    {
+      "login": "anneCarlson",
+      "id": 1570088,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1570088?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anneCarlson",
+      "html_url": "https://github.com/anneCarlson",
+      "followers_url": "https://api.github.com/users/anneCarlson/followers",
+      "following_url": "https://api.github.com/users/anneCarlson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anneCarlson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anneCarlson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anneCarlson/subscriptions",
+      "organizations_url": "https://api.github.com/users/anneCarlson/orgs",
+      "repos_url": "https://api.github.com/users/anneCarlson/repos",
+      "events_url": "https://api.github.com/users/anneCarlson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anneCarlson/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 20.463345
+    },
+    {
+      "login": "noidontdig",
+      "id": 1229810,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1229810?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/noidontdig",
+      "html_url": "https://github.com/noidontdig",
+      "followers_url": "https://api.github.com/users/noidontdig/followers",
+      "following_url": "https://api.github.com/users/noidontdig/following{/other_user}",
+      "gists_url": "https://api.github.com/users/noidontdig/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/noidontdig/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/noidontdig/subscriptions",
+      "organizations_url": "https://api.github.com/users/noidontdig/orgs",
+      "repos_url": "https://api.github.com/users/noidontdig/repos",
+      "events_url": "https://api.github.com/users/noidontdig/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/noidontdig/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.33128
+    },
+    {
+      "login": "abinoda",
+      "id": 50083,
+      "avatar_url": "https://avatars.githubusercontent.com/u/50083?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abinoda",
+      "html_url": "https://github.com/abinoda",
+      "followers_url": "https://api.github.com/users/abinoda/followers",
+      "following_url": "https://api.github.com/users/abinoda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abinoda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abinoda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abinoda/subscriptions",
+      "organizations_url": "https://api.github.com/users/abinoda/orgs",
+      "repos_url": "https://api.github.com/users/abinoda/repos",
+      "events_url": "https://api.github.com/users/abinoda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abinoda/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.33128
+    },
+    {
+      "login": "machinaut",
+      "id": 79779,
+      "avatar_url": "https://avatars.githubusercontent.com/u/79779?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/machinaut",
+      "html_url": "https://github.com/machinaut",
+      "followers_url": "https://api.github.com/users/machinaut/followers",
+      "following_url": "https://api.github.com/users/machinaut/following{/other_user}",
+      "gists_url": "https://api.github.com/users/machinaut/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/machinaut/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/machinaut/subscriptions",
+      "organizations_url": "https://api.github.com/users/machinaut/orgs",
+      "repos_url": "https://api.github.com/users/machinaut/repos",
+      "events_url": "https://api.github.com/users/machinaut/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/machinaut/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.33128
+    },
+    {
+      "login": "alvatar",
+      "id": 191694,
+      "avatar_url": "https://avatars.githubusercontent.com/u/191694?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alvatar",
+      "html_url": "https://github.com/alvatar",
+      "followers_url": "https://api.github.com/users/alvatar/followers",
+      "following_url": "https://api.github.com/users/alvatar/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alvatar/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alvatar/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alvatar/subscriptions",
+      "organizations_url": "https://api.github.com/users/alvatar/orgs",
+      "repos_url": "https://api.github.com/users/alvatar/repos",
+      "events_url": "https://api.github.com/users/alvatar/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alvatar/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.33128
+    },
+    {
+      "login": "abrkn",
+      "id": 843958,
+      "avatar_url": "https://avatars.githubusercontent.com/u/843958?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abrkn",
+      "html_url": "https://github.com/abrkn",
+      "followers_url": "https://api.github.com/users/abrkn/followers",
+      "following_url": "https://api.github.com/users/abrkn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abrkn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abrkn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abrkn/subscriptions",
+      "organizations_url": "https://api.github.com/users/abrkn/orgs",
+      "repos_url": "https://api.github.com/users/abrkn/repos",
+      "events_url": "https://api.github.com/users/abrkn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abrkn/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 18.33128
+    },
+    {
+      "login": "vinyll",
+      "id": 145172,
+      "avatar_url": "https://avatars.githubusercontent.com/u/145172?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vinyll",
+      "html_url": "https://github.com/vinyll",
+      "followers_url": "https://api.github.com/users/vinyll/followers",
+      "following_url": "https://api.github.com/users/vinyll/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vinyll/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vinyll/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vinyll/subscriptions",
+      "organizations_url": "https://api.github.com/users/vinyll/orgs",
+      "repos_url": "https://api.github.com/users/vinyll/repos",
+      "events_url": "https://api.github.com/users/vinyll/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vinyll/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 17.54001
+    },
+    {
+      "login": "antiface",
+      "id": 1619852,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1619852?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/antiface",
+      "html_url": "https://github.com/antiface",
+      "followers_url": "https://api.github.com/users/antiface/followers",
+      "following_url": "https://api.github.com/users/antiface/following{/other_user}",
+      "gists_url": "https://api.github.com/users/antiface/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/antiface/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/antiface/subscriptions",
+      "organizations_url": "https://api.github.com/users/antiface/orgs",
+      "repos_url": "https://api.github.com/users/antiface/repos",
+      "events_url": "https://api.github.com/users/antiface/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/antiface/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.443684
+    },
+    {
+      "login": "robotlolita",
+      "id": 406477,
+      "avatar_url": "https://avatars.githubusercontent.com/u/406477?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/robotlolita",
+      "html_url": "https://github.com/robotlolita",
+      "followers_url": "https://api.github.com/users/robotlolita/followers",
+      "following_url": "https://api.github.com/users/robotlolita/following{/other_user}",
+      "gists_url": "https://api.github.com/users/robotlolita/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/robotlolita/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/robotlolita/subscriptions",
+      "organizations_url": "https://api.github.com/users/robotlolita/orgs",
+      "repos_url": "https://api.github.com/users/robotlolita/repos",
+      "events_url": "https://api.github.com/users/robotlolita/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/robotlolita/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.443684
+    },
+    {
+      "login": "zedshaw",
+      "id": 358171,
+      "avatar_url": "https://avatars.githubusercontent.com/u/358171?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/zedshaw",
+      "html_url": "https://github.com/zedshaw",
+      "followers_url": "https://api.github.com/users/zedshaw/followers",
+      "following_url": "https://api.github.com/users/zedshaw/following{/other_user}",
+      "gists_url": "https://api.github.com/users/zedshaw/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/zedshaw/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/zedshaw/subscriptions",
+      "organizations_url": "https://api.github.com/users/zedshaw/orgs",
+      "repos_url": "https://api.github.com/users/zedshaw/repos",
+      "events_url": "https://api.github.com/users/zedshaw/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/zedshaw/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.443684
+    },
+    {
+      "login": "abemassry",
+      "id": 1616275,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1616275?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abemassry",
+      "html_url": "https://github.com/abemassry",
+      "followers_url": "https://api.github.com/users/abemassry/followers",
+      "following_url": "https://api.github.com/users/abemassry/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abemassry/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abemassry/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abemassry/subscriptions",
+      "organizations_url": "https://api.github.com/users/abemassry/orgs",
+      "repos_url": "https://api.github.com/users/abemassry/repos",
+      "events_url": "https://api.github.com/users/abemassry/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abemassry/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "haozide",
+      "id": 4150641,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4150641?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/haozide",
+      "html_url": "https://github.com/haozide",
+      "followers_url": "https://api.github.com/users/haozide/followers",
+      "following_url": "https://api.github.com/users/haozide/following{/other_user}",
+      "gists_url": "https://api.github.com/users/haozide/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/haozide/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/haozide/subscriptions",
+      "organizations_url": "https://api.github.com/users/haozide/orgs",
+      "repos_url": "https://api.github.com/users/haozide/repos",
+      "events_url": "https://api.github.com/users/haozide/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/haozide/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "abrookins",
+      "id": 97182,
+      "avatar_url": "https://avatars.githubusercontent.com/u/97182?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abrookins",
+      "html_url": "https://github.com/abrookins",
+      "followers_url": "https://api.github.com/users/abrookins/followers",
+      "following_url": "https://api.github.com/users/abrookins/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abrookins/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abrookins/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abrookins/subscriptions",
+      "organizations_url": "https://api.github.com/users/abrookins/orgs",
+      "repos_url": "https://api.github.com/users/abrookins/repos",
+      "events_url": "https://api.github.com/users/abrookins/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abrookins/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "macool",
+      "id": 1407000,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1407000?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/macool",
+      "html_url": "https://github.com/macool",
+      "followers_url": "https://api.github.com/users/macool/followers",
+      "following_url": "https://api.github.com/users/macool/following{/other_user}",
+      "gists_url": "https://api.github.com/users/macool/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/macool/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/macool/subscriptions",
+      "organizations_url": "https://api.github.com/users/macool/orgs",
+      "repos_url": "https://api.github.com/users/macool/repos",
+      "events_url": "https://api.github.com/users/macool/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/macool/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "vmatreshke",
+      "id": 519597,
+      "avatar_url": "https://avatars.githubusercontent.com/u/519597?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vmatreshke",
+      "html_url": "https://github.com/vmatreshke",
+      "followers_url": "https://api.github.com/users/vmatreshke/followers",
+      "following_url": "https://api.github.com/users/vmatreshke/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vmatreshke/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vmatreshke/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vmatreshke/subscriptions",
+      "organizations_url": "https://api.github.com/users/vmatreshke/orgs",
+      "repos_url": "https://api.github.com/users/vmatreshke/repos",
+      "events_url": "https://api.github.com/users/vmatreshke/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vmatreshke/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "enyim",
+      "id": 78400,
+      "avatar_url": "https://avatars.githubusercontent.com/u/78400?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/enyim",
+      "html_url": "https://github.com/enyim",
+      "followers_url": "https://api.github.com/users/enyim/followers",
+      "following_url": "https://api.github.com/users/enyim/following{/other_user}",
+      "gists_url": "https://api.github.com/users/enyim/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/enyim/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/enyim/subscriptions",
+      "organizations_url": "https://api.github.com/users/enyim/orgs",
+      "repos_url": "https://api.github.com/users/enyim/repos",
+      "events_url": "https://api.github.com/users/enyim/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/enyim/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "bluetomlee",
+      "id": 3226165,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3226165?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bluetomlee",
+      "html_url": "https://github.com/bluetomlee",
+      "followers_url": "https://api.github.com/users/bluetomlee/followers",
+      "following_url": "https://api.github.com/users/bluetomlee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bluetomlee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bluetomlee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bluetomlee/subscriptions",
+      "organizations_url": "https://api.github.com/users/bluetomlee/orgs",
+      "repos_url": "https://api.github.com/users/bluetomlee/repos",
+      "events_url": "https://api.github.com/users/bluetomlee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bluetomlee/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "alexeypro",
+      "id": 51543,
+      "avatar_url": "https://avatars.githubusercontent.com/u/51543?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/alexeypro",
+      "html_url": "https://github.com/alexeypro",
+      "followers_url": "https://api.github.com/users/alexeypro/followers",
+      "following_url": "https://api.github.com/users/alexeypro/following{/other_user}",
+      "gists_url": "https://api.github.com/users/alexeypro/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/alexeypro/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/alexeypro/subscriptions",
+      "organizations_url": "https://api.github.com/users/alexeypro/orgs",
+      "repos_url": "https://api.github.com/users/alexeypro/repos",
+      "events_url": "https://api.github.com/users/alexeypro/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/alexeypro/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "AndyFang1998",
+      "id": 5637822,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5637822?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AndyFang1998",
+      "html_url": "https://github.com/AndyFang1998",
+      "followers_url": "https://api.github.com/users/AndyFang1998/followers",
+      "following_url": "https://api.github.com/users/AndyFang1998/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AndyFang1998/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AndyFang1998/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AndyFang1998/subscriptions",
+      "organizations_url": "https://api.github.com/users/AndyFang1998/orgs",
+      "repos_url": "https://api.github.com/users/AndyFang1998/repos",
+      "events_url": "https://api.github.com/users/AndyFang1998/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AndyFang1998/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    },
+    {
+      "login": "expandrew",
+      "id": 3157928,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3157928?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/expandrew",
+      "html_url": "https://github.com/expandrew",
+      "followers_url": "https://api.github.com/users/expandrew/followers",
+      "following_url": "https://api.github.com/users/expandrew/following{/other_user}",
+      "gists_url": "https://api.github.com/users/expandrew/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/expandrew/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/expandrew/subscriptions",
+      "organizations_url": "https://api.github.com/users/expandrew/orgs",
+      "repos_url": "https://api.github.com/users/expandrew/repos",
+      "events_url": "https://api.github.com/users/expandrew/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/expandrew/received_events",
+      "type": "User",
+      "site_admin": false,
+      "score": 15.276068
+    }
+  ]
+}
+
+2015-09-03 15:58:55,094 [37] DEBUG GitHubAPIClient.GitHubClient - Not caching due to an absence of ETag data
+2015-09-03 15:58:55,094 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/a]
+2015-09-03 15:58:55,219 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:55,219 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/snyff]
+2015-09-03 15:58:55,345 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:55,345 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/prodigeni]
+2015-09-03 15:58:55,469 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:55,469 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/adamwiggins]
+2015-09-03 15:58:55,594 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:55,594 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/aarizaq]
+2015-09-03 15:58:55,719 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:55,719 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/Amichai]
+2015-09-03 15:58:55,860 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:55,860 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/schachmat]
+2015-09-03 15:58:55,985 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:55,985 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/adulau]
+2015-09-03 15:58:56,110 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:56,110 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/Saqoosha]
+2015-09-03 15:58:56,235 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:56,251 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/ngs]
+2015-09-03 15:58:56,375 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:56,375 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/anneCarlson]
+2015-09-03 15:58:56,501 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:56,501 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/noidontdig]
+2015-09-03 15:58:56,625 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:56,625 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abinoda]
+2015-09-03 15:58:56,750 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:56,766 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/machinaut]
+2015-09-03 15:58:56,891 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:56,891 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/alvatar]
+2015-09-03 15:58:57,016 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:57,016 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abrkn]
+2015-09-03 15:58:57,141 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:57,156 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/vinyll]
+2015-09-03 15:58:57,281 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:57,297 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/antiface]
+2015-09-03 15:58:57,422 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:57,422 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/robotlolita]
+2015-09-03 15:58:57,547 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:57,547 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/zedshaw]
+2015-09-03 15:58:57,672 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:57,688 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abemassry]
+2015-09-03 15:58:57,813 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:57,813 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/haozide]
+2015-09-03 15:58:57,938 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:57,938 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/abrookins]
+2015-09-03 15:58:58,063 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:58,063 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/macool]
+2015-09-03 15:58:58,188 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:58,188 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/vmatreshke]
+2015-09-03 15:58:58,313 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:58,313 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/enyim]
+2015-09-03 15:58:58,438 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:58,438 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/bluetomlee]
+2015-09-03 15:58:58,580 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:58,581 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/alexeypro]
+2015-09-03 15:58:58,703 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:58,703 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/AndyFang1998]
+2015-09-03 15:58:58,828 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:58,828 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data found for [https://api.github.com/users/expandrew]
+2015-09-03 15:58:58,953 [37] DEBUG GitHubAPIClient.GitHubClient - Cached data is still valid - new request not necessary
+2015-09-03 15:58:58,953 [37] DEBUG GitHubAPIClient.GitHubClient - Returning 30 user entries
+2015-09-03 15:58:58,953 [37] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/Search.aspx?s=a] Render time: 4s 624ms 
+2015-09-03 15:58:59,000 [41] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/style.css] Render time: 
+2015-09-03 15:58:59,016 [31] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/images/repository.jpg] Render time: 
+2015-09-03 15:58:59,031 [37] DEBUG Global.asax - [http://192.168.1.193/PowerShellOnlineSigningService/images/securityguy1.png] Render time: 

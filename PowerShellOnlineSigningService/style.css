@@ -136,18 +136,23 @@ body{
 }
 .userList {
     list-style-type: none;
-    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 .userList li {
+    border: 1px dotted #fff;
+    display: inline;
     float: left;
     height: 100px;
-    padding: 15px;
     text-align: center;
-    width: 100px;
+    width: 24%;
+}
+.userList li:hover {
+    border: 1px dotted forestgreen;
 }
 .userList img {
-    height: 60px;
-    width: 60px;
+    margin-top:15px;
 }
 .userList p {
     margin: 0;
@@ -156,6 +161,12 @@ body{
 .userList .name {
     font-size: 0.9em;
     padding: 2px;
+    margin-top: 10px;
+}
+.userList a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 /* Shared classes*/
@@ -163,21 +174,10 @@ body{
     text-align: center;
     padding: 2px 10px;
 }
-/*.master_link a {
-    color: 	#4078c0;
-    text-decoration: none;
-}
-.master_link a:hover {
-    color: forestgreen;
-}
-.master_link a:visited {
-    text-decoration: none;
-}*/
 .emptyreproman {
     height: 111px !important;
     width: 75px !important;
 }
-
 .oops, .lost {
     margin-top: 75px;
     width: 100% auto;

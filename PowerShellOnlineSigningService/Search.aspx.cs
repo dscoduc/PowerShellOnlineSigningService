@@ -79,14 +79,13 @@ namespace PowerShellOnlineSigningService
             {
                 foreach (GitUserDetails user in Users)
                 {
-                    //string login = SecurityElement.Escape(user.login);
                     string userUrl = string.Format("User.aspx?o={0}", user.login);
                     string formattedUsername = (string.IsNullOrEmpty(user.name)) ? 
                         SecurityElement.Escape(user.login) : SecurityElement.Escape(user.name);
 
                     items.Add("<li class='users'>" +
                                 "<a href='" + userUrl + "'>" +
-                                    "<img class='avatar' src='" + user.avatar_url + "&s=60'>" +
+                                    "<img src='images/repository.jpg'>" +
                                     "<p class='name'>" + formattedUsername + "</p>" +
                                 "</a>" + 
                               "</li>");
