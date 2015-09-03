@@ -145,6 +145,25 @@ body{
     padding-right: 10px;
 }
 
+/* Search.aspx*/
+.userList {
+    list-style-type: none;
+    margin: 0 auto;
+}
+.userList li {
+    float: left;
+    padding: 15px;
+    text-align: center;
+}
+.userList img {
+    height: 60px;
+    width: 60px;
+}
+.userList p {
+    margin: 0;
+    padding: 0;
+}
+
 /* SearchUsers.aspx */
 .search_wrapper{
     padding: 10px;
