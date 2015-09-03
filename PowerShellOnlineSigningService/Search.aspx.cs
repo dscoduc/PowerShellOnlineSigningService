@@ -40,11 +40,16 @@ namespace PowerShellOnlineSigningService
             string urlTemplate = "<a href='{0}'>{1}</a>";
             string homeURL = string.Format(urlTemplate, "Default.aspx", "Home");
 
-            string currentPage = string.Format(urlTemplate, "Search.aspx", "Search Users");
+            string currentPage = string.Format(urlTemplate, "Search.aspx", "Search");
 
-            string searchCriteria = string.Format(urlTemplate, "Search.aspx?s=" + searchString, searchString);
+            string breadcrumb = string.Format("{0} / {1}", homeURL, currentPage);
 
-            string breadcrumb = string.Format("{0} / {1} / {2}", homeURL, currentPage, searchCriteria);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                string searchCriteria = string.Format(urlTemplate, "Search.aspx?s=" + searchString, searchString);
+                breadcrumb = string.Format("{0} / {1}", breadcrumb, searchCriteria);
+            }
+
             HtmlGenericControl site_breadcrumb = (HtmlGenericControl)Master.FindControl("site_breadcrumb");
             site_breadcrumb.Visible = true;
             site_breadcrumb.InnerHtml = breadcrumb;
@@ -66,7 +71,7 @@ namespace PowerShellOnlineSigningService
             }
             else if (Users.Count == 1)
             {
-                string url = string.Format("User.aspx?owner={0}", Users[0].login);
+                string url = string.Format("User.aspx?o={0}", Users[0].login);
                 Response.Redirect(url, false);
                 Context.ApplicationInstance.CompleteRequest();
             }
@@ -74,16 +79,15 @@ namespace PowerShellOnlineSigningService
             {
                 foreach (GitUserDetails user in Users)
                 {
-                    string login = SecurityElement.Escape(user.login);
-                    string userUrl = string.Format("User.aspx?owner={0}", login);
+                    //string login = SecurityElement.Escape(user.login);
+                    string userUrl = string.Format("User.aspx?o={0}", user.login);
                     string formattedUsername = (string.IsNullOrEmpty(user.name)) ? 
-                        string.Empty : string.Format("({0})", SecurityElement.Escape(user.name));
+                        SecurityElement.Escape(user.login) : SecurityElement.Escape(user.name);
 
                     items.Add("<li class='users'>" +
                                 "<a href='" + userUrl + "'>" +
-                                    "<img class='avatar' src='" + user.avatar_url + "&s=60'>" +  
-                                    "<p>" + login + "</p>" +
-                                    "<p>" + formattedUsername + "</p>" +
+                                    "<img class='avatar' src='" + user.avatar_url + "&s=60'>" +
+                                    "<p class='name'>" + formattedUsername + "</p>" +
                                 "</a>" + 
                               "</li>");
                 }

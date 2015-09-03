@@ -124,47 +124,7 @@ body{
     text-align: right;
 }
 
-/* UserContent.aspx */
-.gvFiles {
-    background-color: White;
-    width: 500px;
-    margin: 0 auto;
-}
-.gvFiles_image {
-    text-align: center;
-    width: 17px;
-}
-.gvFiles_link {
-    text-align:left;
-    width: 350px;
-    height: 30px;
-}
-.gvFiles_size { 
-    color: #888; 
-    text-align: right;
-    padding-right: 10px;
-}
-
 /* Search.aspx*/
-.userList {
-    list-style-type: none;
-    margin: 0 auto;
-}
-.userList li {
-    float: left;
-    padding: 15px;
-    text-align: center;
-}
-.userList img {
-    height: 60px;
-    width: 60px;
-}
-.userList p {
-    margin: 0;
-    padding: 0;
-}
-
-/* SearchUsers.aspx */
 .search_wrapper{
     padding: 10px;
     font-size: 1.1em;
@@ -174,26 +134,36 @@ body{
 .search_wrapper input[type=text] {
     width: 200px;
 }
-.dlUsers {
-    background-color: White;
+.userList {
+    list-style-type: none;
     margin: 0 auto;
 }
-.dlUsers img {
+.userList li {
+    float: left;
+    height: 100px;
+    padding: 15px;
+    text-align: center;
+    width: 100px;
+}
+.userList img {
     height: 60px;
     width: 60px;
 }
-.dlUsers td {
-    padding: 20px;
-    text-align: center;
+.userList p {
+    margin: 0;
+    padding: 0;
 }
-
+.userList .name {
+    font-size: 0.9em;
+    padding: 2px;
+}
 
 /* Shared classes*/
 .master_image {
     text-align: center;
     padding: 2px 10px;
 }
-.master_link a {
+/*.master_link a {
     color: 	#4078c0;
     text-decoration: none;
 }
@@ -202,7 +172,7 @@ body{
 }
 .master_link a:visited {
     text-decoration: none;
-}
+}*/
 .emptyreproman {
     height: 111px !important;
     width: 75px !important;

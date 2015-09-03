@@ -22,9 +22,9 @@ namespace PowerShellOnlineSigningService
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string userName = (string)HttpContext.Current.Request.QueryString["owner"] ?? null;
-            string repoName = (string)HttpContext.Current.Request.QueryString["repository"] ?? null;
-            string requestPath = HttpContext.Current.Request.QueryString["path"] ?? string.Empty;
+            string userName = (string)HttpContext.Current.Request.QueryString["o"] ?? null;
+            string repoName = (string)HttpContext.Current.Request.QueryString["r"] ?? null;
+            string requestPath = HttpContext.Current.Request.QueryString["p"] ?? string.Empty;
             
             if (Page.IsPostBack)
                 return;
@@ -32,9 +32,9 @@ namespace PowerShellOnlineSigningService
             if (string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(defaultOwner))
             {
                 if (string.IsNullOrEmpty(repoName) && !string.IsNullOrEmpty(defaultRepository))
-                    Response.Redirect(string.Format("{0}?owner={1}&repository={2}", Request.Url.AbsolutePath, defaultOwner, defaultRepository), true);
+                    Response.Redirect(string.Format("{0}?o={1}&r={2}", Request.Url.AbsolutePath, defaultOwner, defaultRepository), true);
                 else
-                    Response.Redirect(string.Format("{0}?owner={1}", Request.Url.AbsolutePath, defaultOwner), true);
+                    Response.Redirect(string.Format("{0}?o={1}", Request.Url.AbsolutePath, defaultOwner), true);
             }
 
             loadResults(userName, repoName, requestPath);
@@ -56,7 +56,7 @@ namespace PowerShellOnlineSigningService
 
                 if (null == Repositories || Repositories.Count < 1)
                 {
-                    items.Add(string.Format("<li class='empty_results'>No matching repositories found for {0}...</li>", userName));
+                    items.Add(string.Format("<li class='empty_results'>No repositories found for {0}...</li>", userName));
                 }
                 else
                 {
@@ -65,7 +65,7 @@ namespace PowerShellOnlineSigningService
                         // extract the user item from the user field
 				        string owner = SecurityElement.Escape(repo.name);
 				        var description = SecurityElement.Escape(repo.description);
-				        var urlPath = string.Format("?owner={0}&repository={1}", userName, repo.name);
+				        var urlPath = string.Format("?o={0}&r={1}", userName, repo.name);
 
 				        // build html syntax for each user
                         items.Add("<li class='repo'>" +
@@ -128,12 +128,12 @@ namespace PowerShellOnlineSigningService
                         // create url for file path
                         if (item.type == "file")
                         {
-                            urlPath = string.Format("DownloadFile.ashx?owner={0}&repository={1}&path={2}", userName, repoName, item.path);
+                            urlPath = string.Format("DownloadFile.ashx?o={0}&r={1}&p={2}", userName, repoName, item.path);
                         }
                         // create url for folder path
                         else
                         {
-                            urlPath = string.Format("?owner={0}&repository={1}&path={2}", userName, repoName, item.path);
+                            urlPath = string.Format("?o={0}&r={1}&p={2}", userName, repoName, item.path);
                             size = string.Empty;
                         }
 
@@ -175,13 +175,13 @@ namespace PowerShellOnlineSigningService
 
             if (!string.IsNullOrEmpty(userName))
             {
-                string ownerURL = string.Format(urlTemplate, "?owner=" + userName, userName);
+                string ownerURL = string.Format(urlTemplate, "?o=" + userName, userName);
 
                 breadcrumb = string.Format("{0} / {1}", homeURL, ownerURL);
 
                 if (!string.IsNullOrEmpty(repoName))
                 {
-                    string repositoryURL = string.Format(urlTemplate, "?owner=" + userName + "&repository=" + repoName, repoName);
+                    string repositoryURL = string.Format(urlTemplate, "?o=" + userName + "&r=" + repoName, repoName);
                     breadcrumb = string.Format("{0} / {1}", breadcrumb, repositoryURL);
 
                     if (!string.IsNullOrEmpty(requestPath))
@@ -201,7 +201,7 @@ namespace PowerShellOnlineSigningService
             if (!Request.QueryString.HasKeys())
                 return string.Empty;
 
-            string urlTemplate = "<a href='?owner=" + userName + "&repository=" + repoName + "&path={0}'>{1}</a>";
+            string urlTemplate = "<a href='?o=" + userName + "&r=" + repoName + "&p={0}'>{1}</a>";
             string breadcrumb = string.Empty;
             ArrayList al = new ArrayList();
 

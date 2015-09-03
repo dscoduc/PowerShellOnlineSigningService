@@ -30,9 +30,9 @@ namespace PowerShellOnlineSigningService
         {
             TextBox tbSearch = (TextBox)Master.FindControl("cphBody").FindControl("tbSearch");
             if (string.IsNullOrEmpty(tbSearch.Text))
-                Response.Redirect("~/SearchUsers.aspx?s=a", true);
+                Response.Redirect("~/Search.aspx?s=a", true);
 
-            Response.Redirect(string.Format("~/SearchUsers.aspx?s={0}", tbSearch.Text), true);
+            Response.Redirect(string.Format("~/Search.aspx?s={0}", tbSearch.Text), true);
         }
     }
 }
