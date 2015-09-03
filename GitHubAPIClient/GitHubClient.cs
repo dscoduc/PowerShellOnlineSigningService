@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Reflection;
 
@@ -15,40 +14,54 @@ namespace GitHubAPIClient
         #region private declarations
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private static string github_root_url = (string)ConfigurationManager.AppSettings["github_root_url"] ?? "api.github.com";
-        private static string auth_token = (string)ConfigurationManager.AppSettings["auth_token"];
+        private static string auth_token = (string)ConfigurationManager.AppSettings["auth_token"] ?? null;
+        private static string user_agent = (string)ConfigurationManager.AppSettings["user_agent"] ?? "curl/7.43.0";
         #endregion // private declarations
 
         #region public functions
-        /// <summary>
-        /// Ex.
-        ///     GitRateLimit rateLimit = GitHubClient.GetRateLimit();
-        ///     Console.WriteLine("Rate Limit: {0}{1}Rate Remaining: {2}", rateLimit.rate.limit, Environment.NewLine, rateLimit.rate.remaining);
-        /// </summary>
-        /// <returns>Returns the RateLimit object</returns>
-        public static GitRateLimit GetRateLimit()
+
+        public static List<GitUserDetails> GetUsers(string searchString)
         {
-            log.Debug("Requesting the Rate Limit from GitHub");
+            if (string.IsNullOrEmpty(searchString))
+                throw new ArgumentNullException();
 
-            HttpWebRequest request = buildWebRequest("https://api.github.com/rate_limit");
+            // GET /search/users?q=:owner
+            string url = string.Format("https://{0}/search/users?q={1}", github_root_url, searchString);
 
-            string jsonResult = getResponse(request);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            GitRateLimit rateLimit = JsonConvert.DeserializeObject<GitRateLimit>(jsonResult);
-            log.DebugFormat("Current rate limit {0}", rateLimit.rate);
-            return rateLimit;
+            string jsonResponse = null;
+            try
+            {
+                jsonResponse = getResponse(request);
+            }
+            catch (WebException wex)
+            {
+                log.Warn(wex);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                return null; 
+            }
+
+            GitUsers parsedResponse = JsonConvert.DeserializeObject<GitUsers>(jsonResponse);
+            List<GitUserDetails> usersList = new List<GitUserDetails>();
+
+            if(parsedResponse.items.Count == 0)
+                return null;
+
+            foreach (GitUser u in parsedResponse.items)
+                usersList.Add(GetUserDetails(u));
+
+            // sort the list before sending it onward
+            usersList.Sort();
+
+            log.DebugFormat("Returning {0} user entries", usersList.Count);
+            return usersList;
         }
 
-        /// <summary>
-        /// Ex.
-        ///     if (GitHubClient.RateLimitExceeded())
-        ///         Console.WriteLine("Rate limit hass exceeded allowed connections");
-        /// </summary>
-        /// <returns>Have you exceeded your allowed connections?</returns>
-        public static bool RateLimitExceeded()
-        {
-            Rate rate = GetRateLimit().rate;
-            return rate.remaining < 1;
-        }
 
         /// <summary>
         /// Ex. 
@@ -59,164 +72,100 @@ namespace GitHubAPIClient
         /// <returns>The file object</returns>
         public static GitContent GetContent(string owner, string repository, string contentPath)
         {
-            if (string.IsNullOrEmpty(contentPath) || string.IsNullOrEmpty(owner) || 
-                string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-
-            string jsonResult = string.Empty;
+            if (string.IsNullOrEmpty(contentPath) || string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository)) 
+                throw new ArgumentNullException();
 
             // GET /repos/:owner/:repo/contents/:path
             string url = string.Format("https://{0}/repos/{1}/{2}/contents/{3}", github_root_url, owner, repository, contentPath);
 
-            // Build request
-            HttpWebRequest request = buildWebRequest(method.GET, url);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            try
+            string jsonResponse = null;
+            try 
             {
-                // Submit request 
-                jsonResult = getResponse(request);
+                jsonResponse = getResponse(request);
             }
             catch (WebException wex)
             {
-                if ((wex.Response).Headers["status"] == "404 Not Found")
-                {
-                    log.Debug(wex.Message);
-                    return null;
-                }
-                else
-                {
-                    log.Warn(wex);
-                    throw;
-                }
+                log.Warn(wex);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                return null;
             }
 
-            // convert json to object and return object
-            GitContent content = JsonConvert.DeserializeObject<GitContent>(jsonResult);
-            return content;
+            return JsonConvert.DeserializeObject<GitContent>(jsonResponse);
         }
-
-        public static List<GitUserDetails> GetUsers(string searchString)
-        {
-            if (string.IsNullOrEmpty(searchString)) { throw new ArgumentNullException(); }
-
-            string jsonResult = string.Empty;
-
-            // GET /search/users
-            string url = string.Format("https://{0}/search/users?q={1}", github_root_url, searchString);
-
-            // Build request
-            HttpWebRequest request = buildWebRequest(method.GET, url);
-
-            try
-            {
-                jsonResult = getResponse(request);
-            }
-            catch (WebException wex)
-            {
-                if ((wex.Response).Headers["status"] == "404 Not Found")
-                {
-                    log.Warn(wex.Message);
-                    return null;
-                }
-                else
-                {
-                    log.Warn(wex);
-                }
-            }
-
-            GitUsers rawUsersContent = JsonConvert.DeserializeObject<GitUsers>(jsonResult);
-            List<GitUserDetails> users = new List<GitUserDetails>();
-
-            //int iCount = 0;
-            foreach (GitUser u in rawUsersContent.items)
-            {
-                users.Add(GetUserDetails(u));
-            //    iCount++;
-
-                /// have to limit query down to avoid bumping
-                /// into github search limit of 30 per minute                
-             //   if (iCount > 10) { break; }
-            }
-
-            users.Sort();
-
-            log.DebugFormat("Returning {0} user entries", users.Count);
-            return users;
-        }
-
 
         public static GitUserDetails GetUserDetails(GitUser user)
         {
-            if (null == user) { throw new ArgumentNullException(); }
-
-            string jsonResult = string.Empty;
+            if (null == user) 
+                throw new ArgumentNullException();
 
             // GET /search/users
             string url = string.Format("https://{0}/users/{1}", github_root_url, user.login);
 
-            // Build request
-            HttpWebRequest request = buildWebRequest(method.GET, url);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
+            string jsonResponse = null;
             try
             {
-                jsonResult = getResponse(request);
+                jsonResponse = getResponse(request);
             }
             catch (WebException wex)
             {
-                if ((wex.Response).Headers["status"] == "404 Not Found")
-                {
-                    log.Warn(wex.Message);
-                    return null;
-                }
-                else
-                {
-                    log.Warn(wex);
-                }
+                log.Warn(wex);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                return null;
             }
 
-            return JsonConvert.DeserializeObject<GitUserDetails>(jsonResult);
+            return JsonConvert.DeserializeObject<GitUserDetails>(jsonResponse);
         }
 
         public static List<GitContent> GetContents(string owner, string repository, string contentPath)
         {
-            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-
-            string jsonResult = string.Empty;
+            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository))
+                throw new ArgumentNullException();
 
             // GET /repos/:owner/:repo/contents
             string url = string.Format("https://{0}/repos/{1}/{2}/contents/{3}", github_root_url, owner, repository, contentPath);
 
-            // Build request
-            HttpWebRequest request = buildWebRequest(method.GET, url);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
+            string jsonResponse = null;
             try
             {
-                jsonResult = getResponse(request);
+                jsonResponse = getResponse(request);
             }
             catch (WebException wex)
             {
-                if ((wex.Response).Headers["status"] == "404 Not Found")
-                {
-                    log.Warn(wex.Message);
-                    return null;
-                }
-                else
-                {
-                    log.Warn(wex);
-                }
+                log.Warn(wex);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                return null;
             }
 
             List<GitContent> contents = new List<GitContent>();
 
-            // No obvious way to tell difference between a json result with a 
+            // Json.Net can't tell difference between a json result with a 
             // single entry result (non-array) or a json with multiple entries (array).  
             // This hack handles it for now...
-            if (jsonResult.StartsWith("["))
+            if (jsonResponse.StartsWith("["))
             {
-                contents = JsonConvert.DeserializeObject<List<GitContent>>(jsonResult);
+                contents = JsonConvert.DeserializeObject<List<GitContent>>(jsonResponse);
             }
             else
             {
-                GitContent content = JsonConvert.DeserializeObject<GitContent>(jsonResult);
+                GitContent content = JsonConvert.DeserializeObject<GitContent>(jsonResponse);
                 contents.Add(content);
             }
 
@@ -236,53 +185,46 @@ namespace GitHubAPIClient
         /// <returns>An array of all objects in the Repository</returns>
         public static List<GitContent> GetContents(string owner, string repository)
         {
-            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
-            
-            List<GitContent> contents = new List<GitContent>();
-            string jsonResult = string.Empty;
+            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository))
+                throw new ArgumentNullException();
 
             // GET /repos/:owner/:repo/contents
             string url = string.Format("https://{0}/repos/{1}/{2}/contents", github_root_url, owner, repository);
 
-            log.DebugFormat("Requesting a list of all files for {0}/{1}", owner, repository);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            // Build request
-            HttpWebRequest request = buildWebRequest(method.GET, url);
-
+            string jsonResponse = null;
             try
             {
-                jsonResult = getResponse(request);
+                jsonResponse = getResponse(request);
             }
             catch (WebException wex)
             {
-                if ((wex.Response).Headers["status"] == "404 Not Found")
-                {
-                    log.Debug(wex.Message);
-                    return null;
-                }
-                else
-                {
-                    log.Warn(wex);
-                    throw;
-                }
+                log.Warn(wex);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                return null;
             }
 
-            // No obvious way to tell difference between a json result with a 
+            List<GitContent> contents = new List<GitContent>();
+            // Json.Net can't tell difference between a json result with a 
             // single entry result (non-array) or a json with multiple entries (array).  
             // This hack handles it for now...
-            if (jsonResult.StartsWith("["))
+            if (jsonResponse.StartsWith("["))
             {
-                contents = JsonConvert.DeserializeObject<List<GitContent>>(jsonResult);
+                contents = JsonConvert.DeserializeObject<List<GitContent>>(jsonResponse);
             }
             else
             {
-                GitContent content = JsonConvert.DeserializeObject<GitContent>(jsonResult);
+                GitContent content = JsonConvert.DeserializeObject<GitContent>(jsonResponse);
                 contents.Add(content);
             }
 
             log.DebugFormat("Returning {0} content items", contents.Count);
             return contents;
- 
         }
 
         /// <summary>
@@ -293,75 +235,56 @@ namespace GitHubAPIClient
         /// <returns>Plain text output of the Base64 encoded contents of the requested file</returns>
         public static string GetFileContents(string owner, string repository, string contentPath)
         {
-            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository)) { throw new ArgumentNullException(); }
+            if (string.IsNullOrEmpty(owner) || string.IsNullOrEmpty(repository) || string.IsNullOrEmpty(contentPath)) 
+                throw new ArgumentNullException();
 
-            GitContent content = GitHubClient.GetContent(owner, repository, contentPath);
-            if (content == null)
+            GitContent jsonResponse = GitHubClient.GetContent(owner, repository, contentPath);
+            if (null == jsonResponse)
             {
-                log.Debug("No file matching the request was found in the Repository");
-                return string.Empty;
+                log.DebugFormat("No file matching '{0}' was found in the Repository", contentPath);
+                return null;
             }
-            return GetFileContents(content);
-        }
 
-        /// <summary>
-        /// Ex.
-        ///     Console.Write(GitHubClient.GetFileContents(Content));
-        /// </summary>
-        /// <param name="Content">Content object</param>
-        /// <returns>Plain text output of the Base64 encoded contents of the requested file</returns>
-        public static string GetFileContents(GitContent Content)
-        {
-            if (Content == null) { throw new ArgumentNullException(); }
+            // decode from base64
+            byte[] base64EncodedBytes = System.Convert.FromBase64String(jsonResponse.content);
 
-            return Utils.Base64Decode(Content.content);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
 
         public static List<GitRepository> GetRepositories(string owner) 
         {
-            if (string.IsNullOrEmpty(owner)) { throw new ArgumentNullException(); }
-
-            List<GitRepository> contents = new List<GitRepository>();
-            string jsonResult = string.Empty;
+            if (string.IsNullOrEmpty(owner)) 
+                throw new ArgumentNullException();
 
             // GET /users/:username/repos
             string url = string.Format("https://{0}/users/{1}/repos", github_root_url, owner);
 
-            log.DebugFormat("Requesting a list of all repositories for {0}", owner);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            // Build request
-            HttpWebRequest request = buildWebRequest(method.GET, url);
-
+            string jsonResponse = null;
             try
             {
-                jsonResult = getResponse(request);
+                jsonResponse = getResponse(request);
             }
             catch (WebException wex)
             {
-                if ((wex.Response).Headers["status"] == "404 Not Found")
-                {
-                    log.Debug(wex.Message);
-                    return null;
-                }
-                else
-                {
-                    log.Warn(wex);
-                    throw;
-                }
+                log.Warn(wex);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                return null;
             }
 
-            // No obvious way to tell difference between a json result with a 
+            List<GitRepository> contents = new List<GitRepository>();
+            // Json.Net can't tell difference between a json result with a 
             // single entry result (non-array) or a json with multiple entries (array).  
             // This hack handles it for now...
-            if (jsonResult.StartsWith("["))
-            {
-                contents = JsonConvert.DeserializeObject<List<GitRepository>>(jsonResult);
-            }
+            if (jsonResponse.StartsWith("["))
+                contents = JsonConvert.DeserializeObject<List<GitRepository>>(jsonResponse);
             else
-            {
-                GitRepository content = JsonConvert.DeserializeObject<GitRepository>(jsonResult);
-                contents.Add(content);
-            }
+                contents.Add(JsonConvert.DeserializeObject<GitRepository>(jsonResponse));
 
             // sort repositories by name
             contents.Sort();
@@ -375,136 +298,114 @@ namespace GitHubAPIClient
         #region private web functions
         /// <summary>
         /// Builds the web request with pre-set properties needed for GitHub
-        /// using the default GET request method
-        /// </summary>
-        /// <param name="requestURL">The URL to perform the request against</param>
-        /// <returns>Prepared request object</returns>
-        private static HttpWebRequest buildWebRequest(string requestURL)
-        {
-            return buildWebRequest(method.GET, requestURL);
-        }
-
-        /// <summary>
-        /// Builds the web request with pre-set properties needed for GitHub
         /// </summary>
         /// <param name="requestMethod">a http request method type (ex. GET, PUT, POST)</param>
         /// <param name="requestURL">The URL to perform the request against</param>
         /// <returns>Prepared request object</returns>
-        private static HttpWebRequest buildWebRequest(method requestMethod, string requestURL)
-        {
-            if (string.IsNullOrEmpty(requestURL)) { throw new ArgumentNullException("Must provide request URL"); }
+        //private static HttpWebRequest buildWebRequest(method requestMethod, string requestURL)
+        //{
+        //    if (string.IsNullOrEmpty(requestURL)) { throw new ArgumentNullException("Must provide request URL"); }
 
-            log.DebugFormat("Request: {0} [{1}]", requestMethod, requestURL);
+        //    log.DebugFormat("Request: {0} [{1}]", requestMethod, requestURL);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestURL);
-            request.Method = requestMethod.ToString();
-            request.ContentType = "text/json";  // everything we're doing here is json based
-            request.UserAgent = "curl"; //userAgent;  // GitHub requires userAgent be your username or repository
+        //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestURL);
+        //    request.Accept = "*/*";
+        //    request.Method = "GET";
+        //    request.ContentType = "application/json";  // everything we're doing here is json based
+        //    request.UserAgent = user_agent;     // GitHub requires userAgent be your username or repository
             
-            if (!string.IsNullOrEmpty(auth_token))
-                request.Headers.Add("authorization: token " + auth_token);
+        //    if (!string.IsNullOrEmpty(auth_token))
+        //        request.Headers.Add("authorization: token " + auth_token);
 
-            request.Accept = "*/*";
-
-            return request;
-        }
+        //    return request;
+        //}
 
         private static string getResponse(HttpWebRequest request)
         {
+            if ((null == request)) { throw new ArgumentNullException("An empty request object was passed"); }
+
             HttpWebResponse getResponse;
             GitResponse cachedResponse;
             string jsonResponse = string.Empty;
 
-            try
-            {
-                if ((request == null)) { throw new ArgumentNullException("An empty request object was passed"); }
+            // add default request options
+            request.Accept = "*/*";
+            request.Method = "GET";
+            request.ContentType = "application/json";
+            request.UserAgent = user_agent;             // NOTE: GitHub requires userAgent be your username or repository
 
-                // check if the url is in cache
-                object cacheData = Utils.GetCache(request.Address.AbsoluteUri);
+            if (!string.IsNullOrEmpty(auth_token))      // NOTE: Auth token is optional on public Github
+                request.Headers.Add("authorization: token " + auth_token);
 
+            // check if the url is in cache
+            object cacheData = Utils.GetCache(request.Address.AbsoluteUri);
                 
-                if (cacheData != null && request.Method == method.GET.ToString())
+            if (null != cacheData && request.Method == "GET")
+            {
+                // data found in cache, load it up
+                cachedResponse = (GitResponse)cacheData;
+
+                // grab etag and add into request to be made to see if it's expired
+                request.Headers.Add("If-None-Match", cachedResponse.GetETAG);
+
+                // perform the request to see if the response would be different
+                try
                 {
-                    // data found in cache, load it up
-                    cachedResponse = (GitResponse)cacheData;
-
-                    // grab etag and add into request to be made to see if it's expired
-                    request.Headers.Add("If-None-Match", cachedResponse.GetETAG);
-
-                    // perform the request to see if the response would be different
-                    try
-                    {
-                        // if data is stale then a HTTP 304 response will drop this into an WebException
-                        // else it will contain updated information
-                        using (getResponse = (HttpWebResponse)request.GetResponse())
-                        {
-                            log.Debug("Cached data is stale - updating memory cache with latest and greatest");
-                            using (StreamReader streamReader = new StreamReader(getResponse.GetResponseStream()))
-                            {
-                                jsonResponse = streamReader.ReadToEnd();
-                                log.DebugFormat("JSON response received:{0}{1}", Environment.NewLine, jsonResponse);
-
-                                // add latest info to memory cache
-                                Utils.AddCache(request.Address.AbsoluteUri, new GitResponse(jsonResponse, getResponse.Headers));
-
-                                // send back the jsonResponse
-                                return jsonResponse;
-                            }
-                        }
-                    }
-                    catch (WebException wex)
-                    {
-                        if (wex.Response != null && wex.Response.Headers.Get("Status") == "304 Not Modified")
-                        {
-                            log.Debug("Cached data is still valid - new request not necessary");
-                            return cachedResponse.JsonResponse;
-                        }
-                        else
-                        {
-                            log.Error(wex);
-                            throw;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        log.Error(ex);
-                        throw;
-                    }
-                }
-                else
-                {
-                    log.Debug("Initiating a new request");
+                    // if data is stale then a HTTP 304 response will drop this into an WebException
+                    // else it will contain updated information
                     using (getResponse = (HttpWebResponse)request.GetResponse())
                     {
+                        log.Debug("Cached data is stale - updating memory cache with latest and greatest");
                         using (StreamReader streamReader = new StreamReader(getResponse.GetResponseStream()))
                         {
                             jsonResponse = streamReader.ReadToEnd();
                             log.DebugFormat("JSON response received:{0}{1}", Environment.NewLine, jsonResponse);
 
                             // add latest info to memory cache
-                            log.Debug("Updating memory cache with latest and greatest");
                             Utils.AddCache(request.Address.AbsoluteUri, new GitResponse(jsonResponse, getResponse.Headers));
 
+                            // send back the jsonResponse
                             return jsonResponse;
                         }
                     }
                 }
+                catch (WebException wex)
+                {
+                    if (wex.Response != null && wex.Response.Headers.Get("Status") == "304 Not Modified")
+                    {
+                        log.Debug("Cached data is still valid - new request not necessary");
+                        return cachedResponse.JsonResponse;
+                    }
+                    else { throw; }
+                }
+                catch (Exception) { throw; }
             }
-            catch (Exception ex)
+            else
             {
-                log.Error(ex);
-                throw;
-            }
-        }
+                log.Debug("Initiating a new request");
+                using (getResponse = (HttpWebResponse)request.GetResponse())
+                {
+                    using (StreamReader streamReader = new StreamReader(getResponse.GetResponseStream()))
+                    {
+                        jsonResponse = streamReader.ReadToEnd();
+                        log.DebugFormat("JSON response received:{0}{1}", Environment.NewLine, jsonResponse);
 
-        /// <summary>
-        /// HTTPWebRequest Methods
-        /// </summary>
-        private enum method
-        {
-            GET, POST, PUT, HEAD, DELETE
+                        if (!string.IsNullOrEmpty(getResponse.GetResponseHeader("ETag")))
+                        {
+                            // add latest info to memory cache
+                            log.Debug("Updating memory cache with latest and greatest");
+                            Utils.AddCache(request.Address.AbsoluteUri, new GitResponse(jsonResponse, getResponse.Headers));
+                        }
+                        else
+                        {
+                            log.Debug("Not caching due to an absence of ETag data");
+                        }
+
+                        return jsonResponse;
+                    }
+                }
+            }
         }
         #endregion // private web functions
-
     }
 }

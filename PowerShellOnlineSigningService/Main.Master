@@ -5,13 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="author" content="Chris Blankenship" />
-    <meta name="copyright" content="Chris Blankenship" />
     <meta name="description" content="Download digitally signed PowerShell scripts directly from GitHub." />
-    <meta name="keywords" content="Dscoduc, Chris Blaneknship, PowrShell, Security, PKI" />
+    <meta name="keywords" content="PowerShell, Security, PKI" />
     <meta name="X-Powered-By" content="Rackspace Cloud Hosting" />
     <link rel="me" type="text/html" href="http://twitter.com/dscoduc" />
     <link rel="me" type="text/html" href="https://github.com/dscoduc" />
-    <title>PowerShell Online Signing Service</title>
+    <title><%= (string)ConfigurationManager.AppSettings["app_title"] %></title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <asp:ContentPlaceHolder ID="cphHead" runat="server" />
 </head>
@@ -20,7 +19,7 @@
 
         <div class="header_wrapper">
             <div class="header">
-                <h1>PowerShell Online Signing Service</h1>
+                <h1 id="title" runat="server"><%= (string)ConfigurationManager.AppSettings["app_title"] %></h1>
             </div> <%--header--%>
         </div> <%--header_wrapper--%>
 
