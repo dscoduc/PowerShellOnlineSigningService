@@ -10,13 +10,14 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 
 namespace PowerShellOnlineSigningService
 {
     public partial class User : System.Web.UI.Page
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private string approvedExtensions = ConfigurationManager.AppSettings["approved_extensions"];
+        private string approvedExtensions = ConfigurationManager.AppSettings["approved_extensions"] ?? @"^.+\.((ps1)|(ps1))$";
         private static string defaultOwner = ConfigurationManager.AppSettings["default_owner"] ?? string.Empty;
         private static string defaultRepository = ConfigurationManager.AppSettings["default_repository"] ?? string.Empty;
 
@@ -24,7 +25,7 @@ namespace PowerShellOnlineSigningService
         {
             string userName = (string)HttpContext.Current.Request.QueryString["o"] ?? null;
             string repoName = (string)HttpContext.Current.Request.QueryString["r"] ?? null;
-            string requestPath = HttpContext.Current.Request.QueryString["p"] ?? string.Empty;
+            string requestPath = (string)HttpContext.Current.Request.QueryString["p"] ?? string.Empty;
             
             if (Page.IsPostBack)
                 return;
@@ -42,12 +43,15 @@ namespace PowerShellOnlineSigningService
             if(!string.IsNullOrEmpty(userName))
                 displayBreadcrumb(userName, repoName, requestPath);
 
-        } // Page_Load
+        }
 
         private void loadResults(string userName, string repoName, string requestPath)
         {
             // array to hold results
             List<string> items = new List<string>();
+
+            // string to hold message
+            string outMessage = string.Empty;
 
             // only owner provided in request
             if (!string.IsNullOrEmpty(userName) && string.IsNullOrEmpty(repoName))
@@ -56,7 +60,7 @@ namespace PowerShellOnlineSigningService
 
                 if (null == Repositories || Repositories.Count < 1)
                 {
-                    items.Add(string.Format("<li class='empty_results'>No repositories found for {0}...</li>", userName));
+                    outMessage = string.Format("No repositories found for {0}...", userName);
                 }
                 else
                 {
@@ -75,8 +79,8 @@ namespace PowerShellOnlineSigningService
 								        "<p class='repoList_description'>" + description + "</p>" +
 							        "</li>"
 				        );
-                    } // for each
-                } // if/else
+                    }
+                }
             }
             // owner and repo provided
             else if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(repoName))
@@ -84,7 +88,7 @@ namespace PowerShellOnlineSigningService
                 List<GitContent> unfilteredItems = GitHubClient.GetContents(userName, repoName, requestPath);
                 if (null == unfilteredItems || unfilteredItems.Count < 1)
                 {
-                    items.Add(string.Format("<li class='empty_results'>No approved file types found in {0}...</li>", repoName));
+                    outMessage = "No approved file types found...";
                 }
                 else
                 {
@@ -115,53 +119,72 @@ namespace PowerShellOnlineSigningService
                         }
 
                         log.DebugFormat("Total of {0} approved files and folders", allowedItems.Count);
-                    } // foreach
+                    }
 
-                    // loop though approved entries
-                    foreach (GitContent item in allowedItems)
+                    if (allowedItems.Count < 1)
                     {
-                        string urlPath = "#";
-                        string name = item.name;
-                        string size = GetFileSizeString(item.size);
-                        string type = item.type ?? string.Empty;
-
-                        // create url for file path
-                        if (item.type == "file")
+                        outMessage = "No approved file types found...";
+                    }
+                    else
+                    {
+                        // loop though approved entries
+                        foreach (GitContent item in allowedItems)
                         {
-                            urlPath = string.Format("DownloadFile.ashx?o={0}&r={1}&p={2}", userName, repoName, item.path);
-                        }
-                        // create url for folder path
-                        else
-                        {
-                            urlPath = string.Format("?o={0}&r={1}&p={2}", userName, repoName, item.path);
-                            size = string.Empty;
-                        }
+                            string urlPath = "#";
+                            string name = item.name;
+                            string size = GetFileSizeString(item.size);
+                            string type = item.type ?? string.Empty;
+
+                            // create url for file path
+                            if (item.type == "file")
+                            {
+                                urlPath = string.Format("DownloadFile.ashx?o={0}&r={1}&p={2}", userName, repoName, item.path);
+                            }
+                            // create url for folder path
+                            else
+                            {
+                                urlPath = string.Format("?o={0}&r={1}&p={2}", userName, repoName, item.path);
+                                size = string.Empty;
+                            }
 
 
-                        // build html syntax for each user
-				        items.Add("<li class='" + item.type + "'>" +
-								        "<a href='" + urlPath + "'>" + 
-									        "<span class='contentList_name'>" + name + "</span>" +
-								        "</a>" + 
-								        "<span class='contentList_size'>" + size + "</span>" +
-							        "</li>");
+                            // build html syntax for each user
+				            items.Add("<li class='" + item.type + "'>" +
+								            "<a href='" + urlPath + "'>" + 
+									            "<span class='contentList_name'>" + name + "</span>" +
+								            "</a>" + 
+								            "<span class='contentList_size'>" + size + "</span>" +
+							            "</li>");
+                        }
                     }
                 }
             }
             // everything else
             else 
             {
-                items.Add("<li class='empty_results'>Nothing found...</li>");
+                outMessage = "Nothing found...";
             }
 
-            // combine all of the entries
-            string results = string.Join("", items.ToArray());
-            
-            //TODO: update results placeholder with results
-            HtmlGenericControl phResults = (HtmlGenericControl)Master.FindControl("cphBody").FindControl("results");
-            phResults.InnerHtml = "<ul class='contentList'>" + results + "</ul>";
-            
-        } // loadResults
+            if (!string.IsNullOrEmpty(outMessage)) {
+
+                Label lblMessage = new Label();
+                lblMessage.CssClass = "contentMessage";
+                lblMessage.Text = outMessage;
+
+                phMessage.Controls.Add(lblMessage);
+
+            }
+            else {
+
+                phResults.Controls.Add(new LiteralControl("<ul class='contentList'>"));
+
+                foreach (var item in items)
+                    phResults.Controls.Add(new LiteralControl(item));
+                
+                phResults.Controls.Add(new LiteralControl("</ul>"));
+
+            }
+        }
 
         private void displayBreadcrumb(string userName, string repoName, string requestPath)
         {

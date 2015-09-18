@@ -7,7 +7,6 @@
     <meta name="author" content="Chris Blankenship" />
     <meta name="description" content="Download digitally signed PowerShell scripts directly from GitHub." />
     <meta name="keywords" content="PowerShell, Security, PKI" />
-    <meta name="X-Powered-By" content="Rackspace Cloud Hosting" />
     <link rel="me" type="text/html" href="http://twitter.com/dscoduc" />
     <link rel="me" type="text/html" href="https://github.com/dscoduc" />
     <title><%= (string)ConfigurationManager.AppSettings["app_title"] %></title>

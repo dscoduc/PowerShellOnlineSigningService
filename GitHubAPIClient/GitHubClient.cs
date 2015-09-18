@@ -17,10 +17,12 @@ namespace GitHubAPIClient
         private static string github_root_url = (string)ConfigurationManager.AppSettings["github_root_url"] ?? "api.github.com";
         private static string auth_token = (string)ConfigurationManager.AppSettings["auth_token"] ?? null;
         private static string user_agent = (string)ConfigurationManager.AppSettings["user_agent"] ?? "curl/7.43.0";
+        private static string cache_timeout_min = (string)ConfigurationManager.AppSettings["cache_timeout_min"] ?? "30";
+
         #endregion // private declarations
 
         #region public functions
-        public static List<GitUserDetails> GetUsers(string searchString)
+        public static List<GitUser> GetUsers(string searchString)
         {
             if (string.IsNullOrEmpty(searchString))
                 throw new ArgumentNullException();
@@ -47,19 +49,17 @@ namespace GitHubAPIClient
             }
 
             GitUsers parsedResponse = JsonConvert.DeserializeObject<GitUsers>(jsonResponse);
-            List<GitUserDetails> usersList = new List<GitUserDetails>();
+            //List<GitUserDetails> usersList = new List<GitUserDetails>();
 
             if(parsedResponse.items.Count == 0)
                 return null;
 
-            foreach (GitUser u in parsedResponse.items)
-                usersList.Add(GetUserDetails(u));
+            log.DebugFormat("Returning {0} user entries", parsedResponse.items.Count);
 
             // sort the list before sending it onward
-            usersList.Sort();
+            parsedResponse.items.Sort();
 
-            log.DebugFormat("Returning {0} user entries", usersList.Count);
-            return usersList;
+            return parsedResponse.items;
         }
 
         /// <summary>
@@ -243,11 +243,6 @@ namespace GitHubAPIClient
                 log.DebugFormat("No file matching '{0}' was found in the Repository", contentPath);
                 return null;
             }
-
-            // decode from base64
-            //byte[] base64EncodedBytes = System.Convert.FromBase64String(jsonResponse.content);
-
-            //return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
             return jsonResponse.DecodedContent;
         }
 
@@ -386,8 +381,6 @@ namespace GitHubAPIClient
         #region utility functions
         public static void AddCache(string cacheKey, object cacheData)
         {
-            string cache_timeout_min = (string)ConfigurationManager.AppSettings["cache_timeout_min"] ?? "30";
-
             ObjectCache cache = MemoryCache.Default;
             CacheItemPolicy policy = new CacheItemPolicy { 
                 SlidingExpiration = TimeSpan.FromMinutes(Convert.ToDouble(cache_timeout_min)) 

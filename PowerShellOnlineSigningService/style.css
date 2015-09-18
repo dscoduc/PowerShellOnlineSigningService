@@ -79,7 +79,16 @@ body{
 }
 
 /* User.aspx */
-
+.contentMessage {
+    border-collapse: collapse;
+    margin: 20px auto;
+    overflow: hidden;
+    padding-left: 0;
+    width: 500px;
+    text-align: center;
+    color: maroon;
+    display: block;
+}
 .contentList {
     border-collapse: collapse;
     margin: 0 auto;

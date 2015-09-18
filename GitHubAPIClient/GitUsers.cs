@@ -12,7 +12,7 @@ namespace GitHubAPIClient
 
     }
 
-    public class GitUser
+    public class GitUser : IComparable<GitUser>
     {
         public string login { get; set; }
         public int id { get; set; }
@@ -32,6 +32,12 @@ namespace GitHubAPIClient
         public string type { get; set; }
         public bool site_admin { get; set; }
         public double score { get; set; }
+
+        public int CompareTo(GitUser other)
+        {
+            // Default to type sort. [A to Z]
+            return this.login.CompareTo(other.login);
+        }
     }
 
 }

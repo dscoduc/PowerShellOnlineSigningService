@@ -45,24 +45,8 @@ namespace PowerShellOnlineSigningService
         void Application_Error(object sender, EventArgs e)
         {
             // An error has occured on a .Net page.
-            var serverError = Server.GetLastError() as HttpException;
-
-            if (null != serverError)
-            {
-                int errorCode = serverError.GetHttpCode();
-
-                if (404 == errorCode)
-                {
-                    Server.ClearError();
-                    Server.Transfer("/Lost.aspx");
-                }
-                else
-                {
-                    Server.ClearError();
-                    Server.Transfer("/Oops.aspx");
-                }            
-            }
-        
+            Exception ex = Server.GetLastError();
+            log.Error(ex);        
         }
 
         void Session_Start(object sender, EventArgs e)

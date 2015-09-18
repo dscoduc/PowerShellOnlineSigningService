@@ -64,10 +64,13 @@ namespace PowerShellOnlineSigningService
             // array to hold results
             List<string> items = new List<string>();
 
-            List<GitUserDetails> Users = GitHubClient.GetUsers(searchString);
+            // string to hold message
+            string outMessage = string.Empty;
+
+            List<GitUser> Users = GitHubClient.GetUsers(searchString);
             if (null == Users || Users.Count < 1)
             {
-                items.Add(string.Format("<li>No matching items found for {0}...</li>", searchString));
+                outMessage = string.Format("No matching items found for {0}...", searchString);
             }
             else if (Users.Count == 1)
             {
@@ -77,11 +80,10 @@ namespace PowerShellOnlineSigningService
             }
             else
             {
-                foreach (GitUserDetails user in Users)
+                foreach (GitUser user in Users)
                 {
                     string userUrl = string.Format("User.aspx?o={0}", user.login);
-                    string formattedUsername = (string.IsNullOrEmpty(user.name)) ? 
-                        SecurityElement.Escape(user.login) : SecurityElement.Escape(user.name);
+                    string formattedUsername = SecurityElement.Escape(user.login);
 
                     items.Add("<li class='users'>" +
                                 "<a href='" + userUrl + "'>" +
@@ -92,12 +94,23 @@ namespace PowerShellOnlineSigningService
                 }
             }
 
-            // combine all of the entries
-            string results = string.Join("", items.ToArray());
+            if (!string.IsNullOrEmpty(outMessage))
+            {
+                Label lblMessage = new Label();
+                lblMessage.CssClass = "contentMessage";
+                lblMessage.Text = outMessage;
 
-            //TODO: update results placeholder with results
-            HtmlGenericControl phResults = (HtmlGenericControl)Master.FindControl("cphBody").FindControl("results");
-            phResults.InnerHtml = "<ul class='userList'>" + results + "</ul>";
+                phMessage.Controls.Add(lblMessage);
+            }
+            else
+            {
+                phResults.Controls.Add(new LiteralControl("<ul class='userList'>"));
+
+                foreach (var item in items)
+                    phResults.Controls.Add(new LiteralControl(item));
+
+                phResults.Controls.Add(new LiteralControl("</ul>"));
+            }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
