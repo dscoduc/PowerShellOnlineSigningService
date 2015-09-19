@@ -305,7 +305,7 @@ The following section describes the manual way to sign a PowerShell Script.  Thi
 5. Verify file signature with **Get-AuthenticodeSignature $file**
 
 
-
+**[Back to the top](#table-of-contents)**
 
 
 
