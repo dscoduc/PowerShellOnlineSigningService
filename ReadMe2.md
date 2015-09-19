@@ -39,7 +39,7 @@ When the user clicks on the search button they will automatically be redirected 
 ##### Search.aspx
 
 ##### User.aspx
-The User.aspx page provides a list of public repositories or contents within a specified repository.   
+The User.aspx page provides a list of public repositories or contents within a specified repository.   The contents are populated by assessing the query string variables.  If the page request does not include any query strings the page will automatically redirect back to itself with the default GitHub owner (as specified in the web.config) added to the query string, then display a list of available repositories.
 
 The User.aspx page accepts the query string variable "o" which represents the owner login ID.  For example, *o=dscoduc* would display the repositories available for the GitHub owner with the login ID of Dscoduc.
 
