@@ -15,7 +15,17 @@ I believe we need to change this behavior and ensure that critical systems shoul
 There are many benefits of storing PowerShell scripts in GitHub including the sharing of code across teammates and maintain version control for changes and updates. This solution will use GitHub as the source of scripts that are to be signed and downloaded.  This interaction with GitHUb allows the solution to not modify the original script during the signing process.
 ## Solution Details
 ### Web Site
-The solution web site is built on ASP.NET 4.5 using C# running on Windows Server 2012 R2.  The core of the website uses Master Pages to render a common format across the following pages: 
+The solution web site is built on ASP.NET 4.5 using C# running on Windows Server 2012 R2.  Development and testing have been done using FireFox and Chrome browsers though Internet Explorer should work as well.  The web site relies on query string data to identify required inout fields on several web pages.
+### Query String Structure
+##### Owner
+
+##### Repository
+##### Path
+##### Search Criteria
+
+### Page Structure
+The core of the website uses Master Pages to render a common format across the following pages: 
+* Main.master
 * Default.aspx
 * Search.aspx
 * User.aspx
@@ -29,6 +39,11 @@ When the user clicks on the search button they will automatically be redirected 
 ##### Search.aspx
 
 ##### User.aspx
+
+
+The User.aspx page accepts the query string "o" which represents a GitHub owner login ID.  For example, *User.aspx?o=dscoduc* would display the repositories available for the GitHub owner with the login ID of Dscoduc.
+
+The User.aspx page accepts the query string "r" only if the "o" query string is proided.  The "r" query string represents a repository name owned by the GitHub owner.  For example, *User.aspx?o=dscoduc&r=PowerShellScripts* would display the contents of the PowerShellScripts repository for the GitHub owner with the login ID of Dscoduc.
 
 ##### DownloadFile.ashx
 ### Application Pool
