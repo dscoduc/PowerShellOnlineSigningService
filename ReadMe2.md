@@ -20,15 +20,10 @@ With the influx of PowerShell attacks I believe we need to change this behavior 
 
 There are many benefits of storing PowerShell scripts in GitHub including the sharing of code across teammates and maintain version control for changes and updates. This solution will use GitHub as the source of scripts that are to be signed and downloaded.  This interaction with GitHUb allows the solution to not modify the original script during the signing process.
 ## Solution Details
+### Application Pool
+The web site runs under an application pool configured with a dedicated service account.  The service account has been granted permissions to the private key of a digital signing certificate that has been installed on the server.  Additional permissions have been granted to the service account which allows for read/write access to the *~/App_Data/* folder where both temporary files and debug log files are created.
 ### Web Site
 The solution web site is built on ASP.NET 4.5 using C# running on Windows Server 2012 R2.  Development and testing have been done using FireFox and Chrome browsers though Internet Explorer should work as well.  The web site relies on query string data to identify required inout fields on several web pages.
-### Query String Structure
-##### Owner
-
-##### Repository
-##### Path
-##### Search Criteria
-
 ### Page Structure
 The core of the website uses Master Pages to render a common format across the following pages: 
 * Main.master
@@ -95,12 +90,14 @@ More information about the query string variable structure can be found in this 
   * Syntax: ?s={ search criteria }
   * Example: ?s=dsco
   * Availale in Search.aspx
-### Application Pool
-The web site runs under an application pool configured with a dedicated service account.  The service account has been granted permissions to the private key of a digital signing certificate that has been installed on the server.  Additional permissions have been granted to the service account which allows for read/write access to the ASP.NET App_Data folder where both temporary files and debug log files are created.
 ### JSON Serialization
-To assist in the handling of JSON responses coming from GitHub this solution relies on the Newtonsoft Json v7.0.1 module.  This allows a quick translation from JSON to a C# object class.  
+To assist in the handling of JSON responses coming from GitHub this solution relies on the Newtonsoft Json v7.0.1 framework.  This allows a quick translation from JSON to a C# object class.
+
+More information can be found at [Json.NET Newtonsoft](http://www.newtonsoft.com/json "Popular high-performance JSON framework for .NET")
 ### Logging Framework
 To handle the logging this solution relies on the Log4Net v2.0.3 framework.  This framework simplifies the handling of writing to both a log file and the Windows Event Log. A configuration file named log4net.config is placed in the root of the website and contains the settings required for the solution to log effectively.
+
+More information can be found at [Apache Log4Net Website](https://logging.apache.org/log4net/ "Cross-language logging services")
 
 ## How to use
 Accessing the solutions web site requires you to authenticate to the system.  This is a necessary step to ensure the integrity of the code signing certificate and prevent malicious use of the signing certificate.
