@@ -204,8 +204,8 @@ It is recommended that an Application Pool is pre-created before creating the we
 ### Web Site
 The following steps can be followed to create the web site.
 1. Launch IIS Management Console
-2. Expand the local server name and select the Sites
-3. Right click on Sites and select *Add Website...*
+2. Expand the local server name and select *Sites*
+3. Right click on *Sites* and select *Add Website...*
 4. Enter the following parameters
    * **Name:** PowerSign
    * **Application Pool:** PowerSign
@@ -230,7 +230,7 @@ The following steps can be followed to create the web site.
 17. Click on the *Require SSL* checkbox and click Apply in the Actions pane on the right side of the management console
 18. Click on the *Application Settings* option in the Web Site settings
 19. Update the entries with information that matches your environment (ex. auth_token and default_owner)
-20. 
+20. Right-click on the PowerSign site and select *Manage Website | Start*
 
 ### Certificate Installation
 
