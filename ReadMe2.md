@@ -30,22 +30,32 @@ The core of the website uses Master Pages to render a common format across the f
 * Search.aspx
 * User.aspx
 * DownloadFile.ashx
+##### Main.master
+The Main.Master page is the template page for all of the ASP.NET web pages.  This is a hidden page that contains the page structure and is not directly callable by a web client.  Changes to the structure of the page, including the header and footer, would be made in this template file.
+
+The header of the Main.master file includes Meta information as well as links to the style.css and page title.
+
+The footer of the Main.master file includes a welcome message to the authenticated user on the left side of the page, and a hidden message of the physical server name serving the web content on the right side of the page.  The hidden server name is for troubleshooting servers behind a web load balancer and can be removed if necessary due to security concerns.
 ##### Default.aspx
 The Default.aspx page is the entry point for the web site and provides two main option to the web user.  The first option is a link to the default GitHub owner as defined in the web.config file.  When the web user clicks on the first option they will automatically be redirected to the User.aspx page with the pre-defined owner name in the query string (e.g. User.aspx?o=dscoduc). 
 
-The second option is an input field and search button which allows the web user to search for a GitHb owner.  The input field criteria can include the GitHub owner's login ID, first name, and/or last name.  Results are limited by GitHub and if a results are missing a desired owner than a more specific search criteria should be submitted. 
+The second option is an input field and search button which allows the web user to search for a GitHb owner.  The input field is the search criteria and can include the GitHub owner's login ID, first name, and/or last name.  Results are limited by GitHub and if the results don't appear to have the desired owner than a more specific search criteria should be submitted. 
 
-When the user clicks on the search button they will automatically be redirected to the Search.aspx page with the search criteria added to the query string (e.g. Search.aspx?s=dsco). 
+When the user clicks on the search button they will automatically be redirected to the Search.aspx page with the search criteria added to the query string (e.g. Search.aspx?s=dsco).
 ##### Search.aspx
+The Search.aspx page is the search page of the web site and provides an input field and search button which allows the web user to search for a GitHb owner.  The input field is the search criteria and can include the GitHub owner's login ID, first name, and/or last name.  Results are limited by GitHub and if the results don't appear to have the desired owner than a more specific search criteria should be submitted. 
 
+When the user clicks on the search button they will automatically be redirected back to the Search.aspx page with the search criteria added to the query string (e.g. Search.aspx?s=dsco).  The search results provides a list of GitHub owners based on the search criteria provided in the query string.  
+
+If the page request does not include a query string variable of "s" the page will automatically perform a lookup starting with the letter "a".  
 ##### User.aspx
-The User.aspx page provides a list of public repositories or contents within a specified repository.   The contents are populated by assessing the query string variables.  If the page request does not include any query strings the page will automatically redirect back to itself with the default GitHub owner (as specified in the web.config) added to the query string, then display a list of available repositories.
+This page provides a list of public repositories or contents within a specified repository.  The contents of the page is populated by assessing the query string variables.  If the page request does not include any query strings the page will automatically redirect back to itself with the default GitHub owner (as specified in the web.config) added to the query string, then display a list of available repositories.
 
-The User.aspx page accepts the query string variable "o" which represents the owner login ID.  For example, *o=dscoduc* would display the repositories available for the GitHub owner with the login ID of Dscoduc.
+This page accepts the query string variable "o" which represents the owner login ID.  For example, *o=dscoduc* would display the repositories available for the GitHub owner with the login ID of Dscoduc.
 
-The User.aspx page accepts the query string variable "r" only if the "o" variable is provided in the query string.  The "r" variable represents a repository name owned by the GitHub owner.  For example, *o=dscoduc&r=PowerShellScripts* would display the contents of the PowerShellScripts repository for the GitHub owner with the login ID of Dscoduc.
+The User.aspx page accepts the query string variable "r" only if the "o" variable is provided in the query string.  The "r" variable represents a repository name owned by the GitHub owner.  For example, *User.aspx?o=dscoduc&r=PowerShellScripts* would display the contents of the PowerShellScripts repository for the GitHub owner with the login ID of Dscoduc.
 
-The content path of a GitHub Repisitory object is handled with the query string "p".  This can be either the file name you wish to download (e.g. o=dscoduc&r=PowerShellScripts&p=GetDCNetInfo.ps1) or the name of a folder within the Repository (e.g. o=dscoduc&r=PowerShellScripts&p=TestFolder)
+The content path of a GitHub Repisitory object is handled with the query string "p".  This can be either the file name you wish to download (e.g. DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=GetDCNetInfo.ps1) or the name of a folder within the Repository (e.g. User.aspx?o=dscoduc&r=PowerShellScripts&p=TestFolder)
 
 ##### DownloadFile.ashx
 ### Application Pool
