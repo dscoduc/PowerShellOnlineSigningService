@@ -153,32 +153,90 @@ In this scenario the web user is looking for a script from a co-worker.  They ar
 ## Solution Installation
 This section covers the installation of the solution.
 ### Source Files
-The following folder and file structure is incuded in the solution:
+This section displays the folder and file structure incuded in the solution. For each folder name there is the account and permissions required for the solution to work correctly.  After copying the source files into the desired root folder (ex. PowerSign) you will need to delegate permissions to the IIS_IUSRS and Application Pool account.
 
-* App_Data
-  * Website_Debug.log
-* bin
-  * GitHubAPIClient.dll
-  * GitHubAPIClient.pdb
-  * log4net.dll
-  * log4net.xml
-  * Newtonsoft.Json.dll
-  * Newtonsoft.Json.xml
-  * PowerShellOnlineSigningService.dll
-  * PowerShellOnlineSigningService.pdb
-* Default.aspx
-* DownloadFile.ashx
-* favicon.ico
-* Global.asax
-* images
-* log4net.config
-* Main.Master
-* packages.config
-* Search.aspx
-* style.css
-* User.aspx
-* Web.config
+**Note:** This assumes the root folder name is PowerSign and the Application Pool account name is PowerSign.
 
-### Folder Permissions
+* PowerSign (IIS_IUSRS +R/W)
+  * App_Data  (IIS AppPool/PowerSign +R/W/M)
+    * Website_Debug.log
+  * bin
+    * GitHubAPIClient.dll
+    * GitHubAPIClient.pdb
+    * log4net.dll
+    * log4net.xml
+    * Newtonsoft.Json.dll
+    * Newtonsoft.Json.xml
+    * PowerShellOnlineSigningService.dll
+    * PowerShellOnlineSigningService.pdb
+  * images
+    * emptyrepo.png
+    * file.jpg
+    * folder.jpg
+    * github.jpg
+    * githubrobot.png
+    * repository.jpg
+    * searchman.jpg
+    * securityguy1.png
+    * user.jpg
+  * Default.aspx
+  * DownloadFile.ashx
+  * favicon.ico
+  * Global.asax
+  * log4net.config
+  * Main.Master
+  * Search.aspx
+  * style.css
+  * User.aspx
+  * Web.config
+
+### Application Pool
+It is recommended that an Application Pool is pre-created before creating the web site.  The following steps can be followed to create the Application Pool.
+1. Launch IIS Management Console
+2. Expand the local server name and select the Application Pools entry
+3. Right click on Application Pools and select *Add Application Pool*
+4. Enter the following parameters
+   * **Name:** PowerSign
+   * **.NET CLR Version:** .NET CLR Version v4.0.30319
+   * **Managed Pipeline Mode:** Integrated
+   * **Start Application Pool Immediately:** Unchecked
+5. Click OK to complete the creation
+### Web Site
+The following steps can be followed to create the web site.
+1. Launch IIS Management Console
+2. Expand the local server name and select the Sites
+3. Right click on Sites and select *Add Website...*
+4. Enter the following parameters
+   * **Name:** PowerSign
+   * **Application Pool:** PowerSign
+   * **Physical Path:** (path where you copied source files - ex. c:\inetpub\PowerSign)
+   * **Type:** HTTP
+   * **IP Address:** All Unassigned
+   * **Port:** 80
+   * **Host Name:** (Blank)
+   * **Start Website Immediately** Unchecked
+5. Click OK to complete the creation
+6. Right click on the new PowerSign site and select *Edit Bindings*
+7. Click on *Add* to display *Add Site Binding*
+8. Click on *Type | http* and select https
+9. Click on the *SSL Certificate* drop down and choose the appropriate web server certificate
+10. Click OK to save the settings
+11. Click Close to close Site Bindings
+12. Locate and double-click on the *Authentication* option in the Web Site settings
+13. Right-click on *Anonymous Access* and click *Disable*
+14. Right-click on *Windows Authentication* and click *Enable*
+15. Click on the PowerSign site on the left column
+16. Locate and double-click the *SSL Settings* option in the Web Site settings
+17. Click on the *Require SSL* checkbox and click Apply in the Actions pane on the right side of the management console
+18. Click on the *Application Settings* option in the Web Site settings
+19. Update the entries with information that matches your environment (ex. auth_token and default_owner)
+20. 
+
 ### Certificate Installation
-### Certificate Installation
+
+
+
+
+
+
+
