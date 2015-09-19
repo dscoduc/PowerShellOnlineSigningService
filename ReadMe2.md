@@ -6,13 +6,13 @@ One of the security features built into Windows PowerShell scripts is the abilit
 * RemoteSigned
 * Unrestricted
 
-The **Resticted** level is the default execution policy which does not allow the execution of scripts in favor of only allowing interactive execution.  
+The **Resticted** level is the default execution policy which does not allow the execution of scripts in favor of only allowing interactive execution.  Operational requirements will likely not allow for this execution policy level.
 
-The **AllSigned** level only allows the execution of scripts and configuration files that are signed by a trusted publisher.  
+The **AllSigned** level only allows the execution of scripts and configuration files that are signed by a trusted publisher.  A more practical alternative to Restricted, AllSigned should be the execution policy that is configured in a secure environment.
 
 The **RemoteSigned** level allows the execution of scripts and configuration files downloaded from communication applications that are signed by a publisher that you trust.  
 
-Finally the **Unrestricted** level allows the execution of any scripts without requiring the script to be signed.
+Finally the **Unrestricted** level allows the execution of any scripts without requiring the script to be signed.  This is the most insecure execution policy level since it provides no protection from maliciously modified scripts.
 
 For a more detailed description of PowerShell signing visit Scott Hanselman's page on [Signing PowerShell Scripts](http://www.hanselman.com/blog/SigningPowerShellScripts.aspx)
 
@@ -23,6 +23,10 @@ With the influx of PowerShell attacks I believe we need to change this behavior 
 There are many benefits of storing PowerShell scripts in GitHub including the sharing of code across teammates and maintain version control for changes and updates. This solution will use GitHub as the source of scripts that are to be signed and downloaded.  This interaction with GitHUb allows the solution to not modify the original script during the signing process.
 ## Solution Details
 This section covers the components of the solution.
+### Authentication
+Access to this solution will require Windows Integrated authentication.  This is a necessary step to prevent unauthorized access to signed scripts.  If a malicious user could generate scripts that are signed by a trusted signing certificate then the execution policy becomes irrelevant.
+
+The name of the authenticated user will be displayed on the footer of every page, as well as included in the header of any download PowerShell scripts. 
 ### Application Pool
 The web site runs under an application pool configured with a dedicated service account.  The service account has been granted permissions to the private key of a digital signing certificate that has been installed on the server.  Additional permissions have been granted to the service account which allows for read/write access to the *~/App_Data/* folder where both temporary files and debug log files are created.
 ### Web Site
@@ -101,6 +105,47 @@ More information can be found at [Json.NET Newtonsoft](http://www.newtonsoft.com
 To handle the logging this solution relies on the Log4Net v2.0.3 framework.  This framework simplifies the handling of writing to both a log file and the Windows Event Log. A configuration file named log4net.config is placed in the root of the website and contains the settings required for the solution to log effectively.
 
 More information can be found at [Apache Log4Net Website](https://logging.apache.org/log4net/ "Cross-language logging services")
-
 ## How to use
-Accessing the solutions web site requires you to authenticate to the system.  This is a necessary step to ensure the integrity of the code signing certificate and prevent malicious use of the signing certificate.
+This section outlines how the web site might typical be used.
+
+  * **NOTE:** In these examples *dscoduc* has been configured as the Default PowerShell Owner in the web site configuration file
+###### Scenario 1
+In this scenario the web user is looking for a script in the default PowerShell Repository that contains a common shared list of PowerShell scripts.
+
+1. A web user connects to the web site and lands on the Default.aspx page 
+2. The web user selects the *Default PowerShell Repository* link
+3. Their web browser is redirected to User.aspx?o=dscoduc
+4. A list of available repositories is displayed that includes all public repositories
+5. The web user selects the repository named *PowerShellScripts* and their web browser is redirected to User.aspx?o=dscoduc&r=PowerShellScripts which displays a list of PowerShell scripts available to download
+6. The web user clicks on the PowerShell script named *Export_OUs.ps1*
+7. The web browser is redirected to DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=Export_OUs.ps1
+8. A dialog is displayed prompting the web user to download the file Export_OUs.ps1
+###### Scenario 2
+In this scenario the web user is looking for a script in a co-workers repository.
+
+1. A web user with a GitHub login ID of *dscoduc* connects to the web site and lands on the Default.aspx page
+2. The web user enters *dscoduc* into the input field they click on the Search button
+3. The web browser is automatically redirected to Search.aspx?s=dscoduc
+4. The server performs the search and determines an exact match with the search criteria
+5. The web browser is automatically redirected to User.aspx?o=dscoduc
+6. A list of available repositories is displayed that includes all public repositories
+7. The web user selects the repository named *PowerShellScripts* and their web browser is redirected to User.aspx?o=dscoduc&r=PowerShellScripts which displays a list of PowerShell scripts available to download
+8. The web user clicks on the PowerShell script named *Export_OUs.ps1*
+9. The web browser is redirected to DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=Export_OUs.ps1
+10. A dialog is displayed prompting the web user to download the file Export_OUs.ps1
+###### Scenario 3
+In this scenario the web user is looking for a script from a co-worker.  They are not exactly sure of the persons login ID so they need to do a search to find the co-workers login ID.
+
+1. A web user connects to the web site and lands on the Default.aspx page
+2. The web user enters *dsco* into the input field they click on the Search button
+3. The web browser is automatically redirected to Search.aspx?s=dsco
+4. The server performs the search and determines there are 10 matching owners and displays a list of owners login ID's
+5. The web user decides they are unable to identify the co-workers login so they enter the co-workers last name *Blankenship* into the search criteria in the inout field, then they click the Search button
+6. The server performs the search and determines there are 3 matching owners and displays a list of owners login ID's
+7. Having found the co-workers login ID they click on the login ID in the list
+8. The web browser is redirected to User.aspx?o=dscoduc
+9. A list of available repositories is displayed that includes all public repositories
+10. The web user selects the repository named *PowerShellScripts* and their web browser is redirected to User.aspx?o=dscoduc&r=PowerShellScripts which displays a list of PowerShell scripts available to download
+11. The web user clicks on the PowerShell script named *Export_OUs.ps1*
+12. The web browser is redirected to DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=Export_OUs.ps1
+13. A dialog is displayed prompting the web user to download the file Export_OUs.ps1
