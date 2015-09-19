@@ -154,9 +154,7 @@ To handle the logging this solution relies on the Log4Net v2.0.3 framework.  Thi
 
 More information can be found at [Apache Log4Net Website](https://logging.apache.org/log4net/ "Cross-language logging services")
 ## Using the Solution
-This section outlines how the web site might typical be used.
-
-  * **NOTE:** In these examples *dscoduc* has been configured as the Default PowerShell Owner in the web site configuration file
+This section outlines how the web site might typical be used.  In these examples *dscoduc* has been configured as the Default PowerShell Owner in the web site configuration file
 ###### Scenario 1
 In this scenario the web user is looking for a script in the default PowerShell Repository that contains a common shared list of PowerShell scripts.
 
