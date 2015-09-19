@@ -2,11 +2,19 @@
 ### Table of Contents
 * **[Solution Overview](#solution-overview)**
 * **[Solution Details](#solution-details)**
+   * **[Authentication](#authentication)**
+   * **[Application Pool](#application-pool)**
+   * **[Web Site](#web-site)**
+   * **[Page Structure](#page-structure)**
 * **[Using the Solution](#using-the-solution)**
    * **[Scenario 1](#scenario-1)**
    * **[Scenario 2](#scenario-2)**
    * **[Scenario 3](#scenario-3)**
 * **[Solution Installation](#solution-installation)**
+   * **[Source Files](#source-files)**
+   * **[Application Pool Config](#application-pool-config)**
+   * **[Web Site Config](#web-site-config)**
+   * **[Certifiate Permissions](#certificate-permissions)**
 * **[Manual signing of PowerShell Scripts](#manual-signing-of-powershell-scripts)**
 
 ## Solution Overview
@@ -244,7 +252,7 @@ This section assumes the root folder name is PowerSign and the Application Pool 
   * User.aspx
   * Web.config
 
-### Application Pool
+### Application Pool Config
 It is recommended that an Application Pool is pre-created before creating the web site.  The following steps can be followed to create the Application Pool.
 
 1. Launch IIS Management Console
@@ -256,7 +264,7 @@ It is recommended that an Application Pool is pre-created before creating the we
 7. For **Start Application Pool Immediately** select *Unchecked*
 5. Click OK to complete the creation
 
-### Web Site
+### Web Site Config
 The following steps can be followed to create the web site.
 
 1. Launch IIS Management Console
