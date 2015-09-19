@@ -1,6 +1,9 @@
 # PowerShell Online Signing
-[Solution Overview](##SolutionOverview)
-[Solution Details](##SolutionDetails)
+[Solution Overview](#solutionoverview)
+[Solution Details](#solutiondetails)
+[Using the Solution](#usingthesolution)
+[Solution Installation](#solutioninstallation)
+[Manual sighing of PowerShell Scripts](#manualsigningofpowershellscripts)
 
 ## Solution Overview
 One of the security features built into Windows PowerShell scripts is the ability to define an execution policy on the server.  The execution policy allows an administrator to restrict the execution of scripts on a server through the use of four different secruity levels:
@@ -145,7 +148,7 @@ More information can be found at [Json.NET Newtonsoft](http://www.newtonsoft.com
 To handle the logging this solution relies on the Log4Net v2.0.3 framework.  This framework simplifies the handling of writing to both a log file and the Windows Event Log. A configuration file named log4net.config is placed in the root of the website and contains the settings required for the solution to log effectively.
 
 More information can be found at [Apache Log4Net Website](https://logging.apache.org/log4net/ "Cross-language logging services")
-## How to use
+## Using the Solution
 This section outlines how the web site might typical be used.
 
   * **NOTE:** In these examples *dscoduc* has been configured as the Default PowerShell Owner in the web site configuration file
