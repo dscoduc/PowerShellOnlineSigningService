@@ -64,8 +64,19 @@ The User.aspx page accepts the query string variable "r" only if the "o" variabl
 The content path of a GitHub Repisitory object is handled with the query string "p".  This can be either the file name you wish to download (e.g. DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=GetDCNetInfo.ps1) or the name of a folder within the Repository (e.g. User.aspx?o=dscoduc&r=PowerShellScripts&p=TestFolder)
 
 ##### DownloadFile.ashx
+This DownloadFile.ashx page is a dynamic page that is used to process the request for a file from the GitHub repository specified in the query strings.  
 
+This page requires the owner, repository, and path query string variables to be populated - calling this page without providing a complete query string variable list will result in the page displaying a "File not found" error message.
+
+###### Request Processing
+When the DownloadFile.ashx page is requested the web server will perform the following steps:
+1. Download the requested script file from GitHub to the *~/App_Data/* folder into a random temporary file name.  
+2. Insert/replace a header on the temporary file that includes the name of the authenticated user (used for auditing who requested the signed script)
+3. Call PowerShell to sign the temporary file using the available signing certificate
+4. Serve the signed PowerShell script file to the web user
+5. Delete the temporary file from the *~/App_Data/* folder
 ##### Query String Structure
+More information about the query string variable structure can be found in this section.
 * **Owner**
   *  Syntax: ?o={ owner login ID }
   *  Example: User.aspx?o=dscoduc
@@ -80,7 +91,10 @@ The content path of a GitHub Repisitory object is handled with the query string 
   * Example: User.aspx?o=dscoduc&r=PowerShellScripts&p=SubFolder
   * Example: DownloadFile.aspx?o=dscoduc&r=PowerShellScripts&p=myScript.ps1
   * Requires Owner and Repository variable
-* **Search Criteria** : ?s={ search criteria }
+* **Search Criteria**
+  * Syntax: ?s={ search criteria }
+  * Example: ?s=dsco
+  * Availale in Search.aspx
 ### Application Pool
 The web site runs under an application pool configured with a dedicated service account.  The service account has been granted permissions to the private key of a digital signing certificate that has been installed on the server.  Additional permissions have been granted to the service account which allows for read/write access to the ASP.NET App_Data folder where both temporary files and debug log files are created.
 ### JSON Serialization
