@@ -149,3 +149,36 @@ In this scenario the web user is looking for a script from a co-worker.  They ar
 11. The web user clicks on the PowerShell script named *Export_OUs.ps1*
 12. The web browser is redirected to DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=Export_OUs.ps1
 13. A dialog is displayed prompting the web user to download the file Export_OUs.ps1
+
+## Solution Installation
+This section covers the installation of the solution.
+### Source Files
+The following folder and file structure is incuded in the solution:
+
+* App_Data
+  * Website_Debug.log
+* bin
+  * GitHubAPIClient.dll
+  * GitHubAPIClient.pdb
+  * log4net.dll
+  * log4net.xml
+  * Newtonsoft.Json.dll
+  * Newtonsoft.Json.xml
+  * PowerShellOnlineSigningService.dll
+  * PowerShellOnlineSigningService.pdb
+* Default.aspx
+* DownloadFile.ashx
+* favicon.ico
+* Global.asax
+* images
+* log4net.config
+* Main.Master
+* packages.config
+* Search.aspx
+* style.css
+* User.aspx
+* Web.config
+
+### Folder Permissions
+### Certificate Installation
+### Certificate Installation
