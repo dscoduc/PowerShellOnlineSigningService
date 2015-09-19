@@ -37,9 +37,9 @@ The core of the website uses Master Pages to render a common format across the f
 ##### Main.master
 The Main.Master page is the template page for all of the ASP.NET web pages.  This is a hidden page that contains the page structure and is not directly callable by a web client.  Changes to the structure of the page, including the header and footer, would be made in this template file.
 
-The header of the Main.master file includes Meta information as well as links to the style.css and page title.
+The header of the Main.master file includes Meta information as well as links to the style.css and page title.  The footer of the Main.master file includes a welcome message to the authenticated user on the left side of the page, and a hidden message of the physical server name serving the web content on the right side of the page.  
 
-The footer of the Main.master file includes a welcome message to the authenticated user on the left side of the page, and a hidden message of the physical server name serving the web content on the right side of the page.  The hidden server name is for troubleshooting servers behind a web load balancer and can be removed if necessary due to security concerns.
+The hidden server name is for troubleshooting servers behind a web load balancer and can be removed if necessary due to security concerns.
 ##### Default.aspx
 The Default.aspx page is the entry point for the web site and provides two main option to the web user.  The first option is a link to the default GitHub owner as defined in the web.config file.  When the web user clicks on the first option they will automatically be redirected to the User.aspx page with the pre-defined owner name in the query string (e.g. User.aspx?o=dscoduc). 
 
