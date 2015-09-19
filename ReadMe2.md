@@ -2,11 +2,9 @@
 ### Table of Contents
 * **[Solution Overview](#solution-overview)**
 * **[Solution Details](#solution-details)**
-* **[Solution Overview](#solution-overview)**
-* **[Solution Details](#solution-details)**
 * **[Using the Solution](#using-the-solution)**
 * **[Solution Installation](#solution-installation)**
-* **[Manual sighing of PowerShell Scripts](#manual-signing-of-powershell-scripts)**
+* **[Manual signing of PowerShell Scripts](#manual-signing-of-powershell-scripts)**
 
 ## Solution Overview
 One of the security features built into Windows PowerShell scripts is the ability to define an execution policy on the server.  The execution policy allows an administrator to restrict the execution of scripts on a server through the use of four different secruity levels:
@@ -54,7 +52,11 @@ The header of the Main.master file includes Meta information as well as links to
 
 The hidden server name is for troubleshooting servers behind a web load balancer and can be removed if necessary due to security concerns.
 ##### Default.aspx
-The Default.aspx page is the entry point for the web site and provides two main option to the web user.  The first option is a link to the default GitHub owner as defined in the web.config file.  When the web user clicks on the first option they will automatically be redirected to the User.aspx page with the pre-defined owner name in the query string (e.g. User.aspx?o=dscoduc). 
+The Default.aspx page is the entry point for the web site and provides two main option to the web user.  
+
+![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/HomePage.png)
+
+The first option is a link to the default GitHub owner as defined in the web.config file.  When the web user clicks on the first option they will automatically be redirected to the User.aspx page with the pre-defined owner name in the query string (e.g. User.aspx?o=dscoduc). 
 
 The second option is an input field and search button which allows the web user to search for a GitHb owner.  The input field is the search criteria and can include the GitHub owner's login ID, first name, and/or last name.  Results are limited by GitHub and if the results don't appear to have the desired owner than a more specific search criteria should be submitted. 
 
