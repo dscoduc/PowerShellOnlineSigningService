@@ -243,42 +243,41 @@ It is recommended that an Application Pool is pre-created before creating the we
 1. Launch IIS Management Console
 2. Expand the local server name and select the Application Pools entry
 3. Right click on Application Pools and select *Add Application Pool*
-4. Enter the following parameters
-   * **Name:** PowerSign
-   * **.NET CLR Version:** .NET CLR Version v4.0.30319
-   * **Managed Pipeline Mode:** Integrated
-   * **Start Application Pool Immediately:** Unchecked
+4. For **Name** enter PowerSign
+5. For **.NET CLR Version** select *.NET CLR Version v4.0.30319*
+6. For **Managed Pipeline Mode** select *Integrated*
+7. For **Start Application Pool Immediately** select *Unchecked*
 5. Click OK to complete the creation
+
 ### Web Site
 The following steps can be followed to create the web site.
 1. Launch IIS Management Console
 2. Expand the local server name and select *Sites*
 3. Right click on *Sites* and select *Add Website...*
-4. Enter the following parameters
-   * **Name:** PowerSign
-   * **Application Pool:** PowerSign
-   * **Physical Path:** (path where you copied source files - ex. c:\inetpub\PowerSign)
-   * **Type:** HTTP
-   * **IP Address:** All Unassigned
-   * **Port:** 80
-   * **Host Name:** (Blank)
-   * **Start Website Immediately** Unchecked
-5. Click OK to complete the creation
-6. Right click on the new PowerSign site and select *Edit Bindings*
-7. Click on *Add* to display *Add Site Binding*
-8. Click on *Type | http* and select https
-9. Click on the *SSL Certificate* drop down and choose the appropriate web server certificate
-10. Click OK to save the settings
-11. Click Close to close Site Bindings
-12. Locate and double-click on the *Authentication* option in the Web Site settings
-13. Right-click on *Anonymous Access* and click *Disable*
-14. Right-click on *Windows Authentication* and click *Enable*
-15. Click on the PowerSign site on the left column
-16. Locate and double-click the *SSL Settings* option in the Web Site settings
-17. Click on the *Require SSL* checkbox and click Apply in the Actions pane on the right side of the management console
-18. Click on the *Application Settings* option in the Web Site settings
-19. Update the entries with information that matches your environment (ex. auth_token and default_owner)
-20. Right-click on the PowerSign site and select *Manage Website | Start*
+4. For **Name** enter *PowerSign*
+5. For **Application Pool** enter *PowerSign*
+6. For **Physical Path** enter the path where you copied source files (ex. c:\inetpub\PowerSign)
+7. For **Type** select *HTTP*
+8. For **IP Address** select *All Unassigned*
+9. For **Port** enter *80*
+10. For **Host Name** leave blank
+11. For **Start Website Immediately** leave it unchecked
+12. Click OK to complete the creation
+13. Right click on the new PowerSign site and select *Edit Bindings*
+14. Click on *Add* to display *Add Site Binding*
+15. Click on *Type | http* and select https
+16. Click on the *SSL Certificate* drop down and choose the appropriate web server certificate
+17. Click OK to save the settings
+18. Click Close to close Site Bindings
+19. Locate and double-click on the *Authentication* option in the Web Site settings
+20. Right-click on *Anonymous Access* and click *Disable*
+21. Right-click on *Windows Authentication* and click *Enable*
+22. Click on the PowerSign site on the left column
+23. Locate and double-click the *SSL Settings* option in the Web Site settings
+24. Click on the *Require SSL* checkbox and click Apply in the Actions pane on the right side of the management console
+25. Click on the *Application Settings* option in the Web Site settings
+26. Update the entries with information that matches your environment (ex. auth_token and default_owner)
+27. Right-click on the PowerSign site and select *Manage Website | Start*
 
 ### Certificate Permissions
 This section covers the configuration of the digital signing certificate.  These steps assume a digital signing certificate has already been issued and installed onto the web server.
