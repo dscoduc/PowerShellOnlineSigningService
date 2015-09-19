@@ -166,6 +166,7 @@ In this scenario the web user is looking for a script in the default PowerShell 
 6. The web user clicks on the PowerShell script named *Export_OUs.ps1*
 7. The web browser is redirected to DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=Export_OUs.ps1
 8. A dialog is displayed prompting the web user to download the file Export_OUs.ps1
+
 ###### Scenario 2
 In this scenario the web user is looking for a script in a co-workers repository.
 
@@ -179,6 +180,7 @@ In this scenario the web user is looking for a script in a co-workers repository
 8. The web user clicks on the PowerShell script named *Export_OUs.ps1*
 9. The web browser is redirected to DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=Export_OUs.ps1
 10. A dialog is displayed prompting the web user to download the file Export_OUs.ps1
+
 ###### Scenario 3
 In this scenario the web user is looking for a script from a co-worker.  They are not exactly sure of the persons login ID so they need to do a search to find the co-workers login ID.
 
