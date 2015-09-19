@@ -14,12 +14,15 @@ The **RemoteSigned** level allows the execution of scripts and configuration fil
 
 Finally the **Unrestricted** level allows the execution of any scripts without requiring the script to be signed.
 
+For a more detailed description of PowerShell signing visit Scott Hanselman's page on [Signing PowerShell Scripts](http://www.hanselman.com/blog/SigningPowerShellScripts.aspx)
+
 In an ideal world we would want to only allow signed scripts to execute however this can be difficult to accomplish if the ability to sign PowerShell scripts is not simplified.  This solution is an attempt to simplify the process.  Very often one of the first steps for an administrator is to set the execution policy to **Unrestricted**.
 
 With the influx of PowerShell attacks I believe we need to change this behavior and ensure that critical systems should be configured with the **AllSigned** level.  To accomplish this I have developed a web portal that can reduce the difficulties of signing scripts.  One critical component of this solution is the dependency and interaction with GitHub.
 
 There are many benefits of storing PowerShell scripts in GitHub including the sharing of code across teammates and maintain version control for changes and updates. This solution will use GitHub as the source of scripts that are to be signed and downloaded.  This interaction with GitHUb allows the solution to not modify the original script during the signing process.
 ## Solution Details
+This section covers the components of the solution.
 ### Application Pool
 The web site runs under an application pool configured with a dedicated service account.  The service account has been granted permissions to the private key of a digital signing certificate that has been installed on the server.  Additional permissions have been granted to the service account which allows for read/write access to the *~/App_Data/* folder where both temporary files and debug log files are created.
 ### Web Site
