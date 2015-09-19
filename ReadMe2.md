@@ -83,11 +83,13 @@ This page requires the owner, repository, and path query string variables to be 
 
 ###### Request Processing
 When the DownloadFile.ashx page is requested the web server will perform the following steps:
+
 1. Download the requested script file from GitHub to the *~/App_Data/* folder into a random temporary file name.  
 2. Insert/replace a header on the temporary file that includes the name of the authenticated user (used for auditing who requested the signed script)
 3. Call PowerShell to sign the temporary file using the available signing certificate
 4. Serve the signed PowerShell script file to the web user
 5. Delete the temporary file from the *~/App_Data/* folder
+
 ##### Web.config
 This section outlines the settings within the web.config file.
 ###### github_root_url
@@ -127,6 +129,7 @@ Default value = "^.+\.((ps1)|(ps1))$"
 
 ##### Query String Structure
 More information about the query string variable structure can be found in this section.
+
 * **Owner**
   *  Syntax: ?o={ owner login ID }
   *  Example: User.aspx?o=dscoduc
@@ -203,7 +206,7 @@ This section covers the installation of the solution.
 ### Source Files
 This section displays the folder and file structure incuded in the solution. For each folder name there is the account and permissions required for the solution to work correctly.  After copying the source files into the desired root folder (ex. PowerSign) you will need to delegate permissions to the IIS_IUSRS and Application Pool account.
 
-**Note:** This assumes the root folder name is PowerSign and the Application Pool account name is PowerSign.
+This section assumes the root folder name is PowerSign and the Application Pool account name is PowerSign.
 
 * PowerSign (IIS_IUSRS +R/W)
   * App_Data  (IIS AppPool/PowerSign +R/W/M)
@@ -240,6 +243,7 @@ This section displays the folder and file structure incuded in the solution. For
 
 ### Application Pool
 It is recommended that an Application Pool is pre-created before creating the web site.  The following steps can be followed to create the Application Pool.
+
 1. Launch IIS Management Console
 2. Expand the local server name and select the Application Pools entry
 3. Right click on Application Pools and select *Add Application Pool*
@@ -251,6 +255,7 @@ It is recommended that an Application Pool is pre-created before creating the we
 
 ### Web Site
 The following steps can be followed to create the web site.
+
 1. Launch IIS Management Console
 2. Expand the local server name and select *Sites*
 3. Right click on *Sites* and select *Add Website...*
@@ -281,6 +286,7 @@ The following steps can be followed to create the web site.
 
 ### Certificate Permissions
 This section covers the configuration of the digital signing certificate.  These steps assume a digital signing certificate has already been issued and installed onto the web server.
+
 1. Launch the local machine certificate management console (ex. *certlm.msc*)
 2. Expand *Certificates - Local Computer | Personal* and select *Certificates*
 3. Right-click on the digital signing certificate and select *All Tasks | Manage Private Keys...*
@@ -290,8 +296,8 @@ This section covers the configuration of the digital signing certificate.  These
 7. Click OK to save and close the delegation window
 
 ## Manual signing of PowerShell Scripts
-The following section describes the manual way to sign a PowerShell Script.
-* **NOTE:** This section assumes that a signing certificate has already been installed on the computer and the script path is C:\scripts\MyScript.ps1.
+The following section describes the manual way to sign a PowerShell Script.  This section assumes that a signing certificate has already been installed on the computer and the script path is C:\scripts\MyScript.ps1.
+
 1. Launch an elevated PowerShell console
 2. Map script to variable with **$file = "C:\scripts\MyScript.ps1"**
 3. Locate signing certificate with **$cert = Get-ChildItem cert:\CurrentUser\My -CodeSigningCert**
