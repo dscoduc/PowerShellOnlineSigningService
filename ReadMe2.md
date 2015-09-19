@@ -77,6 +77,43 @@ When the DownloadFile.ashx page is requested the web server will perform the fol
 3. Call PowerShell to sign the temporary file using the available signing certificate
 4. Serve the signed PowerShell script file to the web user
 5. Delete the temporary file from the *~/App_Data/* folder
+##### Web.config
+This section outlines the settings within the web.config file.
+###### github_root_url
+This entry defines the api path to GitHub in your environment.  For the [public Internet GitHub](https://www.github.com) the setting for this entry would be **api.github.com**.  For an Enterprise GitHub the path would be **hostname/api/v3/**
+
+Default value = "api.github.com"
+###### auth_token
+This entry defines the authentication token used to connect to the GitHub repository.  
+
+If access to your GitHub server is resricted to authenticated users then an auth_token is required for this solution to work correctly.
+
+Default value = ""
+###### app_title
+This entry defines the title displayed on the web pages.
+
+Default value = "PowerShell Online Signing"
+###### default_owner
+This entry defines the default repository owner for home page link
+
+Default value = "dscoduc"
+###### default_repository
+This entry defines the default repository name for home page link.  If the entry is blank then the home page link will redirect to the default_owners list of repositories.
+
+Default value = ""
+###### cache_timeout_min
+This entry defines how long in minutes the response date from the server web requests to GitHub should remain in cache.
+
+Default value = "30"
+###### user_agent
+This entry provides the ability to set a custom user-agent provided by the web server to GitHub when peforming a web request.  GitHub requires a user_agent value though it doesn't care what is provided.
+
+Default value = "curl/7.43.0"
+###### approved_extensions
+This entry defines which files in a repository will be displayed to the web user.  This soluton can only sign PowerShell scripts so the default value is to only show .PS1 files.
+
+Default value = "^.+\.((ps1)|(ps1))$"
+
 ##### Query String Structure
 More information about the query string variable structure can be found in this section.
 * **Owner**
