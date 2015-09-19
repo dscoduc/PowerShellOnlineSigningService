@@ -3,6 +3,9 @@
 * **[Solution Overview](#solution-overview)**
 * **[Solution Details](#solution-details)**
 * **[Using the Solution](#using-the-solution)**
+   * **[Scenario 1](#scenario-1)**
+   * **[Scenario 2](#scenario-2)**
+   * **[Scenario 3](#scenario-3)**
 * **[Solution Installation](#solution-installation)**
 * **[Manual signing of PowerShell Scripts](#manual-signing-of-powershell-scripts)**
 
