@@ -1,9 +1,12 @@
 # PowerShell Online Signing
-* [Solution Overview](#solutionoverview)
-* [Solution Details](#solutiondetails)
-* [Using the Solution](#usingthesolution)
-* [Solution Installation](#solutioninstallation)
-* [Manual sighing of PowerShell Scripts](#manualsigningofpowershellscripts)
+### Table of Contents
+**[Solution Overview](#solution-overview)**
+**[Solution Details](#solution-details)**
+**[Solution Overview](#solution-overview)**
+**[Solution Details](#solution-details)**
+**[Using the Solution](#using-the-solution)**
+**[Solution Installation](#solution-installation)**
+**[Manual sighing of PowerShell Scripts](#manual-signing-of-powershell-scripts)**
 
 ## Solution Overview
 One of the security features built into Windows PowerShell scripts is the ability to define an execution policy on the server.  The execution policy allows an administrator to restrict the execution of scripts on a server through the use of four different secruity levels:
