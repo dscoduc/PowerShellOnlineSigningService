@@ -232,8 +232,24 @@ The following steps can be followed to create the web site.
 19. Update the entries with information that matches your environment (ex. auth_token and default_owner)
 20. Right-click on the PowerSign site and select *Manage Website | Start*
 
-### Certificate Installation
+### Certificate Permissions
+This section covers the configuration of the digital signing certificate.  These steps assume a digital signing certificate has already been issued and installed onto the web server.
+1. Launch the local machine certificate management console (ex. *certlm.msc*)
+2. Expand *Certificates - Local Computer | Personal* and select *Certificates*
+3. Right-click on the digital signing certificate and select *All Tasks | Manage Private Keys...*
+4. In the *Permissions for certificate* click on Add
+5. In the *Select Users or Groups* enter the name *IIS AppPool\PowerSign* and click OK
+6. Select PowerSign and ensure the Read checkbox is selected
+7. Click OK to save and close the delegation window
 
+## Manual signing of PowerShell Scripts
+The following section describes the manual way to sign a PowerShell Script.
+* **NOTE:** This section assumes that a signing certificate has already been installed on the computer and the script path is C:\scripts\MyScript.ps1.
+1. Launch an elevated PowerShell console
+2. Map script to variable with **$file = "C:\scripts\MyScript.ps1"**
+3. Locate signing certificate with **$cert = Get-ChildItem cert:\CurrentUser\My -CodeSigningCert**
+4. Sign file with **Set-AuthenticodeSignature $file $cert[0]**
+5. Verify file signature with **Get-AuthenticodeSignature $file**
 
 
 
