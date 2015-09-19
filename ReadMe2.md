@@ -39,11 +39,13 @@ When the user clicks on the search button they will automatically be redirected 
 ##### Search.aspx
 
 ##### User.aspx
+The User.aspx page provides a list of public repositories or contents within a specified repository.   
 
+The User.aspx page accepts the query string variable "o" which represents the owner login ID.  For example, *o=dscoduc* would display the repositories available for the GitHub owner with the login ID of Dscoduc.
 
-The User.aspx page accepts the query string "o" which represents a GitHub owner login ID.  For example, *User.aspx?o=dscoduc* would display the repositories available for the GitHub owner with the login ID of Dscoduc.
+The User.aspx page accepts the query string variable "r" only if the "o" variable is provided in the query string.  The "r" variable represents a repository name owned by the GitHub owner.  For example, *o=dscoduc&r=PowerShellScripts* would display the contents of the PowerShellScripts repository for the GitHub owner with the login ID of Dscoduc.
 
-The User.aspx page accepts the query string "r" only if the "o" query string is proided.  The "r" query string represents a repository name owned by the GitHub owner.  For example, *User.aspx?o=dscoduc&r=PowerShellScripts* would display the contents of the PowerShellScripts repository for the GitHub owner with the login ID of Dscoduc.
+The content path of a GitHub Repisitory object is handled with the query string "p".  This can be either the file name you wish to download (e.g. o=dscoduc&r=PowerShellScripts&p=GetDCNetInfo.ps1) or the name of a folder within the Repository (e.g. o=dscoduc&r=PowerShellScripts&p=TestFolder)
 
 ##### DownloadFile.ashx
 ### Application Pool
