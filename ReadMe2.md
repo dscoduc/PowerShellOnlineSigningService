@@ -65,7 +65,7 @@ The hidden server name is for troubleshooting servers behind a web load balancer
 ##### Default.aspx
 The Default.aspx page is the entry point for the web site and provides two main option to the web user.  
 
-![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/HomePage.png)
+![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/images/Default.jpg)
 
 The first option is a link to the default GitHub owner as defined in the web.config file.  When the web user clicks on the first option they will automatically be redirected to the User.aspx page with the pre-defined owner name in the query string (e.g. User.aspx?o=dscoduc). 
 
@@ -73,7 +73,11 @@ The second option is an input field and search button which allows the web user 
 
 When the user clicks on the search button they will automatically be redirected to the Search.aspx page with the search criteria added to the query string (e.g. Search.aspx?s=dsco).
 ##### Search.aspx
-The Search.aspx page is the search page of the web site and provides an input field and search button which allows the web user to search for a GitHb owner.  The input field is the search criteria and can include the GitHub owner's login ID, first name, and/or last name.  Results are limited by GitHub and if the results don't appear to have the desired owner than a more specific search criteria should be submitted. 
+The Search.aspx page is the search page of the web site and provides an input field and search button which allows the web user to search for a GitHb owner.  
+
+![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/images/Search.jpg)
+
+The input field is the search criteria and can include the GitHub owner's login ID, first name, and/or last name.  Results are limited by GitHub and if the results don't appear to have the desired owner than a more specific search criteria should be submitted. 
 
 When the user clicks on the search button they will automatically be redirected back to the Search.aspx page with the search criteria added to the query string (e.g. Search.aspx?s=dsco).  The search results provides a list of GitHub owners based on the search criteria provided in the query string.  
 
@@ -83,7 +87,11 @@ This page provides a list of public repositories or contents within a specified 
 
 This page accepts the query string variable "o" which represents the owner login ID.  For example, *o=dscoduc* would display the repositories available for the GitHub owner with the login ID of Dscoduc.
 
+![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/images/User_Repositories.jpg)
+
 The User.aspx page accepts the query string variable "r" only if the "o" variable is provided in the query string.  The "r" variable represents a repository name owned by the GitHub owner.  For example, *User.aspx?o=dscoduc&r=PowerShellScripts* would display the contents of the PowerShellScripts repository for the GitHub owner with the login ID of Dscoduc.
+
+![Main page](https://raw.githubusercontent.com/dscoduc/PowerShellOnlineSigningService/master/images/User_Scripts.jpg)
 
 The content path of a GitHub Repisitory object is handled with the query string "p".  This can be either the file name you wish to download (e.g. DownloadFile.ashx?o=dscoduc&r=PowerShellScripts&p=GetDCNetInfo.ps1) or the name of a folder within the Repository (e.g. User.aspx?o=dscoduc&r=PowerShellScripts&p=TestFolder)
 
@@ -104,7 +112,7 @@ When the DownloadFile.ashx page is requested the web server will perform the fol
 ##### Web.config
 This section outlines the settings within the web.config file.
 ###### github_root_url
-This entry defines the url path to GitHub api address for your environment (omitting the https://).  For the [public Internet GitHub](https://www.github.com) the setting for this entry would be **api.github.com**.  For an [Enterprise GitHub](https://developer.github.com/v3/enterprise/) the path would be **hostname/api/v3/**
+This entry defines the url path to GitHub api address for your environment (omitting the https://).  For the [Internet GitHub](https://www.github.com) the setting for this entry would be **api.github.com**.  For an [Enterprise GitHub](https://developer.github.com/v3/enterprise/) the path would be **hostname/api/v3/**
 
 Default value = "api.github.com"
 ###### auth_token
