@@ -104,7 +104,7 @@ When the DownloadFile.ashx page is requested the web server will perform the fol
 ##### Web.config
 This section outlines the settings within the web.config file.
 ###### github_root_url
-This entry defines the api path to GitHub in your environment.  For the [public Internet GitHub](https://www.github.com) the setting for this entry would be **api.github.com**.  For an Enterprise GitHub the path would be **hostname/api/v3/**
+This entry defines the url path to GitHub api address for your environment (omitting the https://).  For the [public Internet GitHub](https://www.github.com) the setting for this entry would be **api.github.com**.  For an [Enterprise GitHub](https://developer.github.com/v3/enterprise/) the path would be **hostname/api/v3/**
 
 Default value = "api.github.com"
 ###### auth_token
@@ -168,7 +168,7 @@ To handle the logging this solution relies on the Log4Net v2.0.3 framework.  Thi
 
 More information can be found at [Apache Log4Net Website](https://logging.apache.org/log4net/ "Cross-language logging services")
 ## Using the Solution
-This section outlines how the web site might typical be used.  In these examples *dscoduc* has been configured as the Default PowerShell Owner in the web site configuration file
+This section outlines how the web site might typical be used.  In these examples *dscoduc* has been configured as the Default PowerShell Owner in the web site configuration file.
 ###### Scenario 1
 In this scenario the web user is looking for a script in the default PowerShell Repository that contains a common shared list of PowerShell scripts.
 
