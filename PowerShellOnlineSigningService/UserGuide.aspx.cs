@@ -1,7 +1,10 @@
 ﻿using log4net;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
+using System.Web.UI;
 using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 
 namespace PowerShellOnlineSigningService
 {
@@ -11,22 +14,24 @@ namespace PowerShellOnlineSigningService
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            displayBreadcrumb();
+            //displayBreadcrumb();
+            populateBreadCrumb();
         }
 
-        private void displayBreadcrumb()
+        private void populateBreadCrumb()
         {
-            string urlTemplate = "<a href='{0}'>{1}</a>";
+            PlaceHolder phBreadCrumbList = (PlaceHolder)Master.FindControl("crumbsPlaceHolder");
+            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='breadcrumbList'>"));
 
-            string homeURL = string.Format(urlTemplate, "Default.aspx", "Home");
-            string currentPage = string.Format(urlTemplate, "UserGuide.aspx", "User Guide");
+            List<string> items = new List<string>();
 
-            string breadcrumb = string.Format("{0} / {1}", homeURL, currentPage);
+            items.Add("<li><a href='Default.aspx'>Home</a></li>");
+            items.Add("<li>User Guide</li>");
 
+            foreach (var item in items)
+                phBreadCrumbList.Controls.Add(new LiteralControl(item));
 
-            HtmlGenericControl site_breadcrumb = (HtmlGenericControl)Master.FindControl("site_breadcrumb");
-            site_breadcrumb.Visible = true;
-            site_breadcrumb.InnerHtml = breadcrumb;
+            phBreadCrumbList.Controls.Add(new LiteralControl("</ul>"));
         }
 
     }

@@ -15,9 +15,9 @@ body{
     padding: 0;
 }
 .header_wrapper {
-    margin: 5px auto -30px;
+    margin: 5px auto -33px;
     padding:0;
-    background: url('images/securityguy1.png') no-repeat right;
+    background: url('../images/securityguy1.png') no-repeat right;
     width: 100%;
     height: 165px;
 }
@@ -108,13 +108,13 @@ body{
     padding-top: 10px;
 }
 .contentList .file {
-    background: rgba(0, 0, 0, 0) url("images/file.jpg") no-repeat scroll left 10px;
+    background: rgba(0, 0, 0, 0) url("../images/file.jpg") no-repeat scroll left 10px;
 }
 .contentList .dir {
-    background: rgba(0, 0, 0, 0) url("images/folder.jpg") no-repeat scroll left 10px;
+    background: rgba(0, 0, 0, 0) url("../images/folder.jpg") no-repeat scroll left 10px;
 }
 .contentList .repo {
-    background: rgba(0, 0, 0, 0) url("images/repository.jpg") no-repeat scroll left 17px;
+    background: rgba(0, 0, 0, 0) url("../images/repository.jpg") no-repeat scroll left 17px;
     padding-bottom: 20px;
     padding-left: 40px;
     padding-top: 20px;

@@ -21,7 +21,7 @@ namespace PowerShellOnlineSigningService
             if (Page.IsPostBack)
                 return;
 
-            string searchString = SecurityElement.Escape(HttpContext.Current.Request.QueryString["s"]);
+            string searchString = SecurityElement.Escape(HttpContext.Current.Request.QueryString["s"]) ?? "a";
 
             try
             {
@@ -32,27 +32,25 @@ namespace PowerShellOnlineSigningService
                 // do nothing - it's needed to handle Response.Redirect
             }
 
-            displayBreadcrumb(searchString);
+            populateBreadCrumb(searchString);
         }
 
-        private void displayBreadcrumb(string searchString)
+        private void populateBreadCrumb(string searchString)
         {
-            string urlTemplate = "<a href='{0}'>{1}</a>";
-            string homeURL = string.Format(urlTemplate, "Default.aspx", "Home");
+            PlaceHolder phBreadCrumbList = (PlaceHolder)Master.FindControl("crumbsPlaceHolder");
+            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='breadcrumbList'>"));
+            List<string> items = new List<string>();
 
-            string currentPage = string.Format(urlTemplate, "Search.aspx", "Search");
+            items.Add("<li><a href='Default.aspx'>Home</a></li>");
+            items.Add("<li><a href='Search.aspx'>Search</a></li>");
 
-            string breadcrumb = string.Format("{0} / {1}", homeURL, currentPage);
+            if (!string.IsNullOrEmpty(searchString) && searchString != "a")
+                items.Add(string.Format("<li><a href='Search.aspx?s={0}'>{1}</a></li>", searchString, searchString));
 
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                string searchCriteria = string.Format(urlTemplate, "Search.aspx?s=" + searchString, searchString);
-                breadcrumb = string.Format("{0} / {1}", breadcrumb, searchCriteria);
-            }
+            foreach (var item in items)
+                phBreadCrumbList.Controls.Add(new LiteralControl(item));
 
-            HtmlGenericControl site_breadcrumb = (HtmlGenericControl)Master.FindControl("site_breadcrumb");
-            site_breadcrumb.Visible = true;
-            site_breadcrumb.InnerHtml = breadcrumb;
+            phBreadCrumbList.Controls.Add(new LiteralControl("</ul>"));
         }
 
         private void loadResults(string searchString)

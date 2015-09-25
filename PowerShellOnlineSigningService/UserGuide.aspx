@@ -1,20 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="UserGuide.aspx.cs" Inherits="PowerShellOnlineSigningService.UserGuide" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server" >
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
-    <script type="text/jscript" src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script type="text/javascript">
-          $(function () {
-              $("#overview").accordion({
-                  collapsible: true,
-                  active: false,
-                  heightStyle: "content"
-              });
-              $("#faq").accordion({
-                  collapsible: true,
-                  active: false,
-                  heightStyle: "content"
-              });
+        $(function () {
+            $("#overview").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content"
+            });
+
+            $("#faq").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content"
+            });
           });
     </script>
 </asp:Content>

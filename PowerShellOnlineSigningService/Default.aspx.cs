@@ -16,18 +16,22 @@ namespace PowerShellOnlineSigningService
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            displayBreadcrumb();
+            populateBreadCrumb();
         }
 
-        private void displayBreadcrumb()
+        private void populateBreadCrumb()
         {
-            string urlTemplate = "<a href='{0}'>{1}</a>";
-            string homeURL = string.Format(urlTemplate, "Default.aspx", "Home");
+            PlaceHolder phBreadCrumbList = (PlaceHolder)Master.FindControl("crumbsPlaceHolder");
+            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='breadcrumbList'>"));
+            List<string> items = new List<string>();
 
-            string breadcrumb = string.Format("{0}", homeURL);
-            HtmlGenericControl site_breadcrumb = (HtmlGenericControl)Master.FindControl("site_breadcrumb");
-            site_breadcrumb.Visible = true;
-            site_breadcrumb.InnerHtml = breadcrumb;            
+            items.Add("<li><a href='Default.aspx'>Home</a></li>");
+            items.Add("<li>Home</li>");
+
+            foreach (var item in items)
+                phBreadCrumbList.Controls.Add(new LiteralControl(item));
+
+            phBreadCrumbList.Controls.Add(new LiteralControl("</ul>"));
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

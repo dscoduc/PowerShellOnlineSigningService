@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PowerShellOnlineSigningService.Default" %>
-<asp:Content ID="content1" ContentPlaceHolderID="cphHead" runat="server" >
-
-</asp:Content>
+<asp:Content ID="content1" ContentPlaceHolderID="cphHead" runat="server" />
 
 <asp:Content ID="content2" ContentPlaceHolderID="cphBody" runat="server">
     <div class="summary master_link">

@@ -41,7 +41,7 @@ namespace PowerShellOnlineSigningService
             loadResults(userName, repoName, requestPath);
 
             if(!string.IsNullOrEmpty(userName))
-                displayBreadcrumb(userName, repoName, requestPath);
+                populateBreadCrumb(userName, repoName, requestPath);
 
         }
 
@@ -186,71 +186,69 @@ namespace PowerShellOnlineSigningService
             }
         }
 
-        private void displayBreadcrumb(string userName, string repoName, string requestPath)
+        private void populateBreadCrumb(string userName, string repoName, string requestPath)
         {
-            if (!Request.QueryString.HasKeys())
-                return;
+            PlaceHolder phBreadCrumbList = (PlaceHolder)Master.FindControl("crumbsPlaceHolder");
+            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='crumbs'>"));
 
-            string urlTemplate = "<a href='{0}'>{1}</a>";
-            string homeURL = "<a href='Default.aspx'>Home</a>";
+            List<string> items = new List<string>();
 
-            string breadcrumb = string.Empty;
+            items.Add("<li><a href='Default.aspx'>Home</a></li>");
 
             if (!string.IsNullOrEmpty(userName))
             {
-                string ownerURL = string.Format(urlTemplate, "?o=" + userName, userName);
-
-                breadcrumb = string.Format("{0} / {1}", homeURL, ownerURL);
+                items.Add(string.Format("<li><a href='User.aspx?o={0}'>{0}</a></li>", userName));
 
                 if (!string.IsNullOrEmpty(repoName))
                 {
-                    string repositoryURL = string.Format(urlTemplate, "?o=" + userName + "&r=" + repoName, repoName);
-                    breadcrumb = string.Format("{0} / {1}", breadcrumb, repositoryURL);
+                    items.Add(string.Format("<li><a href='User.aspx?o={0}&r={1}'>{1}</a></li>", userName, repoName));
+                    
 
+                    // check if there is a request path 
                     if (!string.IsNullOrEmpty(requestPath))
                     {
-                        breadcrumb = string.Format("{0} / {1} ", breadcrumb, buildPathBreadcrumb(userName, repoName, requestPath));
+                        // need a temporary list
+                        List<string> t = new List<string>();
+                        string urlTemplate = "<li><a href='?o=" + userName + "&r=" + repoName + "&p={0}'>{1}</a></li>";
+
+                        // enumerate through sub-folders in reverse to get the breadcrumb order correct
+                        if (requestPath.Contains("/"))
+                        {
+                            do
+                            {
+                                // extract foldername from end of path
+                                string folderName = requestPath.Substring(requestPath.LastIndexOf("/") + 1);
+                                // build the request path
+                                string item = string.Format(urlTemplate, requestPath, folderName);
+
+                                //add it to temp list
+                                t.Add(item);
+
+                                // continue to advance through the paths until no more sub folders
+                                requestPath = requestPath.Substring(0, requestPath.LastIndexOf("/"));
+
+                            } while (requestPath.Contains("/"));
+                        }
+
+                        // add final path to the temp list
+                        t.Add(string.Format(urlTemplate, requestPath, requestPath));
+
+                        // loop in reverse to put the breadcrumb order correct
+                        for (int x = t.Count - 1; x >= 0; x--)
+                            items.Add(t[x]);
                     }
                 }
             }
-
-            HtmlGenericControl site_breadcrumb = (HtmlGenericControl)Master.FindControl("site_breadcrumb");
-            site_breadcrumb.Visible = true;
-            site_breadcrumb.InnerHtml = breadcrumb;
-        }
-
-        private string buildPathBreadcrumb(string userName, string repoName, string requestPath)
-        {
-            if (!Request.QueryString.HasKeys())
-                return string.Empty;
-
-            string urlTemplate = "<a href='?o=" + userName + "&r=" + repoName + "&p={0}'>{1}</a>";
-            string breadcrumb = string.Empty;
-            ArrayList al = new ArrayList();
-
-            if (requestPath.Contains("/"))
+            else
             {
-                do
-                {
-                    string folderName = requestPath.Substring(requestPath.LastIndexOf("/") + 1);
-                    string link = string.Format(urlTemplate, requestPath, folderName);
-
-                    al.Add(link);
-
-                    // advance through the paths
-                    requestPath = requestPath.Substring(0, requestPath.LastIndexOf("/"));
-
-                } while (requestPath.Contains("/"));
+                items.Add("<li>User</li>");
             }
 
-            al.Add(string.Format(urlTemplate, requestPath, requestPath));
+            // add each entry in items to the breadcrumb
+            foreach (var item in items)
+                phBreadCrumbList.Controls.Add(new LiteralControl(item));
 
-            for (int x = al.Count - 1; x >= 0; x--)
-            {
-                breadcrumb = string.Format("{0} / {1}", breadcrumb, al[x]);
-            }
-
-            return breadcrumb.Substring(3);
+            phBreadCrumbList.Controls.Add(new LiteralControl("</ul>"));
         }
 
         /// <summary>
