@@ -61,6 +61,11 @@ body{
     font-size: x-small;
     color: #666;
 }
+.footer_center {
+    text-align: center;
+    font-size: x-small;
+    color: #666;
+}
 
 /* Default.aspx */
 .summary {
@@ -191,4 +196,9 @@ body{
     margin-top: 75px;
     width: 100% auto;
     text-align: center;
+}
+
+.accordion div {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 11px;
 }

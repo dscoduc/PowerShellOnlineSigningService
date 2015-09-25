@@ -1,31 +1,37 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="UserGuide.aspx.cs" Inherits="PowerShellOnlineSigningService.UserGuide" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server" >
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
     <script type="text/jscript" src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script type="text/javascript">
           $(function () {
-              $("#overview").accordion();
-              $("#faq").accordion();
+              $("#overview").accordion({
+                  collapsible: true,
+                  active: false,
+                  heightStyle: "content"
+              });
+              $("#faq").accordion({
+                  collapsible: true,
+                  active: false,
+                  heightStyle: "content"
+              });
           });
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="server">
+    <h2>What is the PowerShell Online Signing Portal?</h2>
+    <p>
+        The PowerShell Online Signing Portal provides you the ability to download digitally signed PowerShell scripts without having to know anything about
+        signing and without having to obtain a digital signature.
+    </p>
+    <p>
+        Working with Rackspace Enterprise GitHub the portal will retrieve your PowerShell script, digitally sign it using a Rackspace.corp signing 
+        certificate, and send the signed script to you for immediate use.
+    </p>
+    <p>
+        In order to use this portal you will need to have registered an account in GitHub and your script will need to be uploaded into a public repository.  
+    </p>
     <div id="overview" class="accordion">
-        <h3>What is the PowerShell Online Signing Portal?</h3>
-        <div>
-            <p>
-                The PowerShell Online Signing Portal provides you the ability to download digitally signed PowerShell scripts without having to know anything about
-                signing and without having to obtain a digital signature.
-            </p>
-            <p>
-                Working with Rackspace Enterprise GitHub the portal will retrieve your PowerShell script, digitally sign it using a Rackspace.corp signing 
-                certificate, and send the signed script to you for immediate use.
-            </p>
-            <p>
-                In order to use this portal you will need to have registered an account in GitHub and your script will need to be uploaded into a public repository.  
-            More information about using and creating a GitHub account can be located at <a href="https://github.rackspace.com" target="_blank">https://github.rackspace.com</a>.
-            </p>
-        </div>
         <h3>Home Page</h3>
         <div>
             <p>
@@ -101,40 +107,33 @@
                 Click on the script you wish to download and your browser will download the script already signed by the portal.
             </p>                    
         </div>
-        <h3>Frequently Asked Questions</h3>
-        <div>
-            <p>
-                Once you have clicked on a repository a list of PowerShell scripts will be displayed.
-            </p>
-            <p>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/User_Scripts.jpg" />
-            </p>
-            <p>
-                Click on the script you wish to download and your browser will download the script already signed by the portal.
-            </p>                    
-        </div>
     </div>
 
+    <h2>Frequently Asked Questions</h2>
     <div id="faq" class="accordion">
-        <h3>Question One</h3>
+        <h3>Why do I have to store my scripts in GitHub?</h3>
         <div>
             <p>
-                Something here
+                By leveraging GitHub this portal doesn't have to keep it's own copy of your scripts.
+            </p>
+            <p>
+                And since you asked, keep in mind that storing your scripts in GitHub is a good thing - it allows you to have a central store of scripts where you can share your work with other people
+                doing similar tasks.  It also allow you to keep version control of changes to your scripts in case you discover a problem with a recent change.
             </p>
         </div>
-        <h3>Question two</h3>
+        <h3>Does this portal modify the scripts in GitHub?</h3>
         <div>
             <p>
-                Something here
+                No - a copy of the script is downloaded from GitHub, digitally signed, and sent to you for download.  The original script is unchanged.
             </p>
         </div>
-        <h3>Question three</h3>
+        <h3>Can I make any changes to the script I just downloaded from the portal?</h3>
         <div>
             <p>
-                Something here
+                Sure, but as soon as you do the digital signature will no longer be valid.  We suggest you update the script in GitHub and then download
+                a fresh copy of the script using this portal.
             </p>
         </div>
-
     </div>
 
 

@@ -31,7 +31,8 @@
         <div class="footer_wrapper">
             <div id="serverInfo" class="footer_right" runat="server" /> <%--serverinfo--%>
             <div id="userInfo" runat="server" class="footer_left" /> <%--userinfo--%>
-            <div id="middle_footer" runat="server">
+            <div id="middle_footer" class="footer_center" runat="server">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/UserGuide.aspx" ToolTip="Click to view the user guide and FAQ.">User Guide</asp:HyperLink>
                 <asp:ContentPlaceHolder ID="cphFooter" runat="server" />
             </div> <%--middle_footer--%>
         </div> <%--footer_wrapper--%>
