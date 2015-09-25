@@ -77,18 +77,23 @@
     <Content Include="bin\PowerShellOnlineSigningService.pdb" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\Default.jpg" />
     <Content Include="images\emptyrepo.png" />
     <Content Include="images\file.jpg" />
     <Content Include="images\folder.jpg" />
     <Content Include="images\github.jpg" />
     <Content Include="images\githubrobot.png" />
     <Content Include="images\repository.jpg" />
+    <Content Include="images\Search.jpg" />
     <Content Include="images\searchman.jpg" />
     <Content Include="images\securityguy1.png" />
     <Content Include="images\user.jpg" />
+    <Content Include="images\User_Repositories.jpg" />
+    <Content Include="images\User_Scripts.jpg" />
     <Content Include="Search.aspx" />
     <Content Include="style.css" />
     <Content Include="User.aspx" />
+    <Content Include="UserGuide.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -129,6 +134,13 @@
     </Compile>
     <Compile Include="User.aspx.designer.cs">
       <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserGuide.aspx.cs">
+      <DependentUpon>UserGuide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserGuide.aspx.designer.cs">
+      <DependentUpon>UserGuide.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

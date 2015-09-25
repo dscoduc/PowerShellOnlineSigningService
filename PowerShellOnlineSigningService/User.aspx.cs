@@ -101,7 +101,7 @@ namespace PowerShellOnlineSigningService
 
                         if(entry.type == "file")
                         {
-                            if (Regex.IsMatch(entry.name, approvedExtensions))
+                            if (Regex.IsMatch(entry.name, approvedExtensions, RegexOptions.IgnoreCase))
                             {
                                 // include approved file types
                                 allowedItems.Add(entry);
