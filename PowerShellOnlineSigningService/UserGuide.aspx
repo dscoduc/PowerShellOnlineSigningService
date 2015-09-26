@@ -15,6 +15,7 @@
                 active: false,
                 heightStyle: "content"
             });
+            $(".footer_center").hide();
           });
     </script>
 </asp:Content>
@@ -134,8 +135,13 @@
                 a fresh copy of the script using this portal.
             </p>
         </div>
+        <h3>Are there any limits to the size of script this portal can process?</h3>
+        <div>
+            <p>
+                The GitHub API limits the size of script this portal can download to 1mb.
+            </p>
+        </div>
     </div>
-
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphFooter" runat="server" />
