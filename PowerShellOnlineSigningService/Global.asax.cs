@@ -20,6 +20,10 @@ namespace PowerShellOnlineSigningService
 
         void Application_EndRequest(object sender, EventArgs e)
         {
+
+            if (HttpContext.Current.Items["renderStartTime"] == null)
+                return;
+
             DateTime start = (DateTime)HttpContext.Current.Items["renderStartTime"];
             TimeSpan renderTime = DateTime.Now - start;
 
