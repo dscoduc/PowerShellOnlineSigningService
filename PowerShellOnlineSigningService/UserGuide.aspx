@@ -32,6 +32,8 @@
     <p>
         In order to use this portal you will need to have registered an account in GitHub and your script will need to be uploaded into a public repository.  
     </p>
+
+    <h2>General Overview</h2>
     <div id="overview" class="accordion">
         <h3>Home Page</h3>
         <div>
