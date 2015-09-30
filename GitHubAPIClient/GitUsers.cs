@@ -7,9 +7,7 @@ namespace GitHubAPIClient
     {
         public int total_count { get; set; }
         public bool incomplete_results { get; set; }
-        //public List<Item> items { get; set; }
         public List<GitUser> items { get; set; }
-
     }
 
     public class GitUser : IComparable<GitUser>
@@ -39,5 +37,4 @@ namespace GitHubAPIClient
             return this.login.CompareTo(other.login);
         }
     }
-
 }

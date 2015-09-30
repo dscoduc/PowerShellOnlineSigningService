@@ -21,6 +21,7 @@ namespace PowerShellOnlineSigningService
             if (Page.IsPostBack)
                 return;
 
+            // use provided search string or default value
             string searchString = SecurityElement.Escape(HttpContext.Current.Request.QueryString["s"]) ?? "a";
 
             try
@@ -38,77 +39,64 @@ namespace PowerShellOnlineSigningService
         private void populateBreadCrumb(string searchString)
         {
             PlaceHolder phBreadCrumbList = (PlaceHolder)Master.FindControl("crumbsPlaceHolder");
-            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='breadcrumbList'>"));
-            List<string> items = new List<string>();
+            string literal = "<ul class='breadcrumbList'>" +
+                                 "<li><a href='Default.aspx'>Home</a></li>" + 
+                                 "<li><a href='Search.aspx'>Search</a></li>" + 
+                                 string.Format("<li><a href='Search.aspx?s={0}'>{0}</a></li>", searchString) + 
+                             "</ul>";
 
-            items.Add("<li><a href='Default.aspx'>Home</a></li>");
-            items.Add("<li><a href='Search.aspx'>Search</a></li>");
-
-            if (!string.IsNullOrEmpty(searchString) && searchString != "a")
-                items.Add(string.Format("<li><a href='Search.aspx?s={0}'>{1}</a></li>", searchString, searchString));
-
-            foreach (var item in items)
-                phBreadCrumbList.Controls.Add(new LiteralControl(item));
-
-            phBreadCrumbList.Controls.Add(new LiteralControl("</ul>"));
+            phBreadCrumbList.Controls.Add(new LiteralControl(literal));
         }
 
         private void loadResults(string searchString)
         {
-
             if (string.IsNullOrEmpty(searchString))
                 return;
 
-            // array to hold results
-            List<string> items = new List<string>();
+            // retrieve the list of users
+            List<GitUser> userList = GitHubClient.GetUsers(searchString);
 
-            // string to hold message
-            string outMessage = string.Empty;
-
-            List<GitUser> Users = GitHubClient.GetUsers(searchString);
-            if (null == Users || Users.Count < 1)
+            // make sure it's not empty
+            if (null == userList || userList.Count < 1)
             {
-                outMessage = string.Format("No matching items found for {0}...", searchString);
+                phMessage.Controls.Add(new Label() { 
+                    CssClass = "contentMessage", Text = string.Format("No matching items found for {0}...", searchString) 
+                });
+
+                return;
             }
-            else if (Users.Count == 1)
+            
+            // if only one matching owner then auto-redirect to User.aspx
+            if (userList.Count == 1)
             {
-                string url = string.Format("User.aspx?o={0}", Users[0].login);
+                string url = string.Format("User.aspx?o={0}", userList[0].login);
                 Response.Redirect(url, false);
                 Context.ApplicationInstance.CompleteRequest();
+                return;
             }
-            else
-            {
-                foreach (GitUser user in Users)
-                {
-                    string userUrl = string.Format("User.aspx?o={0}", user.login);
-                    string formattedUsername = SecurityElement.Escape(user.login);
 
-                    items.Add("<li class='users'>" +
-                                "<a href='" + userUrl + "'>" +
-                                    "<img src='images/repository.jpg'>" +
-                                    "<p class='name'>" + formattedUsername + "</p>" +
+            // open output list
+            phResults.Controls.Add(new LiteralControl("<ul class='userList'>"));
+
+            userList.ForEach(delegate(GitUser item)
+            {
+                // sanatize login ID
+                string loginID = SecurityElement.Escape(item.login);
+
+                // create literal control string
+                // "<li class='users' style='background-image: ../images/repository.jpg'>" +
+                string li = "<li class='users'>" +
+                                "<a href='" + string.Format("User.aspx?o={0}", loginID) + "'>" +
+                                    "<p class='name'>" + loginID + "</p>" +
                                 "</a>" + 
-                              "</li>");
-                }
-            }
+                            "</li>";
 
-            if (!string.IsNullOrEmpty(outMessage))
-            {
-                Label lblMessage = new Label();
-                lblMessage.CssClass = "contentMessage";
-                lblMessage.Text = outMessage;
+                // add entry to list
+                phResults.Controls.Add(new LiteralControl(li));
+            });
 
-                phMessage.Controls.Add(lblMessage);
-            }
-            else
-            {
-                phResults.Controls.Add(new LiteralControl("<ul class='userList'>"));
-
-                foreach (var item in items)
-                    phResults.Controls.Add(new LiteralControl(item));
-
-                phResults.Controls.Add(new LiteralControl("</ul>"));
-            }
+            // close output list
+            phResults.Controls.Add(new LiteralControl("</ul>"));
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

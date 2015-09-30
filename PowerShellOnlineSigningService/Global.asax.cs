@@ -7,11 +7,6 @@ namespace PowerShellOnlineSigningService
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger("Global.asax");
 
-        protected void Application_PreSendRequestHeaders(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Application_BeginRequest(Object sender, EventArgs e)
         {
             // Keep in place to show render time in response header via the ServerHeaderModule
@@ -51,14 +46,6 @@ namespace PowerShellOnlineSigningService
             // An error has occured on a .Net page.
             Exception ex = Server.GetLastError();
             log.Error(ex);        
-        }
-
-        void Session_Start(object sender, EventArgs e)
-        {
-        }
-
-        void Session_End(object sender, EventArgs e)
-        {
         }
     }
 }

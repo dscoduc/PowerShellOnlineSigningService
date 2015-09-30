@@ -14,25 +14,17 @@ namespace PowerShellOnlineSigningService
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //displayBreadcrumb();
             populateBreadCrumb();
         }
 
         private void populateBreadCrumb()
         {
             PlaceHolder phBreadCrumbList = (PlaceHolder)Master.FindControl("crumbsPlaceHolder");
-            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='breadcrumbList'>"));
-
-            List<string> items = new List<string>();
-
-            items.Add("<li><a href='Default.aspx'>Home</a></li>");
-            items.Add("<li>User Guide</li>");
-
-            foreach (var item in items)
-                phBreadCrumbList.Controls.Add(new LiteralControl(item));
-
-            phBreadCrumbList.Controls.Add(new LiteralControl("</ul>"));
+            string literal = "<ul class='breadcrumbList'>" +
+                                 "<li><a href='Default.aspx'>Home</a></li>" +
+                                 "<li><a href='UserGuide.aspx'>User Guide</a></li>" +
+                             "</ul>";
+            phBreadCrumbList.Controls.Add(new LiteralControl(literal));
         }
-
     }
 }

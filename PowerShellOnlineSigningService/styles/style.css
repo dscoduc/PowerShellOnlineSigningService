@@ -155,6 +155,7 @@ body{
     margin: 0;
 }
 .userList li {
+    background: rgba(0, 0, 0, 0) url("../images/repository.jpg") no-repeat scroll center 15px;
     border: 1px dotted #fff;
     display: inline;
     float: left;
@@ -174,8 +175,7 @@ body{
 }
 .userList .name {
     font-size: 0.9em;
-    padding: 2px;
-    margin-top: 10px;
+    padding: 65px 2px 2px;
 }
 .userList a {
     display: block;

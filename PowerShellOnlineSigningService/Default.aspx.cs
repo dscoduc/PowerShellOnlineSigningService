@@ -22,16 +22,11 @@ namespace PowerShellOnlineSigningService
         private void populateBreadCrumb()
         {
             PlaceHolder phBreadCrumbList = (PlaceHolder)Master.FindControl("crumbsPlaceHolder");
-            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='breadcrumbList'>"));
-            List<string> items = new List<string>();
-
-            items.Add("<li><a href='Default.aspx'>Home</a></li>");
-            items.Add("<li>Home</li>");
-
-            foreach (var item in items)
-                phBreadCrumbList.Controls.Add(new LiteralControl(item));
-
-            phBreadCrumbList.Controls.Add(new LiteralControl("</ul>"));
+            string literal = "<ul class='breadcrumbList'>" +
+                                 "<li><a href='Default.aspx'>Home</a></li>" +
+                                 "<li><a href='Default.aspx'>Home</a></li>" + // needed to have 'Home' after home image
+                             "</ul>";
+            phBreadCrumbList.Controls.Add(new LiteralControl(literal));
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

@@ -21,33 +21,42 @@ namespace PowerShellOnlineSigningService
         public bool IsReusable
         { get { return false; } }
 
-
         public void ProcessRequest(HttpContext context)
         {
             string filePath = string.Empty;
             string owner = context.Server.HtmlEncode(context.Request.QueryString["o"]);
             string repository = context.Server.HtmlEncode(context.Request.QueryString["r"]);
             string contentPath = context.Server.HtmlEncode(context.Request.QueryString["p"]);
+            string branch = context.Server.HtmlEncode(context.Request.QueryString["b"]);
 
             try
             {
                 if (string.IsNullOrEmpty(contentPath))
                 {
-                    log.Debug("Request made without a proper File query string value");
+                    log.Debug("Request made without a proper content query string value");
                     context.Response.Clear();
+                    context.Response.StatusDescription = "Content path not found";
                     context.Response.StatusCode = 404;
                     return;
                 }
 
                 log.DebugFormat("Download request for {0} by {1}", contentPath, samAccountName);
 
+                string rawContent = string.Empty;
+
+                // pass branch name in contentPath if provided in params
+                if (!string.IsNullOrEmpty(branch))
+                    rawContent = GitHubClient.GetFileContents(owner, repository, string.Format("{0}?ref={1}", contentPath, branch));
+                else
+                    rawContent = GitHubClient.GetFileContents(owner, repository, contentPath);
+
                 // load decoded content from requested file
-                string rawContent = GitHubClient.GetFileContents(owner, repository, contentPath);
+                //string rawContent = GitHubClient.GetFileContents(owner, repository, contentPath);
                 if (string.IsNullOrEmpty(rawContent))
                 {
                     context.Response.Clear();
+                    context.Response.StatusDescription = "Content path not found";
                     context.Response.StatusCode = 404;
-                    context.Response.StatusDescription = "Unable to locate the requested file";
                     return;
                 }
 
@@ -72,14 +81,14 @@ namespace PowerShellOnlineSigningService
                 context.Response.TransmitFile(filePath);
                 context.Response.Flush();
 
-                log.DebugFormat("Downloaded of {0} completed for {1}", contentFileName, samAccountName);
+                log.DebugFormat("Download of {0} completed for {1}", contentFileName, samAccountName);
             }
             catch (Exception ex)
             {
                 log.Error(ex);
                 context.Response.Clear();
-                context.Response.StatusCode = 500;
-                context.Response.StatusDescription = "An unknown error occurred";
+                context.Response.StatusDescription = ex.Message;
+                context.Response.StatusCode = 500;                
             }
             finally
             {
@@ -175,10 +184,6 @@ namespace PowerShellOnlineSigningService
                 {
                     file.Delete();
                     log.DebugFormat("Deleted {0}", filePath);
-                }
-                else
-                {
-                    log.WarnFormat("Unable to delete {0} - file not found", filePath);
                 }
             }
             catch (Exception ex)

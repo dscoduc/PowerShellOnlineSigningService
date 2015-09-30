@@ -17,198 +17,166 @@ namespace PowerShellOnlineSigningService
     public partial class User : System.Web.UI.Page
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private string approvedExtensions = ConfigurationManager.AppSettings["approved_extensions"] ?? @"^.+\.((ps1)|(ps1))$";
+        private string approvedExtensions = ConfigurationManager.AppSettings["approved_extensions"] ?? @"^.+\.((ps1)|(PS1))$";
         private static string defaultOwner = ConfigurationManager.AppSettings["default_owner"] ?? string.Empty;
         private static string defaultRepository = ConfigurationManager.AppSettings["default_repository"] ?? string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack)
+                return;
+
             string userName = (string)HttpContext.Current.Request.QueryString["o"] ?? null;
             string repoName = (string)HttpContext.Current.Request.QueryString["r"] ?? null;
             string requestPath = (string)HttpContext.Current.Request.QueryString["p"] ?? string.Empty;
             
-            if (Page.IsPostBack)
-                return;
-
+            // if no owner provided then try and revert to default info in web.config
             if (string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(defaultOwner))
-            {
-                if (string.IsNullOrEmpty(repoName) && !string.IsNullOrEmpty(defaultRepository))
-                    Response.Redirect(string.Format("{0}?o={1}&r={2}", Request.Url.AbsolutePath, defaultOwner, defaultRepository), true);
-                else
-                    Response.Redirect(string.Format("{0}?o={1}", Request.Url.AbsolutePath, defaultOwner), true);
-            }
+                Response.Redirect(string.Format("{0}?o={1}&r={2}", Request.Url.AbsolutePath, defaultOwner, defaultRepository), true);
 
-            loadResults(userName, repoName, requestPath);
+            // if owner is provided without repo then just load repositories
+            if (!string.IsNullOrEmpty(userName) && string.IsNullOrEmpty(repoName))
+                loadRepos(userName);
 
+            // if owner and repository is provided then load the contents of the repository
+            if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(repoName))
+                loadRepoContents(userName, repoName, requestPath);
+
+            // display the breadcrumb menu
             if(!string.IsNullOrEmpty(userName))
                 populateBreadCrumb(userName, repoName, requestPath);
-
         }
 
-        private void loadResults(string userName, string repoName, string requestPath)
+        private void loadRepos(string userName)
         {
-            // array to hold results
-            List<string> items = new List<string>();
+            // retrieve the list of repos
+            List<GitRepository> repoList = GitHubClient.GetRepositories(userName);
 
-            // string to hold message
-            string outMessage = string.Empty;
-
-            // only owner provided in request
-            if (!string.IsNullOrEmpty(userName) && string.IsNullOrEmpty(repoName))
+            // make sure it's not empty
+            if (null == repoList || repoList.Count < 1)
             {
-                List<GitRepository> Repositories = GitHubClient.GetRepositories(userName);
-
-                if (null == Repositories || Repositories.Count < 1)
-                {
-                    outMessage = string.Format("No repositories found for {0}...", userName);
-                }
-                else
-                {
-                    foreach (GitRepository repo in Repositories)
-                    {
-                        // extract the user item from the user field
-				        string owner = SecurityElement.Escape(repo.name);
-				        var description = SecurityElement.Escape(repo.description);
-				        var urlPath = string.Format("?o={0}&r={1}", userName, repo.name);
-
-				        // build html syntax for each user
-                        items.Add("<li class='repo'>" +
-								        "<a href='" + urlPath + "' tooltip='Click to see the contents'>" + 
-									        "<h3 class='repoList_name'>" + owner + "</h3>" + 
-								        "</a>" + 
-								        "<p class='repoList_description'>" + description + "</p>" +
-							        "</li>"
-				        );
-                    }
-                }
+                phMessage.Controls.Add(new Label() { CssClass = "contentMessage", Text = string.Format("No repositories found for {0}...", userName) });
+                return;
             }
-            // owner and repo provided
-            else if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(repoName))
+
+            // open output list
+            phResults.Controls.Add(new LiteralControl("<ul class='contentList'>"));
+
+            repoList.ForEach(delegate(GitRepository item)
             {
-                List<GitContent> unfilteredItems = GitHubClient.GetContents(userName, repoName, requestPath);
-                if (null == unfilteredItems || unfilteredItems.Count < 1)
-                {
-                    outMessage = "No approved file types found...";
-                }
-                else
-                {
-                    // temp storage for filtering out unapproved file types
-                    List<GitContent> allowedItems = new List<GitContent>();
-                    foreach (GitContent entry in unfilteredItems)
-                    {
-                        string name = SecurityElement.Escape(entry.name);
-                        string size = GetFileSizeString(entry.size);
+                string urlPath = string.Format("?o={0}&r={1}", userName, item.name);
 
-                        if(entry.type == "file")
-                        {
-                            if (Regex.IsMatch(entry.name, approvedExtensions, RegexOptions.IgnoreCase))
-                            {
-                                // include approved file types
-                                allowedItems.Add(entry);
-                            }
-                            else
-                            {
-                                // skip unapproved file types
-                                log.DebugFormat("Skipping {0} - not on approved extension list", entry.name);
-                            }
-                        }
-                        else
-                        {
-                            // include directories
-                            allowedItems.Add(entry);                            
-                        }
+                // create literal control string
+                string li = "<li class='repo'>" +
+                                "<a href='" + urlPath + "' tooltip='Click to see the contents'>" +
+                                    "<h3 class='repoList_name'>" + SecurityElement.Escape(item.name) + "</h3>" +
+                                "</a>" +
+                                "<p class='repoList_description'>" + SecurityElement.Escape(item.description) + "</p>" +
+                            "</li>";
 
-                        log.DebugFormat("Total of {0} approved files and folders", allowedItems.Count);
-                    }
+                // add entry to list
+                phResults.Controls.Add(new LiteralControl(li));
 
-                    if (allowedItems.Count < 1)
-                    {
-                        outMessage = "No approved file types found...";
-                    }
-                    else
-                    {
-                        // loop though approved entries
-                        foreach (GitContent item in allowedItems)
-                        {
-                            string urlPath = "#";
-                            string name = item.name;
-                            string size = GetFileSizeString(item.size);
-                            string type = item.type ?? string.Empty;
+            });
 
-                            // create url for file path
-                            if (item.type == "file")
-                            {
-                                urlPath = string.Format("DownloadFile.ashx?o={0}&r={1}&p={2}", userName, repoName, item.path);
-                            }
-                            // create url for folder path
-                            else
-                            {
-                                urlPath = string.Format("?o={0}&r={1}&p={2}", userName, repoName, item.path);
-                                size = string.Empty;
-                            }
+            // close output list
+            phResults.Controls.Add(new LiteralControl("</ul>"));
+        }
 
+        private void loadRepoContents(string userName, string repoName, string requestPath)
+        {
+            // retrieve the list of contents
+            List<GitContent> contentList = GitHubClient.GetContents(userName, repoName, requestPath);
 
-                            // build html syntax for each user
-				            items.Add("<li class='" + item.type + "'>" +
-								            "<a href='" + urlPath + "'>" + 
-									            "<span class='contentList_name'>" + name + "</span>" +
-								            "</a>" + 
-								            "<span class='contentList_size'>" + size + "</span>" +
-							            "</li>");
-                        }
-                    }
-                }
-            }
-            // everything else
-            else 
+            // make sure it's not empty
+            if (null == contentList || contentList.Count < 1)
             {
-                outMessage = "Nothing found...";
+                phMessage.Controls.Add(new Label() { CssClass = "contentMessage", Text = "No entries found..." });
+                return;
             }
 
-            if (!string.IsNullOrEmpty(outMessage)) {
+            // get list of directories from the response
+            List<GitContent> dirList = contentList.FindAll(delegate(GitContent item) { return item.type == "dir"; });
 
-                Label lblMessage = new Label();
-                lblMessage.CssClass = "contentMessage";
-                lblMessage.Text = outMessage;
+            // get list of approved file types from response
+            List<GitContent> fileList = contentList.FindAll(delegate(GitContent item)
+            {
+                return (item.type == "file" && Regex.IsMatch(item.name, approvedExtensions, RegexOptions.IgnoreCase));
+            });
 
-                phMessage.Controls.Add(lblMessage);
+            log.DebugFormat("Total of {0} directories and {1} approved files", dirList.Count, fileList.Count);
 
+            // check if no approved files or folders were found
+            if (dirList.Count + fileList.Count < 1)
+            {
+                phMessage.Controls.Add(new Label() { CssClass = "contentMessage", Text = "No approved entries found..." });
+                return;
             }
-            else {
 
-                phResults.Controls.Add(new LiteralControl("<ul class='contentList'>"));
+            // open output list
+            phResults.Controls.Add(new LiteralControl("<ul class='contentList'>"));
 
-                foreach (var item in items)
-                    phResults.Controls.Add(new LiteralControl(item));
-                
-                phResults.Controls.Add(new LiteralControl("</ul>"));
+            // add entry for each directory item
+            dirList.ForEach(delegate(GitContent item)
+            {
+                // build url path for folder link
+                string urlPath = string.Format("?o={0}&r={1}&p={2}", userName, repoName, item.path);
 
-            }
+                // create literal control
+                string li = "<li class='" + item.type + "'>" +
+                                    "<a href='" + urlPath + "'>" +
+                                        "<span class='contentList_name'>" + SecurityElement.Escape(item.name) + "</span>" +
+                                    "</a>" +
+                            "</li>";
+
+                // add entry to list
+                phResults.Controls.Add(new LiteralControl(li));
+            });
+
+            // add entry for each directory item
+            fileList.ForEach(delegate(GitContent item)
+            {
+                // build url path for file link
+                string urlPath = string.Format("DownloadFile.ashx?o={0}&r={1}&p={2}", userName, repoName, item.path);
+
+                // create literal control
+                string li = "<li class='" + item.type + "'>" +
+                                    "<a href='" + urlPath + "'>" +
+                                        "<span class='contentList_name'>" + SecurityElement.Escape(item.name) + "</span>" +
+                                    "</a>" +
+                                    "<span class='contentList_size'>" + GetFileSizeString(item.size) + "</span>" +
+                                "</li>";
+
+                // add entry to list
+                phResults.Controls.Add(new LiteralControl(li));
+            });
+
+            // close output list
+            phResults.Controls.Add(new LiteralControl("</ul>"));
         }
 
         private void populateBreadCrumb(string userName, string repoName, string requestPath)
         {
             PlaceHolder phBreadCrumbList = (PlaceHolder)Master.FindControl("crumbsPlaceHolder");
-            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='crumbs'>"));
-
-            List<string> items = new List<string>();
-
-            items.Add("<li><a href='Default.aspx'>Home</a></li>");
+            
+            // open output ul
+            phBreadCrumbList.Controls.Add(new LiteralControl("<ul class='crumbs'><li><a href='Default.aspx'>Home</a></li>"));
 
             if (!string.IsNullOrEmpty(userName))
             {
-                items.Add(string.Format("<li><a href='User.aspx?o={0}'>{0}</a></li>", userName));
+                // add entry to output ul
+                phBreadCrumbList.Controls.Add(new LiteralControl(string.Format("<li><a href='User.aspx?o={0}'>{0}</a></li>", userName)));
 
                 if (!string.IsNullOrEmpty(repoName))
                 {
-                    items.Add(string.Format("<li><a href='User.aspx?o={0}&r={1}'>{1}</a></li>", userName, repoName));
+                    // add entry to output ul
+                    phBreadCrumbList.Controls.Add(new LiteralControl(string.Format("<li><a href='User.aspx?o={0}&r={1}'>{1}</a></li>", userName, repoName)));
                     
-
                     // check if there is a request path 
                     if (!string.IsNullOrEmpty(requestPath))
                     {
-                        // need a temporary list
-                        List<string> t = new List<string>();
+                        // need a temporary list so we can sort the sub-folders correctly
+                        List<string> folderList = new List<string>();
                         string urlTemplate = "<li><a href='?o=" + userName + "&r=" + repoName + "&p={0}'>{1}</a></li>";
 
                         // enumerate through sub-folders in reverse to get the breadcrumb order correct
@@ -222,7 +190,7 @@ namespace PowerShellOnlineSigningService
                                 string item = string.Format(urlTemplate, requestPath, folderName);
 
                                 //add it to temp list
-                                t.Add(item);
+                                folderList.Add(item);
 
                                 // continue to advance through the paths until no more sub folders
                                 requestPath = requestPath.Substring(0, requestPath.LastIndexOf("/"));
@@ -231,23 +199,24 @@ namespace PowerShellOnlineSigningService
                         }
 
                         // add final path to the temp list
-                        t.Add(string.Format(urlTemplate, requestPath, requestPath));
+                        folderList.Add(string.Format(urlTemplate, requestPath, requestPath));
 
-                        // loop in reverse to put the breadcrumb order correct
-                        for (int x = t.Count - 1; x >= 0; x--)
-                            items.Add(t[x]);
+                        // loop in reverse to put the breadcrumb order correct then add entry to output ul
+                        for (int x = folderList.Count - 1; x >= 0; x--)
+                            phBreadCrumbList.Controls.Add(new LiteralControl(folderList[x]));
+
+                        // empty the tempList
+                        folderList.Clear();
                     }
                 }
             }
             else
             {
-                items.Add("<li>User</li>");
+                // add entry to output ul
+                phBreadCrumbList.Controls.Add(new LiteralControl("<li>User</li>"));
             }
 
-            // add each entry in items to the breadcrumb
-            foreach (var item in items)
-                phBreadCrumbList.Controls.Add(new LiteralControl(item));
-
+            // close output ul
             phBreadCrumbList.Controls.Add(new LiteralControl("</ul>"));
         }
 
